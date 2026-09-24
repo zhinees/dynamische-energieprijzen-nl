@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
+  "$comment": "Values hand-checked in Zonneplan's calculator. No automatic adapter: that calculator stores a submission on Zonneplan's side for every calculation.",
   "id": "zonneplan",
   "name": "Zonneplan",
   "website": "https://www.zonneplan.nl",
@@ -13,5 +13,46 @@
     "autoCurtailment": null
   },
   "fields": {},
-  "manual": {}
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 6.25,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://start.zonneplan.nl/energie",
+      "note": "Zonneplan price calculator, test address Madurodam (2584RZ 1); amounts incl. btw ('Vaste leveringskosten stroom' € 75,00 per jaar)"
+    },
+    "electricityMarkup": {
+      "value": 0.02,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://start.zonneplan.nl/energie",
+      "note": "Zonneplan price calculator, test address Madurodam (2584RZ 1); amounts incl. btw ('Inkoopvergoeding 2 ct/kwh')"
+    },
+    "gasFixedMonthly": {
+      "value": 6.25,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://start.zonneplan.nl/energie",
+      "note": "Zonneplan price calculator, test address Madurodam (2584RZ 1); amounts incl. btw ('Vaste leveringskosten gas' € 75,00 per jaar)"
+    },
+    "gasMarkup": {
+      "value": 0.08,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://start.zonneplan.nl/energie",
+      "note": "Zonneplan price calculator, test address Madurodam (2584RZ 1); amounts incl. btw ('Inkoopvergoeding 8 ct/m³')"
+    },
+    "feedInDelta": {
+      "value": 0.02,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://start.zonneplan.nl/energie",
+      "note": "Zonneplan price calculator, test address Madurodam (2584RZ 1); amounts incl. btw ('Inkoopvergoeding teruggave/vergoeding 2 ct/kwh', also after 2027). Not included: 'Zonnebonus 10%' on top."
+    }
+  }
 }

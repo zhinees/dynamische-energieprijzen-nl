@@ -1,6 +1,5 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
   "id": "vandebron",
   "name": "Vandebron",
   "website": "https://vandebron.nl",
@@ -12,6 +11,61 @@
   "features": {
     "autoCurtailment": null
   },
+  "calculator": {
+    "adapter": "vandebron-api",
+    "testAddress": {
+      "postcode": "2584RZ",
+      "houseNumber": 1,
+      "city": "'S-GRAVENHAGE",
+      "label": "Madurodam, George Maduroplein 1, Den Haag (public attraction)"
+    }
+  },
   "fields": {},
-  "manual": {}
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 5.781296,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "note": "Vandebron price-breakdown API (dynamic, 'MarketPriceVariable'), test address Madurodam (2584RZ 1); excl. btw as returned by the API; FixedCost € 0,19007/day × 365/12 (€ 0,22998/day incl. btw)",
+      "valueInclVat": 6.995225
+    },
+    "electricityMarkup": {
+      "value": 0.01825,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "note": "Vandebron price-breakdown API (dynamic, 'MarketPriceVariable'), test address Madurodam (2584RZ 1); excl. btw as returned by the API; SurchargesDeliveryCost (€ 0,02208 incl. btw)",
+      "valueInclVat": 0.02208
+    },
+    "gasFixedMonthly": {
+      "value": 5.781296,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "note": "Vandebron price-breakdown API (dynamic, 'MarketPriceVariable'), test address Madurodam (2584RZ 1); excl. btw as returned by the API; FixedCost € 0,19007/day × 365/12",
+      "valueInclVat": 6.995225
+    },
+    "gasMarkup": {
+      "value": 0.04945,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "note": "Vandebron price-breakdown API (dynamic, 'MarketPriceVariable'), test address Madurodam (2584RZ 1); excl. btw as returned by the API; SurchargesDeliveryCost gas (€ 0,05983 incl. btw)",
+      "valueInclVat": 0.05983
+    },
+    "feedInDelta": {
+      "value": -0.01125,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "note": "Vandebron price-breakdown API (dynamic, 'MarketPriceVariable'), test address Madurodam (2584RZ 1); excl. btw as returned by the API; SurchargesExcessRedeliveryCost is a cost per kWh fed back (€ 0,01361 incl. btw)",
+      "valueInclVat": -0.01361
+    }
+  }
 }

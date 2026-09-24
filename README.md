@@ -58,7 +58,7 @@ Every file has a JSON Schema in [`schema/`](schema) and a `$schema` field pointi
   - `gasMarkup`: EUR/m³.
   - `feedInDelta`: EUR/kWh *added* to the hourly price for power you feed back. It is negative for a cost (terugleverkosten) and positive for a bonus (e.g. Zonneplan).
 - **Per tariff value**:
-  - `value`: excl. btw. `valueInclVat` is included for convenience.
+  - `value`: excl. btw. `valueInclVat`: incl. btw, the supplier's own number when it publishes one (otherwise `value` × 1.21; `null` when it's unknown whether btw applies).
   - `source`: `scraped` (read from the supplier's web page by the bot), `calculator` (from the supplier's own price calculator) or `manual` (from the supplier's config file).
   - `verified`: always `true`. Unverified values are rejected by the validator.
   - `since`: when this value started.

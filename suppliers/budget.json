@@ -1,6 +1,5 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
   "id": "budget",
   "name": "Budget Thuis (Budget Energie)",
   "website": "https://www.budgetthuis.nl",
@@ -12,6 +11,61 @@
   "features": {
     "autoCurtailment": null
   },
+  "calculator": {
+    "adapter": "budget-api",
+    "testAddress": {
+      "postcode": "2584RZ",
+      "houseNumber": 1,
+      "city": "'S-GRAVENHAGE",
+      "label": "Madurodam, George Maduroplein 1, Den Haag (public attraction)"
+    }
+  },
   "fields": {},
-  "manual": {}
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 4.95,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://api.budgetthuis.nl/energy/v1/online-offers",
+      "note": "Budget Thuis offer API, proposition 'Budget Energie Dynamisch', test address Madurodam (2584RZ 1); excl. btw as returned by the API (€ 5,99 incl. btw)",
+      "valueInclVat": 5.99
+    },
+    "electricityMarkup": {
+      "value": 0.0139,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://api.budgetthuis.nl/energy/v1/online-offers",
+      "note": "Budget Thuis offer API, proposition 'Budget Energie Dynamisch', test address Madurodam (2584RZ 1); excl. btw as returned by the API; tradingCostsSurcharge (€ 0,01682 incl. btw)",
+      "valueInclVat": 0.01682
+    },
+    "gasFixedMonthly": {
+      "value": 4.95,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://api.budgetthuis.nl/energy/v1/online-offers",
+      "note": "Budget Thuis offer API, proposition 'Budget Energie Dynamisch', test address Madurodam (2584RZ 1); excl. btw as returned by the API (€ 5,99 incl. btw)",
+      "valueInclVat": 5.99
+    },
+    "gasMarkup": {
+      "value": 0.053,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://api.budgetthuis.nl/energy/v1/online-offers",
+      "note": "Budget Thuis offer API, proposition 'Budget Energie Dynamisch', test address Madurodam (2584RZ 1); excl. btw as returned by the API; tradingCostsSurcharge gas (€ 0,06413 incl. btw)",
+      "valueInclVat": 0.06413
+    },
+    "feedInDelta": {
+      "value": 0,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://api.budgetthuis.nl/energy/v1/online-offers",
+      "note": "Budget Thuis offer API, proposition 'Budget Energie Dynamisch', test address Madurodam (2584RZ 1); excl. btw as returned by the API; productionCharge null ('Géén terugleverkosten met zonnepanelen')",
+      "valueInclVat": 0
+    }
+  }
 }

@@ -309,6 +309,13 @@
         },
         "note": {
           "type": "string"
+        },
+        "valueInclVat": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The incl.-btw amount as published, when the source states both. null = unknown whether btw applies."
         }
       }
     }

@@ -1,6 +1,11 @@
 id,name,electricityFixedMonthly,electricityFixedMonthly_source,electricityFixedMonthly_verified,electricityMarkup,electricityMarkup_source,electricityMarkup_verified,gasFixedMonthly,gasFixedMonthly_source,gasFixedMonthly_verified,gasMarkup,gasMarkup_source,gasMarkup_verified,feedInDelta,feedInDelta_source,feedInDelta_verified,auto_curtailment,tariff_url
 anwb,ANWB Energie,,,,0.014876,manual,true,,,,0.063471,manual,true,0,manual,true,,https://www.anwb.nl/energie/actuele-tarieven
+budget,Budget Thuis (Budget Energie),4.95,manual,true,0.0139,manual,true,4.95,manual,true,0.053,manual,true,0,manual,true,,https://www.budgetthuis.nl/energie/dynamisch-energiecontract
 frank,Frank Energie,5.785124,manual,true,0.015,manual,true,5.785124,manual,true,0.066,manual,true,-0.0105,manual,true,true,https://www.frankenergie.nl/nl/dynamisch-energiecontract
+liveenergy,Live Energy,5,manual,true,0.02,manual,true,5,manual,true,0.07,manual,true,-0.02,manual,true,,https://aanmelden.liveenergy.nl
 nextenergy,NextEnergy,4.950413,manual,true,0.017355,manual,true,4.950413,manual,true,0.065289,manual,true,0,manual,true,,https://www.nextenergy.nl/dynamische-energie
+pure,Pure Energie,5,manual,true,0.014868,manual,true,5,manual,true,0.081818,manual,true,-0.0149,manual,true,,https://pure-energie.nl/energiecontract/dynamisch-energiecontract/
 tibber,Tibber,5.77686,manual,true,0.014876,manual,true,4.950413,manual,true,0.073017,manual,true,-0.014876,manual,true,,https://tibber.com/nl/energiecontract
+vandebron,Vandebron,5.781296,manual,true,0.01825,manual,true,5.781296,manual,true,0.04945,manual,true,-0.01125,manual,true,,https://vandebron.nl/energie/energiecontract/dynamisch
 vattenfall,Vattenfall (FlexPrijs),,,,,,,,,,,,,0,manual,true,,https://www.vattenfall.nl/energie/dynamisch-energiecontract/
+zonneplan,Zonneplan,5.165289,manual,true,0.016529,manual,true,5.165289,manual,true,0.066116,manual,true,0.016529,manual,true,,https://www.zonneplan.nl/energie/dynamisch-energiecontract

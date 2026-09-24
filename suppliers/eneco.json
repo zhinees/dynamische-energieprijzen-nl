@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
+  "$comment": "Not published: Eneco's calculator answers 'We kunnen je op dit moment geen aanbod doen' for the public test address (Madurodam), 2026-09-24. Its flow uses a server-side shopping basket, so there is no automatic adapter.",
   "id": "eneco",
   "name": "Eneco",
   "website": "https://www.eneco.nl",

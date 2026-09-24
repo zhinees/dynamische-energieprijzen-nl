@@ -58,7 +58,7 @@ function report(file: SuppliersFile, pending: string[] = []): string {
     "",
   ];
   if (pending.length) {
-    lines.push("## Not published yet", "", "No verified tariffs yet (prices only in a postcode calculator):", "", ...pending.map((n) => `- ${n}`), "");
+    lines.push("## Not published yet", "", "No verified tariffs yet (the reason is in the supplier file's \$comment):", "", ...pending.map((n) => `- ${n}`), "");
   }
   const errors = file.suppliers.filter((s) => s.fetchError);
   if (errors.length) {

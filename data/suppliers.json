@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/suppliers.schema.json",
   "version": 1,
-  "generatedAt": "2026-09-24T16:31:24.756Z",
+  "generatedAt": "2026-09-24T17:10:03.974Z",
   "currency": "EUR",
   "vat": "excluded",
   "suppliers": [
@@ -46,7 +46,68 @@
           "sourceUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         }
       },
-      "lastRun": "2026-09-24T16:31:24.756Z"
+      "lastRun": "2026-09-24T17:10:03.974Z"
+    },
+    {
+      "id": "budget",
+      "name": "Budget Thuis (Budget Energie)",
+      "website": "https://www.budgetthuis.nl",
+      "tariffUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract",
+      "products": {
+        "electricity": true,
+        "gas": true
+      },
+      "features": {
+        "autoCurtailment": null
+      },
+      "tariffs": {
+        "electricityFixedMonthly": {
+          "value": 4.95,
+          "valueInclVat": 5.99,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+        },
+        "electricityMarkup": {
+          "value": 0.0139,
+          "valueInclVat": 0.01682,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+        },
+        "gasFixedMonthly": {
+          "value": 4.95,
+          "valueInclVat": 5.99,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+        },
+        "gasMarkup": {
+          "value": 0.053,
+          "valueInclVat": 0.06413,
+          "unit": "EUR/m3",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+        },
+        "feedInDelta": {
+          "value": 0,
+          "valueInclVat": 0,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+        }
+      },
+      "lastRun": "2026-09-24T17:10:03.974Z"
     },
     {
       "id": "frank",
@@ -108,7 +169,68 @@
           "sourceUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         }
       },
-      "lastRun": "2026-09-24T16:31:24.756Z"
+      "lastRun": "2026-09-24T17:10:03.974Z"
+    },
+    {
+      "id": "liveenergy",
+      "name": "Live Energy",
+      "website": "https://www.liveenergy.nl",
+      "tariffUrl": "https://aanmelden.liveenergy.nl",
+      "products": {
+        "electricity": true,
+        "gas": true
+      },
+      "features": {
+        "autoCurtailment": null
+      },
+      "tariffs": {
+        "electricityFixedMonthly": {
+          "value": 5,
+          "valueInclVat": 6.05,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://aanmelden.liveenergy.nl"
+        },
+        "electricityMarkup": {
+          "value": 0.02,
+          "valueInclVat": 0.0242,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://aanmelden.liveenergy.nl"
+        },
+        "gasFixedMonthly": {
+          "value": 5,
+          "valueInclVat": 6.05,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://aanmelden.liveenergy.nl"
+        },
+        "gasMarkup": {
+          "value": 0.07,
+          "valueInclVat": 0.0847,
+          "unit": "EUR/m3",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://aanmelden.liveenergy.nl"
+        },
+        "feedInDelta": {
+          "value": -0.02,
+          "valueInclVat": -0.0242,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://aanmelden.liveenergy.nl"
+        }
+      },
+      "lastRun": "2026-09-24T17:10:03.974Z"
     },
     {
       "id": "nextenergy",
@@ -169,7 +291,68 @@
           "sourceUrl": "https://www.nextenergy.nl/dynamische-energie"
         }
       },
-      "lastRun": "2026-09-24T16:31:24.756Z"
+      "lastRun": "2026-09-24T17:10:03.974Z"
+    },
+    {
+      "id": "pure",
+      "name": "Pure Energie",
+      "website": "https://pure-energie.nl",
+      "tariffUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
+      "products": {
+        "electricity": true,
+        "gas": true
+      },
+      "features": {
+        "autoCurtailment": null
+      },
+      "tariffs": {
+        "electricityFixedMonthly": {
+          "value": 5,
+          "valueInclVat": 6.05,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
+        },
+        "electricityMarkup": {
+          "value": 0.014868,
+          "valueInclVat": 0.01799,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
+        },
+        "gasFixedMonthly": {
+          "value": 5,
+          "valueInclVat": 6.05,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
+        },
+        "gasMarkup": {
+          "value": 0.081818,
+          "valueInclVat": 0.099,
+          "unit": "EUR/m3",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
+        },
+        "feedInDelta": {
+          "value": -0.0149,
+          "valueInclVat": null,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
+        }
+      },
+      "lastRun": "2026-09-24T17:10:03.974Z"
     },
     {
       "id": "tibber",
@@ -230,7 +413,68 @@
           "sourceUrl": "https://tibber.com/nl/energiecontract"
         }
       },
-      "lastRun": "2026-09-24T16:31:24.756Z"
+      "lastRun": "2026-09-24T17:10:03.974Z"
+    },
+    {
+      "id": "vandebron",
+      "name": "Vandebron",
+      "website": "https://vandebron.nl",
+      "tariffUrl": "https://vandebron.nl/energie/energiecontract/dynamisch",
+      "products": {
+        "electricity": true,
+        "gas": true
+      },
+      "features": {
+        "autoCurtailment": null
+      },
+      "tariffs": {
+        "electricityFixedMonthly": {
+          "value": 5.781296,
+          "valueInclVat": 6.995225,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+        },
+        "electricityMarkup": {
+          "value": 0.01825,
+          "valueInclVat": 0.02208,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+        },
+        "gasFixedMonthly": {
+          "value": 5.781296,
+          "valueInclVat": 6.995225,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+        },
+        "gasMarkup": {
+          "value": 0.04945,
+          "valueInclVat": 0.05983,
+          "unit": "EUR/m3",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+        },
+        "feedInDelta": {
+          "value": -0.01125,
+          "valueInclVat": -0.01361,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+        }
+      },
+      "lastRun": "2026-09-24T17:10:03.974Z"
     },
     {
       "id": "vattenfall",
@@ -255,7 +499,68 @@
           "sourceUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         }
       },
-      "lastRun": "2026-09-24T16:31:24.756Z"
+      "lastRun": "2026-09-24T17:10:03.974Z"
+    },
+    {
+      "id": "zonneplan",
+      "name": "Zonneplan",
+      "website": "https://www.zonneplan.nl",
+      "tariffUrl": "https://www.zonneplan.nl/energie/dynamisch-energiecontract",
+      "products": {
+        "electricity": true,
+        "gas": true
+      },
+      "features": {
+        "autoCurtailment": null
+      },
+      "tariffs": {
+        "electricityFixedMonthly": {
+          "value": 5.165289,
+          "valueInclVat": 6.25,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://start.zonneplan.nl/energie"
+        },
+        "electricityMarkup": {
+          "value": 0.016529,
+          "valueInclVat": 0.02,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://start.zonneplan.nl/energie"
+        },
+        "gasFixedMonthly": {
+          "value": 5.165289,
+          "valueInclVat": 6.25,
+          "unit": "EUR/month",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://start.zonneplan.nl/energie"
+        },
+        "gasMarkup": {
+          "value": 0.066116,
+          "valueInclVat": 0.08,
+          "unit": "EUR/m3",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://start.zonneplan.nl/energie"
+        },
+        "feedInDelta": {
+          "value": 0.016529,
+          "valueInclVat": 0.02,
+          "unit": "EUR/kWh",
+          "source": "manual",
+          "verified": true,
+          "since": "2026-09-24T00:00:00Z",
+          "sourceUrl": "https://start.zonneplan.nl/energie"
+        }
+      },
+      "lastRun": "2026-09-24T17:10:03.974Z"
     }
   ]
 }

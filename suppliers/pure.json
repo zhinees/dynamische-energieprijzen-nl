@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
+  "$comment": "Values hand-checked in Pure Energie's calculator. No automatic adapter: its calculator keeps a server-side session.",
   "id": "pure",
   "name": "Pure Energie",
   "website": "https://pure-energie.nl",
@@ -13,5 +13,47 @@
     "autoCurtailment": null
   },
   "fields": {},
-  "manual": {}
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 6.05,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
+      "note": "Pure Energie calculator price structure, test address Madurodam (2584RZ 1); 'Vaste leveringskosten' € 54,45 for 9 months incl. btw (€ 5,00/month excl.)"
+    },
+    "electricityMarkup": {
+      "value": 0.01799,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
+      "note": "Pure Energie calculator price structure, test address Madurodam (2584RZ 1); 'Inkoopvergoeding' € 0,01799/kWh incl. btw"
+    },
+    "gasFixedMonthly": {
+      "value": 6.05,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
+      "note": "Pure Energie calculator price structure, test address Madurodam (2584RZ 1); 'Vaste leveringskosten' € 54,45 for 9 months incl. btw"
+    },
+    "gasMarkup": {
+      "value": 0.099,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
+      "note": "Pure Energie calculator price structure, test address Madurodam (2584RZ 1); 'Inkoopvergoeding' € 0,09900/m³ incl. btw"
+    },
+    "feedInDelta": {
+      "value": -0.0149,
+      "vatIncluded": false,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
+      "note": "Pure Energie calculator price structure, test address Madurodam (2584RZ 1); 'Verkoopvergoeding' −€ 0,0149/kWh on net feed-in (market price and fee are excl. btw per Pure's terms)",
+      "valueInclVat": null
+    }
+  }
 }

@@ -79,6 +79,12 @@ export interface ManualValue {
   value: number;
   /** true when `value` includes 21% VAT; it is converted to excl. VAT in the output. */
   vatIncluded: boolean;
+  /**
+   * Optional: the other side as published by the supplier (incl. btw when `value` is excl.).
+   * Use it when the source states both, so no rounded conversion is published.
+   * null = the supplier doesn't say whether btw applies (the incl. value is left empty).
+   */
+  valueInclVat?: number | null;
   /** Must be true: read on the supplier's own site on checkedAt. Unverified values are not allowed. */
   verified: true;
   checkedAt: string; // YYYY-MM-DD
@@ -89,7 +95,7 @@ export interface ManualValue {
 export interface FieldValue {
   /** Excluding VAT. */
   value: number | null;
-  /** value * 1.21, for convenience. */
+  /** Incl. 21% btw: the supplier's own number when published, else value * 1.21. null = not known. */
   valueInclVat: number | null;
   unit: string;
   /** scraped = read from the supplier's web page; calculator = from the supplier's price calculator; manual = from the supplier config. */

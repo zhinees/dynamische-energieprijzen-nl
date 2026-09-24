@@ -37,7 +37,8 @@ function manualValue(cfg: SupplierConfig, key: FieldKey, prev?: FieldValue): Fie
   if (!m || m.verified !== true) return undefined; // only real, checked data is published
   const value = m.vatIncluded ? exclVat(m.value) : r6(m.value);
   // Keep the exact published amount incl. btw (converting back would drift in the last decimal).
-  const valueInclVat = m.vatIncluded ? r6(m.value) : inclVat(value);
+  const valueInclVat =
+    m.valueInclVat !== undefined ? (m.valueInclVat === null ? null : r6(m.valueInclVat)) : m.vatIncluded ? r6(m.value) : inclVat(value);
   const checkedAt = `${m.checkedAt}T00:00:00Z`;
   // Keep a newer scraped/calculator value over an older manual one.
   if (prev && prev.source !== "manual" && prev.since && prev.since > checkedAt) return undefined;
@@ -78,7 +79,7 @@ export function buildSupplier(
       const unchanged = prevVal?.source === "calculator" && prevVal.value === value;
       tariffs[key] = {
         value,
-        valueInclVat: c.vatIncluded ? r6(c.value) : inclVat(value),
+        valueInclVat: c.valueInclVat !== undefined ? r6(c.valueInclVat) : c.vatIncluded ? r6(c.value) : inclVat(value),
         unit: FIELD_UNITS[key],
         source: "calculator",
         verified: true,
