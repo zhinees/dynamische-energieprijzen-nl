@@ -1,116 +1,117 @@
 # Dynamische energieprijzen NL
 
-Open data for Dutch dynamic energy contracts, updated automatically by GitHub Actions:
+Een onafhankelijk, open overzicht van Nederlandse dynamische energiecontracten, automatisch bijgewerkt door GitHub Actions:
 
-- **Day-ahead market prices**: hourly electricity (and quarter-hourly when available), plus gas, per day.
-- **Supplier tariffs** for dynamic contracts: fixed monthly costs, inkoopopslag (purchase markup) and teruglevering (feed-in), per supplier.
-- **Ready-made comparisons**: each supplier's buy and sell price per hour, for today and tomorrow.
+- **Day-aheadmarktprijzen**: stroom per uur (en per kwartier als die beschikbaar is), plus gas, per dag.
+- **Tarieven van leveranciers** met een dynamisch contract: vaste kosten per maand, inkoopopslag en teruglevering, per leverancier.
+- **Kant-en-klare vergelijkingen**: de afname- en terugleverprijs per uur voor elke leverancier, voor vandaag en morgen.
 
-Think of it like an ad-block filter list. The data lives as plain JSON/CSV files in this repo, and a scheduled job keeps it current. Anyone can use the files for charts, comparison sites, home automation or research. Corrections are pull requests.
+Zie het als een filterlijst van een adblocker. De data staat als gewone JSON- en CSV-bestanden in deze repo, en een geplande taak houdt die actueel. Iedereen mag de bestanden gebruiken voor grafieken, vergelijkingssites, domotica of onderzoek. Correcties gaan via pull requests.
 
-> **All amounts are in EUR, excluding VAT (btw), energy tax (energiebelasting) and grid costs.**
+> **Alle bedragen zijn in euro's, exclusief btw, energiebelasting en netbeheerkosten.**
 >
-> **Only real data is published.** Every tariff was read from the supplier's own website or price calculator. Values that can't be verified are left out, never estimated or copied from third-party sites.
+> **Alleen echte data wordt gepubliceerd.** Elk tarief is gelezen op de eigen website of in de eigen prijsrekentool van de leverancier. Waarden die niet te controleren zijn, blijven weg; ze worden nooit geschat of overgenomen van andere sites.
 
-## Use the data
+## De data gebruiken
 
-Fetch any file straight from GitHub. `raw.githubusercontent.com` allows cross-origin requests, so this works in the browser as well as on a server.
+Haal elk bestand direct van GitHub op. `raw.githubusercontent.com` staat verzoeken van andere domeinen toe, dus dit werkt zowel in de browser als op een server.
 
 ```
-https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/data/<file>
+https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data/<bestand>
 ```
 
-A CDN alternative is `https://cdn.jsdelivr.net/gh/OWNER/dynamische-energieprijzen-nl@main/data/<file>`. Note that jsDelivr caches branch URLs for up to 12 hours, so use raw GitHub if you need freshness.
+Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energieprijzen-nl@main/data/<bestand>`. Let op: jsDelivr bewaart branch-URL's tot 12 uur in de cache, dus gebruik raw GitHub als je de nieuwste data nodig hebt.
 
-| File | What | Updated |
+| Bestand | Inhoud | Bijgewerkt |
 | --- | --- | --- |
-| `data/prices/latest.json` | Full price files for `today` and `tomorrow` (tomorrow is `null` until ~13:00) | several times a day |
-| `data/prices/YYYY/YYYY-MM-DD.json` / `.csv` | One day of prices (history) | once per day, when published |
-| `data/prices/index.json` | List of available days | daily |
-| `data/suppliers.json` / `.csv` | Current tariffs per supplier, with source and verification per value | weekly + 1st/2nd of the month |
-| `data/compare/latest.json` | Per hour: market price, plus `buy` and `sell` per supplier, for today and tomorrow | several times a day |
-| `data/tariff-changes.json` | Log of every tariff change | when tariffs change |
-| `data/REPORT.md` | Where each value comes from, and which suppliers aren't published yet | with suppliers.json |
+| `data/prijzen/actueel.json` | Volledige prijsbestanden voor `vandaag` en `morgen` (morgen is `null` tot ongeveer 13:00) | een paar keer per dag |
+| `data/prijzen/JJJJ/JJJJ-MM-DD.json` / `.csv` | De prijzen van één dag (geschiedenis) | één keer per dag, zodra ze gepubliceerd zijn |
+| `data/prijzen/index.json` | Lijst van beschikbare dagen | dagelijks |
+| `data/leveranciers.json` / `.csv` | Huidige tarieven per leverancier, met bron en controle per waarde | wekelijks + op de 1e en 2e van de maand |
+| `data/vergelijking/actueel.json` | Per uur: de marktprijs, plus `afname` en `teruglevering` per leverancier, voor vandaag en morgen | een paar keer per dag |
+| `data/tariefwijzigingen.json` | Logboek van elke tariefwijziging | als tarieven veranderen |
+| `data/RAPPORT.md` | Waar elke waarde vandaan komt, en welke leveranciers nog niet gepubliceerd zijn | samen met leveranciers.json |
 
-### Example: the price today at 18:00
+### Voorbeeld: de prijs vandaag om 18:00
 
 ```js
-const BASE = "https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/data";
-const { today } = await (await fetch(`${BASE}/compare/latest.json`)).json();
+const BASIS = "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data";
+const { vandaag } = await (await fetch(`${BASIS}/vergelijking/actueel.json`)).json();
 
-const at18 = today.hours.find((h) => h.start.slice(11, 13) === "18"); // start is local time
-console.log(at18.market);        // e.g. 0.22118  (EUR/kWh, market price)
-console.log(at18.buy.tibber);    // market + Tibber's inkoopopslag
-console.log(at18.sell.zonneplan); // what Zonneplan pays per kWh fed back at that hour
+const om18 = vandaag.uren.find((u) => u.start.slice(11, 13) === "18"); // start is lokale tijd
+console.log(om18.markt);                   // bijv. 0.22118  (EUR/kWh, marktprijs)
+console.log(om18.afname.tibber);           // marktprijs + inkoopopslag van Tibber
+console.log(om18.teruglevering.zonneplan); // wat Zonneplan dat uur per teruggeleverde kWh betaalt
 ```
 
-More in [`examples/`](examples): a Node script (`price-at-hour.mjs`) and an Astro component (`astro/EnergyPrices.astro`).
+Meer in [`voorbeelden/`](voorbeelden): een Node-script (`prijs-op-uur.mjs`) en een Astro-component (`astro/Energieprijzen.astro`).
 
-### Data format
+### Dataformaat
 
-Every file has a JSON Schema in [`schema/`](schema) and a `$schema` field pointing to it. A few conventions:
+Elk bestand heeft een JSON Schema in [`schema/`](schema) en een veld `$schema` dat ernaar verwijst. Een paar afspraken:
 
-- **Times**: `start` is local Amsterdam time with offset (`2026-09-24T18:00:00+02:00`), and `startUtc` is the same moment in UTC. DST days have 23 or 25 hours.
-- **Hourly and quarter-hourly**: The day-ahead market uses 15-minute slots. `hourly` is always present; with ENTSO-E as the source, `quarterHourly` holds the 15-minute prices, and `hourly` is their average.
-- **Tariff fields**:
-  - `electricityFixedMonthly`, `gasFixedMonthly`: EUR per month.
-  - `electricityMarkup`: EUR/kWh.
-  - `gasMarkup`: EUR/m³.
-  - `feedInDelta`: EUR/kWh *added* to the hourly price for power you feed back. It is negative for a cost (terugleverkosten) and positive for a bonus (e.g. Zonneplan).
-- **Per tariff value**:
-  - `value`: excl. btw. `valueInclVat`: incl. btw, the supplier's own number when it publishes one (otherwise `value` × 1.21; `null` when it's unknown whether btw applies).
-  - `source`: `scraped` (read from the supplier's web page by the bot), `calculator` (from the supplier's own price calculator) or `manual` (from the supplier's config file).
-  - `verified`: always `true`. Unverified values are rejected by the validator.
-  - `since`: when this value started.
-  - `lastChecked`: the bot's last confirmation.
-- **Rounding**: prices are rounded to 6 decimals.
+- **Tijden**: `start` is de lokale tijd in Amsterdam met tijdverschil (`2026-09-24T18:00:00+02:00`), en `startUtc` is hetzelfde moment in UTC. Dagen met een zomertijdwissel hebben 23 of 25 uur.
+- **Per uur en per kwartier**: de day-aheadmarkt werkt met blokken van 15 minuten. `perUur` is er altijd; met ENTSO-E als bron staan de kwartierprijzen in `perKwartier`, en is `perUur` daar het gemiddelde van.
+- **Tariefvelden**:
+  - `stroomVastPerMaand`, `gasVastPerMaand`: EUR per maand.
+  - `stroomInkoopopslag`: EUR/kWh.
+  - `gasInkoopopslag`: EUR/m³.
+  - `terugleverCorrectie`: EUR/kWh die *bij* de uurprijs wordt opgeteld voor stroom die je teruglevert. Negatief bij kosten (terugleverkosten), positief bij een bonus (bijv. Zonneplan).
+- **Per tariefwaarde**:
+  - `waarde`: excl. btw. `waardeInclBtw`: incl. btw; het eigen bedrag van de leverancier als die er een publiceert (anders `waarde` × 1,21; `null` als onbekend is of er btw over gaat).
+  - `bron`: `website` (door de bot gelezen op de webpagina van de leverancier), `rekentool` (uit de eigen prijsrekentool van de leverancier) of `handmatig` (uit het leveranciersbestand).
+  - `geverifieerd`: altijd `true`. Ongecontroleerde waarden worden door de validator geweigerd.
+  - `sinds`: sinds wanneer deze waarde geldt.
+  - `laatstGecontroleerd`: de laatste bevestiging door de bot.
+- **Afronding**: prijzen zijn afgerond op 6 decimalen.
 
-## Where the data comes from
+## Waar de data vandaan komt
 
-- **Electricity**: [ENTSO-E Transparency Platform](https://transparency.entsoe.eu), the official source (needs a free API token). The [EnergyZero](https://www.energyzero.nl) public API is the fallback. Each day file records which one was used.
-- **Gas**: EnergyZero public API.
-- **Supplier tariffs**: each supplier has a config file in [`suppliers/`](suppliers). It holds:
-  - **a calculator adapter** (optional): the bot asks the supplier's own price calculator for an offer at a fixed public test address, Madurodam (George Maduroplein 1, Den Haag), and keeps only the supplier's own tariff lines. Supplier markups are the same nationwide; grid costs, which do depend on the address, are ignored.
-  - **scrape rules**: where on the supplier's website each number is found.
-  - **manual values**: hand-checked on the supplier's own site, with source URL and date. They are used when there is no rule, or a rule breaks. Unverified values are not accepted.
+- **Stroom**: [ENTSO-E Transparency Platform](https://transparency.entsoe.eu), de officiële bron (vraagt een gratis API-token). De openbare API van [EnergyZero](https://www.energyzero.nl) is de reserve. Elk dagbestand vermeldt welke bron is gebruikt.
+- **Gas**: de openbare API van EnergyZero.
+- **Tarieven van leveranciers**: elke leverancier heeft een bestand in [`leveranciers/`](leveranciers). Daarin staan:
+  - **een rekentool-adapter** (optioneel): de bot vraagt de eigen prijsrekentool van de leverancier om een aanbod voor een vast, openbaar testadres, Madurodam (George Maduroplein 1, Den Haag), en bewaart alleen de eigen tariefregels van de leverancier. De opslagen van leveranciers zijn in heel Nederland gelijk; netbeheerkosten, die wel van het adres afhangen, worden genegeerd.
+  - **scraperregels**: waar op de website van de leverancier elk getal te vinden is.
+  - **handmatige waarden**: met de hand gecontroleerd op de eigen site van de leverancier, met bron-URL en datum. Die worden gebruikt als er geen regel is, of als een regel niet meer werkt. Ongecontroleerde waarden worden niet geaccepteerd.
 
-  Suppliers are checked every Monday and on the 1st and 2nd of each month (tariffs usually change on the 1st). That is a handful of requests per supplier per month. See [`data/REPORT.md`](data/REPORT.md) for the current state. Help with more calculator adapters is welcome.
+  Leveranciers worden elke maandag gecontroleerd en op de 1e en 2e van elke maand (tarieven veranderen meestal op de 1e). Dat zijn een handvol verzoeken per leverancier per maand. Zie [`data/RAPPORT.md`](data/RAPPORT.md) voor de huidige stand. Hulp bij meer rekentool-adapters is welkom.
 
-## Run it yourself
+## Zelf draaien
 
-Requires Node 22.18+ (runs TypeScript directly, no build step).
+Vereist Node 22.18+ (draait TypeScript direct, zonder bouwstap).
 
 ```sh
 npm ci
-npm run prices                    # today + tomorrow → data/prices/
-npm run prices -- 2026-01-01 2026-01-31   # backfill a range
-npm run suppliers                 # scrape tariffs → data/suppliers.json
-npm run derive                    # index.json + compare/latest.json
-npm run check                     # typecheck + tests + validate
-npm run debug -- tibber           # show what the scraper reads for one supplier
+npm run prijzen                          # vandaag + morgen → data/prijzen/
+npm run prijzen -- 2026-01-01 2026-01-31 # een periode aanvullen
+npm run leveranciers                     # tarieven uitlezen → data/leveranciers.json
+npm run afleiden                         # index.json + vergelijking/actueel.json
+npm run controleer                       # typecontrole + tests + validatie
+npm run debug -- tibber                  # laat zien wat de scraper leest voor één leverancier
 ```
 
-### Setting up the repo on GitHub
+### Een eigen kopie op GitHub
 
-1. Push this repo and replace `OWNER` with your GitHub user or org:
-   `grep -rl OWNER --exclude-dir=node_modules . | xargs sed -i 's/OWNER/your-name/g'`
-2. **Settings → Actions → General → Workflow permissions**: choose *Read and write*, so the bot can commit data.
-3. Optional, recommended: get a free ENTSO-E API token. Register at transparency.entsoe.eu and request API access; the platform's API guide describes the current procedure (it used to be an email to transparency@entsoe.eu with the subject "Restful API access"). Add the token as the repository secret `ENTSOE_TOKEN`. Without it, electricity prices come from EnergyZero.
-4. Run both workflows once from the **Actions** tab (*Run workflow*).
+1. Fork de repo en vervang `zhinees` door je eigen GitHub-gebruiker of organisatie:
+   `grep -rl zhinees --exclude-dir=node_modules . | xargs sed -i 's/zhinees/jouw-naam/g'`
+2. Optioneel, aanbevolen: vraag een gratis ENTSO-E API-token aan. Registreer je op transparency.entsoe.eu en vraag API-toegang aan; de API-handleiding van het platform beschrijft de actuele procedure (vroeger ging dat via een e-mail aan transparency@entsoe.eu met als onderwerp "Restful API access"). Zet het token als repository-secret `ENTSOE_TOKEN`. Zonder token komen de stroomprijzen van EnergyZero.
+3. Start beide workflows één keer vanaf het tabblad **Actions** (*Run workflow*).
 
-The workflows:
+De workflows vragen zelf schrijfrechten voor hun commits, dus je hoeft de standaardrechten voor Actions niet aan te passen.
 
-- `prices.yml`: runs at 11:05, 12:05, 13:05, 15:05, 22:05 and 23:05 UTC. It commits only when data changed.
-- `suppliers.yml`: runs at 04:17 UTC every Monday and on the 1st and 2nd of the month. It keeps one issue open while a scrape rule or calculator is broken, and closes it again when all of them work.
-- `ci.yml`: runs on every PR. It checks types, tests, schemas and every supplier config.
+De workflows:
 
-## Contributing
+- `prijzen.yml`: draait om 11:05, 12:05, 13:05, 15:05, 22:05 en 23:05 UTC. Commit alleen als de data veranderd is.
+- `leveranciers.yml`: draait om 04:17 UTC op elke maandag en op de 1e en 2e van de maand. Houdt één issue open zolang een scraperregel of rekentool kapot is, en sluit het weer als alles werkt.
+- `ci.yml`: draait bij elke PR. Controleert types, tests, schema's en elk leveranciersbestand.
 
-The most useful help is checking a supplier's current tariffs and updating its file in `suppliers/`. See [CONTRIBUTING.md](CONTRIBUTING.md).
+## Bijdragen
 
-## License
+De nuttigste hulp is de huidige tarieven van een leverancier controleren en het bestand in `leveranciers/` bijwerken. Zie [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Licentie
 
 - Code: [MIT](LICENSE).
-- Data in `data/` and `suppliers/`: [CC BY 4.0](DATA-LICENSE.md). Credit "dynamische-energieprijzen-nl" and the underlying sources listed there.
+- Data in `data/` en `leveranciers/`: [CC BY 4.0](DATA-LICENTIE.md). Vermeld "dynamische-energieprijzen-nl" en de onderliggende bronnen die daar staan.
 
-This project is not affiliated with any energy supplier, and nothing here is financial advice. Always check the supplier's own terms before switching.
+Dit project is niet verbonden aan een energieleverancier, en niets hier is financieel advies. Controleer altijd de voorwaarden van de leverancier zelf voordat je overstapt.

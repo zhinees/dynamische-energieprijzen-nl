@@ -1,0 +1,67 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "id": "frank",
+  "naam": "Frank Energie",
+  "website": "https://www.frankenergie.nl",
+  "tariefUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": true,
+    "notities": "Slim Terugleveren: met jouw toestemming stuurt Frank je zonnepanelen aan (gezien in de rekentool van Frank, 2026-09-24)."
+  },
+  "rekentool": {
+    "adapter": "frank-graphql",
+    "testadres": {
+      "postcode": "2584RZ",
+      "huisnummer": 1,
+      "plaats": "'S-GRAVENHAGE",
+      "omschrijving": "Madurodam, George Maduroplein 1, Den Haag (openbare attractie)"
+    }
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 7,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "notitie": "Aanmeldrekentool van Frank (testadres Madurodam, 2584RZ 1); bedragen incl. btw"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.01815,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "notitie": "Aanmeldrekentool van Frank (testadres Madurodam, 2584RZ 1); bedragen incl. btw; = € 0,015 excl. btw"
+    },
+    "gasVastPerMaand": {
+      "waarde": 7,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "notitie": "Aanmeldrekentool van Frank (testadres Madurodam, 2584RZ 1); bedragen incl. btw"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.07986,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "notitie": "Aanmeldrekentool van Frank (testadres Madurodam, 2584RZ 1); bedragen incl. btw; = € 0,066 excl. btw"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.012705,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "notitie": "Aanmeldrekentool van Frank (testadres Madurodam, 2584RZ 1); bedragen incl. btw; PURCHASE_FEE_FEED_IN; = € 0,0105 excl. btw"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+name: Leverancierstarieven bijwerken
+
+on:
+  schedule:
+    # Tariffs change a few times a year, almost always on the 1st of the month.
+    - cron: "17 4 * * 1"   # every Monday
+    - cron: "17 4 1,2 * *" # 1st and 2nd of the month, to catch new tariffs within a day
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  leveranciers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Chromium installeren (alleen als een leverancier het nodig heeft)
+        run: |
+          if grep -q '"ophalen": *"browser"' leveranciers/*.json; then
+            npx playwright install --with-deps chromium
+          fi
+      - run: npm run leveranciers
+      - run: npm run afleiden
+      - run: npm run valideer
+      - name: Data vastleggen
+        run: |
+          .github/scripts/data-vastleggen.sh "data: leverancierstarieven $(TZ=Europe/Amsterdam date +%F)"
+
+      # Keep one open issue listing broken scrape rules, so maintainers notice.
+      - name: Kapotte scraperregels melden
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          titel="Scraper: sommige leveranciersregels werken niet"
+          bestaand=$(gh issue list --state open --search "in:title \"$titel\"" --json number --jq '.[0].number')
+          if grep -q "⚠️" data/RAPPORT.md; then
+            if [ -n "$bestaand" ]; then
+              gh issue edit "$bestaand" --body-file data/RAPPORT.md
+            else
+              gh issue create --title "$titel" --body-file data/RAPPORT.md
+            fi
+          elif [ -n "$bestaand" ]; then
+            gh issue close "$bestaand" --comment "Alle scraperregels werken weer."
+          fi

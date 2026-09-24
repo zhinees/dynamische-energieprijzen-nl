@@ -1,0 +1,71 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "id": "vandebron",
+  "naam": "Vandebron",
+  "website": "https://vandebron.nl",
+  "tariefUrl": "https://vandebron.nl/energie/energiecontract/dynamisch",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "rekentool": {
+    "adapter": "vandebron-api",
+    "testadres": {
+      "postcode": "2584RZ",
+      "huisnummer": 1,
+      "plaats": "'S-GRAVENHAGE",
+      "omschrijving": "Madurodam, George Maduroplein 1, Den Haag (openbare attractie)"
+    }
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 5.781296,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "notitie": "Prijsopbouw-API van Vandebron (dynamisch, 'MarketPriceVariable'), testadres Madurodam (2584RZ 1); excl. btw zoals de API het teruggeeft; FixedCost € 0,19007 per dag × 365/12 (€ 0,22998 per dag incl. btw)",
+      "waardeInclBtw": 6.995225
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.01825,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "notitie": "Prijsopbouw-API van Vandebron (dynamisch, 'MarketPriceVariable'), testadres Madurodam (2584RZ 1); excl. btw zoals de API het teruggeeft; SurchargesDeliveryCost (€ 0,02208 incl. btw)",
+      "waardeInclBtw": 0.02208
+    },
+    "gasVastPerMaand": {
+      "waarde": 5.781296,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "notitie": "Prijsopbouw-API van Vandebron (dynamisch, 'MarketPriceVariable'), testadres Madurodam (2584RZ 1); excl. btw zoals de API het teruggeeft; FixedCost € 0,19007 per dag × 365/12",
+      "waardeInclBtw": 6.995225
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.04945,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "notitie": "Prijsopbouw-API van Vandebron (dynamisch, 'MarketPriceVariable'), testadres Madurodam (2584RZ 1); excl. btw zoals de API het teruggeeft; SurchargesDeliveryCost gas (€ 0,05983 incl. btw)",
+      "waardeInclBtw": 0.05983
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.01125,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://vandebron.nl/api/v2/pricing/priceBreakdown",
+      "notitie": "Prijsopbouw-API van Vandebron (dynamisch, 'MarketPriceVariable'), testadres Madurodam (2584RZ 1); excl. btw zoals de API het teruggeeft; SurchargesExcessRedeliveryCost is een kostenpost per teruggeleverde kWh (€ 0,01361 incl. btw)",
+      "waardeInclBtw": -0.01361
+    }
+  }
+}

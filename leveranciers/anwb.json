@@ -1,0 +1,81 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "id": "anwb",
+  "naam": "ANWB Energie",
+  "website": "https://www.anwb.nl/energie",
+  "tariefUrl": "https://www.anwb.nl/energie/actuele-tarieven",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {
+    "stroomInkoopopslag": {
+      "sectie": "inkoopkosten",
+      "labels": [
+        "inkoopkosten bedragen"
+      ],
+      "bereik": [
+        0,
+        0.1
+      ],
+      "inclBtw": true,
+      "venster": 30
+    },
+    "gasInkoopopslag": [
+      {
+        "sectie": "inkoopkosten bedragen",
+        "labels": [
+          "vanaf \\d{1,2} [a-z]+ 20\\d\\d"
+        ],
+        "ervoor": true,
+        "bereik": [
+          0.01,
+          0.3
+        ],
+        "inclBtw": true,
+        "venster": 20
+      },
+      {
+        "sectie": "inkoopkosten bedragen",
+        "labels": [
+          "per kWh en"
+        ],
+        "bereik": [
+          0.01,
+          0.3
+        ],
+        "inclBtw": true,
+        "venster": 30
+      }
+    ]
+  },
+  "handmatig": {
+    "stroomInkoopopslag": {
+      "waarde": 0.018,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.anwb.nl/energie/actuele-tarieven",
+      "notitie": "'De inkoopkosten bedragen € 0,018 per kWh ... (incl. btw)'"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.0768,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.anwb.nl/energie/actuele-tarieven",
+      "notitie": "€ 0,07680 per m³ vanaf 1 september 2026 (was € 0,05911), incl. btw."
+    },
+    "terugleverCorrectie": {
+      "waarde": 0,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.anwb.nl/energie/actuele-tarieven",
+      "notitie": "'Je krijgt altijd de kale energieprijs' voor teruglevering."
+    }
+  }
+}

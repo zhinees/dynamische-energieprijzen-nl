@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van Zonneplan. Geen automatische adapter: die rekentool slaat bij elke berekening een aanvraag op bij Zonneplan.",
+  "id": "zonneplan",
+  "naam": "Zonneplan",
+  "website": "https://www.zonneplan.nl",
+  "tariefUrl": "https://www.zonneplan.nl/energie/dynamisch-energiecontract",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.25,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://start.zonneplan.nl/energie",
+      "notitie": "Prijsrekentool van Zonneplan, testadres Madurodam (2584RZ 1); bedragen incl. btw ('Vaste leveringskosten stroom' € 75,00 per jaar)"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.02,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://start.zonneplan.nl/energie",
+      "notitie": "Prijsrekentool van Zonneplan, testadres Madurodam (2584RZ 1); bedragen incl. btw ('Inkoopvergoeding 2 ct/kwh')"
+    },
+    "gasVastPerMaand": {
+      "waarde": 6.25,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://start.zonneplan.nl/energie",
+      "notitie": "Prijsrekentool van Zonneplan, testadres Madurodam (2584RZ 1); bedragen incl. btw ('Vaste leveringskosten gas' € 75,00 per jaar)"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.08,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://start.zonneplan.nl/energie",
+      "notitie": "Prijsrekentool van Zonneplan, testadres Madurodam (2584RZ 1); bedragen incl. btw ('Inkoopvergoeding 8 ct/m³')"
+    },
+    "terugleverCorrectie": {
+      "waarde": 0.02,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://start.zonneplan.nl/energie",
+      "notitie": "Prijsrekentool van Zonneplan, testadres Madurodam (2584RZ 1); bedragen incl. btw ('Inkoopvergoeding teruggave/vergoeding 2 ct/kwh', ook na 2027). Niet meegenomen: de 'Zonnebonus 10%' daarbovenop."
+    }
+  }
+}

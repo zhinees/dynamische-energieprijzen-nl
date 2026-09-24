@@ -1,0 +1,46 @@
+name: Marktprijzen bijwerken
+
+on:
+  schedule:
+    # Day-ahead results are published around 12:45 CET. Several runs so tomorrow
+    # is picked up as soon as it's available; each run commits only if data changed.
+    # 22:05/23:05 UTC roll prijzen/actueel.json and vergelijking/actueel.json over to the new day.
+    - cron: "5 11,12,13,15,22,23 * * *"
+  workflow_dispatch:
+    inputs:
+      van:
+        description: "Aanvullen vanaf datum (JJJJ-MM-DD, optioneel)"
+        required: false
+      tot:
+        description: "Aanvullen tot en met datum (JJJJ-MM-DD, optioneel)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  prijzen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Prijzen ophalen
+        env:
+          ENTSOE_TOKEN: ${{ secrets.ENTSOE_TOKEN }}
+          VAN: ${{ inputs.van }}
+          TOT: ${{ inputs.tot }}
+        run: npm run prijzen -- $VAN $TOT
+      - run: npm run afleiden
+      - run: npm run valideer
+      - name: Data vastleggen
+        run: |
+          .github/scripts/data-vastleggen.sh "data: marktprijzen $(TZ=Europe/Amsterdam date +%F)"

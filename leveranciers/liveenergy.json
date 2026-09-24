@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van Live Energy. Geen automatische adapter: die loopt via een WordPress-formulier met een sessie.",
+  "id": "liveenergy",
+  "naam": "Live Energy",
+  "website": "https://www.liveenergy.nl",
+  "tariefUrl": "https://aanmelden.liveenergy.nl",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.05,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://aanmelden.liveenergy.nl",
+      "notitie": "Rekentool van Live Energy, 'Prijsstructuur en kosten' (product 'Dynamisch B2C KVB (EPEX & TTF)'; vraagt geen adres); bedragen incl. btw; 'Vaste leveringskosten' € 72,60 per jaar (€ 5,00 per maand excl.)"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.0242,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://aanmelden.liveenergy.nl",
+      "notitie": "Rekentool van Live Energy, 'Prijsstructuur en kosten' (product 'Dynamisch B2C KVB (EPEX & TTF)'; vraagt geen adres); bedragen incl. btw; 'Inkoopvergoeding' € 0,02420/kWh (€ 0,02 excl.)"
+    },
+    "gasVastPerMaand": {
+      "waarde": 6.05,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://aanmelden.liveenergy.nl",
+      "notitie": "Rekentool van Live Energy, 'Prijsstructuur en kosten' (product 'Dynamisch B2C KVB (EPEX & TTF)'; vraagt geen adres); bedragen incl. btw; 'Vaste leveringskosten' € 72,60 per jaar"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.0847,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://aanmelden.liveenergy.nl",
+      "notitie": "Rekentool van Live Energy, 'Prijsstructuur en kosten' (product 'Dynamisch B2C KVB (EPEX & TTF)'; vraagt geen adres); bedragen incl. btw; 'Inkoopvergoeding' € 0,08470/m³ (€ 0,07 excl.)"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.0242,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://aanmelden.liveenergy.nl",
+      "notitie": "Rekentool van Live Energy, 'Prijsstructuur en kosten' (product 'Dynamisch B2C KVB (EPEX & TTF)'; vraagt geen adres); bedragen incl. btw; 'Inkoopvergoeding teruglevering' € 0,02420/kWh wordt gerekend over netto teruglevering"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "id": "tibber",
+  "naam": "Tibber",
+  "website": "https://tibber.com/nl",
+  "tariefUrl": "https://tibber.com/nl/energiecontract",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {
+    "stroomVastPerMaand": {
+      "sectie": "kostenplaatje",
+      "labels": [
+        "vaste kosten bij Tibber"
+      ],
+      "bereik": [
+        1,
+        20
+      ],
+      "inclBtw": true
+    },
+    "gasVastPerMaand": {
+      "sectie": "kostenplaatje",
+      "labels": [
+        "per maand voor stroom en"
+      ],
+      "bereik": [
+        1,
+        20
+      ],
+      "inclBtw": true
+    },
+    "stroomInkoopopslag": {
+      "sectie": "kostenplaatje",
+      "labels": [
+        "inkoopvergoeding van"
+      ],
+      "bereik": [
+        0,
+        0.1
+      ],
+      "inclBtw": true
+    },
+    "gasInkoopopslag": {
+      "sectie": "kostenplaatje",
+      "labels": [
+        "per kWh voor stroom en"
+      ],
+      "bereik": [
+        0.01,
+        0.3
+      ],
+      "inclBtw": true
+    },
+    "terugleverCorrectie": {
+      "sectie": "kostenplaatje",
+      "labels": [
+        "verkoopvergoeding van"
+      ],
+      "bereik": [
+        -0.1,
+        0
+      ],
+      "negatief": true,
+      "inclBtw": true
+    }
+  },
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.99,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://tibber.com/nl/energiecontract",
+      "notitie": "Per 1 september 2026. btw aangenomen als inbegrepen (consumentenprijs)."
+    },
+    "gasVastPerMaand": {
+      "waarde": 5.99,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://tibber.com/nl/energiecontract",
+      "notitie": "btw aangenomen als inbegrepen (consumentenprijs)."
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.018,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://tibber.com/nl/energiecontract",
+      "notitie": "btw aangenomen als inbegrepen (consumentenprijs)."
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.08835,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://tibber.com/nl/energiecontract",
+      "notitie": "btw aangenomen als inbegrepen (consumentenprijs)."
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.018,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://tibber.com/nl/energiecontract",
+      "notitie": "Verkoopvergoeding, vermeld incl. btw."
+    }
+  }
+}

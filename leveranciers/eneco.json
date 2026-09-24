@@ -1,0 +1,17 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Niet gepubliceerd: de rekentool van Eneco antwoordt 'We kunnen je op dit moment geen aanbod doen' voor het openbare testadres (Madurodam), 2026-09-24. De flow gebruikt een winkelmandje op de server, dus er is geen automatische adapter.",
+  "id": "eneco",
+  "naam": "Eneco",
+  "website": "https://www.eneco.nl",
+  "tariefUrl": "https://www.eneco.nl/duurzame-energie/dynamisch-energiecontract/dynamische-tarieven/",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {}
+}

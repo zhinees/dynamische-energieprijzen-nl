@@ -1,0 +1,108 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "id": "nextenergy",
+  "naam": "NextEnergy",
+  "website": "https://www.nextenergy.nl",
+  "tariefUrl": "https://www.nextenergy.nl/dynamische-energie",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {
+    "stroomInkoopopslag": {
+      "sectie": "Je betaalt slechts",
+      "labels": [
+        "Je betaalt slechts"
+      ],
+      "bereik": [
+        0,
+        0.1
+      ],
+      "inclBtw": true,
+      "venster": 40
+    },
+    "gasInkoopopslag": {
+      "sectie": "Je betaalt slechts",
+      "labels": [
+        "per kWh en"
+      ],
+      "bereik": [
+        0.01,
+        0.3
+      ],
+      "inclBtw": true,
+      "venster": 40
+    },
+    "stroomVastPerMaand": {
+      "sectie": "vaste kosten per aansluiting",
+      "labels": [
+        "vaste kosten per aansluiting"
+      ],
+      "bereik": [
+        1,
+        20
+      ],
+      "ervoor": true,
+      "venster": 30,
+      "inclBtw": true
+    },
+    "gasVastPerMaand": {
+      "sectie": "vaste kosten per aansluiting",
+      "labels": [
+        "vaste kosten per aansluiting"
+      ],
+      "bereik": [
+        1,
+        20
+      ],
+      "ervoor": true,
+      "venster": 30,
+      "inclBtw": true
+    }
+  },
+  "handmatig": {
+    "stroomInkoopopslag": {
+      "waarde": 0.021,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.nextenergy.nl/dynamische-energie",
+      "notitie": "'2,1 cent per kWh (incl. btw)'"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.079,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.nextenergy.nl/dynamische-energie",
+      "notitie": "'7,9 cent per m³ (incl. btw)'"
+    },
+    "stroomVastPerMaand": {
+      "waarde": 5.99,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.nextenergy.nl/dynamische-energie",
+      "notitie": "'€ 5,99 vaste kosten per aansluiting'; btw aangenomen als inbegrepen."
+    },
+    "gasVastPerMaand": {
+      "waarde": 5.99,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.nextenergy.nl/dynamische-energie",
+      "notitie": "Zelfde bedrag 'per aansluiting'; controleer of gas apart wordt gerekend."
+    },
+    "terugleverCorrectie": {
+      "waarde": 0,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.nextenergy.nl/dynamische-energie",
+      "notitie": "Pagina: 'Bij een dynamisch energiecontract betaal je geen terugleverkosten'. De pagina noemt ook een '50% zonnebonus' (apart NextSolar/zonnebonus-aanbod), die hier niet is meegenomen."
+    }
+  }
+}

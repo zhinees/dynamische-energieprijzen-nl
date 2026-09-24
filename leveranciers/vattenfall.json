@@ -1,0 +1,37 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "id": "vattenfall",
+  "naam": "Vattenfall (FlexPrijs)",
+  "website": "https://www.vattenfall.nl",
+  "tariefUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {
+    "terugleverCorrectie": {
+      "labels": [
+        "verkoopvergoeding"
+      ],
+      "bereik": [
+        -0.1,
+        0
+      ],
+      "negatief": true,
+      "venster": 60
+    }
+  },
+  "handmatig": {
+    "terugleverCorrectie": {
+      "waarde": 0,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/",
+      "notitie": "Verkoopvergoeding € 0 per kWh ('kan in de toekomst wijzigen')."
+    }
+  }
+}

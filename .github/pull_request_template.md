@@ -1,10 +1,10 @@
-<!-- Thanks! Most PRs update one file in suppliers/. -->
+<!-- Bedankt! De meeste PR's passen één bestand in leveranciers/ aan. -->
 
-**Supplier:** 
-**What changed:** (new tariff / fixed scrape rule / new supplier)
-**Source:** (URL on the supplier's own site, and the date you checked it)
+**Leverancier:** 
+**Wat is er veranderd:** (nieuw tarief / scraperregel gerepareerd / nieuwe leverancier)
+**Bron:** (URL op de eigen site van de leverancier, en de datum waarop je het controleerde)
 
-- [ ] Every value was read on the supplier's own site or calculator (`verified: true`, `source` = that URL, `checkedAt` updated)
-- [ ] `vatIncluded` matches how the site shows the amount
-- [ ] `npm run debug -- <id>` shows OK for every rule I touched (if any)
-- [ ] `npm run validate` passes
+- [ ] Elke waarde is gelezen op de eigen site of rekentool van de leverancier (`geverifieerd: true`, `bron` = die URL, `gecontroleerdOp` bijgewerkt)
+- [ ] `inclBtw` klopt met hoe de site het bedrag toont
+- [ ] `npm run debug -- <id>` toont OK voor elke regel die ik heb aangepast (als die er zijn)
+- [ ] `npm run valideer` slaagt

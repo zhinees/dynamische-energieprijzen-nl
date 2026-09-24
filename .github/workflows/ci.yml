@@ -1,4 +1,4 @@
-name: CI
+name: Controle
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
     paths-ignore: ["data/**"]
 
 jobs:
-  check:
+  controle:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -16,8 +16,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run typecheck
+      - run: npm run typecontrole
       - run: npm test
-      - run: npm run validate
+      - run: npm run valideer
       # Rebuild supplier data from the configs (no network) to prove the PR produces valid output.
-      - run: npm run suppliers -- --offline && npm run derive && npm run validate
+      - run: npm run leveranciers -- --offline && npm run afleiden && npm run valideer

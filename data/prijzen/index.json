@@ -1,0 +1,11 @@
+{
+  "$schema": "../../schema/prijzen-index.schema.json",
+  "versie": 1,
+  "gegenereerdOp": "2026-09-24T19:24:03.772Z",
+  "eerste": "2026-09-24",
+  "laatste": "2026-09-25",
+  "dagen": [
+    "2026-09-24",
+    "2026-09-25"
+  ]
+}

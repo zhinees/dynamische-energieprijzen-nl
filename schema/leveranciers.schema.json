@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/leveranciers.schema.json",
+  "title": "data/leveranciers.json",
+  "type": "object",
+  "required": [
+    "versie",
+    "gegenereerdOp",
+    "valuta",
+    "btw",
+    "leveranciers"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "versie": {
+      "const": 1
+    },
+    "gegenereerdOp": {
+      "type": "string"
+    },
+    "valuta": {
+      "const": "EUR"
+    },
+    "btw": {
+      "const": "exclusief"
+    },
+    "leveranciers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "naam",
+          "website",
+          "tariefUrl",
+          "producten",
+          "kenmerken",
+          "tarieven",
+          "laatstUitgevoerd"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "naam": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "tariefUrl": {
+            "type": "string"
+          },
+          "producten": {
+            "type": "object"
+          },
+          "kenmerken": {
+            "type": "object"
+          },
+          "laatstUitgevoerd": {
+            "type": "string"
+          },
+          "ophaalfout": {
+            "type": "string"
+          },
+          "tarieven": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "stroomVastPerMaand": {
+                "$ref": "#/$defs/tariefwaarde"
+              },
+              "stroomInkoopopslag": {
+                "$ref": "#/$defs/tariefwaarde"
+              },
+              "gasVastPerMaand": {
+                "$ref": "#/$defs/tariefwaarde"
+              },
+              "gasInkoopopslag": {
+                "$ref": "#/$defs/tariefwaarde"
+              },
+              "terugleverCorrectie": {
+                "$ref": "#/$defs/tariefwaarde"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tariefwaarde": {
+      "type": "object",
+      "required": [
+        "waarde",
+        "waardeInclBtw",
+        "eenheid",
+        "bron",
+        "geverifieerd",
+        "sinds",
+        "bronUrl"
+      ],
+      "properties": {
+        "waarde": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Exclusief btw"
+        },
+        "waardeInclBtw": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "eenheid": {
+          "enum": [
+            "EUR/maand",
+            "EUR/kWh",
+            "EUR/m3"
+          ]
+        },
+        "bron": {
+          "enum": [
+            "website",
+            "rekentool",
+            "handmatig"
+          ]
+        },
+        "geverifieerd": {
+          "type": "boolean"
+        },
+        "sinds": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "laatstGecontroleerd": {
+          "type": "string"
+        },
+        "bronUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "laatsteFout": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

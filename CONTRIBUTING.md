@@ -1,92 +1,92 @@
-# Contributing
+# Bijdragen
 
-Thanks for helping keep the tariffs correct. Almost every contribution is an edit to one file in `suppliers/`.
+Bedankt dat je helpt de tarieven correct te houden. Bijna elke bijdrage is een aanpassing van één bestand in `leveranciers/`.
 
-## 1. Update a tariff (most common)
+## 1. Een tarief bijwerken (meest voorkomend)
 
-A supplier changed its prices, or a supplier in [`data/REPORT.md`](data/REPORT.md) is listed as not published yet.
+Een leverancier heeft zijn prijzen veranderd, of een leverancier staat in [`data/RAPPORT.md`](data/RAPPORT.md) als nog niet gepubliceerd.
 
-1. Find the number on the **supplier's own website**. For suppliers that only show tariffs after entering a postcode, use their tariff calculator or tarievenblad.
-2. Edit `manual` in `suppliers/<id>.json`:
+1. Zoek het getal op de **eigen website van de leverancier**. Toont een leverancier tarieven pas na het invullen van een postcode, gebruik dan de rekentool of het tarievenblad.
+2. Pas `handmatig` aan in `leveranciers/<id>.json`:
 
 ```json
-"electricityMarkup": {
-  "value": 0.018,
-  "vatIncluded": true,
-  "verified": true,
-  "checkedAt": "2026-09-24",
-  "source": "https://tibber.com/nl/energiecontract",
-  "note": "'inkoopvergoeding van €0,0180 per kWh'"
+"stroomInkoopopslag": {
+  "waarde": 0.018,
+  "inclBtw": true,
+  "geverifieerd": true,
+  "gecontroleerdOp": "2026-09-24",
+  "bron": "https://tibber.com/nl/energiecontract",
+  "notitie": "'inkoopvergoeding van €0,0180 per kWh'"
 }
 ```
 
-Field notes:
-- **`value`**: copy the number exactly as the site shows it. Set `vatIncluded` to match how the site shows it; the conversion to excl. btw happens automatically.
-- **`verified: true`**: required. Only add a number you read on the supplier's own site or calculator, and put that URL in `source`. Numbers from comparison sites, news articles or forums are not accepted; the validator rejects anything else.
-- **`feedInDelta`**: this is what gets added to the hourly price for power you feed back. For "uurprijs minus € 0,02 terugleverkosten", enter `-0.02`. For "uurprijs + € 0,02 bonus", enter `0.02`.
-- **Fixed costs**: use the monthly amount per connection (per aansluiting).
+Uitleg per veld:
+- **`waarde`**: neem het getal precies over zoals de site het toont. Zet `inclBtw` passend bij hoe de site het toont; de omrekening naar excl. btw gaat automatisch.
+- **`geverifieerd: true`**: verplicht. Voeg alleen een getal toe dat je op de eigen site of rekentool van de leverancier hebt gelezen, en zet die URL in `bron`. Getallen van vergelijkingssites, nieuwsartikelen of forums worden niet geaccepteerd; de validator weigert alles wat niet gecontroleerd is.
+- **`terugleverCorrectie`**: dit wordt bij de uurprijs opgeteld voor stroom die je teruglevert. Bij "uurprijs min € 0,02 terugleverkosten" vul je `-0.02` in. Bij "uurprijs + € 0,02 bonus" vul je `0.02` in.
+- **Vaste kosten**: gebruik het bedrag per maand per aansluiting.
 
-3. Run `npm run validate` and open a PR with the source URL.
+3. Draai `npm run valideer` en open een PR met de bron-URL.
 
-## 2. Add or fix a scrape rule
+## 2. Een scraperregel toevoegen of repareren
 
-If a supplier shows a tariff in the page itself, a rule lets the bot check it every day.
+Als een leverancier een tarief op de pagina zelf toont, kan de bot het met een regel elke dag controleren.
 
 ```json
-"fields": {
-  "electricityMarkup": {
-    "section": "kostenplaatje",
+"regels": {
+  "stroomInkoopopslag": {
+    "sectie": "kostenplaatje",
     "labels": ["inkoopvergoeding van"],
-    "range": [0, 0.1],
-    "vatIncluded": true
+    "bereik": [0, 0.1],
+    "inclBtw": true
   }
 }
 ```
 
-How a rule works: the page is turned into plain text, with headings kept as `## Heading ##`. The scraper:
-1. jumps to the first match of `section`,
-2. finds each `labels` match (case-insensitive regex),
-3. takes the nearest euro amount within `window` characters after it,
-4. rejects any amount outside `range`.
+Zo werkt een regel: de pagina wordt omgezet naar platte tekst, waarbij koppen bewaard blijven als `## Kop ##`. De scraper:
+1. springt naar de eerste match van `sectie`,
+2. zoekt elke match van `labels` (regex, hoofdletterongevoelig),
+3. neemt het dichtstbijzijnde eurobedrag binnen `venster` tekens erna,
+4. weigert elk bedrag buiten `bereik`.
 
-Options:
-- **`before: true`**: the amount comes *before* the label ("€ 5,99 vaste kosten").
-- **`negate: true`**: the page shows a cost as a positive number, but it must be stored negative (terugleverkosten).
-- **`"1,82 cent"`**: amounts in cents are converted to euros automatically.
-- **Several rules**: give a list of rules; the first one that succeeds wins. Useful for "€ 0,059 (€ 0,077 vanaf 1 september)".
-- **`"render": "browser"`**: set this on the supplier when prices are loaded by JavaScript. The page is then loaded in headless Chromium, which is slower, so use it only when needed.
+Opties:
+- **`ervoor: true`**: het bedrag staat *vóór* het label ("€ 5,99 vaste kosten").
+- **`negatief: true`**: de pagina toont kosten als positief getal, maar ze moeten negatief worden opgeslagen (terugleverkosten).
+- **`"1,82 cent"`**: bedragen in centen worden automatisch omgerekend naar euro's.
+- **Meerdere regels**: geef een lijst met regels; de eerste die slaagt wint. Handig bij "€ 0,059 (€ 0,077 vanaf 1 september)".
+- **`"ophalen": "browser"`**: zet dit bij de leverancier als prijzen met JavaScript worden geladen. De pagina wordt dan in headless Chromium geladen. Dat is trager, dus gebruik het alleen als het nodig is.
 
-Test your rule:
+Test je regel:
 
 ```sh
-npm run debug -- tibber                     # live page
-npm run debug -- tibber --grep inkoop       # show text around a word
-npm run debug -- tibber --file saved.html   # a page you saved from your browser
+npm run debug -- tibber                          # live pagina
+npm run debug -- tibber --zoek inkoop            # toon tekst rond een woord
+npm run debug -- tibber --bestand opgeslagen.html # een pagina die je uit je browser hebt opgeslagen
 ```
 
-Also keep the `manual` values in the same file up to date, because they are the fallback when the site changes. If you add a rule, a fixture in `test/fixtures/` plus a test in `test/extract.test.ts` protects it from regressions.
+Houd ook de `handmatig`-waarden in hetzelfde bestand bij, want die zijn de reserve als de site verandert. Voeg je een regel toe, dan beschermt een fixture in `test/fixtures/` plus een test in `test/uitlezen.test.ts` die tegen fouten in de toekomst.
 
-## 3. Add a calculator adapter
+## 3. Een rekentool-adapter toevoegen
 
-Many suppliers only show prices after you enter an address. Their calculator usually loads a JSON response with every tariff line separately, which is more reliable than reading a web page. `src/calculators/frank.ts` is the example to copy.
+Veel leveranciers tonen prijzen pas nadat je een adres invult. Hun rekentool laadt meestal een JSON-antwoord met elke tariefregel apart, en dat is betrouwbaarder dan een webpagina uitlezen. `src/rekentools/frank.ts` is het voorbeeld om na te maken.
 
-1. Open the supplier's calculator in your browser, open DevTools (F12) → **Network**, and enter the test address **2584 RZ, huisnummer 1** (Madurodam). Don't use your own address.
-2. Find the request that returns the offer. Save its response as `test/fixtures/<id>-<what>-<date>.json`, with no personal data in it.
-3. Write `src/calculators/<id>.ts`. It repeats the same requests and returns only the supplier's own lines: fixed monthly costs, markup and feed-in. Ignore market price, grid costs and taxes. Check whether amounts are incl. btw: the energy tax line is a good tell (€ 0,0916/kWh excl., € 0,1108 incl. in 2026).
-4. Register it in `src/calculators/index.ts`, add a `calculator` block to the supplier file, and add a test that parses your fixture.
+1. Open de rekentool van de leverancier in je browser, open DevTools (F12) → **Network**, en vul het testadres in: **2584 RZ, huisnummer 1** (Madurodam). Gebruik niet je eigen adres.
+2. Zoek het verzoek dat het aanbod teruggeeft. Bewaar het antwoord als `test/fixtures/<id>-<wat>-<datum>.json`, zonder persoonsgegevens.
+3. Schrijf `src/rekentools/<id>.ts`. Die doet dezelfde verzoeken en geeft alleen de eigen regels van de leverancier terug: vaste kosten per maand, opslag en teruglevering. Negeer marktprijs, netbeheerkosten en belastingen. Controleer of bedragen incl. btw zijn: de regel voor energiebelasting verraadt het (€ 0,0916/kWh excl., € 0,1108 incl. in 2026).
+4. Registreer de adapter in `src/rekentools/index.ts`, voeg een `rekentool`-blok toe aan het leveranciersbestand, en voeg een test toe die je fixture uitleest.
 
-Use plain headers with the project's user agent. Don't imitate the supplier's own app, don't log in, and never submit a signup.
+Gebruik gewone headers met de user agent van het project. Doe je niet voor als de app van de leverancier, log niet in, en verstuur nooit een aanmelding.
 
-## 4. Add a supplier
+## 4. Een leverancier toevoegen
 
-Copy an existing file (for example `suppliers/frank.json`) to `suppliers/<new-id>.json`. The `id` must match the file name. Fill in:
-- `products`,
-- `features.autoCurtailment` (whether it can automatically stop feed-in at negative prices),
-- `manual` values with sources (verified only; a supplier without any is simply not published yet),
-- and rules if the site allows it.
+Kopieer een bestaand bestand (bijvoorbeeld `leveranciers/frank.json`) naar `leveranciers/<nieuw-id>.json`. De `id` moet gelijk zijn aan de bestandsnaam. Vul in:
+- `producten`,
+- `kenmerken.automatischAfschakelen` (of de leverancier teruglevering automatisch kan stoppen bij negatieve prijzen),
+- `handmatig`-waarden met bronnen (alleen gecontroleerd; een leverancier zonder waarden wordt gewoon nog niet gepubliceerd),
+- en regels als de site dat toelaat.
 
-## Ground rules
+## Spelregels
 
-- **Be polite to supplier sites**: the schedule (weekly plus the 1st and 2nd of the month) is plenty. Don't add rules that hit calculators or APIs in bulk, or that ignore a site's terms.
-- **No personal data**: never commit private addresses, connection codes (EAN) or account details. The only address in this repo is the public test address (Madurodam).
-- **Keep PRs small**: one supplier per PR is easiest to review.
+- **Wees netjes tegen de sites van leveranciers**: het schema (wekelijks plus de 1e en 2e van de maand) is ruim voldoende. Voeg geen regels toe die rekentools of API's massaal bevragen, of die de voorwaarden van een site negeren.
+- **Geen persoonsgegevens**: commit nooit privéadressen, aansluitcodes (EAN) of accountgegevens. Het enige adres in deze repo is het openbare testadres (Madurodam).
+- **Houd PR's klein**: één leverancier per PR is het makkelijkst te beoordelen.
