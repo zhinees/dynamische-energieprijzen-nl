@@ -1,0 +1,66 @@
+---
+// Drop into an Astro project (works with the Cloudflare adapter too).
+// Usage: <EnergyPrices hour={18} />
+//
+// With `export const prerender = false` on the page, this runs per request;
+// otherwise it runs at build time. The data refreshes a few times a day, so
+// a short cache in front is plenty.
+interface Props {
+  hour?: number;
+  base?: string;
+}
+const {
+  hour = 18,
+  base = "https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/data",
+} = Astro.props;
+
+let day: any = null;
+let error = "";
+try {
+  const res = await fetch(`${base}/compare/latest.json`);
+  day = (await res.json()).today;
+} catch (e) {
+  error = "Prijzen zijn nu niet beschikbaar.";
+}
+
+const slot = day?.hours.find((h: any) => Number(h.start.slice(11, 13)) === hour);
+const rows = slot
+  ? day.suppliers
+      .map((s: any) => ({ ...s, buy: slot.buy[s.id], sell: slot.sell[s.id] }))
+      .sort((a: any, b: any) => (a.buy ?? 9) - (b.buy ?? 9))
+  : [];
+const eur = (n: number | null) =>
+  n === null || n === undefined ? "–" : n.toLocaleString("nl-NL", { style: "currency", currency: "EUR", minimumFractionDigits: 4 });
+---
+<section class="energy">
+  {error && <p>{error}</p>}
+  {slot && (
+    <>
+      <p>
+        Beursprijs vandaag om {String(hour).padStart(2, "0")}:00: <strong>{eur(slot.market)}</strong> per kWh (excl. btw)
+      </p>
+      <table>
+        <thead>
+          <tr><th>Leverancier</th><th>Afname /kWh</th><th>Teruglevering /kWh</th><th>Vast /mnd</th></tr>
+        </thead>
+        <tbody>
+          {rows.map((s: any) => (
+            <tr>
+              <td>{s.name}{!s.verified && <span title="Niet bevestigd op de site van de leverancier"> *</span>}</td>
+              <td>{eur(s.buy)}</td>
+              <td>{eur(s.sell)}</td>
+              <td>{eur(s.fixedMonthly.electricity)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p><small>Excl. btw, energiebelasting en netbeheerkosten. * = nog niet bevestigd bij de leverancier.</small></p>
+    </>
+  )}
+</section>
+
+<style>
+  .energy table { border-collapse: collapse; width: 100%; }
+  .energy th, .energy td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #ddd; text-align: left; }
+  .energy td:not(:first-child), .energy th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+</style>

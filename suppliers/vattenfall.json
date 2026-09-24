@@ -1,0 +1,66 @@
+{
+  "$schema": "../schema/supplier.schema.json",
+  "id": "vattenfall",
+  "name": "Vattenfall (FlexPrijs)",
+  "website": "https://www.vattenfall.nl",
+  "tariffUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/",
+  "products": {
+    "electricity": true,
+    "gas": true
+  },
+  "features": {
+    "autoCurtailment": false,
+    "notes": "Basis verbruiksinzicht."
+  },
+  "fields": {
+    "feedInDelta": {
+      "labels": [
+        "verkoopvergoeding"
+      ],
+      "range": [
+        -0.1,
+        0
+      ],
+      "negate": true,
+      "window": 60
+    }
+  },
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 7.95,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "electricityMarkup": {
+      "value": 0.0255,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasFixedMonthly": {
+      "value": 6.95,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasMarkup": {
+      "value": 0.075,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "feedInDelta": {
+      "value": 0,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/",
+      "note": "Verkoopvergoeding € 0 per kWh ('kan in de toekomst wijzigen')."
+    }
+  }
+}

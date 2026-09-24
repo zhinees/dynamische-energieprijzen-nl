@@ -1,0 +1,115 @@
+{
+  "$schema": "../schema/supplier.schema.json",
+  "id": "tibber",
+  "name": "Tibber",
+  "website": "https://tibber.com/nl",
+  "tariffUrl": "https://tibber.com/nl/energiecontract",
+  "products": {
+    "electricity": true,
+    "gas": true
+  },
+  "features": {
+    "autoCurtailment": false,
+    "notes": "Handmatig / integraties, geen automatische omvormer-stop."
+  },
+  "fields": {
+    "electricityFixedMonthly": {
+      "section": "kostenplaatje",
+      "labels": [
+        "vaste kosten bij Tibber"
+      ],
+      "range": [
+        1,
+        20
+      ],
+      "vatIncluded": true
+    },
+    "gasFixedMonthly": {
+      "section": "kostenplaatje",
+      "labels": [
+        "per maand voor stroom en"
+      ],
+      "range": [
+        1,
+        20
+      ],
+      "vatIncluded": true
+    },
+    "electricityMarkup": {
+      "section": "kostenplaatje",
+      "labels": [
+        "inkoopvergoeding van"
+      ],
+      "range": [
+        0,
+        0.1
+      ],
+      "vatIncluded": true
+    },
+    "gasMarkup": {
+      "section": "kostenplaatje",
+      "labels": [
+        "per kWh voor stroom en"
+      ],
+      "range": [
+        0.01,
+        0.3
+      ],
+      "vatIncluded": true
+    },
+    "feedInDelta": {
+      "section": "kostenplaatje",
+      "labels": [
+        "verkoopvergoeding van"
+      ],
+      "range": [
+        -0.1,
+        0
+      ],
+      "negate": true,
+      "vatIncluded": true
+    }
+  },
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 6.99,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://tibber.com/nl/energiecontract",
+      "note": "Per 1 september 2026. btw assumed included (consumer price)."
+    },
+    "gasFixedMonthly": {
+      "value": 5.99,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://tibber.com/nl/energiecontract",
+      "note": "btw assumed included (consumer price)."
+    },
+    "electricityMarkup": {
+      "value": 0.018,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://tibber.com/nl/energiecontract",
+      "note": "btw assumed included (consumer price)."
+    },
+    "gasMarkup": {
+      "value": 0.08835,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://tibber.com/nl/energiecontract",
+      "note": "btw assumed included (consumer price)."
+    },
+    "feedInDelta": {
+      "value": -0.018,
+      "vatIncluded": true,
+      "verified": true,
+      "checkedAt": "2026-09-24",
+      "source": "https://tibber.com/nl/energiecontract",
+      "note": "Verkoopvergoeding, stated incl. btw."
+    }
+  }
+}

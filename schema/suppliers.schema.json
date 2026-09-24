@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/schema/suppliers.schema.json",
+  "title": "data/suppliers.json",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "currency",
+    "vat",
+    "suppliers"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "currency": {
+      "const": "EUR"
+    },
+    "vat": {
+      "const": "excluded"
+    },
+    "suppliers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "website",
+          "tariffUrl",
+          "products",
+          "features",
+          "tariffs",
+          "lastRun"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "tariffUrl": {
+            "type": "string"
+          },
+          "products": {
+            "type": "object"
+          },
+          "features": {
+            "type": "object"
+          },
+          "lastRun": {
+            "type": "string"
+          },
+          "fetchError": {
+            "type": "string"
+          },
+          "tariffs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "electricityFixedMonthly": {
+                "$ref": "#/$defs/fieldValue"
+              },
+              "electricityMarkup": {
+                "$ref": "#/$defs/fieldValue"
+              },
+              "gasFixedMonthly": {
+                "$ref": "#/$defs/fieldValue"
+              },
+              "gasMarkup": {
+                "$ref": "#/$defs/fieldValue"
+              },
+              "feedInDelta": {
+                "$ref": "#/$defs/fieldValue"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "fieldValue": {
+      "type": "object",
+      "required": [
+        "value",
+        "valueInclVat",
+        "unit",
+        "source",
+        "verified",
+        "since",
+        "sourceUrl"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Excl. VAT"
+        },
+        "valueInclVat": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "enum": [
+            "EUR/month",
+            "EUR/kWh",
+            "EUR/m3"
+          ]
+        },
+        "source": {
+          "enum": [
+            "scraped",
+            "manual"
+          ]
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "since": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastChecked": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastError": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

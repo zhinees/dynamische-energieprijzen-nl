@@ -1,0 +1,54 @@
+{
+  "$schema": "../schema/supplier.schema.json",
+  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
+  "id": "frank",
+  "name": "Frank Energie",
+  "website": "https://www.frankenergie.nl",
+  "tariffUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+  "products": {
+    "electricity": true,
+    "gas": true
+  },
+  "features": {
+    "autoCurtailment": true,
+    "notes": "Slim Sturen zet automatisch de teruglevering stil als stroom geld kost."
+  },
+  "fields": {},
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 7.25,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "electricityMarkup": {
+      "value": 0.0182,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasFixedMonthly": {
+      "value": 7.25,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasMarkup": {
+      "value": 0.0799,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "feedInDelta": {
+      "value": -0.0182,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    }
+  }
+}

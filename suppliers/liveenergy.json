@@ -1,0 +1,54 @@
+{
+  "$schema": "../schema/supplier.schema.json",
+  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
+  "id": "liveenergy",
+  "name": "Live Energy",
+  "website": "https://www.liveenergy.nl",
+  "tariffUrl": "https://www.liveenergy.nl/dynamisch-energiecontract-1",
+  "products": {
+    "electricity": true,
+    "gas": true
+  },
+  "features": {
+    "autoCurtailment": false,
+    "notes": "Geen software-sturing."
+  },
+  "fields": {},
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 4.95,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "electricityMarkup": {
+      "value": 0.023,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasFixedMonthly": {
+      "value": 4.95,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasMarkup": {
+      "value": 0.089,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "feedInDelta": {
+      "value": -0.023,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    }
+  }
+}

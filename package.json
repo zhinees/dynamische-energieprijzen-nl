@@ -1,0 +1,28 @@
+{
+  "name": "dynamische-energieprijzen-nl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open data: Dutch day-ahead energy prices and dynamic-contract supplier tariffs, updated automatically.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "prices": "node src/fetch-prices.ts",
+    "suppliers": "node src/scrape-suppliers.ts",
+    "derive": "node src/build-derived.ts",
+    "debug": "node src/debug-supplier.ts",
+    "validate": "node src/validate.ts",
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc",
+    "check": "npm run typecheck && npm test && npm run validate"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "playwright": "^1.55.0",
+    "typescript": "^5.9.0"
+  }
+}

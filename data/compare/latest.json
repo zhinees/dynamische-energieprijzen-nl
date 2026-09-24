@@ -1,0 +1,872 @@
+{
+  "$schema": "../../schema/compare.schema.json",
+  "version": 1,
+  "generatedAt": "2026-09-24T15:20:58.370Z",
+  "currency": "EUR",
+  "vat": "excluded",
+  "note": "buy/sell exclude VAT, energy tax (energiebelasting) and grid costs. Add those for an all-in consumer price.",
+  "today": {
+    "date": "2026-09-24",
+    "electricitySource": "energyzero",
+    "gasMarketAverage": null,
+    "suppliers": [
+      {
+        "id": "anwb",
+        "name": "ANWB Energie",
+        "verified": true,
+        "fixedMonthly": {
+          "electricity": 5.99,
+          "gas": 5.99
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "budget",
+        "name": "Budget Thuis (Budget Energie)",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 6,
+          "gas": 6
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "eneco",
+        "name": "Eneco",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 7,
+          "gas": 7
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "frank",
+        "name": "Frank Energie",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 7.25,
+          "gas": 7.25
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "liveenergy",
+        "name": "Live Energy",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 4.95,
+          "gas": 4.95
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "nextenergy",
+        "name": "NextEnergy",
+        "verified": true,
+        "fixedMonthly": {
+          "electricity": 4.950413,
+          "gas": 4.950413
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "pure",
+        "name": "Pure Energie",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 6.05,
+          "gas": 6.05
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "tibber",
+        "name": "Tibber",
+        "verified": true,
+        "fixedMonthly": {
+          "electricity": 5.77686,
+          "gas": 4.950413
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "vandebron",
+        "name": "Vandebron",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 7,
+          "gas": 7
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "vattenfall",
+        "name": "Vattenfall (FlexPrijs)",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 7.95,
+          "gas": 6.95
+        },
+        "gasPrice": null
+      },
+      {
+        "id": "zonneplan",
+        "name": "Zonneplan",
+        "verified": false,
+        "fixedMonthly": {
+          "electricity": 6.25,
+          "gas": 6.25
+        },
+        "gasPrice": null
+      }
+    ],
+    "hours": [
+      {
+        "start": "2026-09-24T00:00:00+02:00",
+        "startUtc": "2026-09-23T22:00:00Z",
+        "market": 0.155292,
+        "buy": {
+          "anwb": 0.170168,
+          "budget": 0.172092,
+          "eneco": 0.173792,
+          "frank": 0.173492,
+          "liveenergy": 0.178292,
+          "nextenergy": 0.172647,
+          "pure": 0.177392,
+          "tibber": 0.170168,
+          "vandebron": 0.173292,
+          "vattenfall": 0.180792,
+          "zonneplan": 0.173492
+        },
+        "sell": {
+          "anwb": 0.155292,
+          "budget": 0.138492,
+          "eneco": 0.136792,
+          "frank": 0.137092,
+          "liveenergy": 0.132292,
+          "nextenergy": 0.155292,
+          "pure": 0.133192,
+          "tibber": 0.140416,
+          "vandebron": 0.137292,
+          "vattenfall": 0.155292,
+          "zonneplan": 0.175292
+        }
+      },
+      {
+        "start": "2026-09-24T01:00:00+02:00",
+        "startUtc": "2026-09-23T23:00:00Z",
+        "market": 0.152602,
+        "buy": {
+          "anwb": 0.167478,
+          "budget": 0.169402,
+          "eneco": 0.171102,
+          "frank": 0.170802,
+          "liveenergy": 0.175602,
+          "nextenergy": 0.169957,
+          "pure": 0.174702,
+          "tibber": 0.167478,
+          "vandebron": 0.170602,
+          "vattenfall": 0.178102,
+          "zonneplan": 0.170802
+        },
+        "sell": {
+          "anwb": 0.152602,
+          "budget": 0.135802,
+          "eneco": 0.134102,
+          "frank": 0.134402,
+          "liveenergy": 0.129602,
+          "nextenergy": 0.152602,
+          "pure": 0.130502,
+          "tibber": 0.137726,
+          "vandebron": 0.134602,
+          "vattenfall": 0.152602,
+          "zonneplan": 0.172602
+        }
+      },
+      {
+        "start": "2026-09-24T02:00:00+02:00",
+        "startUtc": "2026-09-24T00:00:00Z",
+        "market": 0.13039,
+        "buy": {
+          "anwb": 0.145266,
+          "budget": 0.14719,
+          "eneco": 0.14889,
+          "frank": 0.14859,
+          "liveenergy": 0.15339,
+          "nextenergy": 0.147745,
+          "pure": 0.15249,
+          "tibber": 0.145266,
+          "vandebron": 0.14839,
+          "vattenfall": 0.15589,
+          "zonneplan": 0.14859
+        },
+        "sell": {
+          "anwb": 0.13039,
+          "budget": 0.11359,
+          "eneco": 0.11189,
+          "frank": 0.11219,
+          "liveenergy": 0.10739,
+          "nextenergy": 0.13039,
+          "pure": 0.10829,
+          "tibber": 0.115514,
+          "vandebron": 0.11239,
+          "vattenfall": 0.13039,
+          "zonneplan": 0.15039
+        }
+      },
+      {
+        "start": "2026-09-24T03:00:00+02:00",
+        "startUtc": "2026-09-24T01:00:00Z",
+        "market": 0.153123,
+        "buy": {
+          "anwb": 0.167999,
+          "budget": 0.169923,
+          "eneco": 0.171623,
+          "frank": 0.171323,
+          "liveenergy": 0.176123,
+          "nextenergy": 0.170478,
+          "pure": 0.175223,
+          "tibber": 0.167999,
+          "vandebron": 0.171123,
+          "vattenfall": 0.178623,
+          "zonneplan": 0.171323
+        },
+        "sell": {
+          "anwb": 0.153123,
+          "budget": 0.136323,
+          "eneco": 0.134623,
+          "frank": 0.134923,
+          "liveenergy": 0.130123,
+          "nextenergy": 0.153123,
+          "pure": 0.131023,
+          "tibber": 0.138247,
+          "vandebron": 0.135123,
+          "vattenfall": 0.153123,
+          "zonneplan": 0.173123
+        }
+      },
+      {
+        "start": "2026-09-24T04:00:00+02:00",
+        "startUtc": "2026-09-24T02:00:00Z",
+        "market": 0.153952,
+        "buy": {
+          "anwb": 0.168828,
+          "budget": 0.170752,
+          "eneco": 0.172452,
+          "frank": 0.172152,
+          "liveenergy": 0.176952,
+          "nextenergy": 0.171307,
+          "pure": 0.176052,
+          "tibber": 0.168828,
+          "vandebron": 0.171952,
+          "vattenfall": 0.179452,
+          "zonneplan": 0.172152
+        },
+        "sell": {
+          "anwb": 0.153952,
+          "budget": 0.137152,
+          "eneco": 0.135452,
+          "frank": 0.135752,
+          "liveenergy": 0.130952,
+          "nextenergy": 0.153952,
+          "pure": 0.131852,
+          "tibber": 0.139076,
+          "vandebron": 0.135952,
+          "vattenfall": 0.153952,
+          "zonneplan": 0.173952
+        }
+      },
+      {
+        "start": "2026-09-24T05:00:00+02:00",
+        "startUtc": "2026-09-24T03:00:00Z",
+        "market": 0.158365,
+        "buy": {
+          "anwb": 0.173241,
+          "budget": 0.175165,
+          "eneco": 0.176865,
+          "frank": 0.176565,
+          "liveenergy": 0.181365,
+          "nextenergy": 0.17572,
+          "pure": 0.180465,
+          "tibber": 0.173241,
+          "vandebron": 0.176365,
+          "vattenfall": 0.183865,
+          "zonneplan": 0.176565
+        },
+        "sell": {
+          "anwb": 0.158365,
+          "budget": 0.141565,
+          "eneco": 0.139865,
+          "frank": 0.140165,
+          "liveenergy": 0.135365,
+          "nextenergy": 0.158365,
+          "pure": 0.136265,
+          "tibber": 0.143489,
+          "vandebron": 0.140365,
+          "vattenfall": 0.158365,
+          "zonneplan": 0.178365
+        }
+      },
+      {
+        "start": "2026-09-24T06:00:00+02:00",
+        "startUtc": "2026-09-24T04:00:00Z",
+        "market": 0.17356,
+        "buy": {
+          "anwb": 0.188436,
+          "budget": 0.19036,
+          "eneco": 0.19206,
+          "frank": 0.19176,
+          "liveenergy": 0.19656,
+          "nextenergy": 0.190915,
+          "pure": 0.19566,
+          "tibber": 0.188436,
+          "vandebron": 0.19156,
+          "vattenfall": 0.19906,
+          "zonneplan": 0.19176
+        },
+        "sell": {
+          "anwb": 0.17356,
+          "budget": 0.15676,
+          "eneco": 0.15506,
+          "frank": 0.15536,
+          "liveenergy": 0.15056,
+          "nextenergy": 0.17356,
+          "pure": 0.15146,
+          "tibber": 0.158684,
+          "vandebron": 0.15556,
+          "vattenfall": 0.17356,
+          "zonneplan": 0.19356
+        }
+      },
+      {
+        "start": "2026-09-24T07:00:00+02:00",
+        "startUtc": "2026-09-24T05:00:00Z",
+        "market": 0.218002,
+        "buy": {
+          "anwb": 0.232878,
+          "budget": 0.234802,
+          "eneco": 0.236502,
+          "frank": 0.236202,
+          "liveenergy": 0.241002,
+          "nextenergy": 0.235357,
+          "pure": 0.240102,
+          "tibber": 0.232878,
+          "vandebron": 0.236002,
+          "vattenfall": 0.243502,
+          "zonneplan": 0.236202
+        },
+        "sell": {
+          "anwb": 0.218002,
+          "budget": 0.201202,
+          "eneco": 0.199502,
+          "frank": 0.199802,
+          "liveenergy": 0.195002,
+          "nextenergy": 0.218002,
+          "pure": 0.195902,
+          "tibber": 0.203126,
+          "vandebron": 0.200002,
+          "vattenfall": 0.218002,
+          "zonneplan": 0.238002
+        }
+      },
+      {
+        "start": "2026-09-24T08:00:00+02:00",
+        "startUtc": "2026-09-24T06:00:00Z",
+        "market": 0.206477,
+        "buy": {
+          "anwb": 0.221353,
+          "budget": 0.223277,
+          "eneco": 0.224977,
+          "frank": 0.224677,
+          "liveenergy": 0.229477,
+          "nextenergy": 0.223832,
+          "pure": 0.228577,
+          "tibber": 0.221353,
+          "vandebron": 0.224477,
+          "vattenfall": 0.231977,
+          "zonneplan": 0.224677
+        },
+        "sell": {
+          "anwb": 0.206477,
+          "budget": 0.189677,
+          "eneco": 0.187977,
+          "frank": 0.188277,
+          "liveenergy": 0.183477,
+          "nextenergy": 0.206477,
+          "pure": 0.184377,
+          "tibber": 0.191601,
+          "vandebron": 0.188477,
+          "vattenfall": 0.206477,
+          "zonneplan": 0.226477
+        }
+      },
+      {
+        "start": "2026-09-24T09:00:00+02:00",
+        "startUtc": "2026-09-24T07:00:00Z",
+        "market": 0.161105,
+        "buy": {
+          "anwb": 0.175981,
+          "budget": 0.177905,
+          "eneco": 0.179605,
+          "frank": 0.179305,
+          "liveenergy": 0.184105,
+          "nextenergy": 0.17846,
+          "pure": 0.183205,
+          "tibber": 0.175981,
+          "vandebron": 0.179105,
+          "vattenfall": 0.186605,
+          "zonneplan": 0.179305
+        },
+        "sell": {
+          "anwb": 0.161105,
+          "budget": 0.144305,
+          "eneco": 0.142605,
+          "frank": 0.142905,
+          "liveenergy": 0.138105,
+          "nextenergy": 0.161105,
+          "pure": 0.139005,
+          "tibber": 0.146229,
+          "vandebron": 0.143105,
+          "vattenfall": 0.161105,
+          "zonneplan": 0.181105
+        }
+      },
+      {
+        "start": "2026-09-24T10:00:00+02:00",
+        "startUtc": "2026-09-24T08:00:00Z",
+        "market": 0.115062,
+        "buy": {
+          "anwb": 0.129938,
+          "budget": 0.131862,
+          "eneco": 0.133562,
+          "frank": 0.133262,
+          "liveenergy": 0.138062,
+          "nextenergy": 0.132417,
+          "pure": 0.137162,
+          "tibber": 0.129938,
+          "vandebron": 0.133062,
+          "vattenfall": 0.140562,
+          "zonneplan": 0.133262
+        },
+        "sell": {
+          "anwb": 0.115062,
+          "budget": 0.098262,
+          "eneco": 0.096562,
+          "frank": 0.096862,
+          "liveenergy": 0.092062,
+          "nextenergy": 0.115062,
+          "pure": 0.092962,
+          "tibber": 0.100186,
+          "vandebron": 0.097062,
+          "vattenfall": 0.115062,
+          "zonneplan": 0.135062
+        }
+      },
+      {
+        "start": "2026-09-24T11:00:00+02:00",
+        "startUtc": "2026-09-24T09:00:00Z",
+        "market": 0.085245,
+        "buy": {
+          "anwb": 0.100121,
+          "budget": 0.102045,
+          "eneco": 0.103745,
+          "frank": 0.103445,
+          "liveenergy": 0.108245,
+          "nextenergy": 0.1026,
+          "pure": 0.107345,
+          "tibber": 0.100121,
+          "vandebron": 0.103245,
+          "vattenfall": 0.110745,
+          "zonneplan": 0.103445
+        },
+        "sell": {
+          "anwb": 0.085245,
+          "budget": 0.068445,
+          "eneco": 0.066745,
+          "frank": 0.067045,
+          "liveenergy": 0.062245,
+          "nextenergy": 0.085245,
+          "pure": 0.063145,
+          "tibber": 0.070369,
+          "vandebron": 0.067245,
+          "vattenfall": 0.085245,
+          "zonneplan": 0.105245
+        }
+      },
+      {
+        "start": "2026-09-24T12:00:00+02:00",
+        "startUtc": "2026-09-24T10:00:00Z",
+        "market": 0.052763,
+        "buy": {
+          "anwb": 0.067639,
+          "budget": 0.069563,
+          "eneco": 0.071263,
+          "frank": 0.070963,
+          "liveenergy": 0.075763,
+          "nextenergy": 0.070118,
+          "pure": 0.074863,
+          "tibber": 0.067639,
+          "vandebron": 0.070763,
+          "vattenfall": 0.078263,
+          "zonneplan": 0.070963
+        },
+        "sell": {
+          "anwb": 0.052763,
+          "budget": 0.035963,
+          "eneco": 0.034263,
+          "frank": 0.034563,
+          "liveenergy": 0.029763,
+          "nextenergy": 0.052763,
+          "pure": 0.030663,
+          "tibber": 0.037887,
+          "vandebron": 0.034763,
+          "vattenfall": 0.052763,
+          "zonneplan": 0.072763
+        }
+      },
+      {
+        "start": "2026-09-24T13:00:00+02:00",
+        "startUtc": "2026-09-24T11:00:00Z",
+        "market": 0.03941,
+        "buy": {
+          "anwb": 0.054286,
+          "budget": 0.05621,
+          "eneco": 0.05791,
+          "frank": 0.05761,
+          "liveenergy": 0.06241,
+          "nextenergy": 0.056765,
+          "pure": 0.06151,
+          "tibber": 0.054286,
+          "vandebron": 0.05741,
+          "vattenfall": 0.06491,
+          "zonneplan": 0.05761
+        },
+        "sell": {
+          "anwb": 0.03941,
+          "budget": 0.02261,
+          "eneco": 0.02091,
+          "frank": 0.02121,
+          "liveenergy": 0.01641,
+          "nextenergy": 0.03941,
+          "pure": 0.01731,
+          "tibber": 0.024534,
+          "vandebron": 0.02141,
+          "vattenfall": 0.03941,
+          "zonneplan": 0.05941
+        }
+      },
+      {
+        "start": "2026-09-24T14:00:00+02:00",
+        "startUtc": "2026-09-24T12:00:00Z",
+        "market": 0.03903,
+        "buy": {
+          "anwb": 0.053906,
+          "budget": 0.05583,
+          "eneco": 0.05753,
+          "frank": 0.05723,
+          "liveenergy": 0.06203,
+          "nextenergy": 0.056385,
+          "pure": 0.06113,
+          "tibber": 0.053906,
+          "vandebron": 0.05703,
+          "vattenfall": 0.06453,
+          "zonneplan": 0.05723
+        },
+        "sell": {
+          "anwb": 0.03903,
+          "budget": 0.02223,
+          "eneco": 0.02053,
+          "frank": 0.02083,
+          "liveenergy": 0.01603,
+          "nextenergy": 0.03903,
+          "pure": 0.01693,
+          "tibber": 0.024154,
+          "vandebron": 0.02103,
+          "vattenfall": 0.03903,
+          "zonneplan": 0.05903
+        }
+      },
+      {
+        "start": "2026-09-24T15:00:00+02:00",
+        "startUtc": "2026-09-24T13:00:00Z",
+        "market": 0.079988,
+        "buy": {
+          "anwb": 0.094864,
+          "budget": 0.096788,
+          "eneco": 0.098488,
+          "frank": 0.098188,
+          "liveenergy": 0.102988,
+          "nextenergy": 0.097343,
+          "pure": 0.102088,
+          "tibber": 0.094864,
+          "vandebron": 0.097988,
+          "vattenfall": 0.105488,
+          "zonneplan": 0.098188
+        },
+        "sell": {
+          "anwb": 0.079988,
+          "budget": 0.063188,
+          "eneco": 0.061488,
+          "frank": 0.061788,
+          "liveenergy": 0.056988,
+          "nextenergy": 0.079988,
+          "pure": 0.057888,
+          "tibber": 0.065112,
+          "vandebron": 0.061988,
+          "vattenfall": 0.079988,
+          "zonneplan": 0.099988
+        }
+      },
+      {
+        "start": "2026-09-24T16:00:00+02:00",
+        "startUtc": "2026-09-24T14:00:00Z",
+        "market": 0.12056,
+        "buy": {
+          "anwb": 0.135436,
+          "budget": 0.13736,
+          "eneco": 0.13906,
+          "frank": 0.13876,
+          "liveenergy": 0.14356,
+          "nextenergy": 0.137915,
+          "pure": 0.14266,
+          "tibber": 0.135436,
+          "vandebron": 0.13856,
+          "vattenfall": 0.14606,
+          "zonneplan": 0.13876
+        },
+        "sell": {
+          "anwb": 0.12056,
+          "budget": 0.10376,
+          "eneco": 0.10206,
+          "frank": 0.10236,
+          "liveenergy": 0.09756,
+          "nextenergy": 0.12056,
+          "pure": 0.09846,
+          "tibber": 0.105684,
+          "vandebron": 0.10256,
+          "vattenfall": 0.12056,
+          "zonneplan": 0.14056
+        }
+      },
+      {
+        "start": "2026-09-24T17:00:00+02:00",
+        "startUtc": "2026-09-24T15:00:00Z",
+        "market": 0.17137,
+        "buy": {
+          "anwb": 0.186246,
+          "budget": 0.18817,
+          "eneco": 0.18987,
+          "frank": 0.18957,
+          "liveenergy": 0.19437,
+          "nextenergy": 0.188725,
+          "pure": 0.19347,
+          "tibber": 0.186246,
+          "vandebron": 0.18937,
+          "vattenfall": 0.19687,
+          "zonneplan": 0.18957
+        },
+        "sell": {
+          "anwb": 0.17137,
+          "budget": 0.15457,
+          "eneco": 0.15287,
+          "frank": 0.15317,
+          "liveenergy": 0.14837,
+          "nextenergy": 0.17137,
+          "pure": 0.14927,
+          "tibber": 0.156494,
+          "vandebron": 0.15337,
+          "vattenfall": 0.17137,
+          "zonneplan": 0.19137
+        }
+      },
+      {
+        "start": "2026-09-24T18:00:00+02:00",
+        "startUtc": "2026-09-24T16:00:00Z",
+        "market": 0.22118,
+        "buy": {
+          "anwb": 0.236056,
+          "budget": 0.23798,
+          "eneco": 0.23968,
+          "frank": 0.23938,
+          "liveenergy": 0.24418,
+          "nextenergy": 0.238535,
+          "pure": 0.24328,
+          "tibber": 0.236056,
+          "vandebron": 0.23918,
+          "vattenfall": 0.24668,
+          "zonneplan": 0.23938
+        },
+        "sell": {
+          "anwb": 0.22118,
+          "budget": 0.20438,
+          "eneco": 0.20268,
+          "frank": 0.20298,
+          "liveenergy": 0.19818,
+          "nextenergy": 0.22118,
+          "pure": 0.19908,
+          "tibber": 0.206304,
+          "vandebron": 0.20318,
+          "vattenfall": 0.22118,
+          "zonneplan": 0.24118
+        }
+      },
+      {
+        "start": "2026-09-24T19:00:00+02:00",
+        "startUtc": "2026-09-24T17:00:00Z",
+        "market": 0.2677,
+        "buy": {
+          "anwb": 0.282576,
+          "budget": 0.2845,
+          "eneco": 0.2862,
+          "frank": 0.2859,
+          "liveenergy": 0.2907,
+          "nextenergy": 0.285055,
+          "pure": 0.2898,
+          "tibber": 0.282576,
+          "vandebron": 0.2857,
+          "vattenfall": 0.2932,
+          "zonneplan": 0.2859
+        },
+        "sell": {
+          "anwb": 0.2677,
+          "budget": 0.2509,
+          "eneco": 0.2492,
+          "frank": 0.2495,
+          "liveenergy": 0.2447,
+          "nextenergy": 0.2677,
+          "pure": 0.2456,
+          "tibber": 0.252824,
+          "vandebron": 0.2497,
+          "vattenfall": 0.2677,
+          "zonneplan": 0.2877
+        }
+      },
+      {
+        "start": "2026-09-24T20:00:00+02:00",
+        "startUtc": "2026-09-24T18:00:00Z",
+        "market": 0.26,
+        "buy": {
+          "anwb": 0.274876,
+          "budget": 0.2768,
+          "eneco": 0.2785,
+          "frank": 0.2782,
+          "liveenergy": 0.283,
+          "nextenergy": 0.277355,
+          "pure": 0.2821,
+          "tibber": 0.274876,
+          "vandebron": 0.278,
+          "vattenfall": 0.2855,
+          "zonneplan": 0.2782
+        },
+        "sell": {
+          "anwb": 0.26,
+          "budget": 0.2432,
+          "eneco": 0.2415,
+          "frank": 0.2418,
+          "liveenergy": 0.237,
+          "nextenergy": 0.26,
+          "pure": 0.2379,
+          "tibber": 0.245124,
+          "vandebron": 0.242,
+          "vattenfall": 0.26,
+          "zonneplan": 0.28
+        }
+      },
+      {
+        "start": "2026-09-24T21:00:00+02:00",
+        "startUtc": "2026-09-24T19:00:00Z",
+        "market": 0.225855,
+        "buy": {
+          "anwb": 0.240731,
+          "budget": 0.242655,
+          "eneco": 0.244355,
+          "frank": 0.244055,
+          "liveenergy": 0.248855,
+          "nextenergy": 0.24321,
+          "pure": 0.247955,
+          "tibber": 0.240731,
+          "vandebron": 0.243855,
+          "vattenfall": 0.251355,
+          "zonneplan": 0.244055
+        },
+        "sell": {
+          "anwb": 0.225855,
+          "budget": 0.209055,
+          "eneco": 0.207355,
+          "frank": 0.207655,
+          "liveenergy": 0.202855,
+          "nextenergy": 0.225855,
+          "pure": 0.203755,
+          "tibber": 0.210979,
+          "vandebron": 0.207855,
+          "vattenfall": 0.225855,
+          "zonneplan": 0.245855
+        }
+      },
+      {
+        "start": "2026-09-24T22:00:00+02:00",
+        "startUtc": "2026-09-24T20:00:00Z",
+        "market": 0.204997,
+        "buy": {
+          "anwb": 0.219873,
+          "budget": 0.221797,
+          "eneco": 0.223497,
+          "frank": 0.223197,
+          "liveenergy": 0.227997,
+          "nextenergy": 0.222352,
+          "pure": 0.227097,
+          "tibber": 0.219873,
+          "vandebron": 0.222997,
+          "vattenfall": 0.230497,
+          "zonneplan": 0.223197
+        },
+        "sell": {
+          "anwb": 0.204997,
+          "budget": 0.188197,
+          "eneco": 0.186497,
+          "frank": 0.186797,
+          "liveenergy": 0.181997,
+          "nextenergy": 0.204997,
+          "pure": 0.182897,
+          "tibber": 0.190121,
+          "vandebron": 0.186997,
+          "vattenfall": 0.204997,
+          "zonneplan": 0.224997
+        }
+      },
+      {
+        "start": "2026-09-24T23:00:00+02:00",
+        "startUtc": "2026-09-24T21:00:00Z",
+        "market": 0.188222,
+        "buy": {
+          "anwb": 0.203098,
+          "budget": 0.205022,
+          "eneco": 0.206722,
+          "frank": 0.206422,
+          "liveenergy": 0.211222,
+          "nextenergy": 0.205577,
+          "pure": 0.210322,
+          "tibber": 0.203098,
+          "vandebron": 0.206222,
+          "vattenfall": 0.213722,
+          "zonneplan": 0.206422
+        },
+        "sell": {
+          "anwb": 0.188222,
+          "budget": 0.171422,
+          "eneco": 0.169722,
+          "frank": 0.170022,
+          "liveenergy": 0.165222,
+          "nextenergy": 0.188222,
+          "pure": 0.166122,
+          "tibber": 0.173346,
+          "vandebron": 0.170222,
+          "vattenfall": 0.188222,
+          "zonneplan": 0.208222
+        }
+      }
+    ]
+  },
+  "tomorrow": null
+}

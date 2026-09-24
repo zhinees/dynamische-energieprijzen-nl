@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/schema/compare.schema.json",
+  "title": "data/compare/latest.json",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "currency",
+    "vat",
+    "today",
+    "tomorrow"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "currency": {
+      "const": "EUR"
+    },
+    "vat": {
+      "const": "excluded"
+    },
+    "note": {
+      "type": "string"
+    },
+    "today": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/day"
+        }
+      ]
+    },
+    "tomorrow": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/day"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "day": {
+      "type": "object",
+      "required": [
+        "date",
+        "suppliers",
+        "hours"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "electricitySource": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gasMarketAverage": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "suppliers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "verified",
+              "fixedMonthly",
+              "gasPrice"
+            ]
+          }
+        },
+        "hours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "start",
+              "startUtc",
+              "market",
+              "buy",
+              "sell"
+            ],
+            "properties": {
+              "market": {
+                "type": "number"
+              },
+              "buy": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              },
+              "sell": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

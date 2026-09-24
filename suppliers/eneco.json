@@ -1,0 +1,54 @@
+{
+  "$schema": "../schema/supplier.schema.json",
+  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
+  "id": "eneco",
+  "name": "Eneco",
+  "website": "https://www.eneco.nl",
+  "tariffUrl": "https://www.eneco.nl/duurzame-energie/dynamisch-energiecontract/dynamische-tarieven/",
+  "products": {
+    "electricity": true,
+    "gas": true
+  },
+  "features": {
+    "autoCurtailment": false,
+    "notes": "Koppeling met Toon-app mogelijk."
+  },
+  "fields": {},
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 7.0,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "electricityMarkup": {
+      "value": 0.0185,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasFixedMonthly": {
+      "value": 7.0,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasMarkup": {
+      "value": 0.1068,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "feedInDelta": {
+      "value": -0.0185,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    }
+  }
+}

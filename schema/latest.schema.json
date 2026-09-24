@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/schema/latest.schema.json",
+  "title": "data/prices/latest.json",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "today",
+    "tomorrow"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "today": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "prices.schema.json"
+        }
+      ]
+    },
+    "tomorrow": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "prices.schema.json"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/OWNER/dynamische-energieprijzen-nl/main/schema/supplier.schema.json",
+  "title": "Supplier config",
+  "description": "One file per supplier in /suppliers. All tariffs are per unit; the output is always excl. VAT.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "website",
+    "tariffUrl",
+    "products",
+    "features",
+    "fields",
+    "manual"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$comment": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "tariffUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "render": {
+      "enum": [
+        "http",
+        "browser"
+      ],
+      "description": "'browser' uses headless Chromium for pages that load prices with JavaScript."
+    },
+    "products": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "electricity",
+        "gas"
+      ],
+      "properties": {
+        "electricity": {
+          "type": "boolean"
+        },
+        "gas": {
+          "type": "boolean"
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "autoCurtailment"
+      ],
+      "properties": {
+        "autoCurtailment": {
+          "type": "boolean",
+          "description": "Supplier can automatically stop feed-in at negative prices."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "electricityFixedMonthly": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/rule"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/rule"
+              }
+            }
+          ]
+        },
+        "electricityMarkup": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/rule"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/rule"
+              }
+            }
+          ]
+        },
+        "gasFixedMonthly": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/rule"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/rule"
+              }
+            }
+          ]
+        },
+        "gasMarkup": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/rule"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/rule"
+              }
+            }
+          ]
+        },
+        "feedInDelta": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/rule"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/rule"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "manual": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "electricityFixedMonthly": {
+          "$ref": "#/$defs/manual"
+        },
+        "electricityMarkup": {
+          "$ref": "#/$defs/manual"
+        },
+        "gasFixedMonthly": {
+          "$ref": "#/$defs/manual"
+        },
+        "gasMarkup": {
+          "$ref": "#/$defs/manual"
+        },
+        "feedInDelta": {
+          "$ref": "#/$defs/manual"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "labels",
+        "range"
+      ],
+      "properties": {
+        "labels": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Case-insensitive regexes for the text right before (or after, with 'before') the amount. Tried in order."
+        },
+        "range": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "[min, max] sanity bounds, applied after 'negate' and before VAT conversion."
+        },
+        "window": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 1000,
+          "description": "Characters to search next to the label. Default 160."
+        },
+        "section": {
+          "type": "string",
+          "description": "Regex; the search starts at its first match. Default: a stroom/elektriciteit or gas heading."
+        },
+        "negate": {
+          "type": "boolean",
+          "description": "Store the amount as negative (a cost stated as a positive number, e.g. terugleverkosten)."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Override tariffUrl for this field."
+        },
+        "before": {
+          "type": "boolean",
+          "description": "The amount comes before the label, e.g. '€ 5,99 vaste kosten'."
+        },
+        "vatIncluded": {
+          "type": "boolean",
+          "description": "The page shows this amount incl. 21% btw; it is converted to excl. btw."
+        }
+      }
+    },
+    "manual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "vatIncluded",
+        "verified",
+        "checkedAt",
+        "source"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "vatIncluded": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "true = read on the supplier's own site on checkedAt."
+        },
+        "checkedAt": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "description": "URL of the page you read it from, or a description of the source."
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

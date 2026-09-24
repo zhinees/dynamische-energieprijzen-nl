@@ -1,0 +1,54 @@
+{
+  "$schema": "../schema/supplier.schema.json",
+  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
+  "id": "budget",
+  "name": "Budget Thuis (Budget Energie)",
+  "website": "https://www.budgetthuis.nl",
+  "tariffUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract",
+  "products": {
+    "electricity": true,
+    "gas": true
+  },
+  "features": {
+    "autoCurtailment": false,
+    "notes": "Geen actieve omvormersturing via de app."
+  },
+  "fields": {},
+  "manual": {
+    "electricityFixedMonthly": {
+      "value": 6.0,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "electricityMarkup": {
+      "value": 0.0168,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasFixedMonthly": {
+      "value": 6.0,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "gasMarkup": {
+      "value": 0.0641,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    },
+    "feedInDelta": {
+      "value": -0.0168,
+      "vatIncluded": false,
+      "verified": false,
+      "checkedAt": "2026-09-24",
+      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+    }
+  }
+}
