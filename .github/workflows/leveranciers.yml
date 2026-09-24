@@ -37,7 +37,8 @@ jobs:
       - run: npm run valideer
       - name: Data vastleggen
         run: |
-          .github/scripts/data-vastleggen.sh "data: leverancierstarieven en energiebelasting $(TZ=Europe/Amsterdam date +%F)"
+          omslag=$(node -p 'const o=require("./data/omslagpunten.json"); `omslagpunt stroom ${o.stroom.omslagpunt ?? "–"} kWh, gas ${o.gas.omslagpunt ?? "–"} m³, teruglevering ${o.teruglevering.omslagpunt ?? "–"} kWh`')
+          .github/scripts/data-vastleggen.sh "data: leverancierstarieven en energiebelasting $(TZ=Europe/Amsterdam date +%F) ($omslag)"
 
       # Keep one open issue listing broken scrape rules, so maintainers notice.
       - name: Kapotte scraperregels melden

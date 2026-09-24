@@ -1,12 +1,14 @@
 // Build convenience files from prices + supplier tariffs:
 //   data/prijzen/index.json        list of available days
 //   data/vergelijking/actueel.json per-supplier hourly afname/teruglevering prices incl. btw for today and tomorrow
+//   data/omslagpunten.json         usage where fixed costs stop mattering more than the markup (+ OMSLAGPUNTEN.md, history)
 
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { DATA, dagbestandPad, leesJson, schrijfJsonAlsGewijzigd } from "./lib/bestanden.ts";
 import { plusDagen, vandaagLokaal } from "./lib/tijd.ts";
 import { inclBtw } from "./lib/tarieven.ts";
+import { publiceerOmslagpunten } from "./lib/omslagpunten-publiceren.ts";
 import type { Dagprijzen, EnergiebelastingBestand, Leverancier, LeveranciersBestand, Veld } from "./lib/typen.ts";
 
 const r6 = (n: number) => Math.round(n * 1e6) / 1e6 + 0;
@@ -87,6 +89,7 @@ async function main() {
 
   const lev = await leesJson<LeveranciersBestand>(join(DATA, "leveranciers.json"));
   if (!lev) return console.log("nog geen leveranciers.json");
+  const omslag = await publiceerOmslagpunten(lev);
   const vandaag = vandaagLokaal();
   const belasting = await leesJson<EnergiebelastingBestand>(join(DATA, "energiebelasting.json"));
   const laad = (d: string) => leesJson<Dagprijzen>(dagbestandPad(d));
@@ -104,6 +107,7 @@ async function main() {
     morgen: d1 ? vergelijkDag(d1, lev, belasting) : null,
   }, 1);
   console.log(`index: ${dagen.length} dagen; vergelijking: vandaag=${d0 ? "ja" : "nee"} morgen=${d1 ? "ja" : "nee"}`);
+  console.log(`omslagpunten: stroom ${omslag.stroom.omslagpunt ?? "–"} kWh, gas ${omslag.gas.omslagpunt ?? "–"} m3, teruglevering ${omslag.teruglevering.omslagpunt ?? "–"} kWh`);
 }
 
 main().catch((e) => {

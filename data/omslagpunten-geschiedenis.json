@@ -1,0 +1,33 @@
+[
+  {
+    "datum": "2026-09-24",
+    "stroom": {
+      "omslagpunt": 1642,
+      "goedkoopste": [
+        {
+          "vanaf": 0,
+          "tot": null,
+          "id": "budget"
+        }
+      ]
+    },
+    "gas": {
+      "omslagpunt": 309,
+      "goedkoopste": [
+        {
+          "vanaf": 0,
+          "tot": 2805,
+          "id": "budget"
+        },
+        {
+          "vanaf": 2805,
+          "tot": null,
+          "id": "vandebron"
+        }
+      ]
+    },
+    "teruglevering": {
+      "omslagpunt": 274
+    }
+  }
+]

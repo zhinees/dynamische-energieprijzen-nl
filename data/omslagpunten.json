@@ -1,0 +1,243 @@
+{
+  "$schema": "../schema/omslagpunten.schema.json",
+  "versie": 1,
+  "gegenereerdOp": "2026-09-24T19:59:36.877Z",
+  "valuta": "EUR",
+  "btw": "inclusief",
+  "uitleg": "Alleen het deel dat per leverancier verschilt: vaste kosten x 12 + verbruik x inkoopopslag - teruglevering x terugleverCorrectie, incl. btw. Omslagpunten zijn in kWh (stroom, teruglevering) of m3 (gas) per jaar.",
+  "stroom": {
+    "aantalLeveranciers": 8,
+    "vastPerJaar": {
+      "min": 71.88,
+      "max": 84
+    },
+    "opslag": {
+      "min": 0.01682,
+      "max": 0.0242
+    },
+    "omslagpunt": 1642,
+    "goedkoopstePerVerbruik": [
+      {
+        "vanaf": 0,
+        "tot": null,
+        "id": "budget",
+        "naam": "Budget Thuis (Budget Energie)"
+      }
+    ],
+    "paren": [
+      {
+        "lageVasteKosten": "vandebron",
+        "lageOpslag": "frank",
+        "omslagpunt": 15
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "pure",
+        "omslagpunt": 239
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "zonneplan",
+        "omslagpunt": 571
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "tibber",
+        "omslagpunt": 1819
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "frank",
+        "omslagpunt": 1884
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "zonneplan",
+        "omslagpunt": 3120
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "tibber",
+        "omslagpunt": 4000
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "frank",
+        "omslagpunt": 4253
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "tibber",
+        "omslagpunt": 4440
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "frank",
+        "omslagpunt": 4865
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 5349
+      }
+    ]
+  },
+  "gas": {
+    "aantalLeveranciers": 8,
+    "vastPerJaar": {
+      "min": 71.88,
+      "max": 84
+    },
+    "opslag": {
+      "min": 0.05983,
+      "max": 0.099
+    },
+    "omslagpunt": 309,
+    "goedkoopstePerVerbruik": [
+      {
+        "vanaf": 0,
+        "tot": 2805,
+        "id": "budget",
+        "naam": "Budget Thuis (Budget Energie)"
+      },
+      {
+        "vanaf": 2805,
+        "tot": null,
+        "id": "vandebron",
+        "naam": "Vandebron"
+      }
+    ],
+    "paren": [
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "zonneplan",
+        "omslagpunt": 126
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "liveenergy",
+        "omslagpunt": 197
+      },
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 290
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "zonneplan",
+        "omslagpunt": 374
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 423
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 443
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 456
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "zonneplan",
+        "omslagpunt": 511
+      },
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "frank",
+        "omslagpunt": 596
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 629
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "frank",
+        "omslagpunt": 1428
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "frank",
+        "omslagpunt": 2355
+      },
+      {
+        "lageVasteKosten": "budget",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 2805
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "frank",
+        "omslagpunt": 64286
+      }
+    ]
+  },
+  "teruglevering": {
+    "correctie": {
+      "min": -0.0242,
+      "max": 0.02
+    },
+    "omslagpunt": 274,
+    "scenarios": [
+      {
+        "teruglevering": 1000,
+        "goedkoopstePerVerbruik": [
+          {
+            "vanaf": 0,
+            "tot": 5308,
+            "id": "zonneplan",
+            "naam": "Zonneplan"
+          },
+          {
+            "vanaf": 5308,
+            "tot": null,
+            "id": "budget",
+            "naam": "Budget Thuis (Budget Energie)"
+          }
+        ]
+      },
+      {
+        "teruglevering": 2000,
+        "goedkoopstePerVerbruik": [
+          {
+            "vanaf": 0,
+            "tot": 11597,
+            "id": "zonneplan",
+            "naam": "Zonneplan"
+          },
+          {
+            "vanaf": 11597,
+            "tot": null,
+            "id": "budget",
+            "naam": "Budget Thuis (Budget Energie)"
+          }
+        ]
+      },
+      {
+        "teruglevering": 4000,
+        "goedkoopstePerVerbruik": [
+          {
+            "vanaf": 0,
+            "tot": 24176,
+            "id": "zonneplan",
+            "naam": "Zonneplan"
+          },
+          {
+            "vanaf": 24176,
+            "tot": null,
+            "id": "budget",
+            "naam": "Budget Thuis (Budget Energie)"
+          }
+        ]
+      }
+    ]
+  }
+}

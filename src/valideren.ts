@@ -70,6 +70,7 @@ await controleer("prijzen-actueel.schema.json", join(DATA, "prijzen", "actueel.j
 await controleer("prijzen-index.schema.json", join(DATA, "prijzen", "index.json"));
 await controleer("vergelijking.schema.json", join(DATA, "vergelijking", "actueel.json"));
 await controleer("energiebelasting.schema.json", join(DATA, "energiebelasting.json"));
+await controleer("omslagpunten.schema.json", join(DATA, "omslagpunten.json"));
 for (const j of (await readdir(join(DATA, "prijzen")).catch(() => [] as string[])).filter((d) => /^\d{4}$/.test(d))) {
   for (const f of (await readdir(join(DATA, "prijzen", j))).filter((f) => f.endsWith(".json"))) {
     await controleer("prijzen.schema.json", join(DATA, "prijzen", j, f));

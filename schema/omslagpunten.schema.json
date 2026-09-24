@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/omslagpunten.schema.json",
+  "title": "data/omslagpunten.json",
+  "description": "Omslagpunten tussen vaste kosten en inkoopopslag, incl. btw, in kWh (stroom) of m3 (gas) per jaar.",
+  "type": "object",
+  "required": [
+    "versie",
+    "gegenereerdOp",
+    "valuta",
+    "btw",
+    "stroom",
+    "gas",
+    "teruglevering"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "versie": {
+      "const": 1
+    },
+    "gegenereerdOp": {
+      "type": "string"
+    },
+    "valuta": {
+      "const": "EUR"
+    },
+    "btw": {
+      "const": "inclusief"
+    },
+    "uitleg": {
+      "type": "string"
+    },
+    "stroom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aantalLeveranciers",
+        "vastPerJaar",
+        "opslag",
+        "omslagpunt",
+        "goedkoopstePerVerbruik",
+        "paren"
+      ],
+      "properties": {
+        "aantalLeveranciers": {
+          "type": "integer"
+        },
+        "vastPerJaar": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          }
+        },
+        "opslag": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          }
+        },
+        "omslagpunt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Jaarverbruik waarbij het grootste verschil in opslag even zwaar weegt als het grootste verschil in vaste kosten."
+        },
+        "goedkoopstePerVerbruik": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "vanaf",
+              "tot",
+              "id",
+              "naam"
+            ],
+            "properties": {
+              "vanaf": {
+                "type": "number"
+              },
+              "tot": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "naam": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Goedkoopste leverancier per verbruiksbereik (vanaf t/m tot)."
+        },
+        "paren": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "lageVasteKosten",
+              "lageOpslag",
+              "omslagpunt"
+            ],
+            "properties": {
+              "lageVasteKosten": {
+                "type": "string"
+              },
+              "lageOpslag": {
+                "type": "string"
+              },
+              "omslagpunt": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aantalLeveranciers",
+        "vastPerJaar",
+        "opslag",
+        "omslagpunt",
+        "goedkoopstePerVerbruik",
+        "paren"
+      ],
+      "properties": {
+        "aantalLeveranciers": {
+          "type": "integer"
+        },
+        "vastPerJaar": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          }
+        },
+        "opslag": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          }
+        },
+        "omslagpunt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Jaarverbruik waarbij het grootste verschil in opslag even zwaar weegt als het grootste verschil in vaste kosten."
+        },
+        "goedkoopstePerVerbruik": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "vanaf",
+              "tot",
+              "id",
+              "naam"
+            ],
+            "properties": {
+              "vanaf": {
+                "type": "number"
+              },
+              "tot": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "naam": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Goedkoopste leverancier per verbruiksbereik (vanaf t/m tot)."
+        },
+        "paren": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "lageVasteKosten",
+              "lageOpslag",
+              "omslagpunt"
+            ],
+            "properties": {
+              "lageVasteKosten": {
+                "type": "string"
+              },
+              "lageOpslag": {
+                "type": "string"
+              },
+              "omslagpunt": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "teruglevering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "correctie",
+        "omslagpunt",
+        "scenarios"
+      ],
+      "properties": {
+        "correctie": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          }
+        },
+        "omslagpunt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "kWh teruglevering per jaar waarbij het grootste verschil in terugleverCorrectie even zwaar weegt als het grootste verschil in vaste kosten voor stroom."
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "teruglevering",
+              "goedkoopstePerVerbruik"
+            ],
+            "properties": {
+              "teruglevering": {
+                "type": "number"
+              },
+              "goedkoopstePerVerbruik": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "vanaf",
+                    "tot",
+                    "id",
+                    "naam"
+                  ],
+                  "properties": {
+                    "vanaf": {
+                      "type": "number"
+                    },
+                    "tot": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "naam": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
