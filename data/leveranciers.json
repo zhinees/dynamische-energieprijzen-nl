@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/leveranciers.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-24T19:32:56.097Z",
+  "gegenereerdOp": "2026-09-24T19:39:10.132Z",
   "valuta": "EUR",
   "leveranciers": [
     {
@@ -45,7 +45,7 @@
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "budget",
@@ -106,7 +106,7 @@
           "bronUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "frank",
@@ -168,7 +168,7 @@
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "liveenergy",
@@ -229,7 +229,7 @@
           "bronUrl": "https://aanmelden.liveenergy.nl"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "nextenergy",
@@ -290,7 +290,7 @@
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "pure",
@@ -342,7 +342,7 @@
           "bronUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
         },
         "terugleverCorrectie": {
-          "bedragInclBtw": null,
+          "bedragInclBtw": -0.018029,
           "bedragExclBtw": -0.0149,
           "eenheid": "EUR/kWh",
           "bron": "handmatig",
@@ -351,7 +351,7 @@
           "bronUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "tibber",
@@ -412,7 +412,7 @@
           "bronUrl": "https://tibber.com/nl/energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "vandebron",
@@ -473,7 +473,7 @@
           "bronUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "vattenfall",
@@ -498,7 +498,7 @@
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     },
     {
       "id": "zonneplan",
@@ -559,7 +559,7 @@
           "bronUrl": "https://start.zonneplan.nl/energie"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:32:56.097Z"
+      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
     }
   ]
 }

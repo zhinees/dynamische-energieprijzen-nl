@@ -4,7 +4,7 @@ budget,Budget Thuis (Budget Energie),5.99,4.95,handmatig,true,0.01682,0.0139,han
 frank,Frank Energie,7,5.785124,handmatig,true,0.01815,0.015,handmatig,true,7,5.785124,handmatig,true,0.07986,0.066,handmatig,true,-0.012705,-0.0105,handmatig,true,true,https://www.frankenergie.nl/nl/dynamisch-energiecontract
 liveenergy,Live Energy,6.05,5,handmatig,true,0.0242,0.02,handmatig,true,6.05,5,handmatig,true,0.0847,0.07,handmatig,true,-0.0242,-0.02,handmatig,true,,https://aanmelden.liveenergy.nl
 nextenergy,NextEnergy,5.99,4.950413,handmatig,true,0.021,0.017355,handmatig,true,5.99,4.950413,handmatig,true,0.079,0.065289,handmatig,true,0,0,handmatig,true,,https://www.nextenergy.nl/dynamische-energie
-pure,Pure Energie,6.05,5,handmatig,true,0.01799,0.014868,handmatig,true,6.05,5,handmatig,true,0.099,0.081818,handmatig,true,,-0.0149,handmatig,true,,https://pure-energie.nl/energiecontract/dynamisch-energiecontract/
+pure,Pure Energie,6.05,5,handmatig,true,0.01799,0.014868,handmatig,true,6.05,5,handmatig,true,0.099,0.081818,handmatig,true,-0.018029,-0.0149,handmatig,true,,https://pure-energie.nl/energiecontract/dynamisch-energiecontract/
 tibber,Tibber,6.99,5.77686,handmatig,true,0.018,0.014876,handmatig,true,5.99,4.950413,handmatig,true,0.08835,0.073017,handmatig,true,-0.018,-0.014876,handmatig,true,,https://tibber.com/nl/energiecontract
 vandebron,Vandebron,6.995225,5.781296,handmatig,true,0.02208,0.01825,handmatig,true,6.995225,5.781296,handmatig,true,0.05983,0.04945,handmatig,true,-0.01361,-0.01125,handmatig,true,,https://vandebron.nl/energie/energiecontract/dynamisch
 vattenfall,Vattenfall (FlexPrijs),,,,,,,,,,,,,,,,,0,0,handmatig,true,,https://www.vattenfall.nl/energie/dynamisch-energiecontract/

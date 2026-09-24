@@ -52,8 +52,7 @@
       "geverifieerd": true,
       "gecontroleerdOp": "2026-09-24",
       "bron": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/",
-      "notitie": "Prijsopbouw in de rekentool van Pure Energie, testadres Madurodam (2584RZ 1); 'Verkoopvergoeding' −€ 0,0149/kWh over netto teruglevering (marktprijs en vergoeding zijn excl. btw volgens de voorwaarden van Pure)",
-      "waardeInclBtw": null
+      "notitie": "Prijsopbouw in de rekentool van Pure Energie, testadres Madurodam (2584RZ 1); 'Verkoopvergoeding' −€ 0,0149/kWh over netto teruglevering (marktprijs en vergoeding zijn excl. btw volgens de voorwaarden van Pure). Het bedrag incl. btw is omgerekend met 21% btw, net als bij de andere leveranciers."
     }
   }
 }
