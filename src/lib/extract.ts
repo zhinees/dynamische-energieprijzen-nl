@@ -72,6 +72,8 @@ export function extractField(text: string, key: FieldKey, rule: FieldRule): Extr
       break;
     }
   }
+  // "before" rules look left of the label, so keep `window` characters before the section start.
+  if (rule.before) start = Math.max(0, start - window);
   const scoped = text.slice(start);
   const rejected: number[] = [];
 

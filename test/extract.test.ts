@@ -54,6 +54,10 @@ test("NextEnergy config reads cents and the 'before' fixed cost", async () => {
   assert.equal(rec.tariffs.electricityMarkup?.value, ex(0.021));
   assert.equal(rec.tariffs.gasMarkup?.value, ex(0.079));
   assert.equal(rec.tariffs.electricityFixedMonthly?.value, ex(5.99));
+  // Every field with a rule must be scraped, not silently filled by the manual fallback.
+  for (const k of ["electricityMarkup", "gasMarkup", "electricityFixedMonthly", "gasFixedMonthly"] as const) {
+    assert.equal(rec.tariffs[k]?.source, "scraped", k);
+  }
   assert.equal(rec.tariffs.feedInDelta?.source, "manual"); // no rule, "geen terugleverkosten"
   assert.equal(rec.tariffs.feedInDelta?.value, 0);
 });
@@ -63,6 +67,8 @@ test("ANWB config takes the announced new gas price, stroom markup scraped", asy
   const rec = buildSupplier(cfg("anwb"), new Map([[url, await fixture("anwb")]]), undefined, "2026-09-24T05:00:00Z");
   assert.equal(rec.tariffs.electricityMarkup?.value, ex(0.018));
   assert.equal(rec.tariffs.gasMarkup?.value, ex(0.0768));
+  assert.equal(rec.tariffs.electricityMarkup?.source, "scraped");
+  assert.equal(rec.tariffs.gasMarkup?.source, "scraped");
   assert.equal(rec.tariffs.electricityFixedMonthly?.verified, false); // from the community table
 });
 
