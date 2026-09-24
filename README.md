@@ -25,10 +25,10 @@ A CDN alternative is `https://cdn.jsdelivr.net/gh/OWNER/dynamische-energieprijze
 | `data/prices/latest.json` | Full price files for `today` and `tomorrow` (tomorrow is `null` until ~13:00) | several times a day |
 | `data/prices/YYYY/YYYY-MM-DD.json` / `.csv` | One day of prices (history) | once per day, when published |
 | `data/prices/index.json` | List of available days | daily |
-| `data/suppliers.json` / `.csv` | Current tariffs per supplier, with source and verification per value | daily |
+| `data/suppliers.json` / `.csv` | Current tariffs per supplier, with source and verification per value | weekly + 1st/2nd of the month |
 | `data/compare/latest.json` | Per hour: market price, plus `buy` and `sell` per supplier, for today and tomorrow | several times a day |
 | `data/tariff-changes.json` | Log of every tariff change | when tariffs change |
-| `data/REPORT.md` | Which values are scraped, hand-checked or unverified | daily |
+| `data/REPORT.md` | Which values are scraped, from a calculator, hand-checked or unverified | with suppliers.json |
 
 ### Example: the price today at 18:00
 
@@ -57,7 +57,7 @@ Every file has a JSON Schema in [`schema/`](schema) and a `$schema` field pointi
   - `feedInDelta`: EUR/kWh *added* to the hourly price for power you feed back. It is negative for a cost (terugleverkosten) and positive for a bonus (e.g. Zonneplan).
 - **Per tariff value**:
   - `value`: excl. btw. `valueInclVat` is included for convenience.
-  - `source`: `scraped` (read from the supplier site by the bot) or `manual` (from the supplier's config file).
+  - `source`: `scraped` (read from the supplier's web page by the bot), `calculator` (from the supplier's own price calculator) or `manual` (from the supplier's config file).
   - `verified`: `false` means the number was never confirmed on the supplier's own site.
   - `since`: when this value started.
   - `lastChecked`: the bot's last confirmation.
@@ -68,10 +68,11 @@ Every file has a JSON Schema in [`schema/`](schema) and a `$schema` field pointi
 - **Electricity**: [ENTSO-E Transparency Platform](https://transparency.entsoe.eu), the official source (needs a free API token). The [EnergyZero](https://www.energyzero.nl) public API is the fallback. Each day file records which one was used.
 - **Gas**: EnergyZero public API.
 - **Supplier tariffs**: each supplier has a config file in [`suppliers/`](suppliers). It holds:
-  - **scrape rules**: where on the supplier's website each number is found. The bot checks them daily.
+  - **a calculator adapter** (optional): the bot asks the supplier's own price calculator for an offer at a fixed public test address, Madurodam (George Maduroplein 1, Den Haag), and keeps only the supplier's own tariff lines. Supplier markups are the same nationwide; grid costs, which do depend on the address, are ignored.
+  - **scrape rules**: where on the supplier's website each number is found.
   - **manual values**: used when there is no rule, or a rule breaks. Each manual value records its source, date, and whether it was verified on the supplier's own site.
 
-  Many suppliers only show tariffs after you enter a postcode, so they can't be scraped yet. See [`data/REPORT.md`](data/REPORT.md) for the current state. Help is welcome.
+  Suppliers are checked every Monday and on the 1st and 2nd of each month (tariffs usually change on the 1st). That is a handful of requests per supplier per month. See [`data/REPORT.md`](data/REPORT.md) for the current state. Help with more calculator adapters is welcome.
 
 ## Run it yourself
 
@@ -98,7 +99,7 @@ npm run debug -- tibber           # show what the scraper reads for one supplier
 The workflows:
 
 - `prices.yml`: runs at 11:05, 12:05, 13:05, 15:05, 22:05 and 23:05 UTC. It commits only when data changed.
-- `suppliers.yml`: runs daily at 04:17 UTC. It keeps one issue open while a scrape rule is broken, and closes it again when all rules work.
+- `suppliers.yml`: runs at 04:17 UTC every Monday and on the 1st and 2nd of the month. It keeps one issue open while a scrape rule or calculator is broken, and closes it again when all of them work.
 - `ci.yml`: runs on every PR. It checks types, tests, schemas and every supplier config.
 
 ## Contributing

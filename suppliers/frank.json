@@ -1,6 +1,5 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
   "id": "frank",
   "name": "Frank Energie",
   "website": "https://www.frankenergie.nl",
@@ -13,42 +12,56 @@
     "autoCurtailment": true,
     "notes": "Slim Sturen zet automatisch de teruglevering stil als stroom geld kost."
   },
+  "calculator": {
+    "adapter": "frank-graphql",
+    "testAddress": {
+      "postcode": "2584RZ",
+      "houseNumber": 1,
+      "city": "'S-GRAVENHAGE",
+      "label": "Madurodam, George Maduroplein 1, Den Haag (public attraction)"
+    }
+  },
   "fields": {},
   "manual": {
     "electricityFixedMonthly": {
-      "value": 7.25,
-      "vatIncluded": false,
-      "verified": false,
+      "value": 7.0,
+      "vatIncluded": true,
+      "verified": true,
       "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+      "source": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "note": "Frank signup calculator (test address Madurodam, 2584RZ 1); amounts incl. btw"
     },
     "electricityMarkup": {
-      "value": 0.0182,
-      "vatIncluded": false,
-      "verified": false,
+      "value": 0.01815,
+      "vatIncluded": true,
+      "verified": true,
       "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+      "source": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "note": "Frank signup calculator (test address Madurodam, 2584RZ 1); amounts incl. btw; = € 0,015 excl. btw"
     },
     "gasFixedMonthly": {
-      "value": 7.25,
-      "vatIncluded": false,
-      "verified": false,
+      "value": 7.0,
+      "vatIncluded": true,
+      "verified": true,
       "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+      "source": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "note": "Frank signup calculator (test address Madurodam, 2584RZ 1); amounts incl. btw"
     },
     "gasMarkup": {
-      "value": 0.0799,
-      "vatIncluded": false,
-      "verified": false,
+      "value": 0.07986,
+      "vatIncluded": true,
+      "verified": true,
       "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+      "source": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "note": "Frank signup calculator (test address Madurodam, 2584RZ 1); amounts incl. btw; = € 0,066 excl. btw"
     },
     "feedInDelta": {
-      "value": -0.0182,
-      "vatIncluded": false,
-      "verified": false,
+      "value": -0.012705,
+      "vatIncluded": true,
+      "verified": true,
       "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
+      "source": "https://www.frankenergie.nl/nl/dynamisch-energiecontract",
+      "note": "Frank signup calculator (test address Madurodam, 2584RZ 1); amounts incl. btw; PURCHASE_FEE_FEED_IN; = € 0,0105 excl. btw"
     }
   }
 }

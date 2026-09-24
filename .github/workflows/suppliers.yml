@@ -2,7 +2,9 @@ name: Update supplier tariffs
 
 on:
   schedule:
-    - cron: "17 4 * * *" # daily; tariffs change a few times a year
+    # Tariffs change a few times a year, almost always on the 1st of the month.
+    - cron: "17 4 * * 1"   # every Monday
+    - cron: "17 4 1,2 * *" # 1st and 2nd of the month, to catch new tariffs within a day
   workflow_dispatch:
 
 permissions:

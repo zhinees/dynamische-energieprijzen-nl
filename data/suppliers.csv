@@ -2,7 +2,7 @@ id,name,electricityFixedMonthly,electricityFixedMonthly_source,electricityFixedM
 anwb,ANWB Energie,5.99,manual,false,0.014876,manual,true,5.99,manual,false,0.063471,manual,true,0,manual,true,false,https://www.anwb.nl/energie/actuele-tarieven
 budget,Budget Thuis (Budget Energie),6,manual,false,0.0168,manual,false,6,manual,false,0.0641,manual,false,-0.0168,manual,false,false,https://www.budgetthuis.nl/energie/dynamisch-energiecontract
 eneco,Eneco,7,manual,false,0.0185,manual,false,7,manual,false,0.1068,manual,false,-0.0185,manual,false,false,https://www.eneco.nl/duurzame-energie/dynamisch-energiecontract/dynamische-tarieven/
-frank,Frank Energie,7.25,manual,false,0.0182,manual,false,7.25,manual,false,0.0799,manual,false,-0.0182,manual,false,true,https://www.frankenergie.nl/nl/dynamisch-energiecontract
+frank,Frank Energie,5.785124,manual,true,0.015,manual,true,5.785124,manual,true,0.066,manual,true,-0.0105,manual,true,true,https://www.frankenergie.nl/nl/dynamisch-energiecontract
 liveenergy,Live Energy,4.95,manual,false,0.023,manual,false,4.95,manual,false,0.089,manual,false,-0.023,manual,false,false,https://www.liveenergy.nl/dynamisch-energiecontract-1
 nextenergy,NextEnergy,4.950413,manual,true,0.017355,manual,true,4.950413,manual,true,0.065289,manual,true,0,manual,true,true,https://www.nextenergy.nl/dynamische-energie
 pure,Pure Energie,6.05,manual,false,0.0221,manual,false,6.05,manual,false,0.0598,manual,false,-0.0221,manual,false,false,https://pure-energie.nl/energiecontract/dynamisch-energiecontract/

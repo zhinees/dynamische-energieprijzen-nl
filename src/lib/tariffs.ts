@@ -1,4 +1,5 @@
 import { extractFieldAny } from "./extract.ts";
+import type { CalculatorResult } from "../calculators/index.ts";
 import {
   FIELD_KEYS,
   FIELD_UNITS,
@@ -36,8 +37,8 @@ function manualValue(cfg: SupplierConfig, key: FieldKey, prev?: FieldValue): Fie
   if (!m) return undefined;
   const value = m.vatIncluded ? exclVat(m.value) : r6(m.value);
   const checkedAt = `${m.checkedAt}T00:00:00Z`;
-  // Keep a newer scraped value over an older manual one.
-  if (prev?.source === "scraped" && prev.since && prev.since > checkedAt) return undefined;
+  // Keep a newer scraped/calculator value over an older manual one.
+  if (prev && prev.source !== "manual" && prev.since && prev.since > checkedAt) return undefined;
   return {
     value,
     valueInclVat: inclVat(value),
@@ -53,6 +54,7 @@ function manualValue(cfg: SupplierConfig, key: FieldKey, prev?: FieldValue): Fie
  * Build one supplier's published record.
  * @param texts    url -> page text (from htmlToText); missing url = fetch failed
  * @param prev     last published record, so values survive a failed scrape
+ * @param calc     values from the supplier's price calculator (highest priority)
  */
 export function buildSupplier(
   cfg: SupplierConfig,
@@ -60,12 +62,31 @@ export function buildSupplier(
   prev: SupplierData | undefined,
   now: string,
   fetchErrors: string[] = [],
+  calc: CalculatorResult = {},
 ): SupplierData {
   const tariffs: SupplierData["tariffs"] = {};
 
   for (const key of FIELD_KEYS) {
     if (!relevant(cfg, key)) continue;
     const prevVal = prev?.tariffs[key];
+
+    const c = calc[key];
+    if (c) {
+      const value = c.vatIncluded ? exclVat(c.value) : r6(c.value);
+      const unchanged = prevVal?.source === "calculator" && prevVal.value === value;
+      tariffs[key] = {
+        value,
+        valueInclVat: inclVat(value),
+        unit: FIELD_UNITS[key],
+        source: "calculator",
+        verified: true,
+        since: unchanged ? prevVal!.since : now,
+        lastChecked: now,
+        sourceUrl: cfg.tariffUrl,
+      };
+      continue;
+    }
+
     const rules = rulesFor(cfg, key);
     let lastError: string | undefined;
 
@@ -102,6 +123,8 @@ export function buildSupplier(
         continue;
       }
     }
+
+    if (cfg.calculator && !lastError) lastError = "calculator returned no value";
 
     // Scrape failed or no rule: newest of (manual block, previous scraped value).
     const manual = manualValue(cfg, key, prevVal);

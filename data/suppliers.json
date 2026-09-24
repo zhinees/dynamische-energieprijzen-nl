@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/suppliers.schema.json",
   "version": 1,
-  "generatedAt": "2026-09-24T15:21:11.831Z",
+  "generatedAt": "2026-09-24T16:04:54.571Z",
   "currency": "EUR",
   "vat": "excluded",
   "suppliers": [
@@ -65,7 +65,7 @@
           "sourceUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "budget",
@@ -127,7 +127,7 @@
           "sourceUrl": null
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "eneco",
@@ -189,7 +189,7 @@
           "sourceUrl": null
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "frank",
@@ -206,52 +206,52 @@
       },
       "tariffs": {
         "electricityFixedMonthly": {
-          "value": 7.25,
-          "valueInclVat": 8.7725,
+          "value": 5.785124,
+          "valueInclVat": 7,
           "unit": "EUR/month",
           "source": "manual",
-          "verified": false,
+          "verified": true,
           "since": "2026-09-24T00:00:00Z",
-          "sourceUrl": null
+          "sourceUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "electricityMarkup": {
-          "value": 0.0182,
-          "valueInclVat": 0.022022,
+          "value": 0.015,
+          "valueInclVat": 0.01815,
           "unit": "EUR/kWh",
           "source": "manual",
-          "verified": false,
+          "verified": true,
           "since": "2026-09-24T00:00:00Z",
-          "sourceUrl": null
+          "sourceUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "gasFixedMonthly": {
-          "value": 7.25,
-          "valueInclVat": 8.7725,
+          "value": 5.785124,
+          "valueInclVat": 7,
           "unit": "EUR/month",
           "source": "manual",
-          "verified": false,
+          "verified": true,
           "since": "2026-09-24T00:00:00Z",
-          "sourceUrl": null
+          "sourceUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "gasMarkup": {
-          "value": 0.0799,
-          "valueInclVat": 0.096679,
+          "value": 0.066,
+          "valueInclVat": 0.07986,
           "unit": "EUR/m3",
           "source": "manual",
-          "verified": false,
+          "verified": true,
           "since": "2026-09-24T00:00:00Z",
-          "sourceUrl": null
+          "sourceUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "feedInDelta": {
-          "value": -0.0182,
-          "valueInclVat": -0.022022,
+          "value": -0.0105,
+          "valueInclVat": -0.012705,
           "unit": "EUR/kWh",
           "source": "manual",
-          "verified": false,
+          "verified": true,
           "since": "2026-09-24T00:00:00Z",
-          "sourceUrl": null
+          "sourceUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "liveenergy",
@@ -313,7 +313,7 @@
           "sourceUrl": null
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "nextenergy",
@@ -375,7 +375,7 @@
           "sourceUrl": "https://www.nextenergy.nl/dynamische-energie"
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "pure",
@@ -437,7 +437,7 @@
           "sourceUrl": null
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "tibber",
@@ -499,7 +499,7 @@
           "sourceUrl": "https://tibber.com/nl/energiecontract"
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "vandebron",
@@ -561,7 +561,7 @@
           "sourceUrl": null
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "vattenfall",
@@ -623,7 +623,7 @@
           "sourceUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     },
     {
       "id": "zonneplan",
@@ -685,7 +685,7 @@
           "sourceUrl": null
         }
       },
-      "lastRun": "2026-09-24T15:21:11.831Z"
+      "lastRun": "2026-09-24T16:04:54.571Z"
     }
   ]
 }

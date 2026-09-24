@@ -66,7 +66,18 @@ npm run debug -- tibber --file saved.html   # a page you saved from your browser
 
 Also keep the `manual` values in the same file up to date, because they are the fallback when the site changes. If you add a rule, a fixture in `test/fixtures/` plus a test in `test/extract.test.ts` protects it from regressions.
 
-## 3. Add a supplier
+## 3. Add a calculator adapter
+
+Many suppliers only show prices after you enter an address. Their calculator usually loads a JSON response with every tariff line separately, which is more reliable than reading a web page. `src/calculators/frank.ts` is the example to copy.
+
+1. Open the supplier's calculator in your browser, open DevTools (F12) → **Network**, and enter the test address **2584 RZ, huisnummer 1** (Madurodam). Don't use your own address.
+2. Find the request that returns the offer. Save its response as `test/fixtures/<id>-<what>-<date>.json`, with no personal data in it.
+3. Write `src/calculators/<id>.ts`. It repeats the same requests and returns only the supplier's own lines: fixed monthly costs, markup and feed-in. Ignore market price, grid costs and taxes. Check whether amounts are incl. btw: the energy tax line is a good tell (€ 0,0916/kWh excl., € 0,1108 incl. in 2026).
+4. Register it in `src/calculators/index.ts`, add a `calculator` block to the supplier file, and add a test that parses your fixture.
+
+Use plain headers with the project's user agent. Don't imitate the supplier's own app, don't log in, and never submit a signup.
+
+## 4. Add a supplier
 
 Copy an existing file (for example `suppliers/frank.json`) to `suppliers/<new-id>.json`. The `id` must match the file name. Fill in:
 - `products`,
@@ -76,6 +87,6 @@ Copy an existing file (for example `suppliers/frank.json`) to `suppliers/<new-id
 
 ## Ground rules
 
-- **Be polite to supplier sites**: one request per page per day is plenty. Don't add rules that hit calculators or APIs in bulk, or that ignore a site's terms.
-- **No personal data**: never commit postcodes, addresses or account details.
+- **Be polite to supplier sites**: the schedule (weekly plus the 1st and 2nd of the month) is plenty. Don't add rules that hit calculators or APIs in bulk, or that ignore a site's terms.
+- **No personal data**: never commit private addresses, connection codes (EAN) or account details. The only address in this repo is the public test address (Madurodam).
 - **Keep PRs small**: one supplier per PR is easiest to review.

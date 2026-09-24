@@ -126,6 +126,7 @@
         "source": {
           "enum": [
             "scraped",
+            "calculator",
             "manual"
           ]
         },

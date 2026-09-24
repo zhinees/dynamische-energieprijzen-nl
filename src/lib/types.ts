@@ -60,6 +60,14 @@ export interface SupplierConfig {
     autoCurtailment: boolean;
     notes?: string;
   };
+  /**
+   * Read tariffs from the supplier's own price calculator (see src/calculators/).
+   * Takes priority over page rules. Uses a public test address, never a private home.
+   */
+  calculator?: {
+    adapter: string;
+    testAddress: { postcode: string; houseNumber: number; houseNumberAddition?: string; city: string; label: string };
+  };
   /** Scrape rules. One rule or a list tried in order. Leave a field out to rely on `manual` only. */
   fields: Partial<Record<FieldKey, FieldRule | FieldRule[]>>;
   /** Hand-checked values, used when scraping fails or no rule exists. One entry per field. */
@@ -84,8 +92,8 @@ export interface FieldValue {
   /** value * 1.21, for convenience. */
   valueInclVat: number | null;
   unit: string;
-  /** scraped = read from the supplier site; manual = from the supplier config's manual block. */
-  source: "scraped" | "manual";
+  /** scraped = read from the supplier's web page; calculator = from the supplier's price calculator; manual = from the supplier config. */
+  source: "scraped" | "calculator" | "manual";
   /** false when the value was never confirmed on the supplier's own site. */
   verified: boolean;
   /** When this value first appeared (scraped) or was hand-checked (manual). Changes only when the value changes. */

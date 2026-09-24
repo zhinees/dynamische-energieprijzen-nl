@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-09-24",
+    "supplier": "frank",
+    "field": "electricityFixedMonthly",
+    "from": 7.25,
+    "to": 5.785124,
+    "source": "manual"
+  },
+  {
+    "date": "2026-09-24",
+    "supplier": "frank",
+    "field": "electricityMarkup",
+    "from": 0.0182,
+    "to": 0.015,
+    "source": "manual"
+  },
+  {
+    "date": "2026-09-24",
+    "supplier": "frank",
+    "field": "gasFixedMonthly",
+    "from": 7.25,
+    "to": 5.785124,
+    "source": "manual"
+  },
+  {
+    "date": "2026-09-24",
+    "supplier": "frank",
+    "field": "gasMarkup",
+    "from": 0.0799,
+    "to": 0.066,
+    "source": "manual"
+  },
+  {
+    "date": "2026-09-24",
+    "supplier": "frank",
+    "field": "feedInDelta",
+    "from": -0.0182,
+    "to": -0.0105,
+    "source": "manual"
+  }
+]

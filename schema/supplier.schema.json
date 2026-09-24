@@ -172,6 +172,50 @@
           "$ref": "#/$defs/manual"
         }
       }
+    },
+    "calculator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adapter",
+        "testAddress"
+      ],
+      "description": "Read tariffs from the supplier's own price calculator (adapter in src/calculators/). Use a public address, never a private home.",
+      "properties": {
+        "adapter": {
+          "type": "string"
+        },
+        "testAddress": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "postcode",
+            "houseNumber",
+            "city",
+            "label"
+          ],
+          "properties": {
+            "postcode": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]{3}[A-Z]{2}$"
+            },
+            "houseNumber": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "houseNumberAddition": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 3
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {
