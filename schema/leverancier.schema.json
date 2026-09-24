@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/leverancier.schema.json",
   "title": "Leveranciersbestand",
-  "description": "Eén bestand per leverancier in /leveranciers. Alle tarieven zijn per eenheid; de uitvoer is altijd exclusief btw.",
+  "description": "Eén bestand per leverancier in /leveranciers. Alle tarieven zijn per eenheid. Vul het bedrag in zoals de site het toont; de uitvoer bevat het bedrag inclusief én exclusief btw.",
   "type": "object",
   "additionalProperties": false,
   "required": [

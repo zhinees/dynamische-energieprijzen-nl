@@ -7,7 +7,6 @@
     "versie",
     "gegenereerdOp",
     "valuta",
-    "btw",
     "leveranciers"
   ],
   "properties": {
@@ -22,9 +21,6 @@
     },
     "valuta": {
       "const": "EUR"
-    },
-    "btw": {
-      "const": "exclusief"
     },
     "leveranciers": {
       "type": "array",
@@ -94,8 +90,8 @@
     "tariefwaarde": {
       "type": "object",
       "required": [
-        "waarde",
-        "waardeInclBtw",
+        "bedragInclBtw",
+        "bedragExclBtw",
         "eenheid",
         "bron",
         "geverifieerd",
@@ -103,18 +99,19 @@
         "bronUrl"
       ],
       "properties": {
-        "waarde": {
+        "bedragInclBtw": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Wat een consument betaalt, inclusief 21% btw (het eigen bedrag van de leverancier als die het publiceert). null = onbekend of er btw over gaat."
+        },
+        "bedragExclBtw": {
           "type": [
             "number",
             "null"
           ],
           "description": "Exclusief btw"
-        },
-        "waardeInclBtw": {
-          "type": [
-            "number",
-            "null"
-          ]
         },
         "eenheid": {
           "enum": [

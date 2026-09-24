@@ -8,7 +8,7 @@ Een onafhankelijk, open overzicht van Nederlandse dynamische energiecontracten, 
 
 Zie het als een filterlijst van een adblocker. De data staat als gewone JSON- en CSV-bestanden in deze repo, en een geplande taak houdt die actueel. Iedereen mag de bestanden gebruiken voor grafieken, vergelijkingssites, domotica of onderzoek. Correcties gaan via pull requests.
 
-> **Alle bedragen zijn in euro's, exclusief btw, energiebelasting en netbeheerkosten.**
+> **Gericht op consumenten: de hoofdbedragen zijn inclusief 21% btw.** Elk bedrag heeft `InclBtw` of `ExclBtw` in de veldnaam, zodat je nooit hoeft te raden. Energiebelasting en netbeheerkosten zitten er niet in.
 >
 > **Alleen echte data wordt gepubliceerd.** Elk tarief is gelezen op de eigen website of in de eigen prijsrekentool van de leverancier. Waarden die niet te controleren zijn, blijven weg; ze worden nooit geschat of overgenomen van andere sites.
 
@@ -28,7 +28,7 @@ Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energiepr
 | `data/prijzen/JJJJ/JJJJ-MM-DD.json` / `.csv` | De prijzen van één dag (geschiedenis) | één keer per dag, zodra ze gepubliceerd zijn |
 | `data/prijzen/index.json` | Lijst van beschikbare dagen | dagelijks |
 | `data/leveranciers.json` / `.csv` | Huidige tarieven per leverancier, met bron en controle per waarde | wekelijks + op de 1e en 2e van de maand |
-| `data/vergelijking/actueel.json` | Per uur: de marktprijs, plus `afname` en `teruglevering` per leverancier, voor vandaag en morgen | een paar keer per dag |
+| `data/vergelijking/actueel.json` | Per uur, inclusief btw: de marktprijs, plus `afnameInclBtw` en `terugleveringInclBtw` per leverancier, voor vandaag en morgen | een paar keer per dag |
 | `data/tariefwijzigingen.json` | Logboek van elke tariefwijziging | als tarieven veranderen |
 | `data/RAPPORT.md` | Waar elke waarde vandaan komt, en welke leveranciers nog niet gepubliceerd zijn | samen met leveranciers.json |
 
@@ -39,9 +39,9 @@ const BASIS = "https://raw.githubusercontent.com/zhinees/dynamische-energieprijz
 const { vandaag } = await (await fetch(`${BASIS}/vergelijking/actueel.json`)).json();
 
 const om18 = vandaag.uren.find((u) => u.start.slice(11, 13) === "18"); // start is lokale tijd
-console.log(om18.markt);                   // bijv. 0.22118  (EUR/kWh, marktprijs)
-console.log(om18.afname.tibber);           // marktprijs + inkoopopslag van Tibber
-console.log(om18.teruglevering.zonneplan); // wat Zonneplan dat uur per teruggeleverde kWh betaalt
+console.log(om18.marktInclBtw);                   // bijv. 0.267628  (EUR/kWh, marktprijs incl. btw)
+console.log(om18.afnameInclBtw.tibber);           // marktprijs + inkoopopslag van Tibber, incl. btw
+console.log(om18.terugleveringInclBtw.zonneplan); // wat Zonneplan dat uur per teruggeleverde kWh betaalt, incl. btw
 ```
 
 Meer in [`voorbeelden/`](voorbeelden): een Node-script (`prijs-op-uur.mjs`) en een Astro-component (`astro/Energieprijzen.astro`).
@@ -51,14 +51,17 @@ Meer in [`voorbeelden/`](voorbeelden): een Node-script (`prijs-op-uur.mjs`) en e
 Elk bestand heeft een JSON Schema in [`schema/`](schema) en een veld `$schema` dat ernaar verwijst. Een paar afspraken:
 
 - **Tijden**: `start` is de lokale tijd in Amsterdam met tijdverschil (`2026-09-24T18:00:00+02:00`), en `startUtc` is hetzelfde moment in UTC. Dagen met een zomertijdwissel hebben 23 of 25 uur.
-- **Per uur en per kwartier**: de day-aheadmarkt werkt met blokken van 15 minuten. `perUur` is er altijd; met ENTSO-E als bron staan de kwartierprijzen in `perKwartier`, en is `perUur` daar het gemiddelde van.
+- **Per uur en per kwartier**: de day-aheadmarkt werkt met blokken van 15 minuten. `perUur` is er altijd; met ENTSO-E als bron staan de kwartierprijzen in `perKwartier`, en is `perUur` daar het gemiddelde van. Elk punt heeft `prijsInclBtw` en `prijsExclBtw`.
+- **Btw**: bedragen voor consumenten zijn inclusief 21% btw. De marktbronnen leveren prijzen zonder btw; `prijsInclBtw` is die prijs × 1,21. Bij tarieven van leveranciers is `bedragInclBtw` het bedrag dat de leverancier zelf noemt.
 - **Tariefvelden**:
   - `stroomVastPerMaand`, `gasVastPerMaand`: EUR per maand.
   - `stroomInkoopopslag`: EUR/kWh.
   - `gasInkoopopslag`: EUR/m³.
   - `terugleverCorrectie`: EUR/kWh die *bij* de uurprijs wordt opgeteld voor stroom die je teruglevert. Negatief bij kosten (terugleverkosten), positief bij een bonus (bijv. Zonneplan).
+  - In de vergelijking: `afnameInclBtw` = marktprijs incl. btw + `stroomInkoopopslag` incl. btw, en `terugleveringInclBtw` = marktprijs incl. btw + `terugleverCorrectie` incl. btw.
 - **Per tariefwaarde**:
-  - `waarde`: excl. btw. `waardeInclBtw`: incl. btw; het eigen bedrag van de leverancier als die er een publiceert (anders `waarde` × 1,21; `null` als onbekend is of er btw over gaat).
+  - `bedragInclBtw`: wat een consument betaalt, inclusief btw; het eigen bedrag van de leverancier als die er een publiceert (anders `bedragExclBtw` × 1,21). `null` als de leverancier niet zegt of er btw over gaat; dan staat die leverancier in de vergelijking als onbekend.
+  - `bedragExclBtw`: hetzelfde bedrag zonder btw.
   - `bron`: `website` (door de bot gelezen op de webpagina van de leverancier), `rekentool` (uit de eigen prijsrekentool van de leverancier) of `handmatig` (uit het leveranciersbestand).
   - `geverifieerd`: altijd `true`. Ongecontroleerde waarden worden door de validator geweigerd.
   - `sinds`: sinds wanneer deze waarde geldt.

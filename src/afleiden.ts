@@ -1,12 +1,13 @@
 // Build convenience files from prices + supplier tariffs:
 //   data/prijzen/index.json        list of available days
-//   data/vergelijking/actueel.json per-supplier hourly afname/teruglevering prices for today and tomorrow
+//   data/vergelijking/actueel.json per-supplier hourly afname/teruglevering prices incl. btw for today and tomorrow
 
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { DATA, dagbestandPad, leesJson, schrijfJsonAlsGewijzigd } from "./lib/bestanden.ts";
 import { plusDagen, vandaagLokaal } from "./lib/tijd.ts";
-import type { Dagprijzen, LeveranciersBestand } from "./lib/typen.ts";
+import { inclBtw } from "./lib/tarieven.ts";
+import type { Dagprijzen, Leverancier, LeveranciersBestand, Veld } from "./lib/typen.ts";
 
 const r6 = (n: number) => Math.round(n * 1e6) / 1e6 + 0;
 
@@ -22,45 +23,37 @@ async function lijstDagen(): Promise<string[]> {
   return dagen.sort();
 }
 
+/** Consumer view: every amount incl. 21% btw (still excl. energy tax and grid costs). */
 export function vergelijkDag(dag: Dagprijzen, lev: LeveranciersBestand) {
-  const gasPrijzen = dag.gas?.perUur.map((p) => p.prijs) ?? [];
-  const gasGem = gasPrijzen.length ? gasPrijzen.reduce((a, b) => a + b, 0) / gasPrijzen.length : null;
+  const gasPrijzen = dag.gas?.perUur.map((p) => p.prijsExclBtw) ?? [];
+  const gasGem = gasPrijzen.length ? inclBtw(gasPrijzen.reduce((a, b) => a + b, 0) / gasPrijzen.length) : null;
+  const incl = (l: Leverancier, veld: Veld) => l.tarieven[veld]?.bedragInclBtw ?? null;
+  const plus = (a: number | null, b: number | null) => (a === null || b === null ? null : r6(a + b));
   return {
     datum: dag.datum,
     stroomBron: dag.stroom?.bron ?? null,
-    gasMarktgemiddelde: gasGem === null ? null : r6(gasGem),
+    gasMarktgemiddeldeInclBtw: gasGem,
     leveranciers: lev.leveranciers.map((l) => {
       const t = l.tarieven;
-      const gasOpslag = t.gasInkoopopslag?.waarde;
       return {
         id: l.id,
         naam: l.naam,
         /** false if any tariff used here is not confirmed on the supplier's own site */
         geverifieerd: [t.stroomInkoopopslag, t.terugleverCorrectie, t.gasInkoopopslag].every((v) => !v || v.geverifieerd),
-        vastPerMaand: {
-          stroom: t.stroomVastPerMaand?.waarde ?? null,
-          gas: t.gasVastPerMaand?.waarde ?? null,
+        vastPerMaandInclBtw: {
+          stroom: incl(l, "stroomVastPerMaand"),
+          gas: incl(l, "gasVastPerMaand"),
         },
-        gasPrijs: gasGem !== null && gasOpslag !== undefined && gasOpslag !== null ? r6(gasGem + gasOpslag) : null,
+        gasPrijsInclBtw: plus(gasGem, incl(l, "gasInkoopopslag")),
       };
     }),
     uren: (dag.stroom?.perUur ?? []).map((p) => ({
       start: p.start,
       startUtc: p.startUtc,
-      markt: p.prijs,
+      marktInclBtw: p.prijsInclBtw,
       // afname = markt + inkoopopslag, teruglevering = markt + terugleverCorrectie (what you get per kWh fed back)
-      afname: Object.fromEntries(
-        lev.leveranciers.map((l) => {
-          const o = l.tarieven.stroomInkoopopslag?.waarde;
-          return [l.id, o === undefined || o === null ? null : r6(p.prijs + o)];
-        }),
-      ),
-      teruglevering: Object.fromEntries(
-        lev.leveranciers.map((l) => {
-          const c = l.tarieven.terugleverCorrectie?.waarde;
-          return [l.id, c === undefined || c === null ? null : r6(p.prijs + c)];
-        }),
-      ),
+      afnameInclBtw: Object.fromEntries(lev.leveranciers.map((l) => [l.id, plus(p.prijsInclBtw, incl(l, "stroomInkoopopslag"))])),
+      terugleveringInclBtw: Object.fromEntries(lev.leveranciers.map((l) => [l.id, plus(p.prijsInclBtw, incl(l, "terugleverCorrectie"))])),
     })),
   };
 }
@@ -87,8 +80,8 @@ async function main() {
     versie: 1,
     gegenereerdOp: new Date().toISOString(),
     valuta: "EUR",
-    btw: "exclusief",
-    opmerking: "afname/teruglevering zijn exclusief btw, energiebelasting en netbeheerkosten. Tel die erbij op voor een all-in consumentenprijs.",
+    btw: "inclusief",
+    opmerking: "Alle bedragen zijn inclusief 21% btw, maar exclusief energiebelasting en netbeheerkosten. Tel die erbij op voor een all-in consumentenprijs.",
     vandaag: d0 ? vergelijkDag(d0, lev) : null,
     morgen: d1 ? vergelijkDag(d1, lev) : null,
   }, 1);

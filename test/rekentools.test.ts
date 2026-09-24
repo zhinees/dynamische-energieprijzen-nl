@@ -21,10 +21,10 @@ test("leesFrank pakt alleen Franks eigen tariefregels", () => {
 test("rekentoolwaarden worden excl. btw, bron 'rekentool'", () => {
   const rec = bouwLeverancier(frank, new Map(), undefined, "2026-09-24T04:17:00Z", [], leesFrank(fixture.data));
   const t = rec.tarieven;
-  assert.equal(t.stroomInkoopopslag?.waarde, 0.015);
-  assert.equal(t.gasInkoopopslag?.waarde, 0.066);
-  assert.equal(t.terugleverCorrectie?.waarde, -0.0105);
-  assert.equal(t.stroomVastPerMaand?.waarde, 5.785124);
+  assert.equal(t.stroomInkoopopslag?.bedragExclBtw, 0.015);
+  assert.equal(t.gasInkoopopslag?.bedragExclBtw, 0.066);
+  assert.equal(t.terugleverCorrectie?.bedragExclBtw, -0.0105);
+  assert.equal(t.stroomVastPerMaand?.bedragExclBtw, 5.785124);
   assert.equal(t.stroomInkoopopslag?.bron, "rekentool");
   assert.equal(t.stroomInkoopopslag?.geverifieerd, true);
 });
@@ -32,7 +32,7 @@ test("rekentoolwaarden worden excl. btw, bron 'rekentool'", () => {
 test("als de rekentool faalt, vallen we terug op handmatige waarden en melden we dat", () => {
   const rec = bouwLeverancier(frank, new Map(), undefined, "2026-09-24T04:17:00Z", ["rekentool: HTTP 503"], {});
   assert.equal(rec.tarieven.stroomInkoopopslag?.bron, "handmatig");
-  assert.equal(rec.tarieven.stroomInkoopopslag?.waarde, 0.015);
+  assert.equal(rec.tarieven.stroomInkoopopslag?.bedragExclBtw, 0.015);
   assert.equal(rec.tarieven.stroomInkoopopslag?.laatsteFout, "rekentool gaf geen waarde");
   assert.equal(rec.ophaalfout, "rekentool: HTTP 503");
 });
@@ -145,6 +145,6 @@ test("adapters bewaren de exacte bedragen incl. btw uit de API", () => {
   const b = leesBudget(bt);
   assert.equal(b.stroomInkoopopslag?.waardeInclBtw, 0.01682);
   const rec = bouwLeverancier(frank, new Map(), undefined, "2026-09-24T04:17:00Z", [], b);
-  assert.equal(rec.tarieven.stroomInkoopopslag?.waarde, 0.0139);
-  assert.equal(rec.tarieven.stroomInkoopopslag?.waardeInclBtw, 0.01682);
+  assert.equal(rec.tarieven.stroomInkoopopslag?.bedragExclBtw, 0.0139);
+  assert.equal(rec.tarieven.stroomInkoopopslag?.bedragInclBtw, 0.01682);
 });

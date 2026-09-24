@@ -18,19 +18,22 @@ interface Wijziging {
   datum: string;
   leverancier: string;
   veld: Veld;
-  van: number | null;
-  naar: number | null;
+  vanInclBtw: number | null;
+  naarInclBtw: number | null;
   bron: Bron;
 }
 
 function naarCsv(bestand: LeveranciersBestand): string {
-  const kop = ["id", "naam", ...VELDEN.flatMap((k) => [k, `${k}_bron`, `${k}_geverifieerd`]), "automatisch_afschakelen", "tarief_url"];
+  const kop = ["id", "naam", ...VELDEN.flatMap((k) => [`${k}_incl_btw`, `${k}_excl_btw`, `${k}_bron`, `${k}_geverifieerd`]), "automatisch_afschakelen", "tarief_url"];
   const esc = (v: unknown) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v ?? ""));
   const rijen = bestand.leveranciers.map((l) =>
     [
       l.id,
       l.naam,
-      ...VELDEN.flatMap((k) => [l.tarieven[k]?.waarde ?? "", l.tarieven[k]?.bron ?? "", l.tarieven[k]?.geverifieerd ?? ""]),
+      ...VELDEN.flatMap((k) => {
+        const t = l.tarieven[k];
+        return [t?.bedragInclBtw ?? "", t?.bedragExclBtw ?? "", t?.bron ?? "", t?.geverifieerd ?? ""];
+      }),
       l.kenmerken.automatischAfschakelen,
       l.tariefUrl,
     ].map(esc).join(","),
@@ -119,7 +122,6 @@ async function main() {
     versie: 1,
     gegenereerdOp: nu,
     valuta: "EUR",
-    btw: "exclusief",
     leveranciers,
   };
 
@@ -130,9 +132,9 @@ async function main() {
     const vorige = vorigePerId.get(l.id);
     if (!vorige) continue;
     for (const k of VELDEN) {
-      const a = vorige.tarieven[k]?.waarde ?? null;
-      const b = l.tarieven[k]?.waarde ?? null;
-      if (a !== b) wijzigingen.push({ datum: nu.slice(0, 10), leverancier: l.id, veld: k, van: a, naar: b, bron: l.tarieven[k]?.bron ?? "handmatig" });
+      const a = vorige.tarieven[k]?.bedragInclBtw ?? null;
+      const b = l.tarieven[k]?.bedragInclBtw ?? null;
+      if (a !== b) wijzigingen.push({ datum: nu.slice(0, 10), leverancier: l.id, veld: k, vanInclBtw: a, naarInclBtw: b, bron: l.tarieven[k]?.bron ?? "handmatig" });
     }
   }
 

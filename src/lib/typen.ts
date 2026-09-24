@@ -1,4 +1,5 @@
-// Shared types. All money is EUR, excluding VAT (btw) and energy tax (energiebelasting).
+// Shared types. All money is EUR, excluding energy tax (energiebelasting). Published amounts
+// come in pairs: ...InclBtw (what a consumer pays, the main value) and ...ExclBtw.
 
 export type Veld =
   | "stroomVastPerMaand"   // vaste leveringskosten stroom, EUR/maand
@@ -104,10 +105,9 @@ export interface HandmatigeWaarde {
 export type Bron = "website" | "rekentool" | "handmatig";
 
 export interface Tariefwaarde {
-  /** Excluding VAT. */
-  waarde: number | null;
-  /** Incl. 21% btw: the supplier's own number when published, else waarde * 1.21. null = not known. */
-  waardeInclBtw: number | null;
+  /** What a consumer pays, incl. 21% btw: the supplier's own number when published, else bedragExclBtw * 1.21. null = not known. */
+  bedragInclBtw: number | null;
+  bedragExclBtw: number | null;
   eenheid: string;
   /** website = read from the supplier's web page; rekentool = from the supplier's price calculator; handmatig = from the supplier config. */
   bron: Bron;
@@ -139,7 +139,6 @@ export interface LeveranciersBestand {
   versie: 1;
   gegenereerdOp: string;
   valuta: "EUR";
-  btw: "exclusief";
   leveranciers: Leverancier[];
 }
 
@@ -148,7 +147,9 @@ export interface Prijspunt {
   start: string;
   /** Same moment in UTC, e.g. 2026-09-24T16:00:00Z */
   startUtc: string;
-  prijs: number;
+  /** Market price incl. 21% btw (excl. energy tax and supplier markup). */
+  prijsInclBtw: number;
+  prijsExclBtw: number;
 }
 
 export interface Dagprijzen {
@@ -157,7 +158,6 @@ export interface Dagprijzen {
   datum: string; // YYYY-MM-DD (Europe/Amsterdam)
   tijdzone: "Europe/Amsterdam";
   valuta: "EUR";
-  btw: "exclusief";
   opgehaaldOp: string;
   stroom: null | {
     eenheid: "EUR/kWh";

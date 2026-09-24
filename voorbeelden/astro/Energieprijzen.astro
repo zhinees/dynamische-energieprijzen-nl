@@ -26,7 +26,7 @@ try {
 const slot = dag?.uren.find((u: any) => Number(u.start.slice(11, 13)) === uur);
 const rijen = slot
   ? dag.leveranciers
-      .map((l: any) => ({ ...l, afname: slot.afname[l.id], teruglevering: slot.teruglevering[l.id] }))
+      .map((l: any) => ({ ...l, afname: slot.afnameInclBtw[l.id], teruglevering: slot.terugleveringInclBtw[l.id] }))
       .sort((a: any, b: any) => (a.afname ?? 9) - (b.afname ?? 9))
   : [];
 const eur = (n: number | null) =>
@@ -37,7 +37,7 @@ const eur = (n: number | null) =>
   {slot && (
     <>
       <p>
-        Beursprijs vandaag om {String(uur).padStart(2, "0")}:00: <strong>{eur(slot.markt)}</strong> per kWh (excl. btw)
+        Beursprijs vandaag om {String(uur).padStart(2, "0")}:00: <strong>{eur(slot.marktInclBtw)}</strong> per kWh (incl. btw)
       </p>
       <table>
         <thead>
@@ -49,12 +49,12 @@ const eur = (n: number | null) =>
               <td>{l.naam}</td>
               <td>{eur(l.afname)}</td>
               <td>{eur(l.teruglevering)}</td>
-              <td>{eur(l.vastPerMaand.stroom)}</td>
+              <td>{eur(l.vastPerMaandInclBtw.stroom)}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p><small>Excl. btw, energiebelasting en netbeheerkosten. – = niet gepubliceerd door de leverancier.</small></p>
+      <p><small>Incl. btw, excl. energiebelasting en netbeheerkosten. – = niet gepubliceerd door de leverancier.</small></p>
     </>
   )}
 </section>

@@ -25,7 +25,7 @@
       "const": "EUR"
     },
     "btw": {
-      "const": "exclusief"
+      "const": "inclusief"
     },
     "opmerking": {
       "type": "string"
@@ -70,7 +70,7 @@
             "null"
           ]
         },
-        "gasMarktgemiddelde": {
+        "gasMarktgemiddeldeInclBtw": {
           "type": [
             "number",
             "null"
@@ -84,8 +84,8 @@
               "id",
               "naam",
               "geverifieerd",
-              "vastPerMaand",
-              "gasPrijs"
+              "vastPerMaandInclBtw",
+              "gasPrijsInclBtw"
             ]
           }
         },
@@ -96,15 +96,15 @@
             "required": [
               "start",
               "startUtc",
-              "markt",
-              "afname",
-              "teruglevering"
+              "marktInclBtw",
+              "afnameInclBtw",
+              "terugleveringInclBtw"
             ],
             "properties": {
-              "markt": {
+              "marktInclBtw": {
                 "type": "number"
               },
-              "afname": {
+              "afnameInclBtw": {
                 "type": "object",
                 "additionalProperties": {
                   "type": [
@@ -113,7 +113,7 @@
                   ]
                 }
               },
-              "teruglevering": {
+              "terugleveringInclBtw": {
                 "type": "object",
                 "additionalProperties": {
                   "type": [

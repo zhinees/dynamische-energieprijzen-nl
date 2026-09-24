@@ -1,811 +1,811 @@
 {
   "$schema": "../../schema/vergelijking.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-24T19:24:03.782Z",
+  "gegenereerdOp": "2026-09-24T19:32:56.238Z",
   "valuta": "EUR",
-  "btw": "exclusief",
-  "opmerking": "afname/teruglevering zijn exclusief btw, energiebelasting en netbeheerkosten. Tel die erbij op voor een all-in consumentenprijs.",
+  "btw": "inclusief",
+  "opmerking": "Alle bedragen zijn inclusief 21% btw, maar exclusief energiebelasting en netbeheerkosten. Tel die erbij op voor een all-in consumentenprijs.",
   "vandaag": {
     "datum": "2026-09-24",
     "stroomBron": "energyzero",
-    "gasMarktgemiddelde": 0.715,
+    "gasMarktgemiddeldeInclBtw": 0.86515,
     "leveranciers": [
       {
         "id": "anwb",
         "naam": "ANWB Energie",
         "geverifieerd": true,
-        "vastPerMaand": {
+        "vastPerMaandInclBtw": {
           "stroom": null,
           "gas": null
         },
-        "gasPrijs": 0.778471
+        "gasPrijsInclBtw": 0.94195
       },
       {
         "id": "budget",
         "naam": "Budget Thuis (Budget Energie)",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 4.95,
-          "gas": 4.95
+        "vastPerMaandInclBtw": {
+          "stroom": 5.99,
+          "gas": 5.99
         },
-        "gasPrijs": 0.768
+        "gasPrijsInclBtw": 0.92928
       },
       {
         "id": "frank",
         "naam": "Frank Energie",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.785124,
-          "gas": 5.785124
+        "vastPerMaandInclBtw": {
+          "stroom": 7,
+          "gas": 7
         },
-        "gasPrijs": 0.781
+        "gasPrijsInclBtw": 0.94501
       },
       {
         "id": "liveenergy",
         "naam": "Live Energy",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5,
-          "gas": 5
+        "vastPerMaandInclBtw": {
+          "stroom": 6.05,
+          "gas": 6.05
         },
-        "gasPrijs": 0.785
+        "gasPrijsInclBtw": 0.94985
       },
       {
         "id": "nextenergy",
         "naam": "NextEnergy",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 4.950413,
-          "gas": 4.950413
+        "vastPerMaandInclBtw": {
+          "stroom": 5.99,
+          "gas": 5.99
         },
-        "gasPrijs": 0.780289
+        "gasPrijsInclBtw": 0.94415
       },
       {
         "id": "pure",
         "naam": "Pure Energie",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5,
-          "gas": 5
+        "vastPerMaandInclBtw": {
+          "stroom": 6.05,
+          "gas": 6.05
         },
-        "gasPrijs": 0.796818
+        "gasPrijsInclBtw": 0.96415
       },
       {
         "id": "tibber",
         "naam": "Tibber",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.77686,
-          "gas": 4.950413
+        "vastPerMaandInclBtw": {
+          "stroom": 6.99,
+          "gas": 5.99
         },
-        "gasPrijs": 0.788017
+        "gasPrijsInclBtw": 0.9535
       },
       {
         "id": "vandebron",
         "naam": "Vandebron",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.781296,
-          "gas": 5.781296
+        "vastPerMaandInclBtw": {
+          "stroom": 6.995225,
+          "gas": 6.995225
         },
-        "gasPrijs": 0.76445
+        "gasPrijsInclBtw": 0.92498
       },
       {
         "id": "vattenfall",
         "naam": "Vattenfall (FlexPrijs)",
         "geverifieerd": true,
-        "vastPerMaand": {
+        "vastPerMaandInclBtw": {
           "stroom": null,
           "gas": null
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "zonneplan",
         "naam": "Zonneplan",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.165289,
-          "gas": 5.165289
+        "vastPerMaandInclBtw": {
+          "stroom": 6.25,
+          "gas": 6.25
         },
-        "gasPrijs": 0.781116
+        "gasPrijsInclBtw": 0.94515
       }
     ],
     "uren": [
       {
         "start": "2026-09-24T00:00:00+02:00",
         "startUtc": "2026-09-23T22:00:00Z",
-        "markt": 0.155292,
-        "afname": {
-          "anwb": 0.170168,
-          "budget": 0.169192,
-          "frank": 0.170292,
-          "liveenergy": 0.175292,
-          "nextenergy": 0.172647,
-          "pure": 0.17016,
-          "tibber": 0.170168,
-          "vandebron": 0.173542,
+        "marktInclBtw": 0.187903,
+        "afnameInclBtw": {
+          "anwb": 0.205903,
+          "budget": 0.204723,
+          "frank": 0.206053,
+          "liveenergy": 0.212103,
+          "nextenergy": 0.208903,
+          "pure": 0.205893,
+          "tibber": 0.205903,
+          "vandebron": 0.209983,
           "vattenfall": null,
-          "zonneplan": 0.171821
+          "zonneplan": 0.207903
         },
-        "teruglevering": {
-          "anwb": 0.155292,
-          "budget": 0.155292,
-          "frank": 0.144792,
-          "liveenergy": 0.135292,
-          "nextenergy": 0.155292,
-          "pure": 0.140392,
-          "tibber": 0.140416,
-          "vandebron": 0.144042,
-          "vattenfall": 0.155292,
-          "zonneplan": 0.171821
+        "terugleveringInclBtw": {
+          "anwb": 0.187903,
+          "budget": 0.187903,
+          "frank": 0.175198,
+          "liveenergy": 0.163703,
+          "nextenergy": 0.187903,
+          "pure": null,
+          "tibber": 0.169903,
+          "vandebron": 0.174293,
+          "vattenfall": 0.187903,
+          "zonneplan": 0.207903
         }
       },
       {
         "start": "2026-09-24T01:00:00+02:00",
         "startUtc": "2026-09-23T23:00:00Z",
-        "markt": 0.152602,
-        "afname": {
-          "anwb": 0.167478,
-          "budget": 0.166502,
-          "frank": 0.167602,
-          "liveenergy": 0.172602,
-          "nextenergy": 0.169957,
-          "pure": 0.16747,
-          "tibber": 0.167478,
-          "vandebron": 0.170852,
+        "marktInclBtw": 0.184648,
+        "afnameInclBtw": {
+          "anwb": 0.202648,
+          "budget": 0.201468,
+          "frank": 0.202798,
+          "liveenergy": 0.208848,
+          "nextenergy": 0.205648,
+          "pure": 0.202638,
+          "tibber": 0.202648,
+          "vandebron": 0.206728,
           "vattenfall": null,
-          "zonneplan": 0.169131
+          "zonneplan": 0.204648
         },
-        "teruglevering": {
-          "anwb": 0.152602,
-          "budget": 0.152602,
-          "frank": 0.142102,
-          "liveenergy": 0.132602,
-          "nextenergy": 0.152602,
-          "pure": 0.137702,
-          "tibber": 0.137726,
-          "vandebron": 0.141352,
-          "vattenfall": 0.152602,
-          "zonneplan": 0.169131
+        "terugleveringInclBtw": {
+          "anwb": 0.184648,
+          "budget": 0.184648,
+          "frank": 0.171943,
+          "liveenergy": 0.160448,
+          "nextenergy": 0.184648,
+          "pure": null,
+          "tibber": 0.166648,
+          "vandebron": 0.171038,
+          "vattenfall": 0.184648,
+          "zonneplan": 0.204648
         }
       },
       {
         "start": "2026-09-24T02:00:00+02:00",
         "startUtc": "2026-09-24T00:00:00Z",
-        "markt": 0.13039,
-        "afname": {
-          "anwb": 0.145266,
-          "budget": 0.14429,
-          "frank": 0.14539,
-          "liveenergy": 0.15039,
-          "nextenergy": 0.147745,
-          "pure": 0.145258,
-          "tibber": 0.145266,
-          "vandebron": 0.14864,
+        "marktInclBtw": 0.157772,
+        "afnameInclBtw": {
+          "anwb": 0.175772,
+          "budget": 0.174592,
+          "frank": 0.175922,
+          "liveenergy": 0.181972,
+          "nextenergy": 0.178772,
+          "pure": 0.175762,
+          "tibber": 0.175772,
+          "vandebron": 0.179852,
           "vattenfall": null,
-          "zonneplan": 0.146919
+          "zonneplan": 0.177772
         },
-        "teruglevering": {
-          "anwb": 0.13039,
-          "budget": 0.13039,
-          "frank": 0.11989,
-          "liveenergy": 0.11039,
-          "nextenergy": 0.13039,
-          "pure": 0.11549,
-          "tibber": 0.115514,
-          "vandebron": 0.11914,
-          "vattenfall": 0.13039,
-          "zonneplan": 0.146919
+        "terugleveringInclBtw": {
+          "anwb": 0.157772,
+          "budget": 0.157772,
+          "frank": 0.145067,
+          "liveenergy": 0.133572,
+          "nextenergy": 0.157772,
+          "pure": null,
+          "tibber": 0.139772,
+          "vandebron": 0.144162,
+          "vattenfall": 0.157772,
+          "zonneplan": 0.177772
         }
       },
       {
         "start": "2026-09-24T03:00:00+02:00",
         "startUtc": "2026-09-24T01:00:00Z",
-        "markt": 0.153123,
-        "afname": {
-          "anwb": 0.167999,
-          "budget": 0.167023,
-          "frank": 0.168123,
-          "liveenergy": 0.173123,
-          "nextenergy": 0.170478,
-          "pure": 0.167991,
-          "tibber": 0.167999,
-          "vandebron": 0.171373,
+        "marktInclBtw": 0.185279,
+        "afnameInclBtw": {
+          "anwb": 0.203279,
+          "budget": 0.202099,
+          "frank": 0.203429,
+          "liveenergy": 0.209479,
+          "nextenergy": 0.206279,
+          "pure": 0.203269,
+          "tibber": 0.203279,
+          "vandebron": 0.207359,
           "vattenfall": null,
-          "zonneplan": 0.169652
+          "zonneplan": 0.205279
         },
-        "teruglevering": {
-          "anwb": 0.153123,
-          "budget": 0.153123,
-          "frank": 0.142623,
-          "liveenergy": 0.133123,
-          "nextenergy": 0.153123,
-          "pure": 0.138223,
-          "tibber": 0.138247,
-          "vandebron": 0.141873,
-          "vattenfall": 0.153123,
-          "zonneplan": 0.169652
+        "terugleveringInclBtw": {
+          "anwb": 0.185279,
+          "budget": 0.185279,
+          "frank": 0.172574,
+          "liveenergy": 0.161079,
+          "nextenergy": 0.185279,
+          "pure": null,
+          "tibber": 0.167279,
+          "vandebron": 0.171669,
+          "vattenfall": 0.185279,
+          "zonneplan": 0.205279
         }
       },
       {
         "start": "2026-09-24T04:00:00+02:00",
         "startUtc": "2026-09-24T02:00:00Z",
-        "markt": 0.153952,
-        "afname": {
-          "anwb": 0.168828,
-          "budget": 0.167852,
-          "frank": 0.168952,
-          "liveenergy": 0.173952,
-          "nextenergy": 0.171307,
-          "pure": 0.16882,
-          "tibber": 0.168828,
-          "vandebron": 0.172202,
+        "marktInclBtw": 0.186282,
+        "afnameInclBtw": {
+          "anwb": 0.204282,
+          "budget": 0.203102,
+          "frank": 0.204432,
+          "liveenergy": 0.210482,
+          "nextenergy": 0.207282,
+          "pure": 0.204272,
+          "tibber": 0.204282,
+          "vandebron": 0.208362,
           "vattenfall": null,
-          "zonneplan": 0.170481
+          "zonneplan": 0.206282
         },
-        "teruglevering": {
-          "anwb": 0.153952,
-          "budget": 0.153952,
-          "frank": 0.143452,
-          "liveenergy": 0.133952,
-          "nextenergy": 0.153952,
-          "pure": 0.139052,
-          "tibber": 0.139076,
-          "vandebron": 0.142702,
-          "vattenfall": 0.153952,
-          "zonneplan": 0.170481
+        "terugleveringInclBtw": {
+          "anwb": 0.186282,
+          "budget": 0.186282,
+          "frank": 0.173577,
+          "liveenergy": 0.162082,
+          "nextenergy": 0.186282,
+          "pure": null,
+          "tibber": 0.168282,
+          "vandebron": 0.172672,
+          "vattenfall": 0.186282,
+          "zonneplan": 0.206282
         }
       },
       {
         "start": "2026-09-24T05:00:00+02:00",
         "startUtc": "2026-09-24T03:00:00Z",
-        "markt": 0.158365,
-        "afname": {
-          "anwb": 0.173241,
-          "budget": 0.172265,
-          "frank": 0.173365,
-          "liveenergy": 0.178365,
-          "nextenergy": 0.17572,
-          "pure": 0.173233,
-          "tibber": 0.173241,
-          "vandebron": 0.176615,
+        "marktInclBtw": 0.191622,
+        "afnameInclBtw": {
+          "anwb": 0.209622,
+          "budget": 0.208442,
+          "frank": 0.209772,
+          "liveenergy": 0.215822,
+          "nextenergy": 0.212622,
+          "pure": 0.209612,
+          "tibber": 0.209622,
+          "vandebron": 0.213702,
           "vattenfall": null,
-          "zonneplan": 0.174894
+          "zonneplan": 0.211622
         },
-        "teruglevering": {
-          "anwb": 0.158365,
-          "budget": 0.158365,
-          "frank": 0.147865,
-          "liveenergy": 0.138365,
-          "nextenergy": 0.158365,
-          "pure": 0.143465,
-          "tibber": 0.143489,
-          "vandebron": 0.147115,
-          "vattenfall": 0.158365,
-          "zonneplan": 0.174894
+        "terugleveringInclBtw": {
+          "anwb": 0.191622,
+          "budget": 0.191622,
+          "frank": 0.178917,
+          "liveenergy": 0.167422,
+          "nextenergy": 0.191622,
+          "pure": null,
+          "tibber": 0.173622,
+          "vandebron": 0.178012,
+          "vattenfall": 0.191622,
+          "zonneplan": 0.211622
         }
       },
       {
         "start": "2026-09-24T06:00:00+02:00",
         "startUtc": "2026-09-24T04:00:00Z",
-        "markt": 0.17356,
-        "afname": {
-          "anwb": 0.188436,
-          "budget": 0.18746,
-          "frank": 0.18856,
-          "liveenergy": 0.19356,
-          "nextenergy": 0.190915,
-          "pure": 0.188428,
-          "tibber": 0.188436,
-          "vandebron": 0.19181,
+        "marktInclBtw": 0.210008,
+        "afnameInclBtw": {
+          "anwb": 0.228008,
+          "budget": 0.226828,
+          "frank": 0.228158,
+          "liveenergy": 0.234208,
+          "nextenergy": 0.231008,
+          "pure": 0.227998,
+          "tibber": 0.228008,
+          "vandebron": 0.232088,
           "vattenfall": null,
-          "zonneplan": 0.190089
+          "zonneplan": 0.230008
         },
-        "teruglevering": {
-          "anwb": 0.17356,
-          "budget": 0.17356,
-          "frank": 0.16306,
-          "liveenergy": 0.15356,
-          "nextenergy": 0.17356,
-          "pure": 0.15866,
-          "tibber": 0.158684,
-          "vandebron": 0.16231,
-          "vattenfall": 0.17356,
-          "zonneplan": 0.190089
+        "terugleveringInclBtw": {
+          "anwb": 0.210008,
+          "budget": 0.210008,
+          "frank": 0.197303,
+          "liveenergy": 0.185808,
+          "nextenergy": 0.210008,
+          "pure": null,
+          "tibber": 0.192008,
+          "vandebron": 0.196398,
+          "vattenfall": 0.210008,
+          "zonneplan": 0.230008
         }
       },
       {
         "start": "2026-09-24T07:00:00+02:00",
         "startUtc": "2026-09-24T05:00:00Z",
-        "markt": 0.218002,
-        "afname": {
-          "anwb": 0.232878,
-          "budget": 0.231902,
-          "frank": 0.233002,
-          "liveenergy": 0.238002,
-          "nextenergy": 0.235357,
-          "pure": 0.23287,
-          "tibber": 0.232878,
-          "vandebron": 0.236252,
+        "marktInclBtw": 0.263782,
+        "afnameInclBtw": {
+          "anwb": 0.281782,
+          "budget": 0.280602,
+          "frank": 0.281932,
+          "liveenergy": 0.287982,
+          "nextenergy": 0.284782,
+          "pure": 0.281772,
+          "tibber": 0.281782,
+          "vandebron": 0.285862,
           "vattenfall": null,
-          "zonneplan": 0.234531
+          "zonneplan": 0.283782
         },
-        "teruglevering": {
-          "anwb": 0.218002,
-          "budget": 0.218002,
-          "frank": 0.207502,
-          "liveenergy": 0.198002,
-          "nextenergy": 0.218002,
-          "pure": 0.203102,
-          "tibber": 0.203126,
-          "vandebron": 0.206752,
-          "vattenfall": 0.218002,
-          "zonneplan": 0.234531
+        "terugleveringInclBtw": {
+          "anwb": 0.263782,
+          "budget": 0.263782,
+          "frank": 0.251077,
+          "liveenergy": 0.239582,
+          "nextenergy": 0.263782,
+          "pure": null,
+          "tibber": 0.245782,
+          "vandebron": 0.250172,
+          "vattenfall": 0.263782,
+          "zonneplan": 0.283782
         }
       },
       {
         "start": "2026-09-24T08:00:00+02:00",
         "startUtc": "2026-09-24T06:00:00Z",
-        "markt": 0.206477,
-        "afname": {
-          "anwb": 0.221353,
-          "budget": 0.220377,
-          "frank": 0.221477,
-          "liveenergy": 0.226477,
-          "nextenergy": 0.223832,
-          "pure": 0.221345,
-          "tibber": 0.221353,
-          "vandebron": 0.224727,
+        "marktInclBtw": 0.249837,
+        "afnameInclBtw": {
+          "anwb": 0.267837,
+          "budget": 0.266657,
+          "frank": 0.267987,
+          "liveenergy": 0.274037,
+          "nextenergy": 0.270837,
+          "pure": 0.267827,
+          "tibber": 0.267837,
+          "vandebron": 0.271917,
           "vattenfall": null,
-          "zonneplan": 0.223006
+          "zonneplan": 0.269837
         },
-        "teruglevering": {
-          "anwb": 0.206477,
-          "budget": 0.206477,
-          "frank": 0.195977,
-          "liveenergy": 0.186477,
-          "nextenergy": 0.206477,
-          "pure": 0.191577,
-          "tibber": 0.191601,
-          "vandebron": 0.195227,
-          "vattenfall": 0.206477,
-          "zonneplan": 0.223006
+        "terugleveringInclBtw": {
+          "anwb": 0.249837,
+          "budget": 0.249837,
+          "frank": 0.237132,
+          "liveenergy": 0.225637,
+          "nextenergy": 0.249837,
+          "pure": null,
+          "tibber": 0.231837,
+          "vandebron": 0.236227,
+          "vattenfall": 0.249837,
+          "zonneplan": 0.269837
         }
       },
       {
         "start": "2026-09-24T09:00:00+02:00",
         "startUtc": "2026-09-24T07:00:00Z",
-        "markt": 0.161105,
-        "afname": {
-          "anwb": 0.175981,
-          "budget": 0.175005,
-          "frank": 0.176105,
-          "liveenergy": 0.181105,
-          "nextenergy": 0.17846,
-          "pure": 0.175973,
-          "tibber": 0.175981,
-          "vandebron": 0.179355,
+        "marktInclBtw": 0.194937,
+        "afnameInclBtw": {
+          "anwb": 0.212937,
+          "budget": 0.211757,
+          "frank": 0.213087,
+          "liveenergy": 0.219137,
+          "nextenergy": 0.215937,
+          "pure": 0.212927,
+          "tibber": 0.212937,
+          "vandebron": 0.217017,
           "vattenfall": null,
-          "zonneplan": 0.177634
+          "zonneplan": 0.214937
         },
-        "teruglevering": {
-          "anwb": 0.161105,
-          "budget": 0.161105,
-          "frank": 0.150605,
-          "liveenergy": 0.141105,
-          "nextenergy": 0.161105,
-          "pure": 0.146205,
-          "tibber": 0.146229,
-          "vandebron": 0.149855,
-          "vattenfall": 0.161105,
-          "zonneplan": 0.177634
+        "terugleveringInclBtw": {
+          "anwb": 0.194937,
+          "budget": 0.194937,
+          "frank": 0.182232,
+          "liveenergy": 0.170737,
+          "nextenergy": 0.194937,
+          "pure": null,
+          "tibber": 0.176937,
+          "vandebron": 0.181327,
+          "vattenfall": 0.194937,
+          "zonneplan": 0.214937
         }
       },
       {
         "start": "2026-09-24T10:00:00+02:00",
         "startUtc": "2026-09-24T08:00:00Z",
-        "markt": 0.115062,
-        "afname": {
-          "anwb": 0.129938,
-          "budget": 0.128962,
-          "frank": 0.130062,
-          "liveenergy": 0.135062,
-          "nextenergy": 0.132417,
-          "pure": 0.12993,
-          "tibber": 0.129938,
-          "vandebron": 0.133312,
+        "marktInclBtw": 0.139225,
+        "afnameInclBtw": {
+          "anwb": 0.157225,
+          "budget": 0.156045,
+          "frank": 0.157375,
+          "liveenergy": 0.163425,
+          "nextenergy": 0.160225,
+          "pure": 0.157215,
+          "tibber": 0.157225,
+          "vandebron": 0.161305,
           "vattenfall": null,
-          "zonneplan": 0.131591
+          "zonneplan": 0.159225
         },
-        "teruglevering": {
-          "anwb": 0.115062,
-          "budget": 0.115062,
-          "frank": 0.104562,
-          "liveenergy": 0.095062,
-          "nextenergy": 0.115062,
-          "pure": 0.100162,
-          "tibber": 0.100186,
-          "vandebron": 0.103812,
-          "vattenfall": 0.115062,
-          "zonneplan": 0.131591
+        "terugleveringInclBtw": {
+          "anwb": 0.139225,
+          "budget": 0.139225,
+          "frank": 0.12652,
+          "liveenergy": 0.115025,
+          "nextenergy": 0.139225,
+          "pure": null,
+          "tibber": 0.121225,
+          "vandebron": 0.125615,
+          "vattenfall": 0.139225,
+          "zonneplan": 0.159225
         }
       },
       {
         "start": "2026-09-24T11:00:00+02:00",
         "startUtc": "2026-09-24T09:00:00Z",
-        "markt": 0.085245,
-        "afname": {
-          "anwb": 0.100121,
-          "budget": 0.099145,
-          "frank": 0.100245,
-          "liveenergy": 0.105245,
-          "nextenergy": 0.1026,
-          "pure": 0.100113,
-          "tibber": 0.100121,
-          "vandebron": 0.103495,
+        "marktInclBtw": 0.103146,
+        "afnameInclBtw": {
+          "anwb": 0.121146,
+          "budget": 0.119966,
+          "frank": 0.121296,
+          "liveenergy": 0.127346,
+          "nextenergy": 0.124146,
+          "pure": 0.121136,
+          "tibber": 0.121146,
+          "vandebron": 0.125226,
           "vattenfall": null,
-          "zonneplan": 0.101774
+          "zonneplan": 0.123146
         },
-        "teruglevering": {
-          "anwb": 0.085245,
-          "budget": 0.085245,
-          "frank": 0.074745,
-          "liveenergy": 0.065245,
-          "nextenergy": 0.085245,
-          "pure": 0.070345,
-          "tibber": 0.070369,
-          "vandebron": 0.073995,
-          "vattenfall": 0.085245,
-          "zonneplan": 0.101774
+        "terugleveringInclBtw": {
+          "anwb": 0.103146,
+          "budget": 0.103146,
+          "frank": 0.090441,
+          "liveenergy": 0.078946,
+          "nextenergy": 0.103146,
+          "pure": null,
+          "tibber": 0.085146,
+          "vandebron": 0.089536,
+          "vattenfall": 0.103146,
+          "zonneplan": 0.123146
         }
       },
       {
         "start": "2026-09-24T12:00:00+02:00",
         "startUtc": "2026-09-24T10:00:00Z",
-        "markt": 0.052763,
-        "afname": {
-          "anwb": 0.067639,
-          "budget": 0.066663,
-          "frank": 0.067763,
-          "liveenergy": 0.072763,
-          "nextenergy": 0.070118,
-          "pure": 0.067631,
-          "tibber": 0.067639,
-          "vandebron": 0.071013,
+        "marktInclBtw": 0.063843,
+        "afnameInclBtw": {
+          "anwb": 0.081843,
+          "budget": 0.080663,
+          "frank": 0.081993,
+          "liveenergy": 0.088043,
+          "nextenergy": 0.084843,
+          "pure": 0.081833,
+          "tibber": 0.081843,
+          "vandebron": 0.085923,
           "vattenfall": null,
-          "zonneplan": 0.069292
+          "zonneplan": 0.083843
         },
-        "teruglevering": {
-          "anwb": 0.052763,
-          "budget": 0.052763,
-          "frank": 0.042263,
-          "liveenergy": 0.032763,
-          "nextenergy": 0.052763,
-          "pure": 0.037863,
-          "tibber": 0.037887,
-          "vandebron": 0.041513,
-          "vattenfall": 0.052763,
-          "zonneplan": 0.069292
+        "terugleveringInclBtw": {
+          "anwb": 0.063843,
+          "budget": 0.063843,
+          "frank": 0.051138,
+          "liveenergy": 0.039643,
+          "nextenergy": 0.063843,
+          "pure": null,
+          "tibber": 0.045843,
+          "vandebron": 0.050233,
+          "vattenfall": 0.063843,
+          "zonneplan": 0.083843
         }
       },
       {
         "start": "2026-09-24T13:00:00+02:00",
         "startUtc": "2026-09-24T11:00:00Z",
-        "markt": 0.03941,
-        "afname": {
-          "anwb": 0.054286,
-          "budget": 0.05331,
-          "frank": 0.05441,
-          "liveenergy": 0.05941,
-          "nextenergy": 0.056765,
-          "pure": 0.054278,
-          "tibber": 0.054286,
-          "vandebron": 0.05766,
+        "marktInclBtw": 0.047686,
+        "afnameInclBtw": {
+          "anwb": 0.065686,
+          "budget": 0.064506,
+          "frank": 0.065836,
+          "liveenergy": 0.071886,
+          "nextenergy": 0.068686,
+          "pure": 0.065676,
+          "tibber": 0.065686,
+          "vandebron": 0.069766,
           "vattenfall": null,
-          "zonneplan": 0.055939
+          "zonneplan": 0.067686
         },
-        "teruglevering": {
-          "anwb": 0.03941,
-          "budget": 0.03941,
-          "frank": 0.02891,
-          "liveenergy": 0.01941,
-          "nextenergy": 0.03941,
-          "pure": 0.02451,
-          "tibber": 0.024534,
-          "vandebron": 0.02816,
-          "vattenfall": 0.03941,
-          "zonneplan": 0.055939
+        "terugleveringInclBtw": {
+          "anwb": 0.047686,
+          "budget": 0.047686,
+          "frank": 0.034981,
+          "liveenergy": 0.023486,
+          "nextenergy": 0.047686,
+          "pure": null,
+          "tibber": 0.029686,
+          "vandebron": 0.034076,
+          "vattenfall": 0.047686,
+          "zonneplan": 0.067686
         }
       },
       {
         "start": "2026-09-24T14:00:00+02:00",
         "startUtc": "2026-09-24T12:00:00Z",
-        "markt": 0.03903,
-        "afname": {
-          "anwb": 0.053906,
-          "budget": 0.05293,
-          "frank": 0.05403,
-          "liveenergy": 0.05903,
-          "nextenergy": 0.056385,
-          "pure": 0.053898,
-          "tibber": 0.053906,
-          "vandebron": 0.05728,
+        "marktInclBtw": 0.047226,
+        "afnameInclBtw": {
+          "anwb": 0.065226,
+          "budget": 0.064046,
+          "frank": 0.065376,
+          "liveenergy": 0.071426,
+          "nextenergy": 0.068226,
+          "pure": 0.065216,
+          "tibber": 0.065226,
+          "vandebron": 0.069306,
           "vattenfall": null,
-          "zonneplan": 0.055559
+          "zonneplan": 0.067226
         },
-        "teruglevering": {
-          "anwb": 0.03903,
-          "budget": 0.03903,
-          "frank": 0.02853,
-          "liveenergy": 0.01903,
-          "nextenergy": 0.03903,
-          "pure": 0.02413,
-          "tibber": 0.024154,
-          "vandebron": 0.02778,
-          "vattenfall": 0.03903,
-          "zonneplan": 0.055559
+        "terugleveringInclBtw": {
+          "anwb": 0.047226,
+          "budget": 0.047226,
+          "frank": 0.034521,
+          "liveenergy": 0.023026,
+          "nextenergy": 0.047226,
+          "pure": null,
+          "tibber": 0.029226,
+          "vandebron": 0.033616,
+          "vattenfall": 0.047226,
+          "zonneplan": 0.067226
         }
       },
       {
         "start": "2026-09-24T15:00:00+02:00",
         "startUtc": "2026-09-24T13:00:00Z",
-        "markt": 0.079988,
-        "afname": {
-          "anwb": 0.094864,
-          "budget": 0.093888,
-          "frank": 0.094988,
-          "liveenergy": 0.099988,
-          "nextenergy": 0.097343,
-          "pure": 0.094856,
-          "tibber": 0.094864,
-          "vandebron": 0.098238,
+        "marktInclBtw": 0.096785,
+        "afnameInclBtw": {
+          "anwb": 0.114785,
+          "budget": 0.113605,
+          "frank": 0.114935,
+          "liveenergy": 0.120985,
+          "nextenergy": 0.117785,
+          "pure": 0.114775,
+          "tibber": 0.114785,
+          "vandebron": 0.118865,
           "vattenfall": null,
-          "zonneplan": 0.096517
+          "zonneplan": 0.116785
         },
-        "teruglevering": {
-          "anwb": 0.079988,
-          "budget": 0.079988,
-          "frank": 0.069488,
-          "liveenergy": 0.059988,
-          "nextenergy": 0.079988,
-          "pure": 0.065088,
-          "tibber": 0.065112,
-          "vandebron": 0.068738,
-          "vattenfall": 0.079988,
-          "zonneplan": 0.096517
+        "terugleveringInclBtw": {
+          "anwb": 0.096785,
+          "budget": 0.096785,
+          "frank": 0.08408,
+          "liveenergy": 0.072585,
+          "nextenergy": 0.096785,
+          "pure": null,
+          "tibber": 0.078785,
+          "vandebron": 0.083175,
+          "vattenfall": 0.096785,
+          "zonneplan": 0.116785
         }
       },
       {
         "start": "2026-09-24T16:00:00+02:00",
         "startUtc": "2026-09-24T14:00:00Z",
-        "markt": 0.12056,
-        "afname": {
-          "anwb": 0.135436,
-          "budget": 0.13446,
-          "frank": 0.13556,
-          "liveenergy": 0.14056,
-          "nextenergy": 0.137915,
-          "pure": 0.135428,
-          "tibber": 0.135436,
-          "vandebron": 0.13881,
+        "marktInclBtw": 0.145878,
+        "afnameInclBtw": {
+          "anwb": 0.163878,
+          "budget": 0.162698,
+          "frank": 0.164028,
+          "liveenergy": 0.170078,
+          "nextenergy": 0.166878,
+          "pure": 0.163868,
+          "tibber": 0.163878,
+          "vandebron": 0.167958,
           "vattenfall": null,
-          "zonneplan": 0.137089
+          "zonneplan": 0.165878
         },
-        "teruglevering": {
-          "anwb": 0.12056,
-          "budget": 0.12056,
-          "frank": 0.11006,
-          "liveenergy": 0.10056,
-          "nextenergy": 0.12056,
-          "pure": 0.10566,
-          "tibber": 0.105684,
-          "vandebron": 0.10931,
-          "vattenfall": 0.12056,
-          "zonneplan": 0.137089
+        "terugleveringInclBtw": {
+          "anwb": 0.145878,
+          "budget": 0.145878,
+          "frank": 0.133173,
+          "liveenergy": 0.121678,
+          "nextenergy": 0.145878,
+          "pure": null,
+          "tibber": 0.127878,
+          "vandebron": 0.132268,
+          "vattenfall": 0.145878,
+          "zonneplan": 0.165878
         }
       },
       {
         "start": "2026-09-24T17:00:00+02:00",
         "startUtc": "2026-09-24T15:00:00Z",
-        "markt": 0.17137,
-        "afname": {
-          "anwb": 0.186246,
-          "budget": 0.18527,
-          "frank": 0.18637,
-          "liveenergy": 0.19137,
-          "nextenergy": 0.188725,
-          "pure": 0.186238,
-          "tibber": 0.186246,
-          "vandebron": 0.18962,
+        "marktInclBtw": 0.207358,
+        "afnameInclBtw": {
+          "anwb": 0.225358,
+          "budget": 0.224178,
+          "frank": 0.225508,
+          "liveenergy": 0.231558,
+          "nextenergy": 0.228358,
+          "pure": 0.225348,
+          "tibber": 0.225358,
+          "vandebron": 0.229438,
           "vattenfall": null,
-          "zonneplan": 0.187899
+          "zonneplan": 0.227358
         },
-        "teruglevering": {
-          "anwb": 0.17137,
-          "budget": 0.17137,
-          "frank": 0.16087,
-          "liveenergy": 0.15137,
-          "nextenergy": 0.17137,
-          "pure": 0.15647,
-          "tibber": 0.156494,
-          "vandebron": 0.16012,
-          "vattenfall": 0.17137,
-          "zonneplan": 0.187899
+        "terugleveringInclBtw": {
+          "anwb": 0.207358,
+          "budget": 0.207358,
+          "frank": 0.194653,
+          "liveenergy": 0.183158,
+          "nextenergy": 0.207358,
+          "pure": null,
+          "tibber": 0.189358,
+          "vandebron": 0.193748,
+          "vattenfall": 0.207358,
+          "zonneplan": 0.227358
         }
       },
       {
         "start": "2026-09-24T18:00:00+02:00",
         "startUtc": "2026-09-24T16:00:00Z",
-        "markt": 0.22118,
-        "afname": {
-          "anwb": 0.236056,
-          "budget": 0.23508,
-          "frank": 0.23618,
-          "liveenergy": 0.24118,
-          "nextenergy": 0.238535,
-          "pure": 0.236048,
-          "tibber": 0.236056,
-          "vandebron": 0.23943,
+        "marktInclBtw": 0.267628,
+        "afnameInclBtw": {
+          "anwb": 0.285628,
+          "budget": 0.284448,
+          "frank": 0.285778,
+          "liveenergy": 0.291828,
+          "nextenergy": 0.288628,
+          "pure": 0.285618,
+          "tibber": 0.285628,
+          "vandebron": 0.289708,
           "vattenfall": null,
-          "zonneplan": 0.237709
+          "zonneplan": 0.287628
         },
-        "teruglevering": {
-          "anwb": 0.22118,
-          "budget": 0.22118,
-          "frank": 0.21068,
-          "liveenergy": 0.20118,
-          "nextenergy": 0.22118,
-          "pure": 0.20628,
-          "tibber": 0.206304,
-          "vandebron": 0.20993,
-          "vattenfall": 0.22118,
-          "zonneplan": 0.237709
+        "terugleveringInclBtw": {
+          "anwb": 0.267628,
+          "budget": 0.267628,
+          "frank": 0.254923,
+          "liveenergy": 0.243428,
+          "nextenergy": 0.267628,
+          "pure": null,
+          "tibber": 0.249628,
+          "vandebron": 0.254018,
+          "vattenfall": 0.267628,
+          "zonneplan": 0.287628
         }
       },
       {
         "start": "2026-09-24T19:00:00+02:00",
         "startUtc": "2026-09-24T17:00:00Z",
-        "markt": 0.2677,
-        "afname": {
-          "anwb": 0.282576,
-          "budget": 0.2816,
-          "frank": 0.2827,
-          "liveenergy": 0.2877,
-          "nextenergy": 0.285055,
-          "pure": 0.282568,
-          "tibber": 0.282576,
-          "vandebron": 0.28595,
+        "marktInclBtw": 0.323917,
+        "afnameInclBtw": {
+          "anwb": 0.341917,
+          "budget": 0.340737,
+          "frank": 0.342067,
+          "liveenergy": 0.348117,
+          "nextenergy": 0.344917,
+          "pure": 0.341907,
+          "tibber": 0.341917,
+          "vandebron": 0.345997,
           "vattenfall": null,
-          "zonneplan": 0.284229
+          "zonneplan": 0.343917
         },
-        "teruglevering": {
-          "anwb": 0.2677,
-          "budget": 0.2677,
-          "frank": 0.2572,
-          "liveenergy": 0.2477,
-          "nextenergy": 0.2677,
-          "pure": 0.2528,
-          "tibber": 0.252824,
-          "vandebron": 0.25645,
-          "vattenfall": 0.2677,
-          "zonneplan": 0.284229
+        "terugleveringInclBtw": {
+          "anwb": 0.323917,
+          "budget": 0.323917,
+          "frank": 0.311212,
+          "liveenergy": 0.299717,
+          "nextenergy": 0.323917,
+          "pure": null,
+          "tibber": 0.305917,
+          "vandebron": 0.310307,
+          "vattenfall": 0.323917,
+          "zonneplan": 0.343917
         }
       },
       {
         "start": "2026-09-24T20:00:00+02:00",
         "startUtc": "2026-09-24T18:00:00Z",
-        "markt": 0.26,
-        "afname": {
-          "anwb": 0.274876,
-          "budget": 0.2739,
-          "frank": 0.275,
-          "liveenergy": 0.28,
-          "nextenergy": 0.277355,
-          "pure": 0.274868,
-          "tibber": 0.274876,
-          "vandebron": 0.27825,
+        "marktInclBtw": 0.3146,
+        "afnameInclBtw": {
+          "anwb": 0.3326,
+          "budget": 0.33142,
+          "frank": 0.33275,
+          "liveenergy": 0.3388,
+          "nextenergy": 0.3356,
+          "pure": 0.33259,
+          "tibber": 0.3326,
+          "vandebron": 0.33668,
           "vattenfall": null,
-          "zonneplan": 0.276529
+          "zonneplan": 0.3346
         },
-        "teruglevering": {
-          "anwb": 0.26,
-          "budget": 0.26,
-          "frank": 0.2495,
-          "liveenergy": 0.24,
-          "nextenergy": 0.26,
-          "pure": 0.2451,
-          "tibber": 0.245124,
-          "vandebron": 0.24875,
-          "vattenfall": 0.26,
-          "zonneplan": 0.276529
+        "terugleveringInclBtw": {
+          "anwb": 0.3146,
+          "budget": 0.3146,
+          "frank": 0.301895,
+          "liveenergy": 0.2904,
+          "nextenergy": 0.3146,
+          "pure": null,
+          "tibber": 0.2966,
+          "vandebron": 0.30099,
+          "vattenfall": 0.3146,
+          "zonneplan": 0.3346
         }
       },
       {
         "start": "2026-09-24T21:00:00+02:00",
         "startUtc": "2026-09-24T19:00:00Z",
-        "markt": 0.225855,
-        "afname": {
-          "anwb": 0.240731,
-          "budget": 0.239755,
-          "frank": 0.240855,
-          "liveenergy": 0.245855,
-          "nextenergy": 0.24321,
-          "pure": 0.240723,
-          "tibber": 0.240731,
-          "vandebron": 0.244105,
+        "marktInclBtw": 0.273285,
+        "afnameInclBtw": {
+          "anwb": 0.291285,
+          "budget": 0.290105,
+          "frank": 0.291435,
+          "liveenergy": 0.297485,
+          "nextenergy": 0.294285,
+          "pure": 0.291275,
+          "tibber": 0.291285,
+          "vandebron": 0.295365,
           "vattenfall": null,
-          "zonneplan": 0.242384
+          "zonneplan": 0.293285
         },
-        "teruglevering": {
-          "anwb": 0.225855,
-          "budget": 0.225855,
-          "frank": 0.215355,
-          "liveenergy": 0.205855,
-          "nextenergy": 0.225855,
-          "pure": 0.210955,
-          "tibber": 0.210979,
-          "vandebron": 0.214605,
-          "vattenfall": 0.225855,
-          "zonneplan": 0.242384
+        "terugleveringInclBtw": {
+          "anwb": 0.273285,
+          "budget": 0.273285,
+          "frank": 0.26058,
+          "liveenergy": 0.249085,
+          "nextenergy": 0.273285,
+          "pure": null,
+          "tibber": 0.255285,
+          "vandebron": 0.259675,
+          "vattenfall": 0.273285,
+          "zonneplan": 0.293285
         }
       },
       {
         "start": "2026-09-24T22:00:00+02:00",
         "startUtc": "2026-09-24T20:00:00Z",
-        "markt": 0.204997,
-        "afname": {
-          "anwb": 0.219873,
-          "budget": 0.218897,
-          "frank": 0.219997,
-          "liveenergy": 0.224997,
-          "nextenergy": 0.222352,
-          "pure": 0.219865,
-          "tibber": 0.219873,
-          "vandebron": 0.223247,
+        "marktInclBtw": 0.248046,
+        "afnameInclBtw": {
+          "anwb": 0.266046,
+          "budget": 0.264866,
+          "frank": 0.266196,
+          "liveenergy": 0.272246,
+          "nextenergy": 0.269046,
+          "pure": 0.266036,
+          "tibber": 0.266046,
+          "vandebron": 0.270126,
           "vattenfall": null,
-          "zonneplan": 0.221526
+          "zonneplan": 0.268046
         },
-        "teruglevering": {
-          "anwb": 0.204997,
-          "budget": 0.204997,
-          "frank": 0.194497,
-          "liveenergy": 0.184997,
-          "nextenergy": 0.204997,
-          "pure": 0.190097,
-          "tibber": 0.190121,
-          "vandebron": 0.193747,
-          "vattenfall": 0.204997,
-          "zonneplan": 0.221526
+        "terugleveringInclBtw": {
+          "anwb": 0.248046,
+          "budget": 0.248046,
+          "frank": 0.235341,
+          "liveenergy": 0.223846,
+          "nextenergy": 0.248046,
+          "pure": null,
+          "tibber": 0.230046,
+          "vandebron": 0.234436,
+          "vattenfall": 0.248046,
+          "zonneplan": 0.268046
         }
       },
       {
         "start": "2026-09-24T23:00:00+02:00",
         "startUtc": "2026-09-24T21:00:00Z",
-        "markt": 0.188222,
-        "afname": {
-          "anwb": 0.203098,
-          "budget": 0.202122,
-          "frank": 0.203222,
-          "liveenergy": 0.208222,
-          "nextenergy": 0.205577,
-          "pure": 0.20309,
-          "tibber": 0.203098,
-          "vandebron": 0.206472,
+        "marktInclBtw": 0.227749,
+        "afnameInclBtw": {
+          "anwb": 0.245749,
+          "budget": 0.244569,
+          "frank": 0.245899,
+          "liveenergy": 0.251949,
+          "nextenergy": 0.248749,
+          "pure": 0.245739,
+          "tibber": 0.245749,
+          "vandebron": 0.249829,
           "vattenfall": null,
-          "zonneplan": 0.204751
+          "zonneplan": 0.247749
         },
-        "teruglevering": {
-          "anwb": 0.188222,
-          "budget": 0.188222,
-          "frank": 0.177722,
-          "liveenergy": 0.168222,
-          "nextenergy": 0.188222,
-          "pure": 0.173322,
-          "tibber": 0.173346,
-          "vandebron": 0.176972,
-          "vattenfall": 0.188222,
-          "zonneplan": 0.204751
+        "terugleveringInclBtw": {
+          "anwb": 0.227749,
+          "budget": 0.227749,
+          "frank": 0.215044,
+          "liveenergy": 0.203549,
+          "nextenergy": 0.227749,
+          "pure": null,
+          "tibber": 0.209749,
+          "vandebron": 0.214139,
+          "vattenfall": 0.227749,
+          "zonneplan": 0.247749
         }
       }
     ]
@@ -813,804 +813,804 @@
   "morgen": {
     "datum": "2026-09-25",
     "stroomBron": "energyzero",
-    "gasMarktgemiddelde": null,
+    "gasMarktgemiddeldeInclBtw": null,
     "leveranciers": [
       {
         "id": "anwb",
         "naam": "ANWB Energie",
         "geverifieerd": true,
-        "vastPerMaand": {
+        "vastPerMaandInclBtw": {
           "stroom": null,
           "gas": null
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "budget",
         "naam": "Budget Thuis (Budget Energie)",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 4.95,
-          "gas": 4.95
+        "vastPerMaandInclBtw": {
+          "stroom": 5.99,
+          "gas": 5.99
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "frank",
         "naam": "Frank Energie",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.785124,
-          "gas": 5.785124
+        "vastPerMaandInclBtw": {
+          "stroom": 7,
+          "gas": 7
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "liveenergy",
         "naam": "Live Energy",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5,
-          "gas": 5
+        "vastPerMaandInclBtw": {
+          "stroom": 6.05,
+          "gas": 6.05
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "nextenergy",
         "naam": "NextEnergy",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 4.950413,
-          "gas": 4.950413
+        "vastPerMaandInclBtw": {
+          "stroom": 5.99,
+          "gas": 5.99
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "pure",
         "naam": "Pure Energie",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5,
-          "gas": 5
+        "vastPerMaandInclBtw": {
+          "stroom": 6.05,
+          "gas": 6.05
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "tibber",
         "naam": "Tibber",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.77686,
-          "gas": 4.950413
+        "vastPerMaandInclBtw": {
+          "stroom": 6.99,
+          "gas": 5.99
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "vandebron",
         "naam": "Vandebron",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.781296,
-          "gas": 5.781296
+        "vastPerMaandInclBtw": {
+          "stroom": 6.995225,
+          "gas": 6.995225
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "vattenfall",
         "naam": "Vattenfall (FlexPrijs)",
         "geverifieerd": true,
-        "vastPerMaand": {
+        "vastPerMaandInclBtw": {
           "stroom": null,
           "gas": null
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       },
       {
         "id": "zonneplan",
         "naam": "Zonneplan",
         "geverifieerd": true,
-        "vastPerMaand": {
-          "stroom": 5.165289,
-          "gas": 5.165289
+        "vastPerMaandInclBtw": {
+          "stroom": 6.25,
+          "gas": 6.25
         },
-        "gasPrijs": null
+        "gasPrijsInclBtw": null
       }
     ],
     "uren": [
       {
         "start": "2026-09-25T00:00:00+02:00",
         "startUtc": "2026-09-24T22:00:00Z",
-        "markt": 0.181983,
-        "afname": {
-          "anwb": 0.196859,
-          "budget": 0.195883,
-          "frank": 0.196983,
-          "liveenergy": 0.201983,
-          "nextenergy": 0.199338,
-          "pure": 0.196851,
-          "tibber": 0.196859,
-          "vandebron": 0.200233,
+        "marktInclBtw": 0.220199,
+        "afnameInclBtw": {
+          "anwb": 0.238199,
+          "budget": 0.237019,
+          "frank": 0.238349,
+          "liveenergy": 0.244399,
+          "nextenergy": 0.241199,
+          "pure": 0.238189,
+          "tibber": 0.238199,
+          "vandebron": 0.242279,
           "vattenfall": null,
-          "zonneplan": 0.198512
+          "zonneplan": 0.240199
         },
-        "teruglevering": {
-          "anwb": 0.181983,
-          "budget": 0.181983,
-          "frank": 0.171483,
-          "liveenergy": 0.161983,
-          "nextenergy": 0.181983,
-          "pure": 0.167083,
-          "tibber": 0.167107,
-          "vandebron": 0.170733,
-          "vattenfall": 0.181983,
-          "zonneplan": 0.198512
+        "terugleveringInclBtw": {
+          "anwb": 0.220199,
+          "budget": 0.220199,
+          "frank": 0.207494,
+          "liveenergy": 0.195999,
+          "nextenergy": 0.220199,
+          "pure": null,
+          "tibber": 0.202199,
+          "vandebron": 0.206589,
+          "vattenfall": 0.220199,
+          "zonneplan": 0.240199
         }
       },
       {
         "start": "2026-09-25T01:00:00+02:00",
         "startUtc": "2026-09-24T23:00:00Z",
-        "markt": 0.1722,
-        "afname": {
-          "anwb": 0.187076,
-          "budget": 0.1861,
-          "frank": 0.1872,
-          "liveenergy": 0.1922,
-          "nextenergy": 0.189555,
-          "pure": 0.187068,
-          "tibber": 0.187076,
-          "vandebron": 0.19045,
+        "marktInclBtw": 0.208362,
+        "afnameInclBtw": {
+          "anwb": 0.226362,
+          "budget": 0.225182,
+          "frank": 0.226512,
+          "liveenergy": 0.232562,
+          "nextenergy": 0.229362,
+          "pure": 0.226352,
+          "tibber": 0.226362,
+          "vandebron": 0.230442,
           "vattenfall": null,
-          "zonneplan": 0.188729
+          "zonneplan": 0.228362
         },
-        "teruglevering": {
-          "anwb": 0.1722,
-          "budget": 0.1722,
-          "frank": 0.1617,
-          "liveenergy": 0.1522,
-          "nextenergy": 0.1722,
-          "pure": 0.1573,
-          "tibber": 0.157324,
-          "vandebron": 0.16095,
-          "vattenfall": 0.1722,
-          "zonneplan": 0.188729
+        "terugleveringInclBtw": {
+          "anwb": 0.208362,
+          "budget": 0.208362,
+          "frank": 0.195657,
+          "liveenergy": 0.184162,
+          "nextenergy": 0.208362,
+          "pure": null,
+          "tibber": 0.190362,
+          "vandebron": 0.194752,
+          "vattenfall": 0.208362,
+          "zonneplan": 0.228362
         }
       },
       {
         "start": "2026-09-25T02:00:00+02:00",
         "startUtc": "2026-09-25T00:00:00Z",
-        "markt": 0.16493,
-        "afname": {
-          "anwb": 0.179806,
-          "budget": 0.17883,
-          "frank": 0.17993,
-          "liveenergy": 0.18493,
-          "nextenergy": 0.182285,
-          "pure": 0.179798,
-          "tibber": 0.179806,
-          "vandebron": 0.18318,
+        "marktInclBtw": 0.199565,
+        "afnameInclBtw": {
+          "anwb": 0.217565,
+          "budget": 0.216385,
+          "frank": 0.217715,
+          "liveenergy": 0.223765,
+          "nextenergy": 0.220565,
+          "pure": 0.217555,
+          "tibber": 0.217565,
+          "vandebron": 0.221645,
           "vattenfall": null,
-          "zonneplan": 0.181459
+          "zonneplan": 0.219565
         },
-        "teruglevering": {
-          "anwb": 0.16493,
-          "budget": 0.16493,
-          "frank": 0.15443,
-          "liveenergy": 0.14493,
-          "nextenergy": 0.16493,
-          "pure": 0.15003,
-          "tibber": 0.150054,
-          "vandebron": 0.15368,
-          "vattenfall": 0.16493,
-          "zonneplan": 0.181459
+        "terugleveringInclBtw": {
+          "anwb": 0.199565,
+          "budget": 0.199565,
+          "frank": 0.18686,
+          "liveenergy": 0.175365,
+          "nextenergy": 0.199565,
+          "pure": null,
+          "tibber": 0.181565,
+          "vandebron": 0.185955,
+          "vattenfall": 0.199565,
+          "zonneplan": 0.219565
         }
       },
       {
         "start": "2026-09-25T03:00:00+02:00",
         "startUtc": "2026-09-25T01:00:00Z",
-        "markt": 0.164477,
-        "afname": {
-          "anwb": 0.179353,
-          "budget": 0.178377,
-          "frank": 0.179477,
-          "liveenergy": 0.184477,
-          "nextenergy": 0.181832,
-          "pure": 0.179345,
-          "tibber": 0.179353,
-          "vandebron": 0.182727,
+        "marktInclBtw": 0.199017,
+        "afnameInclBtw": {
+          "anwb": 0.217017,
+          "budget": 0.215837,
+          "frank": 0.217167,
+          "liveenergy": 0.223217,
+          "nextenergy": 0.220017,
+          "pure": 0.217007,
+          "tibber": 0.217017,
+          "vandebron": 0.221097,
           "vattenfall": null,
-          "zonneplan": 0.181006
+          "zonneplan": 0.219017
         },
-        "teruglevering": {
-          "anwb": 0.164477,
-          "budget": 0.164477,
-          "frank": 0.153977,
-          "liveenergy": 0.144477,
-          "nextenergy": 0.164477,
-          "pure": 0.149577,
-          "tibber": 0.149601,
-          "vandebron": 0.153227,
-          "vattenfall": 0.164477,
-          "zonneplan": 0.181006
+        "terugleveringInclBtw": {
+          "anwb": 0.199017,
+          "budget": 0.199017,
+          "frank": 0.186312,
+          "liveenergy": 0.174817,
+          "nextenergy": 0.199017,
+          "pure": null,
+          "tibber": 0.181017,
+          "vandebron": 0.185407,
+          "vattenfall": 0.199017,
+          "zonneplan": 0.219017
         }
       },
       {
         "start": "2026-09-25T04:00:00+02:00",
         "startUtc": "2026-09-25T02:00:00Z",
-        "markt": 0.16117,
-        "afname": {
-          "anwb": 0.176046,
-          "budget": 0.17507,
-          "frank": 0.17617,
-          "liveenergy": 0.18117,
-          "nextenergy": 0.178525,
-          "pure": 0.176038,
-          "tibber": 0.176046,
-          "vandebron": 0.17942,
+        "marktInclBtw": 0.195016,
+        "afnameInclBtw": {
+          "anwb": 0.213016,
+          "budget": 0.211836,
+          "frank": 0.213166,
+          "liveenergy": 0.219216,
+          "nextenergy": 0.216016,
+          "pure": 0.213006,
+          "tibber": 0.213016,
+          "vandebron": 0.217096,
           "vattenfall": null,
-          "zonneplan": 0.177699
+          "zonneplan": 0.215016
         },
-        "teruglevering": {
-          "anwb": 0.16117,
-          "budget": 0.16117,
-          "frank": 0.15067,
-          "liveenergy": 0.14117,
-          "nextenergy": 0.16117,
-          "pure": 0.14627,
-          "tibber": 0.146294,
-          "vandebron": 0.14992,
-          "vattenfall": 0.16117,
-          "zonneplan": 0.177699
+        "terugleveringInclBtw": {
+          "anwb": 0.195016,
+          "budget": 0.195016,
+          "frank": 0.182311,
+          "liveenergy": 0.170816,
+          "nextenergy": 0.195016,
+          "pure": null,
+          "tibber": 0.177016,
+          "vandebron": 0.181406,
+          "vattenfall": 0.195016,
+          "zonneplan": 0.215016
         }
       },
       {
         "start": "2026-09-25T05:00:00+02:00",
         "startUtc": "2026-09-25T03:00:00Z",
-        "markt": 0.165863,
-        "afname": {
-          "anwb": 0.180739,
-          "budget": 0.179763,
-          "frank": 0.180863,
-          "liveenergy": 0.185863,
-          "nextenergy": 0.183218,
-          "pure": 0.180731,
-          "tibber": 0.180739,
-          "vandebron": 0.184113,
+        "marktInclBtw": 0.200694,
+        "afnameInclBtw": {
+          "anwb": 0.218694,
+          "budget": 0.217514,
+          "frank": 0.218844,
+          "liveenergy": 0.224894,
+          "nextenergy": 0.221694,
+          "pure": 0.218684,
+          "tibber": 0.218694,
+          "vandebron": 0.222774,
           "vattenfall": null,
-          "zonneplan": 0.182392
+          "zonneplan": 0.220694
         },
-        "teruglevering": {
-          "anwb": 0.165863,
-          "budget": 0.165863,
-          "frank": 0.155363,
-          "liveenergy": 0.145863,
-          "nextenergy": 0.165863,
-          "pure": 0.150963,
-          "tibber": 0.150987,
-          "vandebron": 0.154613,
-          "vattenfall": 0.165863,
-          "zonneplan": 0.182392
+        "terugleveringInclBtw": {
+          "anwb": 0.200694,
+          "budget": 0.200694,
+          "frank": 0.187989,
+          "liveenergy": 0.176494,
+          "nextenergy": 0.200694,
+          "pure": null,
+          "tibber": 0.182694,
+          "vandebron": 0.187084,
+          "vattenfall": 0.200694,
+          "zonneplan": 0.220694
         }
       },
       {
         "start": "2026-09-25T06:00:00+02:00",
         "startUtc": "2026-09-25T04:00:00Z",
-        "markt": 0.1799,
-        "afname": {
-          "anwb": 0.194776,
-          "budget": 0.1938,
-          "frank": 0.1949,
-          "liveenergy": 0.1999,
-          "nextenergy": 0.197255,
-          "pure": 0.194768,
-          "tibber": 0.194776,
-          "vandebron": 0.19815,
+        "marktInclBtw": 0.217679,
+        "afnameInclBtw": {
+          "anwb": 0.235679,
+          "budget": 0.234499,
+          "frank": 0.235829,
+          "liveenergy": 0.241879,
+          "nextenergy": 0.238679,
+          "pure": 0.235669,
+          "tibber": 0.235679,
+          "vandebron": 0.239759,
           "vattenfall": null,
-          "zonneplan": 0.196429
+          "zonneplan": 0.237679
         },
-        "teruglevering": {
-          "anwb": 0.1799,
-          "budget": 0.1799,
-          "frank": 0.1694,
-          "liveenergy": 0.1599,
-          "nextenergy": 0.1799,
-          "pure": 0.165,
-          "tibber": 0.165024,
-          "vandebron": 0.16865,
-          "vattenfall": 0.1799,
-          "zonneplan": 0.196429
+        "terugleveringInclBtw": {
+          "anwb": 0.217679,
+          "budget": 0.217679,
+          "frank": 0.204974,
+          "liveenergy": 0.193479,
+          "nextenergy": 0.217679,
+          "pure": null,
+          "tibber": 0.199679,
+          "vandebron": 0.204069,
+          "vattenfall": 0.217679,
+          "zonneplan": 0.237679
         }
       },
       {
         "start": "2026-09-25T07:00:00+02:00",
         "startUtc": "2026-09-25T05:00:00Z",
-        "markt": 0.20757,
-        "afname": {
-          "anwb": 0.222446,
-          "budget": 0.22147,
-          "frank": 0.22257,
-          "liveenergy": 0.22757,
-          "nextenergy": 0.224925,
-          "pure": 0.222438,
-          "tibber": 0.222446,
-          "vandebron": 0.22582,
+        "marktInclBtw": 0.25116,
+        "afnameInclBtw": {
+          "anwb": 0.26916,
+          "budget": 0.26798,
+          "frank": 0.26931,
+          "liveenergy": 0.27536,
+          "nextenergy": 0.27216,
+          "pure": 0.26915,
+          "tibber": 0.26916,
+          "vandebron": 0.27324,
           "vattenfall": null,
-          "zonneplan": 0.224099
+          "zonneplan": 0.27116
         },
-        "teruglevering": {
-          "anwb": 0.20757,
-          "budget": 0.20757,
-          "frank": 0.19707,
-          "liveenergy": 0.18757,
-          "nextenergy": 0.20757,
-          "pure": 0.19267,
-          "tibber": 0.192694,
-          "vandebron": 0.19632,
-          "vattenfall": 0.20757,
-          "zonneplan": 0.224099
+        "terugleveringInclBtw": {
+          "anwb": 0.25116,
+          "budget": 0.25116,
+          "frank": 0.238455,
+          "liveenergy": 0.22696,
+          "nextenergy": 0.25116,
+          "pure": null,
+          "tibber": 0.23316,
+          "vandebron": 0.23755,
+          "vattenfall": 0.25116,
+          "zonneplan": 0.27116
         }
       },
       {
         "start": "2026-09-25T08:00:00+02:00",
         "startUtc": "2026-09-25T06:00:00Z",
-        "markt": 0.21246,
-        "afname": {
-          "anwb": 0.227336,
-          "budget": 0.22636,
-          "frank": 0.22746,
-          "liveenergy": 0.23246,
-          "nextenergy": 0.229815,
-          "pure": 0.227328,
-          "tibber": 0.227336,
-          "vandebron": 0.23071,
+        "marktInclBtw": 0.257077,
+        "afnameInclBtw": {
+          "anwb": 0.275077,
+          "budget": 0.273897,
+          "frank": 0.275227,
+          "liveenergy": 0.281277,
+          "nextenergy": 0.278077,
+          "pure": 0.275067,
+          "tibber": 0.275077,
+          "vandebron": 0.279157,
           "vattenfall": null,
-          "zonneplan": 0.228989
+          "zonneplan": 0.277077
         },
-        "teruglevering": {
-          "anwb": 0.21246,
-          "budget": 0.21246,
-          "frank": 0.20196,
-          "liveenergy": 0.19246,
-          "nextenergy": 0.21246,
-          "pure": 0.19756,
-          "tibber": 0.197584,
-          "vandebron": 0.20121,
-          "vattenfall": 0.21246,
-          "zonneplan": 0.228989
+        "terugleveringInclBtw": {
+          "anwb": 0.257077,
+          "budget": 0.257077,
+          "frank": 0.244372,
+          "liveenergy": 0.232877,
+          "nextenergy": 0.257077,
+          "pure": null,
+          "tibber": 0.239077,
+          "vandebron": 0.243467,
+          "vattenfall": 0.257077,
+          "zonneplan": 0.277077
         }
       },
       {
         "start": "2026-09-25T09:00:00+02:00",
         "startUtc": "2026-09-25T07:00:00Z",
-        "markt": 0.194707,
-        "afname": {
-          "anwb": 0.209583,
-          "budget": 0.208607,
-          "frank": 0.209707,
-          "liveenergy": 0.214707,
-          "nextenergy": 0.212062,
-          "pure": 0.209575,
-          "tibber": 0.209583,
-          "vandebron": 0.212957,
+        "marktInclBtw": 0.235595,
+        "afnameInclBtw": {
+          "anwb": 0.253595,
+          "budget": 0.252415,
+          "frank": 0.253745,
+          "liveenergy": 0.259795,
+          "nextenergy": 0.256595,
+          "pure": 0.253585,
+          "tibber": 0.253595,
+          "vandebron": 0.257675,
           "vattenfall": null,
-          "zonneplan": 0.211236
+          "zonneplan": 0.255595
         },
-        "teruglevering": {
-          "anwb": 0.194707,
-          "budget": 0.194707,
-          "frank": 0.184207,
-          "liveenergy": 0.174707,
-          "nextenergy": 0.194707,
-          "pure": 0.179807,
-          "tibber": 0.179831,
-          "vandebron": 0.183457,
-          "vattenfall": 0.194707,
-          "zonneplan": 0.211236
+        "terugleveringInclBtw": {
+          "anwb": 0.235595,
+          "budget": 0.235595,
+          "frank": 0.22289,
+          "liveenergy": 0.211395,
+          "nextenergy": 0.235595,
+          "pure": null,
+          "tibber": 0.217595,
+          "vandebron": 0.221985,
+          "vattenfall": 0.235595,
+          "zonneplan": 0.255595
         }
       },
       {
         "start": "2026-09-25T10:00:00+02:00",
         "startUtc": "2026-09-25T08:00:00Z",
-        "markt": 0.155007,
-        "afname": {
-          "anwb": 0.169883,
-          "budget": 0.168907,
-          "frank": 0.170007,
-          "liveenergy": 0.175007,
-          "nextenergy": 0.172362,
-          "pure": 0.169875,
-          "tibber": 0.169883,
-          "vandebron": 0.173257,
+        "marktInclBtw": 0.187558,
+        "afnameInclBtw": {
+          "anwb": 0.205558,
+          "budget": 0.204378,
+          "frank": 0.205708,
+          "liveenergy": 0.211758,
+          "nextenergy": 0.208558,
+          "pure": 0.205548,
+          "tibber": 0.205558,
+          "vandebron": 0.209638,
           "vattenfall": null,
-          "zonneplan": 0.171536
+          "zonneplan": 0.207558
         },
-        "teruglevering": {
-          "anwb": 0.155007,
-          "budget": 0.155007,
-          "frank": 0.144507,
-          "liveenergy": 0.135007,
-          "nextenergy": 0.155007,
-          "pure": 0.140107,
-          "tibber": 0.140131,
-          "vandebron": 0.143757,
-          "vattenfall": 0.155007,
-          "zonneplan": 0.171536
+        "terugleveringInclBtw": {
+          "anwb": 0.187558,
+          "budget": 0.187558,
+          "frank": 0.174853,
+          "liveenergy": 0.163358,
+          "nextenergy": 0.187558,
+          "pure": null,
+          "tibber": 0.169558,
+          "vandebron": 0.173948,
+          "vattenfall": 0.187558,
+          "zonneplan": 0.207558
         }
       },
       {
         "start": "2026-09-25T11:00:00+02:00",
         "startUtc": "2026-09-25T09:00:00Z",
-        "markt": 0.106008,
-        "afname": {
-          "anwb": 0.120884,
-          "budget": 0.119908,
-          "frank": 0.121008,
-          "liveenergy": 0.126008,
-          "nextenergy": 0.123363,
-          "pure": 0.120876,
-          "tibber": 0.120884,
-          "vandebron": 0.124258,
+        "marktInclBtw": 0.12827,
+        "afnameInclBtw": {
+          "anwb": 0.14627,
+          "budget": 0.14509,
+          "frank": 0.14642,
+          "liveenergy": 0.15247,
+          "nextenergy": 0.14927,
+          "pure": 0.14626,
+          "tibber": 0.14627,
+          "vandebron": 0.15035,
           "vattenfall": null,
-          "zonneplan": 0.122537
+          "zonneplan": 0.14827
         },
-        "teruglevering": {
-          "anwb": 0.106008,
-          "budget": 0.106008,
-          "frank": 0.095508,
-          "liveenergy": 0.086008,
-          "nextenergy": 0.106008,
-          "pure": 0.091108,
-          "tibber": 0.091132,
-          "vandebron": 0.094758,
-          "vattenfall": 0.106008,
-          "zonneplan": 0.122537
+        "terugleveringInclBtw": {
+          "anwb": 0.12827,
+          "budget": 0.12827,
+          "frank": 0.115565,
+          "liveenergy": 0.10407,
+          "nextenergy": 0.12827,
+          "pure": null,
+          "tibber": 0.11027,
+          "vandebron": 0.11466,
+          "vattenfall": 0.12827,
+          "zonneplan": 0.14827
         }
       },
       {
         "start": "2026-09-25T12:00:00+02:00",
         "startUtc": "2026-09-25T10:00:00Z",
-        "markt": 0.061683,
-        "afname": {
-          "anwb": 0.076559,
-          "budget": 0.075583,
-          "frank": 0.076683,
-          "liveenergy": 0.081683,
-          "nextenergy": 0.079038,
-          "pure": 0.076551,
-          "tibber": 0.076559,
-          "vandebron": 0.079933,
+        "marktInclBtw": 0.074636,
+        "afnameInclBtw": {
+          "anwb": 0.092636,
+          "budget": 0.091456,
+          "frank": 0.092786,
+          "liveenergy": 0.098836,
+          "nextenergy": 0.095636,
+          "pure": 0.092626,
+          "tibber": 0.092636,
+          "vandebron": 0.096716,
           "vattenfall": null,
-          "zonneplan": 0.078212
+          "zonneplan": 0.094636
         },
-        "teruglevering": {
-          "anwb": 0.061683,
-          "budget": 0.061683,
-          "frank": 0.051183,
-          "liveenergy": 0.041683,
-          "nextenergy": 0.061683,
-          "pure": 0.046783,
-          "tibber": 0.046807,
-          "vandebron": 0.050433,
-          "vattenfall": 0.061683,
-          "zonneplan": 0.078212
+        "terugleveringInclBtw": {
+          "anwb": 0.074636,
+          "budget": 0.074636,
+          "frank": 0.061931,
+          "liveenergy": 0.050436,
+          "nextenergy": 0.074636,
+          "pure": null,
+          "tibber": 0.056636,
+          "vandebron": 0.061026,
+          "vattenfall": 0.074636,
+          "zonneplan": 0.094636
         }
       },
       {
         "start": "2026-09-25T13:00:00+02:00",
         "startUtc": "2026-09-25T11:00:00Z",
-        "markt": 0.034928,
-        "afname": {
-          "anwb": 0.049804,
-          "budget": 0.048828,
-          "frank": 0.049928,
-          "liveenergy": 0.054928,
-          "nextenergy": 0.052283,
-          "pure": 0.049796,
-          "tibber": 0.049804,
-          "vandebron": 0.053178,
+        "marktInclBtw": 0.042263,
+        "afnameInclBtw": {
+          "anwb": 0.060263,
+          "budget": 0.059083,
+          "frank": 0.060413,
+          "liveenergy": 0.066463,
+          "nextenergy": 0.063263,
+          "pure": 0.060253,
+          "tibber": 0.060263,
+          "vandebron": 0.064343,
           "vattenfall": null,
-          "zonneplan": 0.051457
+          "zonneplan": 0.062263
         },
-        "teruglevering": {
-          "anwb": 0.034928,
-          "budget": 0.034928,
-          "frank": 0.024428,
-          "liveenergy": 0.014928,
-          "nextenergy": 0.034928,
-          "pure": 0.020028,
-          "tibber": 0.020052,
-          "vandebron": 0.023678,
-          "vattenfall": 0.034928,
-          "zonneplan": 0.051457
+        "terugleveringInclBtw": {
+          "anwb": 0.042263,
+          "budget": 0.042263,
+          "frank": 0.029558,
+          "liveenergy": 0.018063,
+          "nextenergy": 0.042263,
+          "pure": null,
+          "tibber": 0.024263,
+          "vandebron": 0.028653,
+          "vattenfall": 0.042263,
+          "zonneplan": 0.062263
         }
       },
       {
         "start": "2026-09-25T14:00:00+02:00",
         "startUtc": "2026-09-25T12:00:00Z",
-        "markt": 0.043635,
-        "afname": {
-          "anwb": 0.058511,
-          "budget": 0.057535,
-          "frank": 0.058635,
-          "liveenergy": 0.063635,
-          "nextenergy": 0.06099,
-          "pure": 0.058503,
-          "tibber": 0.058511,
-          "vandebron": 0.061885,
+        "marktInclBtw": 0.052798,
+        "afnameInclBtw": {
+          "anwb": 0.070798,
+          "budget": 0.069618,
+          "frank": 0.070948,
+          "liveenergy": 0.076998,
+          "nextenergy": 0.073798,
+          "pure": 0.070788,
+          "tibber": 0.070798,
+          "vandebron": 0.074878,
           "vattenfall": null,
-          "zonneplan": 0.060164
+          "zonneplan": 0.072798
         },
-        "teruglevering": {
-          "anwb": 0.043635,
-          "budget": 0.043635,
-          "frank": 0.033135,
-          "liveenergy": 0.023635,
-          "nextenergy": 0.043635,
-          "pure": 0.028735,
-          "tibber": 0.028759,
-          "vandebron": 0.032385,
-          "vattenfall": 0.043635,
-          "zonneplan": 0.060164
+        "terugleveringInclBtw": {
+          "anwb": 0.052798,
+          "budget": 0.052798,
+          "frank": 0.040093,
+          "liveenergy": 0.028598,
+          "nextenergy": 0.052798,
+          "pure": null,
+          "tibber": 0.034798,
+          "vandebron": 0.039188,
+          "vattenfall": 0.052798,
+          "zonneplan": 0.072798
         }
       },
       {
         "start": "2026-09-25T15:00:00+02:00",
         "startUtc": "2026-09-25T13:00:00Z",
-        "markt": 0.085855,
-        "afname": {
-          "anwb": 0.100731,
-          "budget": 0.099755,
-          "frank": 0.100855,
-          "liveenergy": 0.105855,
-          "nextenergy": 0.10321,
-          "pure": 0.100723,
-          "tibber": 0.100731,
-          "vandebron": 0.104105,
+        "marktInclBtw": 0.103885,
+        "afnameInclBtw": {
+          "anwb": 0.121885,
+          "budget": 0.120705,
+          "frank": 0.122035,
+          "liveenergy": 0.128085,
+          "nextenergy": 0.124885,
+          "pure": 0.121875,
+          "tibber": 0.121885,
+          "vandebron": 0.125965,
           "vattenfall": null,
-          "zonneplan": 0.102384
+          "zonneplan": 0.123885
         },
-        "teruglevering": {
-          "anwb": 0.085855,
-          "budget": 0.085855,
-          "frank": 0.075355,
-          "liveenergy": 0.065855,
-          "nextenergy": 0.085855,
-          "pure": 0.070955,
-          "tibber": 0.070979,
-          "vandebron": 0.074605,
-          "vattenfall": 0.085855,
-          "zonneplan": 0.102384
+        "terugleveringInclBtw": {
+          "anwb": 0.103885,
+          "budget": 0.103885,
+          "frank": 0.09118,
+          "liveenergy": 0.079685,
+          "nextenergy": 0.103885,
+          "pure": null,
+          "tibber": 0.085885,
+          "vandebron": 0.090275,
+          "vattenfall": 0.103885,
+          "zonneplan": 0.123885
         }
       },
       {
         "start": "2026-09-25T16:00:00+02:00",
         "startUtc": "2026-09-25T14:00:00Z",
-        "markt": 0.14528,
-        "afname": {
-          "anwb": 0.160156,
-          "budget": 0.15918,
-          "frank": 0.16028,
-          "liveenergy": 0.16528,
-          "nextenergy": 0.162635,
-          "pure": 0.160148,
-          "tibber": 0.160156,
-          "vandebron": 0.16353,
+        "marktInclBtw": 0.175789,
+        "afnameInclBtw": {
+          "anwb": 0.193789,
+          "budget": 0.192609,
+          "frank": 0.193939,
+          "liveenergy": 0.199989,
+          "nextenergy": 0.196789,
+          "pure": 0.193779,
+          "tibber": 0.193789,
+          "vandebron": 0.197869,
           "vattenfall": null,
-          "zonneplan": 0.161809
+          "zonneplan": 0.195789
         },
-        "teruglevering": {
-          "anwb": 0.14528,
-          "budget": 0.14528,
-          "frank": 0.13478,
-          "liveenergy": 0.12528,
-          "nextenergy": 0.14528,
-          "pure": 0.13038,
-          "tibber": 0.130404,
-          "vandebron": 0.13403,
-          "vattenfall": 0.14528,
-          "zonneplan": 0.161809
+        "terugleveringInclBtw": {
+          "anwb": 0.175789,
+          "budget": 0.175789,
+          "frank": 0.163084,
+          "liveenergy": 0.151589,
+          "nextenergy": 0.175789,
+          "pure": null,
+          "tibber": 0.157789,
+          "vandebron": 0.162179,
+          "vattenfall": 0.175789,
+          "zonneplan": 0.195789
         }
       },
       {
         "start": "2026-09-25T17:00:00+02:00",
         "startUtc": "2026-09-25T15:00:00Z",
-        "markt": 0.195252,
-        "afname": {
-          "anwb": 0.210128,
-          "budget": 0.209152,
-          "frank": 0.210252,
-          "liveenergy": 0.215252,
-          "nextenergy": 0.212607,
-          "pure": 0.21012,
-          "tibber": 0.210128,
-          "vandebron": 0.213502,
+        "marktInclBtw": 0.236255,
+        "afnameInclBtw": {
+          "anwb": 0.254255,
+          "budget": 0.253075,
+          "frank": 0.254405,
+          "liveenergy": 0.260455,
+          "nextenergy": 0.257255,
+          "pure": 0.254245,
+          "tibber": 0.254255,
+          "vandebron": 0.258335,
           "vattenfall": null,
-          "zonneplan": 0.211781
+          "zonneplan": 0.256255
         },
-        "teruglevering": {
-          "anwb": 0.195252,
-          "budget": 0.195252,
-          "frank": 0.184752,
-          "liveenergy": 0.175252,
-          "nextenergy": 0.195252,
-          "pure": 0.180352,
-          "tibber": 0.180376,
-          "vandebron": 0.184002,
-          "vattenfall": 0.195252,
-          "zonneplan": 0.211781
+        "terugleveringInclBtw": {
+          "anwb": 0.236255,
+          "budget": 0.236255,
+          "frank": 0.22355,
+          "liveenergy": 0.212055,
+          "nextenergy": 0.236255,
+          "pure": null,
+          "tibber": 0.218255,
+          "vandebron": 0.222645,
+          "vattenfall": 0.236255,
+          "zonneplan": 0.256255
         }
       },
       {
         "start": "2026-09-25T18:00:00+02:00",
         "startUtc": "2026-09-25T16:00:00Z",
-        "markt": 0.240393,
-        "afname": {
-          "anwb": 0.255269,
-          "budget": 0.254293,
-          "frank": 0.255393,
-          "liveenergy": 0.260393,
-          "nextenergy": 0.257748,
-          "pure": 0.255261,
-          "tibber": 0.255269,
-          "vandebron": 0.258643,
+        "marktInclBtw": 0.290876,
+        "afnameInclBtw": {
+          "anwb": 0.308876,
+          "budget": 0.307696,
+          "frank": 0.309026,
+          "liveenergy": 0.315076,
+          "nextenergy": 0.311876,
+          "pure": 0.308866,
+          "tibber": 0.308876,
+          "vandebron": 0.312956,
           "vattenfall": null,
-          "zonneplan": 0.256922
+          "zonneplan": 0.310876
         },
-        "teruglevering": {
-          "anwb": 0.240393,
-          "budget": 0.240393,
-          "frank": 0.229893,
-          "liveenergy": 0.220393,
-          "nextenergy": 0.240393,
-          "pure": 0.225493,
-          "tibber": 0.225517,
-          "vandebron": 0.229143,
-          "vattenfall": 0.240393,
-          "zonneplan": 0.256922
+        "terugleveringInclBtw": {
+          "anwb": 0.290876,
+          "budget": 0.290876,
+          "frank": 0.278171,
+          "liveenergy": 0.266676,
+          "nextenergy": 0.290876,
+          "pure": null,
+          "tibber": 0.272876,
+          "vandebron": 0.277266,
+          "vattenfall": 0.290876,
+          "zonneplan": 0.310876
         }
       },
       {
         "start": "2026-09-25T19:00:00+02:00",
         "startUtc": "2026-09-25T17:00:00Z",
-        "markt": 0.297403,
-        "afname": {
-          "anwb": 0.312279,
-          "budget": 0.311303,
-          "frank": 0.312403,
-          "liveenergy": 0.317403,
-          "nextenergy": 0.314758,
-          "pure": 0.312271,
-          "tibber": 0.312279,
-          "vandebron": 0.315653,
+        "marktInclBtw": 0.359858,
+        "afnameInclBtw": {
+          "anwb": 0.377858,
+          "budget": 0.376678,
+          "frank": 0.378008,
+          "liveenergy": 0.384058,
+          "nextenergy": 0.380858,
+          "pure": 0.377848,
+          "tibber": 0.377858,
+          "vandebron": 0.381938,
           "vattenfall": null,
-          "zonneplan": 0.313932
+          "zonneplan": 0.379858
         },
-        "teruglevering": {
-          "anwb": 0.297403,
-          "budget": 0.297403,
-          "frank": 0.286903,
-          "liveenergy": 0.277403,
-          "nextenergy": 0.297403,
-          "pure": 0.282503,
-          "tibber": 0.282527,
-          "vandebron": 0.286153,
-          "vattenfall": 0.297403,
-          "zonneplan": 0.313932
+        "terugleveringInclBtw": {
+          "anwb": 0.359858,
+          "budget": 0.359858,
+          "frank": 0.347153,
+          "liveenergy": 0.335658,
+          "nextenergy": 0.359858,
+          "pure": null,
+          "tibber": 0.341858,
+          "vandebron": 0.346248,
+          "vattenfall": 0.359858,
+          "zonneplan": 0.379858
         }
       },
       {
         "start": "2026-09-25T20:00:00+02:00",
         "startUtc": "2026-09-25T18:00:00Z",
-        "markt": 0.252187,
-        "afname": {
-          "anwb": 0.267063,
-          "budget": 0.266087,
-          "frank": 0.267187,
-          "liveenergy": 0.272187,
-          "nextenergy": 0.269542,
-          "pure": 0.267055,
-          "tibber": 0.267063,
-          "vandebron": 0.270437,
+        "marktInclBtw": 0.305146,
+        "afnameInclBtw": {
+          "anwb": 0.323146,
+          "budget": 0.321966,
+          "frank": 0.323296,
+          "liveenergy": 0.329346,
+          "nextenergy": 0.326146,
+          "pure": 0.323136,
+          "tibber": 0.323146,
+          "vandebron": 0.327226,
           "vattenfall": null,
-          "zonneplan": 0.268716
+          "zonneplan": 0.325146
         },
-        "teruglevering": {
-          "anwb": 0.252187,
-          "budget": 0.252187,
-          "frank": 0.241687,
-          "liveenergy": 0.232187,
-          "nextenergy": 0.252187,
-          "pure": 0.237287,
-          "tibber": 0.237311,
-          "vandebron": 0.240937,
-          "vattenfall": 0.252187,
-          "zonneplan": 0.268716
+        "terugleveringInclBtw": {
+          "anwb": 0.305146,
+          "budget": 0.305146,
+          "frank": 0.292441,
+          "liveenergy": 0.280946,
+          "nextenergy": 0.305146,
+          "pure": null,
+          "tibber": 0.287146,
+          "vandebron": 0.291536,
+          "vattenfall": 0.305146,
+          "zonneplan": 0.325146
         }
       },
       {
         "start": "2026-09-25T21:00:00+02:00",
         "startUtc": "2026-09-25T19:00:00Z",
-        "markt": 0.22425,
-        "afname": {
-          "anwb": 0.239126,
-          "budget": 0.23815,
-          "frank": 0.23925,
-          "liveenergy": 0.24425,
-          "nextenergy": 0.241605,
-          "pure": 0.239118,
-          "tibber": 0.239126,
-          "vandebron": 0.2425,
+        "marktInclBtw": 0.271343,
+        "afnameInclBtw": {
+          "anwb": 0.289343,
+          "budget": 0.288163,
+          "frank": 0.289493,
+          "liveenergy": 0.295543,
+          "nextenergy": 0.292343,
+          "pure": 0.289333,
+          "tibber": 0.289343,
+          "vandebron": 0.293423,
           "vattenfall": null,
-          "zonneplan": 0.240779
+          "zonneplan": 0.291343
         },
-        "teruglevering": {
-          "anwb": 0.22425,
-          "budget": 0.22425,
-          "frank": 0.21375,
-          "liveenergy": 0.20425,
-          "nextenergy": 0.22425,
-          "pure": 0.20935,
-          "tibber": 0.209374,
-          "vandebron": 0.213,
-          "vattenfall": 0.22425,
-          "zonneplan": 0.240779
+        "terugleveringInclBtw": {
+          "anwb": 0.271343,
+          "budget": 0.271343,
+          "frank": 0.258638,
+          "liveenergy": 0.247143,
+          "nextenergy": 0.271343,
+          "pure": null,
+          "tibber": 0.253343,
+          "vandebron": 0.257733,
+          "vattenfall": 0.271343,
+          "zonneplan": 0.291343
         }
       },
       {
         "start": "2026-09-25T22:00:00+02:00",
         "startUtc": "2026-09-25T20:00:00Z",
-        "markt": 0.20652,
-        "afname": {
-          "anwb": 0.221396,
-          "budget": 0.22042,
-          "frank": 0.22152,
-          "liveenergy": 0.22652,
-          "nextenergy": 0.223875,
-          "pure": 0.221388,
-          "tibber": 0.221396,
-          "vandebron": 0.22477,
+        "marktInclBtw": 0.249889,
+        "afnameInclBtw": {
+          "anwb": 0.267889,
+          "budget": 0.266709,
+          "frank": 0.268039,
+          "liveenergy": 0.274089,
+          "nextenergy": 0.270889,
+          "pure": 0.267879,
+          "tibber": 0.267889,
+          "vandebron": 0.271969,
           "vattenfall": null,
-          "zonneplan": 0.223049
+          "zonneplan": 0.269889
         },
-        "teruglevering": {
-          "anwb": 0.20652,
-          "budget": 0.20652,
-          "frank": 0.19602,
-          "liveenergy": 0.18652,
-          "nextenergy": 0.20652,
-          "pure": 0.19162,
-          "tibber": 0.191644,
-          "vandebron": 0.19527,
-          "vattenfall": 0.20652,
-          "zonneplan": 0.223049
+        "terugleveringInclBtw": {
+          "anwb": 0.249889,
+          "budget": 0.249889,
+          "frank": 0.237184,
+          "liveenergy": 0.225689,
+          "nextenergy": 0.249889,
+          "pure": null,
+          "tibber": 0.231889,
+          "vandebron": 0.236279,
+          "vattenfall": 0.249889,
+          "zonneplan": 0.269889
         }
       },
       {
         "start": "2026-09-25T23:00:00+02:00",
         "startUtc": "2026-09-25T21:00:00Z",
-        "markt": 0.177,
-        "afname": {
-          "anwb": 0.191876,
-          "budget": 0.1909,
-          "frank": 0.192,
-          "liveenergy": 0.197,
-          "nextenergy": 0.194355,
-          "pure": 0.191868,
-          "tibber": 0.191876,
-          "vandebron": 0.19525,
+        "marktInclBtw": 0.21417,
+        "afnameInclBtw": {
+          "anwb": 0.23217,
+          "budget": 0.23099,
+          "frank": 0.23232,
+          "liveenergy": 0.23837,
+          "nextenergy": 0.23517,
+          "pure": 0.23216,
+          "tibber": 0.23217,
+          "vandebron": 0.23625,
           "vattenfall": null,
-          "zonneplan": 0.193529
+          "zonneplan": 0.23417
         },
-        "teruglevering": {
-          "anwb": 0.177,
-          "budget": 0.177,
-          "frank": 0.1665,
-          "liveenergy": 0.157,
-          "nextenergy": 0.177,
-          "pure": 0.1621,
-          "tibber": 0.162124,
-          "vandebron": 0.16575,
-          "vattenfall": 0.177,
-          "zonneplan": 0.193529
+        "terugleveringInclBtw": {
+          "anwb": 0.21417,
+          "budget": 0.21417,
+          "frank": 0.201465,
+          "liveenergy": 0.18997,
+          "nextenergy": 0.21417,
+          "pure": null,
+          "tibber": 0.19617,
+          "vandebron": 0.20056,
+          "vattenfall": 0.21417,
+          "zonneplan": 0.23417
         }
       }
     ]

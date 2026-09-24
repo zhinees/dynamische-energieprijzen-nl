@@ -1,4 +1,4 @@
-// Print today's market price at a given hour and each supplier's afname/teruglevering price.
+// Print today's market price at a given hour and each supplier's afname/teruglevering price, incl. btw.
 //   node voorbeelden/prijs-op-uur.mjs 18
 //   DATA_BASIS=./data node voorbeelden/prijs-op-uur.mjs 18   # use a local checkout
 import { readFile } from "node:fs/promises";
@@ -17,13 +17,14 @@ if (!dag) throw new Error("Nog geen prijzen voor vandaag");
 const slot = dag.uren.find((u) => Number(u.start.slice(11, 13)) === uur);
 if (!slot) throw new Error(`Geen prijs voor ${uur}:00`);
 
-const eur = (n) => (n === null ? "   n.b." : `€ ${n.toFixed(4)}`);
-console.log(`${dag.datum} ${String(uur).padStart(2, "0")}:00 marktprijs: ${eur(slot.markt)} /kWh (excl. btw)\n`);
+const eur = (n) => (n === null || n === undefined ? "   n.b." : `€ ${n.toFixed(4)}`);
+console.log(`${dag.datum} ${String(uur).padStart(2, "0")}:00 marktprijs: ${eur(slot.marktInclBtw)} /kWh (incl. btw)\n`);
 console.log("leverancier".padEnd(32), "afname /kWh".padEnd(12), "teruglevering /kWh");
 const rijen = dag.leveranciers
-  .map((l) => ({ ...l, afname: slot.afname[l.id], teruglevering: slot.teruglevering[l.id] }))
+  .map((l) => ({ ...l, afname: slot.afnameInclBtw[l.id], teruglevering: slot.terugleveringInclBtw[l.id] }))
   .sort((a, b) => (a.afname ?? 9) - (b.afname ?? 9));
 for (const l of rijen) {
   console.log(l.naam.padEnd(32), eur(l.afname).padEnd(12), eur(l.teruglevering));
 }
-console.log("\nn.b. = de leverancier publiceert deze waarde niet op een plek waar we hem kunnen controleren");
+console.log("\nIncl. btw, excl. energiebelasting en netbeheerkosten.");
+console.log("n.b. = de leverancier publiceert deze waarde (incl. btw) niet op een plek waar we hem kunnen controleren");

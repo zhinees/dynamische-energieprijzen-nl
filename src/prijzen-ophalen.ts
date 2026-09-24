@@ -9,15 +9,17 @@ import { join } from "node:path";
 import { DATA, dagbestandPad, leesJson, schrijfJsonAlsGewijzigd, schrijfTekst } from "./lib/bestanden.ts";
 import { haalEnergyZero, haalEntsoe, naarPerUur, type RuweReeks } from "./lib/bronnen.ts";
 import { dagGrenzenUtc, naarLokaalIso, naarUtcIso, plusDagen, vandaagLokaal } from "./lib/tijd.ts";
+import { inclBtw } from "./lib/tarieven.ts";
 import type { Dagprijzen, Prijspunt } from "./lib/typen.ts";
 
 const UUR = 3_600_000;
 const r6 = (n: number) => Math.round(n * 1e6) / 1e6 + 0;
 
+/** Sources give prices excl. btw; consumers pay 21% btw on top. */
 function punten(map: Map<number, number>): Prijspunt[] {
   return [...map.entries()]
     .sort(([a], [b]) => a - b)
-    .map(([t, prijs]) => ({ start: naarLokaalIso(t), startUtc: naarUtcIso(t), prijs: r6(prijs) }));
+    .map(([t, prijs]) => ({ start: naarLokaalIso(t), startUtc: naarUtcIso(t), prijsInclBtw: inclBtw(prijs), prijsExclBtw: r6(prijs) }));
 }
 
 async function stroom(datum: string): Promise<Dagprijzen["stroom"]> {
@@ -65,10 +67,11 @@ async function gas(datum: string): Promise<Dagprijzen["gas"]> {
 }
 
 function naarCsv(dag: Dagprijzen): string {
-  const gasPerUtc = new Map(dag.gas?.perUur.map((p) => [p.startUtc, p.prijs]) ?? []);
-  const rijen = ["start,start_utc,stroom_eur_kwh,gas_eur_m3"];
+  const gasPerUtc = new Map(dag.gas?.perUur.map((p) => [p.startUtc, p]) ?? []);
+  const rijen = ["start,start_utc,stroom_eur_kwh_incl_btw,stroom_eur_kwh_excl_btw,gas_eur_m3_incl_btw,gas_eur_m3_excl_btw"];
   for (const p of dag.stroom?.perUur ?? []) {
-    rijen.push(`${p.start},${p.startUtc},${p.prijs},${gasPerUtc.get(p.startUtc) ?? ""}`);
+    const g = gasPerUtc.get(p.startUtc);
+    rijen.push(`${p.start},${p.startUtc},${p.prijsInclBtw},${p.prijsExclBtw},${g?.prijsInclBtw ?? ""},${g?.prijsExclBtw ?? ""}`);
   }
   return rijen.join("\n") + "\n";
 }
@@ -86,7 +89,6 @@ async function haalDag(datum: string): Promise<Dagprijzen | null> {
     datum,
     tijdzone: "Europe/Amsterdam",
     valuta: "EUR",
-    btw: "exclusief",
     opgehaaldOp: new Date().toISOString(),
     stroom: s,
     gas: g,

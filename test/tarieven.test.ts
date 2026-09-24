@@ -20,9 +20,9 @@ const pagina = (v: string) => new Map([["https://x.nl/t", `opslag € ${v} per k
 
 test("uitgelezen waarde wint en is geverifieerd", () => {
   const r = bouwLeverancier(cfg, pagina("0,03"), undefined, "2026-09-24T05:00:00Z");
-  assert.equal(r.tarieven.stroomInkoopopslag?.waarde, 0.03);
+  assert.equal(r.tarieven.stroomInkoopopslag?.bedragExclBtw, 0.03);
   assert.equal(r.tarieven.stroomInkoopopslag?.bron, "website");
-  assert.equal(r.tarieven.stroomInkoopopslag?.waardeInclBtw, 0.0363);
+  assert.equal(r.tarieven.stroomInkoopopslag?.bedragInclBtw, 0.0363);
 });
 
 test("gasvelden worden overgeslagen als de leverancier geen gas levert", () => {
@@ -42,7 +42,7 @@ test("'sinds' blijft staan zolang de waarde niet verandert", () => {
 test("mislukt uitlezen houdt de nieuwere uitgelezen waarde boven een oudere handmatige", () => {
   const eerste = bouwLeverancier(cfg, pagina("0,03"), undefined, "2026-09-24T05:00:00Z");
   const mislukt = bouwLeverancier(cfg, new Map(), eerste, "2026-09-25T05:00:00Z", ["HTTP 503"]);
-  assert.equal(mislukt.tarieven.stroomInkoopopslag?.waarde, 0.03);
+  assert.equal(mislukt.tarieven.stroomInkoopopslag?.bedragExclBtw, 0.03);
   assert.equal(mislukt.tarieven.stroomInkoopopslag?.laatsteFout, "pagina kon niet worden opgehaald");
   assert.equal(mislukt.ophaalfout, "HTTP 503");
 });
@@ -50,7 +50,7 @@ test("mislukt uitlezen houdt de nieuwere uitgelezen waarde boven een oudere hand
 test("mislukt uitlezen met een nieuwere handmatige waarde gebruikt de handmatige waarde", () => {
   const eerste = bouwLeverancier(cfg, pagina("0,03"), undefined, "2026-08-01T05:00:00Z");
   const mislukt = bouwLeverancier(cfg, new Map(), eerste, "2026-09-25T05:00:00Z");
-  assert.equal(mislukt.tarieven.stroomInkoopopslag?.waarde, 0.02);
+  assert.equal(mislukt.tarieven.stroomInkoopopslag?.bedragExclBtw, 0.02);
   assert.equal(mislukt.tarieven.stroomInkoopopslag?.bron, "handmatig");
 });
 
@@ -68,9 +68,9 @@ test("een oude handmatige waarde verdwijnt zodra hij uit het bestand is gehaald"
   assert.equal(volgende.tarieven.stroomInkoopopslag, undefined);
 });
 
-test("waardeInclBtw is precies het gepubliceerde bedrag, zonder afrondingsverschil", () => {
+test("bedragInclBtw is precies het gepubliceerde bedrag, zonder afrondingsverschil", () => {
   const c = structuredClone(cfg);
   c.handmatig.stroomInkoopopslag = { waarde: 0.08835, inclBtw: true, geverifieerd: true, gecontroleerdOp: "2026-09-24", bron: "https://x.nl/t" };
   const r = bouwLeverancier({ ...c, regels: {} }, new Map(), undefined, "2026-09-24T05:00:00Z");
-  assert.equal(r.tarieven.stroomInkoopopslag?.waardeInclBtw, 0.08835);
+  assert.equal(r.tarieven.stroomInkoopopslag?.bedragInclBtw, 0.08835);
 });

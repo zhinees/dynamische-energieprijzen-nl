@@ -35,16 +35,16 @@ export function urlsVoor(cfg: LeverancierConfig): string[] {
 function handmatigeWaarde(cfg: LeverancierConfig, veld: Veld, vorige?: Tariefwaarde): Tariefwaarde | undefined {
   const h = cfg.handmatig[veld];
   if (!h || h.geverifieerd !== true) return undefined; // only real, checked data is published
-  const waarde = h.inclBtw ? exclBtw(h.waarde) : r6(h.waarde);
+  const bedragExclBtw = h.inclBtw ? exclBtw(h.waarde) : r6(h.waarde);
   // Keep the exact published amount incl. btw (converting back would drift in the last decimal).
-  const waardeInclBtw =
-    h.waardeInclBtw !== undefined ? (h.waardeInclBtw === null ? null : r6(h.waardeInclBtw)) : h.inclBtw ? r6(h.waarde) : inclBtw(waarde);
+  const bedragInclBtw =
+    h.waardeInclBtw !== undefined ? (h.waardeInclBtw === null ? null : r6(h.waardeInclBtw)) : h.inclBtw ? r6(h.waarde) : inclBtw(bedragExclBtw);
   const gecontroleerdOp = `${h.gecontroleerdOp}T00:00:00Z`;
   // Keep a newer scraped/rekentool value over an older handmatig one.
   if (vorige && vorige.bron !== "handmatig" && vorige.sinds && vorige.sinds > gecontroleerdOp) return undefined;
   return {
-    waarde,
-    waardeInclBtw,
+    bedragInclBtw,
+    bedragExclBtw,
     eenheid: EENHEDEN[veld],
     bron: "handmatig",
     geverifieerd: h.geverifieerd,
@@ -75,11 +75,11 @@ export function bouwLeverancier(
 
     const r = rekentool[veld];
     if (r) {
-      const waarde = r.inclBtw ? exclBtw(r.waarde) : r6(r.waarde);
-      const ongewijzigd = vorigeWaarde?.bron === "rekentool" && vorigeWaarde.waarde === waarde;
+      const bedragExclBtw = r.inclBtw ? exclBtw(r.waarde) : r6(r.waarde);
+      const ongewijzigd = vorigeWaarde?.bron === "rekentool" && vorigeWaarde.bedragExclBtw === bedragExclBtw;
       tarieven[veld] = {
-        waarde,
-        waardeInclBtw: r.waardeInclBtw !== undefined ? r6(r.waardeInclBtw) : r.inclBtw ? r6(r.waarde) : inclBtw(waarde),
+        bedragInclBtw: r.waardeInclBtw !== undefined ? r6(r.waardeInclBtw) : r.inclBtw ? r6(r.waarde) : inclBtw(bedragExclBtw),
+        bedragExclBtw,
         eenheid: EENHEDEN[veld],
         bron: "rekentool",
         geverifieerd: true,
@@ -105,11 +105,11 @@ export function bouwLeverancier(
         }
         const res = leesVeldMetRegels(tekst, veld, regel);
         if (res.ok && res.waarde !== null) {
-          const waarde = regel.inclBtw ? exclBtw(res.waarde) : res.waarde;
-          const ongewijzigd = vorigeWaarde?.bron === "website" && vorigeWaarde.waarde === waarde;
+          const bedragExclBtw = regel.inclBtw ? exclBtw(res.waarde) : res.waarde;
+          const ongewijzigd = vorigeWaarde?.bron === "website" && vorigeWaarde.bedragExclBtw === bedragExclBtw;
           gelezen = {
-            waarde,
-            waardeInclBtw: regel.inclBtw ? r6(res.waarde) : inclBtw(waarde),
+            bedragInclBtw: regel.inclBtw ? r6(res.waarde) : inclBtw(bedragExclBtw),
+            bedragExclBtw,
             eenheid: EENHEDEN[veld],
             bron: "website",
             geverifieerd: true,

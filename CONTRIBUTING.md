@@ -21,7 +21,7 @@ Een leverancier heeft zijn prijzen veranderd, of een leverancier staat in [`data
 ```
 
 Uitleg per veld:
-- **`waarde`**: neem het getal precies over zoals de site het toont. Zet `inclBtw` passend bij hoe de site het toont; de omrekening naar excl. btw gaat automatisch.
+- **`waarde`**: neem het getal precies over zoals de site het toont. Zet `inclBtw` passend bij hoe de site het toont; het project publiceert automatisch het bedrag inclusief én exclusief btw. Noemt de site beide, zet het andere bedrag dan in `waardeInclBtw`, zodat er niets wordt afgerond.
 - **`geverifieerd: true`**: verplicht. Voeg alleen een getal toe dat je op de eigen site of rekentool van de leverancier hebt gelezen, en zet die URL in `bron`. Getallen van vergelijkingssites, nieuwsartikelen of forums worden niet geaccepteerd; de validator weigert alles wat niet gecontroleerd is.
 - **`terugleverCorrectie`**: dit wordt bij de uurprijs opgeteld voor stroom die je teruglevert. Bij "uurprijs min € 0,02 terugleverkosten" vul je `-0.02` in. Bij "uurprijs + € 0,02 bonus" vul je `0.02` in.
 - **Vaste kosten**: gebruik het bedrag per maand per aansluiting.
