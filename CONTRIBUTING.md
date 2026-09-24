@@ -85,6 +85,13 @@ Kopieer een bestaand bestand (bijvoorbeeld `leveranciers/frank.json`) naar `leve
 - `handmatig`-waarden met bronnen (alleen gecontroleerd; een leverancier zonder waarden wordt gewoon nog niet gepubliceerd),
 - en regels als de site dat toelaat.
 
+## 5. Energiebelasting
+
+De bot leest de energiebelasting zelf van de site van de Belastingdienst. Je hoeft alleen iets te doen als [`data/RAPPORT.md`](data/RAPPORT.md) onder "Energiebelasting" een ⚠️ toont, bijvoorbeeld omdat de pagina anders is opgebouwd.
+
+- Pas dan de reader aan in `src/lib/energiebelasting.ts`, sla een nieuwe kopie van de pagina op in `test/fixtures/` en werk `test/energiebelasting.test.ts` bij.
+- Of voeg het nieuwe jaar met de hand toe onder `handmatig` in `belastingen/energiebelasting.json`. Neem de bedragen over zoals de Belastingdienst ze noemt: exclusief btw.
+
 ## Spelregels
 
 - **Wees netjes tegen de sites van leveranciers**: het schema (wekelijks plus de 1e en 2e van de maand) is ruim voldoende. Voeg geen regels toe die rekentools of API's massaal bevragen, of die de voorwaarden van een site negeren.

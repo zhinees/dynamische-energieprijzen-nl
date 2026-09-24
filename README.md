@@ -4,11 +4,12 @@ Een onafhankelijk, open overzicht van Nederlandse dynamische energiecontracten, 
 
 - **Day-aheadmarktprijzen**: stroom per uur (en per kwartier als die beschikbaar is), plus gas, per dag.
 - **Tarieven van leveranciers** met een dynamisch contract: vaste kosten per maand, inkoopopslag en teruglevering, per leverancier.
-- **Kant-en-klare vergelijkingen**: de afname- en terugleverprijs per uur voor elke leverancier, voor vandaag en morgen.
+- **Energiebelasting** per jaar, rechtstreeks van de Belastingdienst.
+- **Kant-en-klare vergelijkingen**: de afname- en terugleverprijs per uur voor elke leverancier, voor vandaag en morgen, ook met energiebelasting erbij.
 
 Zie het als een filterlijst van een adblocker. De data staat als gewone JSON- en CSV-bestanden in deze repo, en een geplande taak houdt die actueel. Iedereen mag de bestanden gebruiken voor grafieken, vergelijkingssites, domotica of onderzoek. Correcties gaan via pull requests.
 
-> **Gericht op consumenten: de hoofdbedragen zijn inclusief 21% btw.** Elk bedrag heeft `InclBtw` of `ExclBtw` in de veldnaam, zodat je nooit hoeft te raden. Energiebelasting en netbeheerkosten zitten er niet in.
+> **Gericht op consumenten: de hoofdbedragen zijn inclusief 21% btw.** Elk bedrag heeft `InclBtw` of `ExclBtw` in de veldnaam, zodat je nooit hoeft te raden. Velden met `MetEnergiebelasting` in de naam tellen ook de energiebelasting mee. Netbeheerkosten zitten er nooit in, want die verschillen per regio.
 >
 > **Alleen echte data wordt gepubliceerd.** Elk tarief is gelezen op de eigen website of in de eigen prijsrekentool van de leverancier. Waarden die niet te controleren zijn, blijven weg; ze worden nooit geschat of overgenomen van andere sites.
 
@@ -29,6 +30,7 @@ Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energiepr
 | `data/prijzen/index.json` | Lijst van beschikbare dagen | dagelijks |
 | `data/leveranciers.json` / `.csv` | Huidige tarieven per leverancier, met bron en controle per waarde | wekelijks + op de 1e en 2e van de maand |
 | `data/vergelijking/actueel.json` | Per uur, inclusief btw: de marktprijs, plus `afnameInclBtw` en `terugleveringInclBtw` per leverancier, voor vandaag en morgen | een paar keer per dag |
+| `data/energiebelasting.json` | Energiebelasting voor huishoudens per jaar (vanaf 2023), incl. en excl. btw | wekelijks + op de 1e en 2e van de maand |
 | `data/tariefwijzigingen.json` | Logboek van elke tariefwijziging | als tarieven veranderen |
 | `data/RAPPORT.md` | Waar elke waarde vandaan komt, en welke leveranciers nog niet gepubliceerd zijn | samen met leveranciers.json |
 
@@ -42,6 +44,7 @@ const om18 = vandaag.uren.find((u) => u.start.slice(11, 13) === "18"); // start 
 console.log(om18.marktInclBtw);                   // bijv. 0.267628  (EUR/kWh, marktprijs incl. btw)
 console.log(om18.afnameInclBtw.tibber);           // marktprijs + inkoopopslag van Tibber, incl. btw
 console.log(om18.terugleveringInclBtw.zonneplan); // wat Zonneplan dat uur per teruggeleverde kWh betaalt, incl. btw
+console.log(om18.afnameMetEnergiebelastingInclBtw.tibber); // wat een kWh bij Tibber echt kost, zonder netbeheerkosten
 ```
 
 Meer in [`voorbeelden/`](voorbeelden): een Node-script (`prijs-op-uur.mjs`) en een Astro-component (`astro/Energieprijzen.astro`).
@@ -59,6 +62,9 @@ Elk bestand heeft een JSON Schema in [`schema/`](schema) en een veld `$schema` d
   - `gasInkoopopslag`: EUR/m³.
   - `terugleverCorrectie`: EUR/kWh die *bij* de uurprijs wordt opgeteld voor stroom die je teruglevert. Negatief bij kosten (terugleverkosten), positief bij een bonus (bijv. Zonneplan).
   - In de vergelijking: `afnameInclBtw` = marktprijs incl. btw + `stroomInkoopopslag` incl. btw, en `terugleveringInclBtw` = marktprijs incl. btw + `terugleverCorrectie` incl. btw.
+  - `afnameMetEnergiebelastingInclBtw` = `afnameInclBtw` + energiebelasting per kWh incl. btw. Voor gas is er `gasPrijsMetEnergiebelastingInclBtw`. Ontbreekt de energiebelasting voor het jaar van die dag nog (bijv. vlak na 1 januari), dan is dit `null`.
+- **Energiebelasting** (`data/energiebelasting.json`, per jaar): `stroomPerKwh` (0 t/m 10.000 kWh), `gasPerM3` (0 t/m 170.000 m³) en `verminderingPerAansluitingPerJaar` (de belastingvermindering per stroomaansluiting van een woning), elk met `bedragInclBtw` en `bedragExclBtw`. De vermindering is een vast bedrag per jaar en zit daarom niet in de prijs per kWh. Jaren vóór 2023 staan er niet in, omdat de ODE toen nog een aparte heffing was.
+- **Teruglevering en energiebelasting**: `terugleveringInclBtw` bevat geen energiebelasting. Tot 1 januari 2027 geldt de salderingsregeling, waardoor stroom die je teruglevert tegen je verbruik wegvalt, inclusief de belasting daarover. Hoeveel dat oplevert hangt af van je eigen verbruik, dus dat rekent het project niet voor je uit.
 - **Per tariefwaarde**:
   - `bedragInclBtw`: wat een consument betaalt, inclusief btw; het eigen bedrag van de leverancier als die er een publiceert (anders `bedragExclBtw` × 1,21). `null` als de leverancier niet zegt of er btw over gaat; dan staat die leverancier in de vergelijking als onbekend.
   - `bedragExclBtw`: hetzelfde bedrag zonder btw.
@@ -72,6 +78,7 @@ Elk bestand heeft een JSON Schema in [`schema/`](schema) en een veld `$schema` d
 
 - **Stroom**: [ENTSO-E Transparency Platform](https://transparency.entsoe.eu), de officiële bron (vraagt een gratis API-token). De openbare API van [EnergyZero](https://www.energyzero.nl) is de reserve. Elk dagbestand vermeldt welke bron is gebruikt.
 - **Gas**: de openbare API van EnergyZero.
+- **Energiebelasting**: de tarieventabellen op de [site van de Belastingdienst](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting). De bot leest die elke week; nieuwe tarieven verschijnen meestal rond 1 januari. Als reserve staan met de hand gecontroleerde waarden in [`belastingen/energiebelasting.json`](belastingen/energiebelasting.json).
 - **Tarieven van leveranciers**: elke leverancier heeft een bestand in [`leveranciers/`](leveranciers). Daarin staan:
   - **een rekentool-adapter** (optioneel): de bot vraagt de eigen prijsrekentool van de leverancier om een aanbod voor een vast, openbaar testadres, Madurodam (George Maduroplein 1, Den Haag), en bewaart alleen de eigen tariefregels van de leverancier. De opslagen van leveranciers zijn in heel Nederland gelijk; netbeheerkosten, die wel van het adres afhangen, worden genegeerd.
   - **scraperregels**: waar op de website van de leverancier elk getal te vinden is.
@@ -87,6 +94,7 @@ Vereist Node 22.18+ (draait TypeScript direct, zonder bouwstap).
 npm ci
 npm run prijzen                          # vandaag + morgen → data/prijzen/
 npm run prijzen -- 2026-01-01 2026-01-31 # een periode aanvullen
+npm run belasting                        # energiebelasting → data/energiebelasting.json
 npm run leveranciers                     # tarieven uitlezen → data/leveranciers.json
 npm run afleiden                         # index.json + vergelijking/actueel.json
 npm run controleer                       # typecontrole + tests + validatie
@@ -105,7 +113,7 @@ De workflows vragen zelf schrijfrechten voor hun commits, dus je hoeft de standa
 De workflows:
 
 - `prijzen.yml`: draait om 11:05, 12:05, 13:05, 15:05, 22:05 en 23:05 UTC. Commit alleen als de data veranderd is.
-- `leveranciers.yml`: draait om 04:17 UTC op elke maandag en op de 1e en 2e van de maand. Houdt één issue open zolang een scraperregel of rekentool kapot is, en sluit het weer als alles werkt.
+- `leveranciers.yml`: draait om 04:17 UTC op elke maandag en op de 1e en 2e van de maand. Werkt de energiebelasting en de tarieven van leveranciers bij. Houdt één issue open zolang een scraperregel, rekentool of het uitlezen van de energiebelasting kapot is, en sluit het weer als alles werkt.
 - `ci.yml`: draait bij elke PR. Controleert types, tests, schema's en elk leveranciersbestand.
 
 ## Bijdragen

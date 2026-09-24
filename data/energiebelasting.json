@@ -1,0 +1,84 @@
+{
+  "$schema": "../schema/energiebelasting.schema.json",
+  "versie": 1,
+  "gegenereerdOp": "2026-09-24T19:46:48.677Z",
+  "valuta": "EUR",
+  "jaren": {
+    "2023": {
+      "stroomPerKwh": {
+        "bedragInclBtw": 0.152448,
+        "bedragExclBtw": 0.12599
+      },
+      "gasPerM3": {
+        "bedragInclBtw": 0.592658,
+        "bedragExclBtw": 0.4898
+      },
+      "verminderingPerAansluitingPerJaar": {
+        "bedragInclBtw": 596.8567,
+        "bedragExclBtw": 493.27
+      },
+      "bron": "website",
+      "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
+      "geverifieerd": true,
+      "sinds": "2026-09-24T19:46:48.677Z",
+      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+    },
+    "2024": {
+      "stroomPerKwh": {
+        "bedragInclBtw": 0.131648,
+        "bedragExclBtw": 0.1088
+      },
+      "gasPerM3": {
+        "bedragInclBtw": 0.705442,
+        "bedragExclBtw": 0.58301
+      },
+      "verminderingPerAansluitingPerJaar": {
+        "bedragInclBtw": 631.3901,
+        "bedragExclBtw": 521.81
+      },
+      "bron": "website",
+      "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
+      "geverifieerd": true,
+      "sinds": "2026-09-24T19:46:48.677Z",
+      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+    },
+    "2025": {
+      "stroomPerKwh": {
+        "bedragInclBtw": 0.122863,
+        "bedragExclBtw": 0.10154
+      },
+      "gasPerM3": {
+        "bedragInclBtw": 0.699574,
+        "bedragExclBtw": 0.57816
+      },
+      "verminderingPerAansluitingPerJaar": {
+        "bedragInclBtw": 635.1895,
+        "bedragExclBtw": 524.95
+      },
+      "bron": "website",
+      "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
+      "geverifieerd": true,
+      "sinds": "2026-09-24T19:46:48.677Z",
+      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+    },
+    "2026": {
+      "stroomPerKwh": {
+        "bedragInclBtw": 0.110848,
+        "bedragExclBtw": 0.09161
+      },
+      "gasPerM3": {
+        "bedragInclBtw": 0.726799,
+        "bedragExclBtw": 0.60066
+      },
+      "verminderingPerAansluitingPerJaar": {
+        "bedragInclBtw": 628.958,
+        "bedragExclBtw": 519.8
+      },
+      "bron": "website",
+      "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
+      "geverifieerd": true,
+      "sinds": "2026-09-24T19:46:48.677Z",
+      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+    }
+  }
+}

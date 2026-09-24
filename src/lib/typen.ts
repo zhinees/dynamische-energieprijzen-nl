@@ -173,3 +173,52 @@ export interface Dagprijzen {
     perUur: Prijspunt[];
   };
 }
+
+/** Energy tax (energiebelasting) for households, first bracket. Belastingdienst states it excl. btw. */
+export interface Belastingbedrag {
+  bedragInclBtw: number;
+  bedragExclBtw: number;
+}
+
+export interface BelastingJaar {
+  /** 0 t/m 10.000 kWh */
+  stroomPerKwh: Belastingbedrag;
+  /** 0 t/m 170.000 m3 */
+  gasPerM3: Belastingbedrag;
+  /** Belastingvermindering per elektriciteitsaansluiting (verblijfsfunctie), per year. */
+  verminderingPerAansluitingPerJaar: Belastingbedrag;
+  bron: "website" | "handmatig";
+  bronUrl: string;
+  geverifieerd: true;
+  sinds: string;
+  laatstGecontroleerd?: string;
+}
+
+export interface EnergiebelastingBestand {
+  $schema?: string;
+  versie: 1;
+  gegenereerdOp: string;
+  valuta: "EUR";
+  jaren: Record<string, BelastingJaar>;
+  ophaalfout?: string;
+}
+
+/** belastingen/energiebelasting.json: where to read the rates, plus hand-checked fallback values. */
+export interface EnergiebelastingConfig {
+  $schema?: string;
+  $comment?: string;
+  tariefUrl: string;
+  /** Per year, amounts as the Belastingdienst states them: excl. btw. */
+  handmatig: Record<
+    string,
+    {
+      stroomPerKwh: number;
+      gasPerM3: number;
+      verminderingPerAansluitingPerJaar: number;
+      geverifieerd: true;
+      gecontroleerdOp: string;
+      bron: string;
+      notitie?: string;
+    }
+  >;
+}

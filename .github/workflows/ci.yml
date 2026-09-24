@@ -20,4 +20,4 @@ jobs:
       - run: npm test
       - run: npm run valideer
       # Rebuild supplier data from the configs (no network) to prove the PR produces valid output.
-      - run: npm run leveranciers -- --offline && npm run afleiden && npm run valideer
+      - run: npm run belasting -- --offline && npm run leveranciers -- --offline && npm run afleiden && npm run valideer

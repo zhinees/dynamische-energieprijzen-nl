@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/energiebelasting.schema.json",
+  "title": "data/energiebelasting.json",
+  "description": "Energiebelasting voor huishoudens (eerste schijf) per jaar, van de Belastingdienst.",
+  "type": "object",
+  "required": [
+    "versie",
+    "gegenereerdOp",
+    "valuta",
+    "jaren"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "versie": {
+      "const": 1
+    },
+    "gegenereerdOp": {
+      "type": "string"
+    },
+    "valuta": {
+      "const": "EUR"
+    },
+    "ophaalfout": {
+      "type": "string"
+    },
+    "jaren": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^20\\d\\d$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stroomPerKwh",
+          "gasPerM3",
+          "verminderingPerAansluitingPerJaar",
+          "bron",
+          "bronUrl",
+          "geverifieerd",
+          "sinds"
+        ],
+        "properties": {
+          "stroomPerKwh": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "bedragInclBtw",
+              "bedragExclBtw"
+            ],
+            "properties": {
+              "bedragInclBtw": {
+                "type": "number"
+              },
+              "bedragExclBtw": {
+                "type": "number"
+              }
+            },
+            "description": "0 t/m 10.000 kWh"
+          },
+          "gasPerM3": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "bedragInclBtw",
+              "bedragExclBtw"
+            ],
+            "properties": {
+              "bedragInclBtw": {
+                "type": "number"
+              },
+              "bedragExclBtw": {
+                "type": "number"
+              }
+            },
+            "description": "0 t/m 170.000 m3"
+          },
+          "verminderingPerAansluitingPerJaar": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "bedragInclBtw",
+              "bedragExclBtw"
+            ],
+            "properties": {
+              "bedragInclBtw": {
+                "type": "number"
+              },
+              "bedragExclBtw": {
+                "type": "number"
+              }
+            },
+            "description": "Belastingvermindering per elektriciteitsaansluiting met verblijfsfunctie, per jaar"
+          },
+          "bron": {
+            "enum": [
+              "website",
+              "handmatig"
+            ]
+          },
+          "bronUrl": {
+            "type": "string"
+          },
+          "geverifieerd": {
+            "const": true
+          },
+          "sinds": {
+            "type": "string"
+          },
+          "laatstGecontroleerd": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schema/energiebelasting-config.schema.json",
+  "$comment": "De bot leest de tarieven elke week van de pagina van de Belastingdienst. De handmatige waarden zijn de reserve als die pagina niet te lezen is.",
+  "tariefUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
+  "handmatig": {
+    "2026": {
+      "stroomPerKwh": 0.09161,
+      "gasPerM3": 0.60066,
+      "verminderingPerAansluitingPerJaar": 519.8,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-24",
+      "bron": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
+      "notitie": "Tabellen 'Belasting op elektriciteit' (0 t/m 2.900 en 2.901 t/m 10.000 kWh: € 0,09161), 'Belasting op aardgas (normaal tarief)' (0 tot 1.000 en 1.001 t/m 170.000 m3: € 0,60066) en 'Belastingvermindering per elektriciteitsaansluiting' (verblijfsfunctie: € 519,80). Bedragen excl. btw."
+    }
+  }
+}

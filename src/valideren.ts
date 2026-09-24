@@ -7,7 +7,7 @@ import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import { DATA, ROOT, laadLeverancierConfigs, leesJson } from "./lib/bestanden.ts";
 import { regelsVoor } from "./lib/tarieven.ts";
-import { VELDEN } from "./lib/typen.ts";
+import { VELDEN, type EnergiebelastingConfig } from "./lib/typen.ts";
 
 const ajv = new (Ajv2020 as any)({ allErrors: true, strict: false });
 (addFormats as any)(ajv);
@@ -57,11 +57,19 @@ for (const cfg of configs) {
   if (ontbrekend.length) console.log(`· ${cfg.id}: nog geen geverifieerde bron voor ${ontbrekend.length === VELDEN.length ? "alle velden (niet gepubliceerd)" : ontbrekend.join(", ")}`);
 }
 
-// 2. Generated data (if present)
+// 2. Energy tax config
+const belastingCfg = join(ROOT, "belastingen", "energiebelasting.json");
+await controleer("energiebelasting-config.schema.json", belastingCfg);
+for (const [jaar, h] of Object.entries((await leesJson<EnergiebelastingConfig>(belastingCfg))?.handmatig ?? {})) {
+  if (h.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("belastingen/energiebelasting.json", `${jaar}: gecontroleerdOp ligt in de toekomst`);
+}
+
+// 3. Generated data (if present)
 await controleer("leveranciers.schema.json", join(DATA, "leveranciers.json"));
 await controleer("prijzen-actueel.schema.json", join(DATA, "prijzen", "actueel.json"));
 await controleer("prijzen-index.schema.json", join(DATA, "prijzen", "index.json"));
 await controleer("vergelijking.schema.json", join(DATA, "vergelijking", "actueel.json"));
+await controleer("energiebelasting.schema.json", join(DATA, "energiebelasting.json"));
 for (const j of (await readdir(join(DATA, "prijzen")).catch(() => [] as string[])).filter((d) => /^\d{4}$/.test(d))) {
   for (const f of (await readdir(join(DATA, "prijzen", j))).filter((f) => f.endsWith(".json"))) {
     await controleer("prijzen.schema.json", join(DATA, "prijzen", j, f));
@@ -72,4 +80,4 @@ if (fouten) {
   console.error(`\n${fouten} probleem/problemen`);
   process.exit(1);
 }
-console.log(`✓ ${configs.length} leveranciersbestanden en databestanden geldig`);
+console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand en de databestanden zijn geldig`);

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/energiebelasting-config.schema.json",
+  "title": "belastingen/energiebelasting.json",
+  "description": "Waar de bot de energiebelasting leest, plus met de hand gecontroleerde reservewaarden per jaar (excl. btw, zoals de Belastingdienst ze noemt).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tariefUrl",
+    "handmatig"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$comment": {
+      "type": "string"
+    },
+    "tariefUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "handmatig": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^20\\d\\d$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stroomPerKwh",
+          "gasPerM3",
+          "verminderingPerAansluitingPerJaar",
+          "geverifieerd",
+          "gecontroleerdOp",
+          "bron"
+        ],
+        "properties": {
+          "stroomPerKwh": {
+            "type": "number",
+            "minimum": 0.03,
+            "maximum": 0.3
+          },
+          "gasPerM3": {
+            "type": "number",
+            "minimum": 0.2,
+            "maximum": 1.5
+          },
+          "verminderingPerAansluitingPerJaar": {
+            "type": "number",
+            "minimum": 100,
+            "maximum": 1500
+          },
+          "geverifieerd": {
+            "const": true,
+            "description": "Moet true zijn: gelezen op de site van de Belastingdienst op gecontroleerdOp."
+          },
+          "gecontroleerdOp": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "bron": {
+            "type": "string",
+            "format": "uri"
+          },
+          "notitie": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

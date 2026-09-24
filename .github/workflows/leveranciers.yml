@@ -1,4 +1,4 @@
-name: Leverancierstarieven bijwerken
+name: Leverancierstarieven en energiebelasting bijwerken
 
 on:
   schedule:
@@ -31,19 +31,20 @@ jobs:
           if grep -q '"ophalen": *"browser"' leveranciers/*.json; then
             npx playwright install --with-deps chromium
           fi
+      - run: npm run belasting
       - run: npm run leveranciers
       - run: npm run afleiden
       - run: npm run valideer
       - name: Data vastleggen
         run: |
-          .github/scripts/data-vastleggen.sh "data: leverancierstarieven $(TZ=Europe/Amsterdam date +%F)"
+          .github/scripts/data-vastleggen.sh "data: leverancierstarieven en energiebelasting $(TZ=Europe/Amsterdam date +%F)"
 
       # Keep one open issue listing broken scrape rules, so maintainers notice.
       - name: Kapotte scraperregels melden
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          titel="Scraper: sommige leveranciersregels werken niet"
+          titel="Scraper: sommige leveranciersregels of de energiebelasting werken niet"
           bestaand=$(gh issue list --state open --search "in:title \"$titel\"" --json number --jq '.[0].number')
           if grep -q "⚠️" data/RAPPORT.md; then
             if [ -n "$bestaand" ]; then

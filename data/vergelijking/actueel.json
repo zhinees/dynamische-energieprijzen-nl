@@ -1,14 +1,19 @@
 {
   "$schema": "../../schema/vergelijking.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-24T19:39:10.277Z",
+  "gegenereerdOp": "2026-09-24T19:47:06.216Z",
   "valuta": "EUR",
   "btw": "inclusief",
-  "opmerking": "Alle bedragen zijn inclusief 21% btw, maar exclusief energiebelasting en netbeheerkosten. Tel die erbij op voor een all-in consumentenprijs.",
+  "opmerking": "Alle bedragen zijn inclusief 21% btw. Velden met 'MetEnergiebelasting' tellen ook de energiebelasting van de Belastingdienst mee; de andere niet. Netbeheerkosten en de belastingvermindering per aansluiting zitten nergens in.",
   "vandaag": {
     "datum": "2026-09-24",
     "stroomBron": "energyzero",
     "gasMarktgemiddeldeInclBtw": 0.86515,
+    "energiebelastingInclBtw": {
+      "stroomPerKwh": 0.110848,
+      "gasPerM3": 0.726799,
+      "verminderingPerAansluitingPerJaar": 628.958
+    },
     "leveranciers": [
       {
         "id": "anwb",
@@ -18,7 +23,8 @@
           "stroom": null,
           "gas": null
         },
-        "gasPrijsInclBtw": 0.94195
+        "gasPrijsInclBtw": 0.94195,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.668749
       },
       {
         "id": "budget",
@@ -28,7 +34,8 @@
           "stroom": 5.99,
           "gas": 5.99
         },
-        "gasPrijsInclBtw": 0.92928
+        "gasPrijsInclBtw": 0.92928,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.656079
       },
       {
         "id": "frank",
@@ -38,7 +45,8 @@
           "stroom": 7,
           "gas": 7
         },
-        "gasPrijsInclBtw": 0.94501
+        "gasPrijsInclBtw": 0.94501,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.671809
       },
       {
         "id": "liveenergy",
@@ -48,7 +56,8 @@
           "stroom": 6.05,
           "gas": 6.05
         },
-        "gasPrijsInclBtw": 0.94985
+        "gasPrijsInclBtw": 0.94985,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.676649
       },
       {
         "id": "nextenergy",
@@ -58,7 +67,8 @@
           "stroom": 5.99,
           "gas": 5.99
         },
-        "gasPrijsInclBtw": 0.94415
+        "gasPrijsInclBtw": 0.94415,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.670949
       },
       {
         "id": "pure",
@@ -68,7 +78,8 @@
           "stroom": 6.05,
           "gas": 6.05
         },
-        "gasPrijsInclBtw": 0.96415
+        "gasPrijsInclBtw": 0.96415,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.690949
       },
       {
         "id": "tibber",
@@ -78,7 +89,8 @@
           "stroom": 6.99,
           "gas": 5.99
         },
-        "gasPrijsInclBtw": 0.9535
+        "gasPrijsInclBtw": 0.9535,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.680299
       },
       {
         "id": "vandebron",
@@ -88,7 +100,8 @@
           "stroom": 6.995225,
           "gas": 6.995225
         },
-        "gasPrijsInclBtw": 0.92498
+        "gasPrijsInclBtw": 0.92498,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.651779
       },
       {
         "id": "vattenfall",
@@ -98,7 +111,8 @@
           "stroom": null,
           "gas": null
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "zonneplan",
@@ -108,7 +122,8 @@
           "stroom": 6.25,
           "gas": 6.25
         },
-        "gasPrijsInclBtw": 0.94515
+        "gasPrijsInclBtw": 0.94515,
+        "gasPrijsMetEnergiebelastingInclBtw": 1.671949
       }
     ],
     "uren": [
@@ -139,6 +154,18 @@
           "vandebron": 0.174293,
           "vattenfall": 0.187903,
           "zonneplan": 0.207903
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.316751,
+          "budget": 0.315571,
+          "frank": 0.316901,
+          "liveenergy": 0.322951,
+          "nextenergy": 0.319751,
+          "pure": 0.316741,
+          "tibber": 0.316751,
+          "vandebron": 0.320831,
+          "vattenfall": null,
+          "zonneplan": 0.318751
         }
       },
       {
@@ -168,6 +195,18 @@
           "vandebron": 0.171038,
           "vattenfall": 0.184648,
           "zonneplan": 0.204648
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.313496,
+          "budget": 0.312316,
+          "frank": 0.313646,
+          "liveenergy": 0.319696,
+          "nextenergy": 0.316496,
+          "pure": 0.313486,
+          "tibber": 0.313496,
+          "vandebron": 0.317576,
+          "vattenfall": null,
+          "zonneplan": 0.315496
         }
       },
       {
@@ -197,6 +236,18 @@
           "vandebron": 0.144162,
           "vattenfall": 0.157772,
           "zonneplan": 0.177772
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.28662,
+          "budget": 0.28544,
+          "frank": 0.28677,
+          "liveenergy": 0.29282,
+          "nextenergy": 0.28962,
+          "pure": 0.28661,
+          "tibber": 0.28662,
+          "vandebron": 0.2907,
+          "vattenfall": null,
+          "zonneplan": 0.28862
         }
       },
       {
@@ -226,6 +277,18 @@
           "vandebron": 0.171669,
           "vattenfall": 0.185279,
           "zonneplan": 0.205279
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.314127,
+          "budget": 0.312947,
+          "frank": 0.314277,
+          "liveenergy": 0.320327,
+          "nextenergy": 0.317127,
+          "pure": 0.314117,
+          "tibber": 0.314127,
+          "vandebron": 0.318207,
+          "vattenfall": null,
+          "zonneplan": 0.316127
         }
       },
       {
@@ -255,6 +318,18 @@
           "vandebron": 0.172672,
           "vattenfall": 0.186282,
           "zonneplan": 0.206282
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.31513,
+          "budget": 0.31395,
+          "frank": 0.31528,
+          "liveenergy": 0.32133,
+          "nextenergy": 0.31813,
+          "pure": 0.31512,
+          "tibber": 0.31513,
+          "vandebron": 0.31921,
+          "vattenfall": null,
+          "zonneplan": 0.31713
         }
       },
       {
@@ -284,6 +359,18 @@
           "vandebron": 0.178012,
           "vattenfall": 0.191622,
           "zonneplan": 0.211622
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.32047,
+          "budget": 0.31929,
+          "frank": 0.32062,
+          "liveenergy": 0.32667,
+          "nextenergy": 0.32347,
+          "pure": 0.32046,
+          "tibber": 0.32047,
+          "vandebron": 0.32455,
+          "vattenfall": null,
+          "zonneplan": 0.32247
         }
       },
       {
@@ -313,6 +400,18 @@
           "vandebron": 0.196398,
           "vattenfall": 0.210008,
           "zonneplan": 0.230008
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.338856,
+          "budget": 0.337676,
+          "frank": 0.339006,
+          "liveenergy": 0.345056,
+          "nextenergy": 0.341856,
+          "pure": 0.338846,
+          "tibber": 0.338856,
+          "vandebron": 0.342936,
+          "vattenfall": null,
+          "zonneplan": 0.340856
         }
       },
       {
@@ -342,6 +441,18 @@
           "vandebron": 0.250172,
           "vattenfall": 0.263782,
           "zonneplan": 0.283782
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.39263,
+          "budget": 0.39145,
+          "frank": 0.39278,
+          "liveenergy": 0.39883,
+          "nextenergy": 0.39563,
+          "pure": 0.39262,
+          "tibber": 0.39263,
+          "vandebron": 0.39671,
+          "vattenfall": null,
+          "zonneplan": 0.39463
         }
       },
       {
@@ -371,6 +482,18 @@
           "vandebron": 0.236227,
           "vattenfall": 0.249837,
           "zonneplan": 0.269837
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.378685,
+          "budget": 0.377505,
+          "frank": 0.378835,
+          "liveenergy": 0.384885,
+          "nextenergy": 0.381685,
+          "pure": 0.378675,
+          "tibber": 0.378685,
+          "vandebron": 0.382765,
+          "vattenfall": null,
+          "zonneplan": 0.380685
         }
       },
       {
@@ -400,6 +523,18 @@
           "vandebron": 0.181327,
           "vattenfall": 0.194937,
           "zonneplan": 0.214937
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.323785,
+          "budget": 0.322605,
+          "frank": 0.323935,
+          "liveenergy": 0.329985,
+          "nextenergy": 0.326785,
+          "pure": 0.323775,
+          "tibber": 0.323785,
+          "vandebron": 0.327865,
+          "vattenfall": null,
+          "zonneplan": 0.325785
         }
       },
       {
@@ -429,6 +564,18 @@
           "vandebron": 0.125615,
           "vattenfall": 0.139225,
           "zonneplan": 0.159225
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.268073,
+          "budget": 0.266893,
+          "frank": 0.268223,
+          "liveenergy": 0.274273,
+          "nextenergy": 0.271073,
+          "pure": 0.268063,
+          "tibber": 0.268073,
+          "vandebron": 0.272153,
+          "vattenfall": null,
+          "zonneplan": 0.270073
         }
       },
       {
@@ -458,6 +605,18 @@
           "vandebron": 0.089536,
           "vattenfall": 0.103146,
           "zonneplan": 0.123146
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.231994,
+          "budget": 0.230814,
+          "frank": 0.232144,
+          "liveenergy": 0.238194,
+          "nextenergy": 0.234994,
+          "pure": 0.231984,
+          "tibber": 0.231994,
+          "vandebron": 0.236074,
+          "vattenfall": null,
+          "zonneplan": 0.233994
         }
       },
       {
@@ -487,6 +646,18 @@
           "vandebron": 0.050233,
           "vattenfall": 0.063843,
           "zonneplan": 0.083843
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.192691,
+          "budget": 0.191511,
+          "frank": 0.192841,
+          "liveenergy": 0.198891,
+          "nextenergy": 0.195691,
+          "pure": 0.192681,
+          "tibber": 0.192691,
+          "vandebron": 0.196771,
+          "vattenfall": null,
+          "zonneplan": 0.194691
         }
       },
       {
@@ -516,6 +687,18 @@
           "vandebron": 0.034076,
           "vattenfall": 0.047686,
           "zonneplan": 0.067686
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.176534,
+          "budget": 0.175354,
+          "frank": 0.176684,
+          "liveenergy": 0.182734,
+          "nextenergy": 0.179534,
+          "pure": 0.176524,
+          "tibber": 0.176534,
+          "vandebron": 0.180614,
+          "vattenfall": null,
+          "zonneplan": 0.178534
         }
       },
       {
@@ -545,6 +728,18 @@
           "vandebron": 0.033616,
           "vattenfall": 0.047226,
           "zonneplan": 0.067226
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.176074,
+          "budget": 0.174894,
+          "frank": 0.176224,
+          "liveenergy": 0.182274,
+          "nextenergy": 0.179074,
+          "pure": 0.176064,
+          "tibber": 0.176074,
+          "vandebron": 0.180154,
+          "vattenfall": null,
+          "zonneplan": 0.178074
         }
       },
       {
@@ -574,6 +769,18 @@
           "vandebron": 0.083175,
           "vattenfall": 0.096785,
           "zonneplan": 0.116785
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.225633,
+          "budget": 0.224453,
+          "frank": 0.225783,
+          "liveenergy": 0.231833,
+          "nextenergy": 0.228633,
+          "pure": 0.225623,
+          "tibber": 0.225633,
+          "vandebron": 0.229713,
+          "vattenfall": null,
+          "zonneplan": 0.227633
         }
       },
       {
@@ -603,6 +810,18 @@
           "vandebron": 0.132268,
           "vattenfall": 0.145878,
           "zonneplan": 0.165878
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.274726,
+          "budget": 0.273546,
+          "frank": 0.274876,
+          "liveenergy": 0.280926,
+          "nextenergy": 0.277726,
+          "pure": 0.274716,
+          "tibber": 0.274726,
+          "vandebron": 0.278806,
+          "vattenfall": null,
+          "zonneplan": 0.276726
         }
       },
       {
@@ -632,6 +851,18 @@
           "vandebron": 0.193748,
           "vattenfall": 0.207358,
           "zonneplan": 0.227358
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.336206,
+          "budget": 0.335026,
+          "frank": 0.336356,
+          "liveenergy": 0.342406,
+          "nextenergy": 0.339206,
+          "pure": 0.336196,
+          "tibber": 0.336206,
+          "vandebron": 0.340286,
+          "vattenfall": null,
+          "zonneplan": 0.338206
         }
       },
       {
@@ -661,6 +892,18 @@
           "vandebron": 0.254018,
           "vattenfall": 0.267628,
           "zonneplan": 0.287628
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.396476,
+          "budget": 0.395296,
+          "frank": 0.396626,
+          "liveenergy": 0.402676,
+          "nextenergy": 0.399476,
+          "pure": 0.396466,
+          "tibber": 0.396476,
+          "vandebron": 0.400556,
+          "vattenfall": null,
+          "zonneplan": 0.398476
         }
       },
       {
@@ -690,6 +933,18 @@
           "vandebron": 0.310307,
           "vattenfall": 0.323917,
           "zonneplan": 0.343917
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.452765,
+          "budget": 0.451585,
+          "frank": 0.452915,
+          "liveenergy": 0.458965,
+          "nextenergy": 0.455765,
+          "pure": 0.452755,
+          "tibber": 0.452765,
+          "vandebron": 0.456845,
+          "vattenfall": null,
+          "zonneplan": 0.454765
         }
       },
       {
@@ -719,6 +974,18 @@
           "vandebron": 0.30099,
           "vattenfall": 0.3146,
           "zonneplan": 0.3346
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.443448,
+          "budget": 0.442268,
+          "frank": 0.443598,
+          "liveenergy": 0.449648,
+          "nextenergy": 0.446448,
+          "pure": 0.443438,
+          "tibber": 0.443448,
+          "vandebron": 0.447528,
+          "vattenfall": null,
+          "zonneplan": 0.445448
         }
       },
       {
@@ -748,6 +1015,18 @@
           "vandebron": 0.259675,
           "vattenfall": 0.273285,
           "zonneplan": 0.293285
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.402133,
+          "budget": 0.400953,
+          "frank": 0.402283,
+          "liveenergy": 0.408333,
+          "nextenergy": 0.405133,
+          "pure": 0.402123,
+          "tibber": 0.402133,
+          "vandebron": 0.406213,
+          "vattenfall": null,
+          "zonneplan": 0.404133
         }
       },
       {
@@ -777,6 +1056,18 @@
           "vandebron": 0.234436,
           "vattenfall": 0.248046,
           "zonneplan": 0.268046
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.376894,
+          "budget": 0.375714,
+          "frank": 0.377044,
+          "liveenergy": 0.383094,
+          "nextenergy": 0.379894,
+          "pure": 0.376884,
+          "tibber": 0.376894,
+          "vandebron": 0.380974,
+          "vattenfall": null,
+          "zonneplan": 0.378894
         }
       },
       {
@@ -806,6 +1097,18 @@
           "vandebron": 0.214139,
           "vattenfall": 0.227749,
           "zonneplan": 0.247749
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.356597,
+          "budget": 0.355417,
+          "frank": 0.356747,
+          "liveenergy": 0.362797,
+          "nextenergy": 0.359597,
+          "pure": 0.356587,
+          "tibber": 0.356597,
+          "vandebron": 0.360677,
+          "vattenfall": null,
+          "zonneplan": 0.358597
         }
       }
     ]
@@ -814,6 +1117,11 @@
     "datum": "2026-09-25",
     "stroomBron": "energyzero",
     "gasMarktgemiddeldeInclBtw": null,
+    "energiebelastingInclBtw": {
+      "stroomPerKwh": 0.110848,
+      "gasPerM3": 0.726799,
+      "verminderingPerAansluitingPerJaar": 628.958
+    },
     "leveranciers": [
       {
         "id": "anwb",
@@ -823,7 +1131,8 @@
           "stroom": null,
           "gas": null
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "budget",
@@ -833,7 +1142,8 @@
           "stroom": 5.99,
           "gas": 5.99
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "frank",
@@ -843,7 +1153,8 @@
           "stroom": 7,
           "gas": 7
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "liveenergy",
@@ -853,7 +1164,8 @@
           "stroom": 6.05,
           "gas": 6.05
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "nextenergy",
@@ -863,7 +1175,8 @@
           "stroom": 5.99,
           "gas": 5.99
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "pure",
@@ -873,7 +1186,8 @@
           "stroom": 6.05,
           "gas": 6.05
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "tibber",
@@ -883,7 +1197,8 @@
           "stroom": 6.99,
           "gas": 5.99
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "vandebron",
@@ -893,7 +1208,8 @@
           "stroom": 6.995225,
           "gas": 6.995225
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "vattenfall",
@@ -903,7 +1219,8 @@
           "stroom": null,
           "gas": null
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       },
       {
         "id": "zonneplan",
@@ -913,7 +1230,8 @@
           "stroom": 6.25,
           "gas": 6.25
         },
-        "gasPrijsInclBtw": null
+        "gasPrijsInclBtw": null,
+        "gasPrijsMetEnergiebelastingInclBtw": null
       }
     ],
     "uren": [
@@ -944,6 +1262,18 @@
           "vandebron": 0.206589,
           "vattenfall": 0.220199,
           "zonneplan": 0.240199
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.349047,
+          "budget": 0.347867,
+          "frank": 0.349197,
+          "liveenergy": 0.355247,
+          "nextenergy": 0.352047,
+          "pure": 0.349037,
+          "tibber": 0.349047,
+          "vandebron": 0.353127,
+          "vattenfall": null,
+          "zonneplan": 0.351047
         }
       },
       {
@@ -973,6 +1303,18 @@
           "vandebron": 0.194752,
           "vattenfall": 0.208362,
           "zonneplan": 0.228362
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.33721,
+          "budget": 0.33603,
+          "frank": 0.33736,
+          "liveenergy": 0.34341,
+          "nextenergy": 0.34021,
+          "pure": 0.3372,
+          "tibber": 0.33721,
+          "vandebron": 0.34129,
+          "vattenfall": null,
+          "zonneplan": 0.33921
         }
       },
       {
@@ -1002,6 +1344,18 @@
           "vandebron": 0.185955,
           "vattenfall": 0.199565,
           "zonneplan": 0.219565
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.328413,
+          "budget": 0.327233,
+          "frank": 0.328563,
+          "liveenergy": 0.334613,
+          "nextenergy": 0.331413,
+          "pure": 0.328403,
+          "tibber": 0.328413,
+          "vandebron": 0.332493,
+          "vattenfall": null,
+          "zonneplan": 0.330413
         }
       },
       {
@@ -1031,6 +1385,18 @@
           "vandebron": 0.185407,
           "vattenfall": 0.199017,
           "zonneplan": 0.219017
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.327865,
+          "budget": 0.326685,
+          "frank": 0.328015,
+          "liveenergy": 0.334065,
+          "nextenergy": 0.330865,
+          "pure": 0.327855,
+          "tibber": 0.327865,
+          "vandebron": 0.331945,
+          "vattenfall": null,
+          "zonneplan": 0.329865
         }
       },
       {
@@ -1060,6 +1426,18 @@
           "vandebron": 0.181406,
           "vattenfall": 0.195016,
           "zonneplan": 0.215016
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.323864,
+          "budget": 0.322684,
+          "frank": 0.324014,
+          "liveenergy": 0.330064,
+          "nextenergy": 0.326864,
+          "pure": 0.323854,
+          "tibber": 0.323864,
+          "vandebron": 0.327944,
+          "vattenfall": null,
+          "zonneplan": 0.325864
         }
       },
       {
@@ -1089,6 +1467,18 @@
           "vandebron": 0.187084,
           "vattenfall": 0.200694,
           "zonneplan": 0.220694
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.329542,
+          "budget": 0.328362,
+          "frank": 0.329692,
+          "liveenergy": 0.335742,
+          "nextenergy": 0.332542,
+          "pure": 0.329532,
+          "tibber": 0.329542,
+          "vandebron": 0.333622,
+          "vattenfall": null,
+          "zonneplan": 0.331542
         }
       },
       {
@@ -1118,6 +1508,18 @@
           "vandebron": 0.204069,
           "vattenfall": 0.217679,
           "zonneplan": 0.237679
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.346527,
+          "budget": 0.345347,
+          "frank": 0.346677,
+          "liveenergy": 0.352727,
+          "nextenergy": 0.349527,
+          "pure": 0.346517,
+          "tibber": 0.346527,
+          "vandebron": 0.350607,
+          "vattenfall": null,
+          "zonneplan": 0.348527
         }
       },
       {
@@ -1147,6 +1549,18 @@
           "vandebron": 0.23755,
           "vattenfall": 0.25116,
           "zonneplan": 0.27116
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.380008,
+          "budget": 0.378828,
+          "frank": 0.380158,
+          "liveenergy": 0.386208,
+          "nextenergy": 0.383008,
+          "pure": 0.379998,
+          "tibber": 0.380008,
+          "vandebron": 0.384088,
+          "vattenfall": null,
+          "zonneplan": 0.382008
         }
       },
       {
@@ -1176,6 +1590,18 @@
           "vandebron": 0.243467,
           "vattenfall": 0.257077,
           "zonneplan": 0.277077
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.385925,
+          "budget": 0.384745,
+          "frank": 0.386075,
+          "liveenergy": 0.392125,
+          "nextenergy": 0.388925,
+          "pure": 0.385915,
+          "tibber": 0.385925,
+          "vandebron": 0.390005,
+          "vattenfall": null,
+          "zonneplan": 0.387925
         }
       },
       {
@@ -1205,6 +1631,18 @@
           "vandebron": 0.221985,
           "vattenfall": 0.235595,
           "zonneplan": 0.255595
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.364443,
+          "budget": 0.363263,
+          "frank": 0.364593,
+          "liveenergy": 0.370643,
+          "nextenergy": 0.367443,
+          "pure": 0.364433,
+          "tibber": 0.364443,
+          "vandebron": 0.368523,
+          "vattenfall": null,
+          "zonneplan": 0.366443
         }
       },
       {
@@ -1234,6 +1672,18 @@
           "vandebron": 0.173948,
           "vattenfall": 0.187558,
           "zonneplan": 0.207558
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.316406,
+          "budget": 0.315226,
+          "frank": 0.316556,
+          "liveenergy": 0.322606,
+          "nextenergy": 0.319406,
+          "pure": 0.316396,
+          "tibber": 0.316406,
+          "vandebron": 0.320486,
+          "vattenfall": null,
+          "zonneplan": 0.318406
         }
       },
       {
@@ -1263,6 +1713,18 @@
           "vandebron": 0.11466,
           "vattenfall": 0.12827,
           "zonneplan": 0.14827
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.257118,
+          "budget": 0.255938,
+          "frank": 0.257268,
+          "liveenergy": 0.263318,
+          "nextenergy": 0.260118,
+          "pure": 0.257108,
+          "tibber": 0.257118,
+          "vandebron": 0.261198,
+          "vattenfall": null,
+          "zonneplan": 0.259118
         }
       },
       {
@@ -1292,6 +1754,18 @@
           "vandebron": 0.061026,
           "vattenfall": 0.074636,
           "zonneplan": 0.094636
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.203484,
+          "budget": 0.202304,
+          "frank": 0.203634,
+          "liveenergy": 0.209684,
+          "nextenergy": 0.206484,
+          "pure": 0.203474,
+          "tibber": 0.203484,
+          "vandebron": 0.207564,
+          "vattenfall": null,
+          "zonneplan": 0.205484
         }
       },
       {
@@ -1321,6 +1795,18 @@
           "vandebron": 0.028653,
           "vattenfall": 0.042263,
           "zonneplan": 0.062263
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.171111,
+          "budget": 0.169931,
+          "frank": 0.171261,
+          "liveenergy": 0.177311,
+          "nextenergy": 0.174111,
+          "pure": 0.171101,
+          "tibber": 0.171111,
+          "vandebron": 0.175191,
+          "vattenfall": null,
+          "zonneplan": 0.173111
         }
       },
       {
@@ -1350,6 +1836,18 @@
           "vandebron": 0.039188,
           "vattenfall": 0.052798,
           "zonneplan": 0.072798
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.181646,
+          "budget": 0.180466,
+          "frank": 0.181796,
+          "liveenergy": 0.187846,
+          "nextenergy": 0.184646,
+          "pure": 0.181636,
+          "tibber": 0.181646,
+          "vandebron": 0.185726,
+          "vattenfall": null,
+          "zonneplan": 0.183646
         }
       },
       {
@@ -1379,6 +1877,18 @@
           "vandebron": 0.090275,
           "vattenfall": 0.103885,
           "zonneplan": 0.123885
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.232733,
+          "budget": 0.231553,
+          "frank": 0.232883,
+          "liveenergy": 0.238933,
+          "nextenergy": 0.235733,
+          "pure": 0.232723,
+          "tibber": 0.232733,
+          "vandebron": 0.236813,
+          "vattenfall": null,
+          "zonneplan": 0.234733
         }
       },
       {
@@ -1408,6 +1918,18 @@
           "vandebron": 0.162179,
           "vattenfall": 0.175789,
           "zonneplan": 0.195789
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.304637,
+          "budget": 0.303457,
+          "frank": 0.304787,
+          "liveenergy": 0.310837,
+          "nextenergy": 0.307637,
+          "pure": 0.304627,
+          "tibber": 0.304637,
+          "vandebron": 0.308717,
+          "vattenfall": null,
+          "zonneplan": 0.306637
         }
       },
       {
@@ -1437,6 +1959,18 @@
           "vandebron": 0.222645,
           "vattenfall": 0.236255,
           "zonneplan": 0.256255
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.365103,
+          "budget": 0.363923,
+          "frank": 0.365253,
+          "liveenergy": 0.371303,
+          "nextenergy": 0.368103,
+          "pure": 0.365093,
+          "tibber": 0.365103,
+          "vandebron": 0.369183,
+          "vattenfall": null,
+          "zonneplan": 0.367103
         }
       },
       {
@@ -1466,6 +2000,18 @@
           "vandebron": 0.277266,
           "vattenfall": 0.290876,
           "zonneplan": 0.310876
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.419724,
+          "budget": 0.418544,
+          "frank": 0.419874,
+          "liveenergy": 0.425924,
+          "nextenergy": 0.422724,
+          "pure": 0.419714,
+          "tibber": 0.419724,
+          "vandebron": 0.423804,
+          "vattenfall": null,
+          "zonneplan": 0.421724
         }
       },
       {
@@ -1495,6 +2041,18 @@
           "vandebron": 0.346248,
           "vattenfall": 0.359858,
           "zonneplan": 0.379858
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.488706,
+          "budget": 0.487526,
+          "frank": 0.488856,
+          "liveenergy": 0.494906,
+          "nextenergy": 0.491706,
+          "pure": 0.488696,
+          "tibber": 0.488706,
+          "vandebron": 0.492786,
+          "vattenfall": null,
+          "zonneplan": 0.490706
         }
       },
       {
@@ -1524,6 +2082,18 @@
           "vandebron": 0.291536,
           "vattenfall": 0.305146,
           "zonneplan": 0.325146
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.433994,
+          "budget": 0.432814,
+          "frank": 0.434144,
+          "liveenergy": 0.440194,
+          "nextenergy": 0.436994,
+          "pure": 0.433984,
+          "tibber": 0.433994,
+          "vandebron": 0.438074,
+          "vattenfall": null,
+          "zonneplan": 0.435994
         }
       },
       {
@@ -1553,6 +2123,18 @@
           "vandebron": 0.257733,
           "vattenfall": 0.271343,
           "zonneplan": 0.291343
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.400191,
+          "budget": 0.399011,
+          "frank": 0.400341,
+          "liveenergy": 0.406391,
+          "nextenergy": 0.403191,
+          "pure": 0.400181,
+          "tibber": 0.400191,
+          "vandebron": 0.404271,
+          "vattenfall": null,
+          "zonneplan": 0.402191
         }
       },
       {
@@ -1582,6 +2164,18 @@
           "vandebron": 0.236279,
           "vattenfall": 0.249889,
           "zonneplan": 0.269889
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.378737,
+          "budget": 0.377557,
+          "frank": 0.378887,
+          "liveenergy": 0.384937,
+          "nextenergy": 0.381737,
+          "pure": 0.378727,
+          "tibber": 0.378737,
+          "vandebron": 0.382817,
+          "vattenfall": null,
+          "zonneplan": 0.380737
         }
       },
       {
@@ -1611,6 +2205,18 @@
           "vandebron": 0.20056,
           "vattenfall": 0.21417,
           "zonneplan": 0.23417
+        },
+        "afnameMetEnergiebelastingInclBtw": {
+          "anwb": 0.343018,
+          "budget": 0.341838,
+          "frank": 0.343168,
+          "liveenergy": 0.349218,
+          "nextenergy": 0.346018,
+          "pure": 0.343008,
+          "tibber": 0.343018,
+          "vandebron": 0.347098,
+          "vattenfall": null,
+          "zonneplan": 0.345018
         }
       }
     ]

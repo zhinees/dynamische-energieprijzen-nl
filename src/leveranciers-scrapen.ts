@@ -1,4 +1,5 @@
 // Scrape supplier tariffs and write data/leveranciers.json (+ .csv, report, change log).
+// Run `npm run belasting` first: the report also shows the energy tax status.
 //
 //   node src/leveranciers-scrapen.ts            # all suppliers
 //   node src/leveranciers-scrapen.ts --offline  # no network: rebuild from handmatig values (used in CI)
@@ -9,7 +10,7 @@ import { sluitBrowser, haalPaginaTekst } from "./lib/pagina-ophalen.ts";
 import { DATA, laadLeverancierConfigs, leesJson, schrijfJsonAlsGewijzigd, schrijfTekst } from "./lib/bestanden.ts";
 import { bouwLeverancier, regelsVoor, urlsVoor } from "./lib/tarieven.ts";
 import { REKENTOOLS, type Rekentoolresultaat } from "./rekentools/index.ts";
-import { VELDEN, type Bron, type Leverancier, type LeverancierConfig, type LeveranciersBestand, type Veld } from "./lib/typen.ts";
+import { VELDEN, type Bron, type EnergiebelastingBestand, type Leverancier, type LeverancierConfig, type LeveranciersBestand, type Veld } from "./lib/typen.ts";
 
 const LEVERANCIERS_JSON = join(DATA, "leveranciers.json");
 const WIJZIGINGEN_JSON = join(DATA, "tariefwijzigingen.json");
@@ -41,7 +42,7 @@ function naarCsv(bestand: LeveranciersBestand): string {
   return [kop.join(","), ...rijen].join("\n") + "\n";
 }
 
-function rapport(bestand: LeveranciersBestand, wachtend: string[] = []): string {
+function rapport(bestand: LeveranciersBestand, wachtend: string[] = [], belasting?: EnergiebelastingBestand): string {
   const icoon = (l: Leverancier, k: Veld) => {
     const v = l.tarieven[k];
     if (!v) return "–";
@@ -62,6 +63,15 @@ function rapport(bestand: LeveranciersBestand, wachtend: string[] = []): string 
   ];
   if (wachtend.length) {
     regels.push("## Nog niet gepubliceerd", "", "Nog geen geverifieerde tarieven (de reden staat in \$comment van het leveranciersbestand):", "", ...wachtend.map((n) => `- ${n}`), "");
+  }
+  if (belasting) {
+    const jaren = Object.entries(belasting.jaren);
+    const status = belasting.ophaalfout
+      ? `⚠️ uitlezen mislukt (${belasting.ophaalfout}), de laatst bekende waarden worden gebruikt`
+      : jaren.every(([, v]) => v.bron === "website")
+        ? "✅ uitgelezen van de site van de Belastingdienst"
+        : "☑️ handmatig gecontroleerd";
+    regels.push("## Energiebelasting", "", `${status}. Jaren: ${jaren.map(([j]) => j).join(", ")}.`, "");
   }
   const fouten = bestand.leveranciers.filter((l) => l.ophaalfout);
   if (fouten.length) {
@@ -142,7 +152,7 @@ async function main() {
   if (geschreven) await schrijfTekst(join(DATA, "leveranciers.csv"), naarCsv(bestand));
   if (wijzigingen.length !== eerder) await schrijfTekst(WIJZIGINGEN_JSON, JSON.stringify(wijzigingen, null, 2) + "\n");
 
-  const rap = rapport(bestand, wachtend.map((l) => l.naam));
+  const rap = rapport(bestand, wachtend.map((l) => l.naam), await leesJson<EnergiebelastingBestand>(join(DATA, "energiebelasting.json")));
   const oudRap = await readFile(join(DATA, "RAPPORT.md"), "utf8").catch(() => "");
   if (rap !== oudRap) await schrijfTekst(join(DATA, "RAPPORT.md"), rap);
 

@@ -20,3 +20,7 @@ Gemaakt door `npm run leveranciers`. ✅ uitgelezen van de site van de leveranci
 Nog geen geverifieerde tarieven (de reden staat in $comment van het leveranciersbestand):
 
 - Eneco
+
+## Energiebelasting
+
+✅ uitgelezen van de site van de Belastingdienst. Jaren: 2023, 2024, 2025, 2026.

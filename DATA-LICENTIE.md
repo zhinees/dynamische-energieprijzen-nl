@@ -13,6 +13,7 @@ De bestanden combineren data uit deze bronnen. Hun voorwaarden gelden voor dat d
 | --- | --- | --- |
 | Day-ahead-stroomprijzen (`"bron": "entsoe"`) | [ENTSO-E Transparency Platform](https://transparency.entsoe.eu) | Vermeld ENTSO-E als bron. Zie hun gebruiksvoorwaarden. |
 | Stroomprijzen (`"bron": "energyzero"`) en gasprijzen | Openbare API van [EnergyZero](https://www.energyzero.nl) | Controleer de voorwaarden van EnergyZero voordat je de data commercieel hergebruikt. Waar mogelijk gebruikt het project ENTSO-E voor stroom. |
+| Energiebelasting (`data/energiebelasting.json`) | [Belastingdienst](https://www.belastingdienst.nl) | Tarieven uit wet- en regelgeving (Wet belastingen op milieugrondslag); de overheid publiceert ze openbaar. |
 | Tarieven van leveranciers | De openbare websites van de leveranciers (URL in `bronUrl` / `bron` van elke waarde) | Tarieven zijn feiten, verzameld van openbare pagina's. Merknamen zijn van hun eigenaars. |
 
 Beheerders: controleer deze voorwaarden opnieuw voordat je de dataset breed promoot. Dit bestand is geen juridisch advies.

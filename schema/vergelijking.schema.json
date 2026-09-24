@@ -76,6 +76,33 @@
             "null"
           ]
         },
+        "energiebelastingInclBtw": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "stroomPerKwh",
+                "gasPerM3",
+                "verminderingPerAansluitingPerJaar"
+              ],
+              "properties": {
+                "stroomPerKwh": {
+                  "type": "number"
+                },
+                "gasPerM3": {
+                  "type": "number"
+                },
+                "verminderingPerAansluitingPerJaar": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "description": "Energiebelasting van het jaar van deze dag, incl. btw. null als die nog niet bekend is."
+        },
         "leveranciers": {
           "type": "array",
           "items": {
@@ -85,7 +112,8 @@
               "naam",
               "geverifieerd",
               "vastPerMaandInclBtw",
-              "gasPrijsInclBtw"
+              "gasPrijsInclBtw",
+              "gasPrijsMetEnergiebelastingInclBtw"
             ]
           }
         },
@@ -98,7 +126,8 @@
               "startUtc",
               "marktInclBtw",
               "afnameInclBtw",
-              "terugleveringInclBtw"
+              "terugleveringInclBtw",
+              "afnameMetEnergiebelastingInclBtw"
             ],
             "properties": {
               "marktInclBtw": {
@@ -114,6 +143,15 @@
                 }
               },
               "terugleveringInclBtw": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              },
+              "afnameMetEnergiebelastingInclBtw": {
                 "type": "object",
                 "additionalProperties": {
                   "type": [
