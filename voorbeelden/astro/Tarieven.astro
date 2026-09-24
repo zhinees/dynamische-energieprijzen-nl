@@ -1,0 +1,65 @@
+---
+// Drop into an Astro project (works with the Cloudflare adapter too).
+// Usage: <Tarieven />
+//
+// Shows each supplier's dynamic-contract tariffs incl. btw. The data changes a few
+// times a year, so building it at build time (the default) is fine.
+interface Props {
+  basis?: string;
+}
+const { basis = "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data" } = Astro.props;
+
+let leveranciers: any[] = [];
+let fout = "";
+try {
+  leveranciers = (await (await fetch(`${basis}/leveranciers.json`)).json()).leveranciers;
+} catch (e) {
+  fout = "Tarieven zijn nu niet beschikbaar.";
+}
+
+const incl = (l: any, veld: string): number | null => l.tarieven[veld]?.bedragInclBtw ?? null;
+const eur = (n: number | null, dec = 2) =>
+  n === null ? "–" : n.toLocaleString("nl-NL", { style: "currency", currency: "EUR", minimumFractionDigits: dec, maximumFractionDigits: dec });
+const rijen = leveranciers.slice().sort((a, b) => (incl(a, "stroomInkoopopslag") ?? 9) - (incl(b, "stroomInkoopopslag") ?? 9));
+---
+<section class="tarieven">
+  {fout && <p>{fout}</p>}
+  {rijen.length > 0 && (
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>Leverancier</th>
+            <th>Vast stroom /mnd</th>
+            <th>Opslag stroom /kWh</th>
+            <th>Teruglevering /kWh</th>
+            <th>Vast gas /mnd</th>
+            <th>Opslag gas /m³</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rijen.map((l: any) => (
+            <tr>
+              <td><a href={l.tariefUrl}>{l.naam}</a></td>
+              <td>{eur(incl(l, "stroomVastPerMaand"))}</td>
+              <td>{eur(incl(l, "stroomInkoopopslag"), 4)}</td>
+              <td>{eur(incl(l, "terugleverCorrectie"), 4)}</td>
+              <td>{eur(incl(l, "gasVastPerMaand"))}</td>
+              <td>{eur(incl(l, "gasInkoopopslag"), 4)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p><small>
+        Incl. btw, bovenop de marktprijs. Teruglevering: negatief = kosten, positief = bonus.
+        – = niet gepubliceerd door de leverancier. Bron: dynamische-energieprijzen-nl.
+      </small></p>
+    </>
+  )}
+</section>
+
+<style>
+  .tarieven table { border-collapse: collapse; width: 100%; }
+  .tarieven th, .tarieven td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #ddd; text-align: left; }
+  .tarieven td:not(:first-child), .tarieven th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+</style>

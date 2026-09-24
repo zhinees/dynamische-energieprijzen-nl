@@ -6,11 +6,6 @@ import type { LeverancierConfig } from "./typen.ts";
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 export const DATA = join(ROOT, "data");
 
-/** data/prijzen/2026/2026-09-24.json */
-export function dagbestandPad(datum: string) {
-  return join(DATA, "prijzen", datum.slice(0, 4), `${datum}.json`);
-}
-
 export async function leesJson<T>(pad: string): Promise<T | undefined> {
   try {
     return JSON.parse(await readFile(pad, "utf8")) as T;
@@ -21,7 +16,7 @@ export async function leesJson<T>(pad: string): Promise<T | undefined> {
 }
 
 /** Keys that change on every run; ignored when deciding whether a file really changed. */
-const VLUCHTIG = new Set(["gegenereerdOp", "opgehaaldOp", "laatstUitgevoerd", "laatstGecontroleerd"]);
+const VLUCHTIG = new Set(["gegenereerdOp", "laatstUitgevoerd", "laatstGecontroleerd"]);
 
 function stabiel(waarde: unknown): unknown {
   if (Array.isArray(waarde)) return waarde.map(stabiel);

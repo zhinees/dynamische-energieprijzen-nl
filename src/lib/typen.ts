@@ -1,5 +1,5 @@
-// Shared types. All money is EUR, excluding energy tax (energiebelasting). Published amounts
-// come in pairs: ...InclBtw (what a consumer pays, the main value) and ...ExclBtw.
+// Shared types. All money is EUR. Published amounts come in pairs: ...InclBtw (what a
+// consumer pays, the main value) and ...ExclBtw.
 
 export type Veld =
   | "stroomVastPerMaand"   // vaste leveringskosten stroom, EUR/maand
@@ -140,38 +140,6 @@ export interface LeveranciersBestand {
   gegenereerdOp: string;
   valuta: "EUR";
   leveranciers: Leverancier[];
-}
-
-export interface Prijspunt {
-  /** Local time with offset, e.g. 2026-09-24T18:00:00+02:00 */
-  start: string;
-  /** Same moment in UTC, e.g. 2026-09-24T16:00:00Z */
-  startUtc: string;
-  /** Market price incl. 21% btw (excl. energy tax and supplier markup). */
-  prijsInclBtw: number;
-  prijsExclBtw: number;
-}
-
-export interface Dagprijzen {
-  $schema?: string;
-  versie: 1;
-  datum: string; // YYYY-MM-DD (Europe/Amsterdam)
-  tijdzone: "Europe/Amsterdam";
-  valuta: "EUR";
-  opgehaaldOp: string;
-  stroom: null | {
-    eenheid: "EUR/kWh";
-    bron: "entsoe" | "energyzero";
-    /** Hourly prices (average of the quarter-hours when the market is 15-min). */
-    perUur: Prijspunt[];
-    /** Quarter-hour prices, when the source provides them. */
-    perKwartier?: Prijspunt[];
-  };
-  gas: null | {
-    eenheid: "EUR/m3";
-    bron: "energyzero";
-    perUur: Prijspunt[];
-  };
 }
 
 /** Energy tax (energiebelasting) for households, first bracket. Belastingdienst states it excl. btw. */

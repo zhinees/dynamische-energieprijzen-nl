@@ -3,12 +3,12 @@
 //   node src/rekenhulp.ts --stroom 2500 --gas 1000
 //   node src/rekenhulp.ts --stroom 3000 --teruglevering 2000   # with solar panels, no gas
 
-import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { DATA, leesJson } from "./lib/bestanden.ts";
 import { berekenOmslagpunten, berekenTerugleveromslag, goedkoopstePerVerbruik, leverancierdelen, productkosten, type Product, type Verbruik } from "./lib/jaarkosten.ts";
-import { plusDagen, vandaagLokaal } from "./lib/tijd.ts";
-import type { Dagprijzen, EnergiebelastingBestand, LeveranciersBestand } from "./lib/typen.ts";
+import { haalJaargemiddelde, type Jaargemiddelde } from "./lib/bronnen.ts";
+import { vandaagLokaal } from "./lib/tijd.ts";
+import type { EnergiebelastingBestand, LeveranciersBestand } from "./lib/typen.ts";
 
 const args = process.argv.slice(2);
 const optie = (naam: string) => {
@@ -32,25 +32,6 @@ const belasting = await leesJson<EnergiebelastingBestand>(join(DATA, "energiebel
 const eur = (n: number | null, dec = 2) =>
   n === null ? "–" : `€ ${(Math.round(n * 10 ** dec) / 10 ** dec + 0).toLocaleString("nl-NL", { minimumFractionDigits: dec, maximumFractionDigits: dec })}`;
 const getal = (n: number) => n.toLocaleString("nl-NL");
-
-/** Average market price incl. btw over the stored days of the past year (unweighted: same usage every hour). */
-async function gemiddeldeMarktprijs(): Promise<{ stroom: number | null; gas: number | null; dagen: number }> {
-  const vanaf = plusDagen(vandaagLokaal(), -365);
-  const stroom: number[] = [];
-  const gas: number[] = [];
-  let dagen = 0;
-  for (const j of (await readdir(join(DATA, "prijzen")).catch(() => [] as string[])).filter((d) => /^\d{4}$/.test(d))) {
-    for (const f of (await readdir(join(DATA, "prijzen", j))).filter((f) => f.endsWith(".json") && f.slice(0, 10) >= vanaf)) {
-      const d = await leesJson<Dagprijzen>(join(DATA, "prijzen", j, f));
-      if (!d) continue;
-      dagen++;
-      stroom.push(...(d.stroom?.perUur.map((p) => p.prijsInclBtw) ?? []));
-      gas.push(...(d.gas?.perUur.map((p) => p.prijsInclBtw) ?? []));
-    }
-  }
-  const gem = (a: number[]) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : null);
-  return { stroom: gem(stroom), gas: gem(gas), dagen };
-}
 
 // 1. Ranking: only the part that differs per supplier.
 const delen = leverancierdelen(lev.leveranciers, verbruik);
@@ -125,29 +106,40 @@ if (verbruik.teruglevering) {
 }
 
 // 3. Estimated bill: market price, energy tax and the tax reduction added (no grid costs).
-const markt = await gemiddeldeMarktprijs();
+// The market price is the average of the last 365 days, fetched live from EnergyZero.
+const haal = async (soort: "stroom" | "gas") => haalJaargemiddelde(soort).catch((e: Error) => (console.error(`\n  marktprijs ${soort}: ${e.message}`), null));
+const markt: { stroom: Jaargemiddelde | null; gas: Jaargemiddelde | null } = {
+  stroom: verbruik.stroom ? await haal("stroom") : null,
+  gas: verbruik.gas ? await haal("gas") : null,
+};
 const jaar = vandaagLokaal().slice(0, 4);
 const eb = belasting?.jaren[jaar];
 const beste = volledig[0];
-if (beste && eb && markt.dagen) {
-  const stroomMarkt = verbruik.stroom && markt.stroom !== null ? verbruik.stroom * markt.stroom : 0;
-  const gasMarkt = verbruik.gas && markt.gas !== null ? verbruik.gas * markt.gas : 0;
+const marktCompleet = (!verbruik.stroom || markt.stroom) && (!verbruik.gas || markt.gas);
+if (!marktCompleet) console.log("\nGeen jaarrekening: de marktprijs kon niet bij EnergyZero worden opgehaald.");
+if (beste && eb && marktCompleet) {
+  const stroomMarkt = verbruik.stroom * (markt.stroom?.prijsInclBtw ?? 0);
+  const gasMarkt = verbruik.gas * (markt.gas?.prijsInclBtw ?? 0);
   const ebStroom = verbruik.stroom * eb.stroomPerKwh.bedragInclBtw;
   const ebGas = verbruik.gas * eb.gasPerM3.bedragInclBtw;
   const vermindering = verbruik.stroom || verbruik.teruglevering ? eb.verminderingPerAansluitingPerJaar.bedragInclBtw : 0;
   const totaal = beste.totaal! + stroomMarkt + gasMarkt + ebStroom + ebGas - vermindering;
   console.log(`\nGeschatte jaarrekening bij ${beste.naam} (incl. btw, zonder netbeheerkosten):`);
-  if (verbruik.stroom) console.log(`  stroom marktprijs    ${eur(stroomMarkt).padStart(12)}   (gemiddeld ${eur(markt.stroom, 4)} per kWh)`);
-  if (verbruik.gas) console.log(`  gas marktprijs       ${eur(gasMarkt).padStart(12)}   (gemiddeld ${eur(markt.gas, 4)} per m³)`);
+  if (verbruik.stroom) console.log(`  stroom marktprijs    ${eur(stroomMarkt).padStart(12)}   (gemiddeld ${eur(markt.stroom!.prijsInclBtw, 4)} per kWh)`);
+  if (verbruik.gas) console.log(`  gas marktprijs       ${eur(gasMarkt).padStart(12)}   (gemiddeld ${eur(markt.gas!.prijsInclBtw, 4)} per m³)`);
   console.log(`  leverancier          ${eur(beste.totaal).padStart(12)}   (vaste kosten en opslag, zie boven)`);
   if (verbruik.stroom) console.log(`  energiebelasting     ${eur(ebStroom).padStart(12)}   (stroom, ${eur(eb.stroomPerKwh.bedragInclBtw, 5)} per kWh in ${jaar})`);
   if (verbruik.gas) console.log(`  energiebelasting     ${eur(ebGas).padStart(12)}   (gas, ${eur(eb.gasPerM3.bedragInclBtw, 5)} per m³ in ${jaar})`);
   if (vermindering) console.log(`  belastingvermindering ${eur(-vermindering).padStart(11)}   (per aansluiting van een woning)`);
   console.log(`  totaal               ${eur(totaal).padStart(12)}   ≈ ${eur(totaal / 12)} per maand`);
+  const periode = markt.stroom ?? markt.gas;
   console.log(
-    `\n  De marktprijs is het gewone gemiddelde over de ${markt.dagen} dag(en) met prijzen in deze repo van het afgelopen jaar,` +
-      `\n  alsof je elk uur evenveel gebruikt. Met weinig dagen is dat een ruwe schatting. Netbeheerkosten en de` +
-      `\n  opbrengst van teruglevering (salderen tot 2027) zitten er niet in. Een negatief totaal kan: de belastingvermindering\n  wordt ook uitbetaald als die hoger is dan je energiebelasting.`,
+    (periode
+      ? `\n  Marktprijs: gemiddelde van de dagprijzen van ${periode.van} t/m ${periode.tot} (${periode.dagen} dagen, EnergyZero),` +
+        `\n  alsof je elke dag evenveel gebruikt. Met zonnepanelen of een warmtepomp wijkt jouw echte gemiddelde af.`
+      : "") +
+      `\n  Netbeheerkosten en de opbrengst van teruglevering (salderen tot 2027) zitten er niet in. Een negatief totaal` +
+      `\n  kan: de belastingvermindering wordt ook uitbetaald als die hoger is dan je energiebelasting.`,
   );
 }
 console.log("");

@@ -2,14 +2,13 @@
   "name": "dynamische-energieprijzen-nl",
   "version": "1.0.0",
   "private": true,
-  "description": "Open data: Nederlandse day-ahead energieprijzen en tarieven van leveranciers met een dynamisch contract, automatisch bijgewerkt.",
+  "description": "Open data: tarieven van Nederlandse leveranciers met een dynamisch energiecontract, energiebelasting en omslagpunten, automatisch bijgewerkt.",
   "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=22.18"
   },
   "scripts": {
-    "prijzen": "node src/prijzen-ophalen.ts",
     "leveranciers": "node src/leveranciers-scrapen.ts",
     "belasting": "node src/belasting-ophalen.ts",
     "afleiden": "node src/afleiden.ts",
