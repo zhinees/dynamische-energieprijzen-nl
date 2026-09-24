@@ -24,6 +24,6 @@ const rows = day.suppliers
   .map((s) => ({ ...s, buy: slot.buy[s.id], sell: slot.sell[s.id] }))
   .sort((a, b) => (a.buy ?? 9) - (b.buy ?? 9));
 for (const s of rows) {
-  console.log(`${s.name}${s.verified ? "" : " *"}`.padEnd(32), eur(s.buy).padEnd(10), eur(s.sell));
+  console.log(s.name.padEnd(32), eur(s.buy).padEnd(10), eur(s.sell));
 }
-console.log("\n* includes values not yet confirmed on the supplier's own site");
+console.log("\nn/a = the supplier doesn't publish this value where it can be verified");

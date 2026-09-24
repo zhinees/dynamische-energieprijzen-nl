@@ -9,8 +9,7 @@
     "gas": true
   },
   "features": {
-    "autoCurtailment": false,
-    "notes": "Handmatig / integraties, geen automatische omvormer-stop."
+    "autoCurtailment": null
   },
   "fields": {
     "electricityFixedMonthly": {

@@ -37,7 +37,7 @@ for (const key of FIELD_KEYS) {
   const rules = rulesFor(cfg, key);
   if (!rules.length) {
     const m = cfg.manual[key];
-    console.log(`${key}: no rule${m ? `, manual ${m.value}${m.vatIncluded ? " incl. btw" : ""} (${m.verified ? "verified" : "unverified"})` : ""}`);
+    console.log(`${key}: no rule${m ? `, manual ${m.value}${m.vatIncluded ? " incl. btw" : ""} (checked ${m.checkedAt})` : ""}`);
     continue;
   }
   rules.forEach((rule, i) => {

@@ -9,7 +9,7 @@ const cfg: SupplierConfig = {
   website: "https://x.nl",
   tariffUrl: "https://x.nl/t",
   products: { electricity: true, gas: false },
-  features: { autoCurtailment: false },
+  features: { autoCurtailment: null },
   fields: { electricityMarkup: { labels: ["opslag"], range: [0, 0.1] } },
   manual: {
     electricityMarkup: { value: 0.02, vatIncluded: false, verified: true, checkedAt: "2026-09-01", source: "https://x.nl/t" },
@@ -52,4 +52,25 @@ test("failed scrape with a newer manual value uses the manual value", () => {
   const failed = buildSupplier(cfg, new Map(), first, "2026-09-25T05:00:00Z");
   assert.equal(failed.tariffs.electricityMarkup?.value, 0.02);
   assert.equal(failed.tariffs.electricityMarkup?.source, "manual");
+});
+
+test("unverified manual values are never published", () => {
+  const c = structuredClone(cfg);
+  (c.manual.electricityMarkup as any).verified = false;
+  const r = buildSupplier({ ...c, fields: {} }, new Map(), undefined, "2026-09-24T05:00:00Z");
+  assert.equal(r.tariffs.electricityMarkup, undefined);
+});
+
+test("an old manual value is not carried forward once it is removed from the config", () => {
+  const first = buildSupplier({ ...cfg, fields: {} }, new Map(), undefined, "2026-09-24T05:00:00Z");
+  assert.equal(first.tariffs.electricityMarkup?.source, "manual");
+  const next = buildSupplier({ ...cfg, fields: {}, manual: {} }, new Map(), first, "2026-09-25T05:00:00Z");
+  assert.equal(next.tariffs.electricityMarkup, undefined);
+});
+
+test("valueInclVat is the exact published amount, no rounding drift", () => {
+  const c = structuredClone(cfg);
+  c.manual.electricityMarkup = { value: 0.08835, vatIncluded: true, verified: true, checkedAt: "2026-09-24", source: "https://x.nl/t" };
+  const r = buildSupplier({ ...c, fields: {} }, new Map(), undefined, "2026-09-24T05:00:00Z");
+  assert.equal(r.tariffs.electricityMarkup?.valueInclVat, 0.08835);
 });

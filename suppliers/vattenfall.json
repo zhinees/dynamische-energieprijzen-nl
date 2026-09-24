@@ -9,8 +9,7 @@
     "gas": true
   },
   "features": {
-    "autoCurtailment": false,
-    "notes": "Basis verbruiksinzicht."
+    "autoCurtailment": null
   },
   "fields": {
     "feedInDelta": {
@@ -26,34 +25,6 @@
     }
   },
   "manual": {
-    "electricityFixedMonthly": {
-      "value": 7.95,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "electricityMarkup": {
-      "value": 0.0255,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "gasFixedMonthly": {
-      "value": 6.95,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "gasMarkup": {
-      "value": 0.075,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
     "feedInDelta": {
       "value": 0,
       "vatIncluded": true,

@@ -35,6 +35,7 @@ async function check(schemaFile: string, path: string) {
 const configs = await loadSupplierConfigs();
 for (const cfg of configs) {
   const where = `suppliers/${cfg.id}.json`;
+  const missing: string[] = [];
   await check("supplier.schema.json", join(ROOT, where));
   for (const key of FIELD_KEYS) {
     for (const rule of rulesFor(cfg, key)) {
@@ -48,12 +49,12 @@ for (const cfg of configs) {
       if (rule.range[0] > rule.range[1]) fail(where, `${key}: range min > max`);
     }
     const wanted = key.startsWith("gas") ? cfg.products.gas : cfg.products.electricity;
-    if (wanted && !rulesFor(cfg, key).length && !cfg.manual[key]) {
-      console.warn(`! ${where}: ${key} has no scrape rule and no manual value`);
-    }
+    if (wanted && !rulesFor(cfg, key).length && !cfg.manual[key] && !cfg.calculator) missing.push(key);
     const m = cfg.manual[key];
+    if (m && (m as any).verified !== true) fail(where, `${key}: manual values must be verified on the supplier's own site (verified: true)`);
     if (m && m.checkedAt > new Date().toISOString().slice(0, 10)) fail(where, `${key}: checkedAt is in the future`);
   }
+  if (missing.length) console.log(`· ${cfg.id}: no verified source yet for ${missing.length === 5 ? "any field (not published)" : missing.join(", ")}`);
 }
 
 // 2. Generated data (if present)

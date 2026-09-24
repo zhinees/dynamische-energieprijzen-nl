@@ -8,7 +8,9 @@ Open data for Dutch dynamic energy contracts, updated automatically by GitHub Ac
 
 Think of it like an ad-block filter list. The data lives as plain JSON/CSV files in this repo, and a scheduled job keeps it current. Anyone can use the files for charts, comparison sites, home automation or research. Corrections are pull requests.
 
-> **All amounts are in EUR, excluding VAT (btw), energy tax (energiebelasting) and grid costs.** Tariff values carry a `verified` flag. Check it before you present a number as fact.
+> **All amounts are in EUR, excluding VAT (btw), energy tax (energiebelasting) and grid costs.**
+>
+> **Only real data is published.** Every tariff was read from the supplier's own website or price calculator. Values that can't be verified are left out, never estimated or copied from third-party sites.
 
 ## Use the data
 
@@ -28,7 +30,7 @@ A CDN alternative is `https://cdn.jsdelivr.net/gh/OWNER/dynamische-energieprijze
 | `data/suppliers.json` / `.csv` | Current tariffs per supplier, with source and verification per value | weekly + 1st/2nd of the month |
 | `data/compare/latest.json` | Per hour: market price, plus `buy` and `sell` per supplier, for today and tomorrow | several times a day |
 | `data/tariff-changes.json` | Log of every tariff change | when tariffs change |
-| `data/REPORT.md` | Which values are scraped, from a calculator, hand-checked or unverified | with suppliers.json |
+| `data/REPORT.md` | Where each value comes from, and which suppliers aren't published yet | with suppliers.json |
 
 ### Example: the price today at 18:00
 
@@ -58,7 +60,7 @@ Every file has a JSON Schema in [`schema/`](schema) and a `$schema` field pointi
 - **Per tariff value**:
   - `value`: excl. btw. `valueInclVat` is included for convenience.
   - `source`: `scraped` (read from the supplier's web page by the bot), `calculator` (from the supplier's own price calculator) or `manual` (from the supplier's config file).
-  - `verified`: `false` means the number was never confirmed on the supplier's own site.
+  - `verified`: always `true`. Unverified values are rejected by the validator.
   - `since`: when this value started.
   - `lastChecked`: the bot's last confirmation.
 - **Rounding**: prices are rounded to 6 decimals.
@@ -70,7 +72,7 @@ Every file has a JSON Schema in [`schema/`](schema) and a `$schema` field pointi
 - **Supplier tariffs**: each supplier has a config file in [`suppliers/`](suppliers). It holds:
   - **a calculator adapter** (optional): the bot asks the supplier's own price calculator for an offer at a fixed public test address, Madurodam (George Maduroplein 1, Den Haag), and keeps only the supplier's own tariff lines. Supplier markups are the same nationwide; grid costs, which do depend on the address, are ignored.
   - **scrape rules**: where on the supplier's website each number is found.
-  - **manual values**: used when there is no rule, or a rule breaks. Each manual value records its source, date, and whether it was verified on the supplier's own site.
+  - **manual values**: hand-checked on the supplier's own site, with source URL and date. They are used when there is no rule, or a rule breaks. Unverified values are not accepted.
 
   Suppliers are checked every Monday and on the 1st and 2nd of each month (tariffs usually change on the 1st). That is a handful of requests per supplier per month. See [`data/REPORT.md`](data/REPORT.md) for the current state. Help with more calculator adapters is welcome.
 

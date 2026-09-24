@@ -1,7 +1,7 @@
 {
   "$schema": "../../schema/compare.schema.json",
   "version": 1,
-  "generatedAt": "2026-09-24T16:13:33.663Z",
+  "generatedAt": "2026-09-24T16:30:33.202Z",
   "currency": "EUR",
   "vat": "excluded",
   "note": "buy/sell exclude VAT, energy tax (energiebelasting) and grid costs. Add those for an all-in consumer price.",
@@ -15,30 +15,10 @@
         "name": "ANWB Energie",
         "verified": true,
         "fixedMonthly": {
-          "electricity": 5.99,
-          "gas": 5.99
+          "electricity": null,
+          "gas": null
         },
         "gasPrice": 0.778471
-      },
-      {
-        "id": "budget",
-        "name": "Budget Thuis (Budget Energie)",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 6,
-          "gas": 6
-        },
-        "gasPrice": 0.7791
-      },
-      {
-        "id": "eneco",
-        "name": "Eneco",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 7,
-          "gas": 7
-        },
-        "gasPrice": 0.8218
       },
       {
         "id": "frank",
@@ -51,16 +31,6 @@
         "gasPrice": 0.781
       },
       {
-        "id": "liveenergy",
-        "name": "Live Energy",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 4.95,
-          "gas": 4.95
-        },
-        "gasPrice": 0.804
-      },
-      {
         "id": "nextenergy",
         "name": "NextEnergy",
         "verified": true,
@@ -69,16 +39,6 @@
           "gas": 4.950413
         },
         "gasPrice": 0.780289
-      },
-      {
-        "id": "pure",
-        "name": "Pure Energie",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 6.05,
-          "gas": 6.05
-        },
-        "gasPrice": 0.7748
       },
       {
         "id": "tibber",
@@ -91,34 +51,14 @@
         "gasPrice": 0.788017
       },
       {
-        "id": "vandebron",
-        "name": "Vandebron",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 7,
-          "gas": 7
-        },
-        "gasPrice": 0.814
-      },
-      {
         "id": "vattenfall",
         "name": "Vattenfall (FlexPrijs)",
-        "verified": false,
+        "verified": true,
         "fixedMonthly": {
-          "electricity": 7.95,
-          "gas": 6.95
+          "electricity": null,
+          "gas": null
         },
-        "gasPrice": 0.79
-      },
-      {
-        "id": "zonneplan",
-        "name": "Zonneplan",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 6.25,
-          "gas": 6.25
-        },
-        "gasPrice": 0.7949
+        "gasPrice": null
       }
     ],
     "hours": [
@@ -128,29 +68,17 @@
         "market": 0.155292,
         "buy": {
           "anwb": 0.170168,
-          "budget": 0.172092,
-          "eneco": 0.173792,
           "frank": 0.170292,
-          "liveenergy": 0.178292,
           "nextenergy": 0.172647,
-          "pure": 0.177392,
           "tibber": 0.170168,
-          "vandebron": 0.173292,
-          "vattenfall": 0.180792,
-          "zonneplan": 0.173492
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.155292,
-          "budget": 0.138492,
-          "eneco": 0.136792,
           "frank": 0.144792,
-          "liveenergy": 0.132292,
           "nextenergy": 0.155292,
-          "pure": 0.133192,
           "tibber": 0.140416,
-          "vandebron": 0.137292,
-          "vattenfall": 0.155292,
-          "zonneplan": 0.175292
+          "vattenfall": 0.155292
         }
       },
       {
@@ -159,29 +87,17 @@
         "market": 0.152602,
         "buy": {
           "anwb": 0.167478,
-          "budget": 0.169402,
-          "eneco": 0.171102,
           "frank": 0.167602,
-          "liveenergy": 0.175602,
           "nextenergy": 0.169957,
-          "pure": 0.174702,
           "tibber": 0.167478,
-          "vandebron": 0.170602,
-          "vattenfall": 0.178102,
-          "zonneplan": 0.170802
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.152602,
-          "budget": 0.135802,
-          "eneco": 0.134102,
           "frank": 0.142102,
-          "liveenergy": 0.129602,
           "nextenergy": 0.152602,
-          "pure": 0.130502,
           "tibber": 0.137726,
-          "vandebron": 0.134602,
-          "vattenfall": 0.152602,
-          "zonneplan": 0.172602
+          "vattenfall": 0.152602
         }
       },
       {
@@ -190,29 +106,17 @@
         "market": 0.13039,
         "buy": {
           "anwb": 0.145266,
-          "budget": 0.14719,
-          "eneco": 0.14889,
           "frank": 0.14539,
-          "liveenergy": 0.15339,
           "nextenergy": 0.147745,
-          "pure": 0.15249,
           "tibber": 0.145266,
-          "vandebron": 0.14839,
-          "vattenfall": 0.15589,
-          "zonneplan": 0.14859
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.13039,
-          "budget": 0.11359,
-          "eneco": 0.11189,
           "frank": 0.11989,
-          "liveenergy": 0.10739,
           "nextenergy": 0.13039,
-          "pure": 0.10829,
           "tibber": 0.115514,
-          "vandebron": 0.11239,
-          "vattenfall": 0.13039,
-          "zonneplan": 0.15039
+          "vattenfall": 0.13039
         }
       },
       {
@@ -221,29 +125,17 @@
         "market": 0.153123,
         "buy": {
           "anwb": 0.167999,
-          "budget": 0.169923,
-          "eneco": 0.171623,
           "frank": 0.168123,
-          "liveenergy": 0.176123,
           "nextenergy": 0.170478,
-          "pure": 0.175223,
           "tibber": 0.167999,
-          "vandebron": 0.171123,
-          "vattenfall": 0.178623,
-          "zonneplan": 0.171323
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.153123,
-          "budget": 0.136323,
-          "eneco": 0.134623,
           "frank": 0.142623,
-          "liveenergy": 0.130123,
           "nextenergy": 0.153123,
-          "pure": 0.131023,
           "tibber": 0.138247,
-          "vandebron": 0.135123,
-          "vattenfall": 0.153123,
-          "zonneplan": 0.173123
+          "vattenfall": 0.153123
         }
       },
       {
@@ -252,29 +144,17 @@
         "market": 0.153952,
         "buy": {
           "anwb": 0.168828,
-          "budget": 0.170752,
-          "eneco": 0.172452,
           "frank": 0.168952,
-          "liveenergy": 0.176952,
           "nextenergy": 0.171307,
-          "pure": 0.176052,
           "tibber": 0.168828,
-          "vandebron": 0.171952,
-          "vattenfall": 0.179452,
-          "zonneplan": 0.172152
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.153952,
-          "budget": 0.137152,
-          "eneco": 0.135452,
           "frank": 0.143452,
-          "liveenergy": 0.130952,
           "nextenergy": 0.153952,
-          "pure": 0.131852,
           "tibber": 0.139076,
-          "vandebron": 0.135952,
-          "vattenfall": 0.153952,
-          "zonneplan": 0.173952
+          "vattenfall": 0.153952
         }
       },
       {
@@ -283,29 +163,17 @@
         "market": 0.158365,
         "buy": {
           "anwb": 0.173241,
-          "budget": 0.175165,
-          "eneco": 0.176865,
           "frank": 0.173365,
-          "liveenergy": 0.181365,
           "nextenergy": 0.17572,
-          "pure": 0.180465,
           "tibber": 0.173241,
-          "vandebron": 0.176365,
-          "vattenfall": 0.183865,
-          "zonneplan": 0.176565
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.158365,
-          "budget": 0.141565,
-          "eneco": 0.139865,
           "frank": 0.147865,
-          "liveenergy": 0.135365,
           "nextenergy": 0.158365,
-          "pure": 0.136265,
           "tibber": 0.143489,
-          "vandebron": 0.140365,
-          "vattenfall": 0.158365,
-          "zonneplan": 0.178365
+          "vattenfall": 0.158365
         }
       },
       {
@@ -314,29 +182,17 @@
         "market": 0.17356,
         "buy": {
           "anwb": 0.188436,
-          "budget": 0.19036,
-          "eneco": 0.19206,
           "frank": 0.18856,
-          "liveenergy": 0.19656,
           "nextenergy": 0.190915,
-          "pure": 0.19566,
           "tibber": 0.188436,
-          "vandebron": 0.19156,
-          "vattenfall": 0.19906,
-          "zonneplan": 0.19176
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.17356,
-          "budget": 0.15676,
-          "eneco": 0.15506,
           "frank": 0.16306,
-          "liveenergy": 0.15056,
           "nextenergy": 0.17356,
-          "pure": 0.15146,
           "tibber": 0.158684,
-          "vandebron": 0.15556,
-          "vattenfall": 0.17356,
-          "zonneplan": 0.19356
+          "vattenfall": 0.17356
         }
       },
       {
@@ -345,29 +201,17 @@
         "market": 0.218002,
         "buy": {
           "anwb": 0.232878,
-          "budget": 0.234802,
-          "eneco": 0.236502,
           "frank": 0.233002,
-          "liveenergy": 0.241002,
           "nextenergy": 0.235357,
-          "pure": 0.240102,
           "tibber": 0.232878,
-          "vandebron": 0.236002,
-          "vattenfall": 0.243502,
-          "zonneplan": 0.236202
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.218002,
-          "budget": 0.201202,
-          "eneco": 0.199502,
           "frank": 0.207502,
-          "liveenergy": 0.195002,
           "nextenergy": 0.218002,
-          "pure": 0.195902,
           "tibber": 0.203126,
-          "vandebron": 0.200002,
-          "vattenfall": 0.218002,
-          "zonneplan": 0.238002
+          "vattenfall": 0.218002
         }
       },
       {
@@ -376,29 +220,17 @@
         "market": 0.206477,
         "buy": {
           "anwb": 0.221353,
-          "budget": 0.223277,
-          "eneco": 0.224977,
           "frank": 0.221477,
-          "liveenergy": 0.229477,
           "nextenergy": 0.223832,
-          "pure": 0.228577,
           "tibber": 0.221353,
-          "vandebron": 0.224477,
-          "vattenfall": 0.231977,
-          "zonneplan": 0.224677
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.206477,
-          "budget": 0.189677,
-          "eneco": 0.187977,
           "frank": 0.195977,
-          "liveenergy": 0.183477,
           "nextenergy": 0.206477,
-          "pure": 0.184377,
           "tibber": 0.191601,
-          "vandebron": 0.188477,
-          "vattenfall": 0.206477,
-          "zonneplan": 0.226477
+          "vattenfall": 0.206477
         }
       },
       {
@@ -407,29 +239,17 @@
         "market": 0.161105,
         "buy": {
           "anwb": 0.175981,
-          "budget": 0.177905,
-          "eneco": 0.179605,
           "frank": 0.176105,
-          "liveenergy": 0.184105,
           "nextenergy": 0.17846,
-          "pure": 0.183205,
           "tibber": 0.175981,
-          "vandebron": 0.179105,
-          "vattenfall": 0.186605,
-          "zonneplan": 0.179305
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.161105,
-          "budget": 0.144305,
-          "eneco": 0.142605,
           "frank": 0.150605,
-          "liveenergy": 0.138105,
           "nextenergy": 0.161105,
-          "pure": 0.139005,
           "tibber": 0.146229,
-          "vandebron": 0.143105,
-          "vattenfall": 0.161105,
-          "zonneplan": 0.181105
+          "vattenfall": 0.161105
         }
       },
       {
@@ -438,29 +258,17 @@
         "market": 0.115062,
         "buy": {
           "anwb": 0.129938,
-          "budget": 0.131862,
-          "eneco": 0.133562,
           "frank": 0.130062,
-          "liveenergy": 0.138062,
           "nextenergy": 0.132417,
-          "pure": 0.137162,
           "tibber": 0.129938,
-          "vandebron": 0.133062,
-          "vattenfall": 0.140562,
-          "zonneplan": 0.133262
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.115062,
-          "budget": 0.098262,
-          "eneco": 0.096562,
           "frank": 0.104562,
-          "liveenergy": 0.092062,
           "nextenergy": 0.115062,
-          "pure": 0.092962,
           "tibber": 0.100186,
-          "vandebron": 0.097062,
-          "vattenfall": 0.115062,
-          "zonneplan": 0.135062
+          "vattenfall": 0.115062
         }
       },
       {
@@ -469,29 +277,17 @@
         "market": 0.085245,
         "buy": {
           "anwb": 0.100121,
-          "budget": 0.102045,
-          "eneco": 0.103745,
           "frank": 0.100245,
-          "liveenergy": 0.108245,
           "nextenergy": 0.1026,
-          "pure": 0.107345,
           "tibber": 0.100121,
-          "vandebron": 0.103245,
-          "vattenfall": 0.110745,
-          "zonneplan": 0.103445
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.085245,
-          "budget": 0.068445,
-          "eneco": 0.066745,
           "frank": 0.074745,
-          "liveenergy": 0.062245,
           "nextenergy": 0.085245,
-          "pure": 0.063145,
           "tibber": 0.070369,
-          "vandebron": 0.067245,
-          "vattenfall": 0.085245,
-          "zonneplan": 0.105245
+          "vattenfall": 0.085245
         }
       },
       {
@@ -500,29 +296,17 @@
         "market": 0.052763,
         "buy": {
           "anwb": 0.067639,
-          "budget": 0.069563,
-          "eneco": 0.071263,
           "frank": 0.067763,
-          "liveenergy": 0.075763,
           "nextenergy": 0.070118,
-          "pure": 0.074863,
           "tibber": 0.067639,
-          "vandebron": 0.070763,
-          "vattenfall": 0.078263,
-          "zonneplan": 0.070963
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.052763,
-          "budget": 0.035963,
-          "eneco": 0.034263,
           "frank": 0.042263,
-          "liveenergy": 0.029763,
           "nextenergy": 0.052763,
-          "pure": 0.030663,
           "tibber": 0.037887,
-          "vandebron": 0.034763,
-          "vattenfall": 0.052763,
-          "zonneplan": 0.072763
+          "vattenfall": 0.052763
         }
       },
       {
@@ -531,29 +315,17 @@
         "market": 0.03941,
         "buy": {
           "anwb": 0.054286,
-          "budget": 0.05621,
-          "eneco": 0.05791,
           "frank": 0.05441,
-          "liveenergy": 0.06241,
           "nextenergy": 0.056765,
-          "pure": 0.06151,
           "tibber": 0.054286,
-          "vandebron": 0.05741,
-          "vattenfall": 0.06491,
-          "zonneplan": 0.05761
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.03941,
-          "budget": 0.02261,
-          "eneco": 0.02091,
           "frank": 0.02891,
-          "liveenergy": 0.01641,
           "nextenergy": 0.03941,
-          "pure": 0.01731,
           "tibber": 0.024534,
-          "vandebron": 0.02141,
-          "vattenfall": 0.03941,
-          "zonneplan": 0.05941
+          "vattenfall": 0.03941
         }
       },
       {
@@ -562,29 +334,17 @@
         "market": 0.03903,
         "buy": {
           "anwb": 0.053906,
-          "budget": 0.05583,
-          "eneco": 0.05753,
           "frank": 0.05403,
-          "liveenergy": 0.06203,
           "nextenergy": 0.056385,
-          "pure": 0.06113,
           "tibber": 0.053906,
-          "vandebron": 0.05703,
-          "vattenfall": 0.06453,
-          "zonneplan": 0.05723
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.03903,
-          "budget": 0.02223,
-          "eneco": 0.02053,
           "frank": 0.02853,
-          "liveenergy": 0.01603,
           "nextenergy": 0.03903,
-          "pure": 0.01693,
           "tibber": 0.024154,
-          "vandebron": 0.02103,
-          "vattenfall": 0.03903,
-          "zonneplan": 0.05903
+          "vattenfall": 0.03903
         }
       },
       {
@@ -593,29 +353,17 @@
         "market": 0.079988,
         "buy": {
           "anwb": 0.094864,
-          "budget": 0.096788,
-          "eneco": 0.098488,
           "frank": 0.094988,
-          "liveenergy": 0.102988,
           "nextenergy": 0.097343,
-          "pure": 0.102088,
           "tibber": 0.094864,
-          "vandebron": 0.097988,
-          "vattenfall": 0.105488,
-          "zonneplan": 0.098188
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.079988,
-          "budget": 0.063188,
-          "eneco": 0.061488,
           "frank": 0.069488,
-          "liveenergy": 0.056988,
           "nextenergy": 0.079988,
-          "pure": 0.057888,
           "tibber": 0.065112,
-          "vandebron": 0.061988,
-          "vattenfall": 0.079988,
-          "zonneplan": 0.099988
+          "vattenfall": 0.079988
         }
       },
       {
@@ -624,29 +372,17 @@
         "market": 0.12056,
         "buy": {
           "anwb": 0.135436,
-          "budget": 0.13736,
-          "eneco": 0.13906,
           "frank": 0.13556,
-          "liveenergy": 0.14356,
           "nextenergy": 0.137915,
-          "pure": 0.14266,
           "tibber": 0.135436,
-          "vandebron": 0.13856,
-          "vattenfall": 0.14606,
-          "zonneplan": 0.13876
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.12056,
-          "budget": 0.10376,
-          "eneco": 0.10206,
           "frank": 0.11006,
-          "liveenergy": 0.09756,
           "nextenergy": 0.12056,
-          "pure": 0.09846,
           "tibber": 0.105684,
-          "vandebron": 0.10256,
-          "vattenfall": 0.12056,
-          "zonneplan": 0.14056
+          "vattenfall": 0.12056
         }
       },
       {
@@ -655,29 +391,17 @@
         "market": 0.17137,
         "buy": {
           "anwb": 0.186246,
-          "budget": 0.18817,
-          "eneco": 0.18987,
           "frank": 0.18637,
-          "liveenergy": 0.19437,
           "nextenergy": 0.188725,
-          "pure": 0.19347,
           "tibber": 0.186246,
-          "vandebron": 0.18937,
-          "vattenfall": 0.19687,
-          "zonneplan": 0.18957
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.17137,
-          "budget": 0.15457,
-          "eneco": 0.15287,
           "frank": 0.16087,
-          "liveenergy": 0.14837,
           "nextenergy": 0.17137,
-          "pure": 0.14927,
           "tibber": 0.156494,
-          "vandebron": 0.15337,
-          "vattenfall": 0.17137,
-          "zonneplan": 0.19137
+          "vattenfall": 0.17137
         }
       },
       {
@@ -686,29 +410,17 @@
         "market": 0.22118,
         "buy": {
           "anwb": 0.236056,
-          "budget": 0.23798,
-          "eneco": 0.23968,
           "frank": 0.23618,
-          "liveenergy": 0.24418,
           "nextenergy": 0.238535,
-          "pure": 0.24328,
           "tibber": 0.236056,
-          "vandebron": 0.23918,
-          "vattenfall": 0.24668,
-          "zonneplan": 0.23938
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.22118,
-          "budget": 0.20438,
-          "eneco": 0.20268,
           "frank": 0.21068,
-          "liveenergy": 0.19818,
           "nextenergy": 0.22118,
-          "pure": 0.19908,
           "tibber": 0.206304,
-          "vandebron": 0.20318,
-          "vattenfall": 0.22118,
-          "zonneplan": 0.24118
+          "vattenfall": 0.22118
         }
       },
       {
@@ -717,29 +429,17 @@
         "market": 0.2677,
         "buy": {
           "anwb": 0.282576,
-          "budget": 0.2845,
-          "eneco": 0.2862,
           "frank": 0.2827,
-          "liveenergy": 0.2907,
           "nextenergy": 0.285055,
-          "pure": 0.2898,
           "tibber": 0.282576,
-          "vandebron": 0.2857,
-          "vattenfall": 0.2932,
-          "zonneplan": 0.2859
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.2677,
-          "budget": 0.2509,
-          "eneco": 0.2492,
           "frank": 0.2572,
-          "liveenergy": 0.2447,
           "nextenergy": 0.2677,
-          "pure": 0.2456,
           "tibber": 0.252824,
-          "vandebron": 0.2497,
-          "vattenfall": 0.2677,
-          "zonneplan": 0.2877
+          "vattenfall": 0.2677
         }
       },
       {
@@ -748,29 +448,17 @@
         "market": 0.26,
         "buy": {
           "anwb": 0.274876,
-          "budget": 0.2768,
-          "eneco": 0.2785,
           "frank": 0.275,
-          "liveenergy": 0.283,
           "nextenergy": 0.277355,
-          "pure": 0.2821,
           "tibber": 0.274876,
-          "vandebron": 0.278,
-          "vattenfall": 0.2855,
-          "zonneplan": 0.2782
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.26,
-          "budget": 0.2432,
-          "eneco": 0.2415,
           "frank": 0.2495,
-          "liveenergy": 0.237,
           "nextenergy": 0.26,
-          "pure": 0.2379,
           "tibber": 0.245124,
-          "vandebron": 0.242,
-          "vattenfall": 0.26,
-          "zonneplan": 0.28
+          "vattenfall": 0.26
         }
       },
       {
@@ -779,29 +467,17 @@
         "market": 0.225855,
         "buy": {
           "anwb": 0.240731,
-          "budget": 0.242655,
-          "eneco": 0.244355,
           "frank": 0.240855,
-          "liveenergy": 0.248855,
           "nextenergy": 0.24321,
-          "pure": 0.247955,
           "tibber": 0.240731,
-          "vandebron": 0.243855,
-          "vattenfall": 0.251355,
-          "zonneplan": 0.244055
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.225855,
-          "budget": 0.209055,
-          "eneco": 0.207355,
           "frank": 0.215355,
-          "liveenergy": 0.202855,
           "nextenergy": 0.225855,
-          "pure": 0.203755,
           "tibber": 0.210979,
-          "vandebron": 0.207855,
-          "vattenfall": 0.225855,
-          "zonneplan": 0.245855
+          "vattenfall": 0.225855
         }
       },
       {
@@ -810,29 +486,17 @@
         "market": 0.204997,
         "buy": {
           "anwb": 0.219873,
-          "budget": 0.221797,
-          "eneco": 0.223497,
           "frank": 0.219997,
-          "liveenergy": 0.227997,
           "nextenergy": 0.222352,
-          "pure": 0.227097,
           "tibber": 0.219873,
-          "vandebron": 0.222997,
-          "vattenfall": 0.230497,
-          "zonneplan": 0.223197
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.204997,
-          "budget": 0.188197,
-          "eneco": 0.186497,
           "frank": 0.194497,
-          "liveenergy": 0.181997,
           "nextenergy": 0.204997,
-          "pure": 0.182897,
           "tibber": 0.190121,
-          "vandebron": 0.186997,
-          "vattenfall": 0.204997,
-          "zonneplan": 0.224997
+          "vattenfall": 0.204997
         }
       },
       {
@@ -841,29 +505,17 @@
         "market": 0.188222,
         "buy": {
           "anwb": 0.203098,
-          "budget": 0.205022,
-          "eneco": 0.206722,
           "frank": 0.203222,
-          "liveenergy": 0.211222,
           "nextenergy": 0.205577,
-          "pure": 0.210322,
           "tibber": 0.203098,
-          "vandebron": 0.206222,
-          "vattenfall": 0.213722,
-          "zonneplan": 0.206422
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.188222,
-          "budget": 0.171422,
-          "eneco": 0.169722,
           "frank": 0.177722,
-          "liveenergy": 0.165222,
           "nextenergy": 0.188222,
-          "pure": 0.166122,
           "tibber": 0.173346,
-          "vandebron": 0.170222,
-          "vattenfall": 0.188222,
-          "zonneplan": 0.208222
+          "vattenfall": 0.188222
         }
       }
     ]
@@ -878,28 +530,8 @@
         "name": "ANWB Energie",
         "verified": true,
         "fixedMonthly": {
-          "electricity": 5.99,
-          "gas": 5.99
-        },
-        "gasPrice": null
-      },
-      {
-        "id": "budget",
-        "name": "Budget Thuis (Budget Energie)",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 6,
-          "gas": 6
-        },
-        "gasPrice": null
-      },
-      {
-        "id": "eneco",
-        "name": "Eneco",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 7,
-          "gas": 7
+          "electricity": null,
+          "gas": null
         },
         "gasPrice": null
       },
@@ -914,32 +546,12 @@
         "gasPrice": null
       },
       {
-        "id": "liveenergy",
-        "name": "Live Energy",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 4.95,
-          "gas": 4.95
-        },
-        "gasPrice": null
-      },
-      {
         "id": "nextenergy",
         "name": "NextEnergy",
         "verified": true,
         "fixedMonthly": {
           "electricity": 4.950413,
           "gas": 4.950413
-        },
-        "gasPrice": null
-      },
-      {
-        "id": "pure",
-        "name": "Pure Energie",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 6.05,
-          "gas": 6.05
         },
         "gasPrice": null
       },
@@ -954,32 +566,12 @@
         "gasPrice": null
       },
       {
-        "id": "vandebron",
-        "name": "Vandebron",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 7,
-          "gas": 7
-        },
-        "gasPrice": null
-      },
-      {
         "id": "vattenfall",
         "name": "Vattenfall (FlexPrijs)",
-        "verified": false,
+        "verified": true,
         "fixedMonthly": {
-          "electricity": 7.95,
-          "gas": 6.95
-        },
-        "gasPrice": null
-      },
-      {
-        "id": "zonneplan",
-        "name": "Zonneplan",
-        "verified": false,
-        "fixedMonthly": {
-          "electricity": 6.25,
-          "gas": 6.25
+          "electricity": null,
+          "gas": null
         },
         "gasPrice": null
       }
@@ -991,29 +583,17 @@
         "market": 0.181983,
         "buy": {
           "anwb": 0.196859,
-          "budget": 0.198783,
-          "eneco": 0.200483,
           "frank": 0.196983,
-          "liveenergy": 0.204983,
           "nextenergy": 0.199338,
-          "pure": 0.204083,
           "tibber": 0.196859,
-          "vandebron": 0.199983,
-          "vattenfall": 0.207483,
-          "zonneplan": 0.200183
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.181983,
-          "budget": 0.165183,
-          "eneco": 0.163483,
           "frank": 0.171483,
-          "liveenergy": 0.158983,
           "nextenergy": 0.181983,
-          "pure": 0.159883,
           "tibber": 0.167107,
-          "vandebron": 0.163983,
-          "vattenfall": 0.181983,
-          "zonneplan": 0.201983
+          "vattenfall": 0.181983
         }
       },
       {
@@ -1022,29 +602,17 @@
         "market": 0.1722,
         "buy": {
           "anwb": 0.187076,
-          "budget": 0.189,
-          "eneco": 0.1907,
           "frank": 0.1872,
-          "liveenergy": 0.1952,
           "nextenergy": 0.189555,
-          "pure": 0.1943,
           "tibber": 0.187076,
-          "vandebron": 0.1902,
-          "vattenfall": 0.1977,
-          "zonneplan": 0.1904
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.1722,
-          "budget": 0.1554,
-          "eneco": 0.1537,
           "frank": 0.1617,
-          "liveenergy": 0.1492,
           "nextenergy": 0.1722,
-          "pure": 0.1501,
           "tibber": 0.157324,
-          "vandebron": 0.1542,
-          "vattenfall": 0.1722,
-          "zonneplan": 0.1922
+          "vattenfall": 0.1722
         }
       },
       {
@@ -1053,29 +621,17 @@
         "market": 0.16493,
         "buy": {
           "anwb": 0.179806,
-          "budget": 0.18173,
-          "eneco": 0.18343,
           "frank": 0.17993,
-          "liveenergy": 0.18793,
           "nextenergy": 0.182285,
-          "pure": 0.18703,
           "tibber": 0.179806,
-          "vandebron": 0.18293,
-          "vattenfall": 0.19043,
-          "zonneplan": 0.18313
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.16493,
-          "budget": 0.14813,
-          "eneco": 0.14643,
           "frank": 0.15443,
-          "liveenergy": 0.14193,
           "nextenergy": 0.16493,
-          "pure": 0.14283,
           "tibber": 0.150054,
-          "vandebron": 0.14693,
-          "vattenfall": 0.16493,
-          "zonneplan": 0.18493
+          "vattenfall": 0.16493
         }
       },
       {
@@ -1084,29 +640,17 @@
         "market": 0.164477,
         "buy": {
           "anwb": 0.179353,
-          "budget": 0.181277,
-          "eneco": 0.182977,
           "frank": 0.179477,
-          "liveenergy": 0.187477,
           "nextenergy": 0.181832,
-          "pure": 0.186577,
           "tibber": 0.179353,
-          "vandebron": 0.182477,
-          "vattenfall": 0.189977,
-          "zonneplan": 0.182677
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.164477,
-          "budget": 0.147677,
-          "eneco": 0.145977,
           "frank": 0.153977,
-          "liveenergy": 0.141477,
           "nextenergy": 0.164477,
-          "pure": 0.142377,
           "tibber": 0.149601,
-          "vandebron": 0.146477,
-          "vattenfall": 0.164477,
-          "zonneplan": 0.184477
+          "vattenfall": 0.164477
         }
       },
       {
@@ -1115,29 +659,17 @@
         "market": 0.16117,
         "buy": {
           "anwb": 0.176046,
-          "budget": 0.17797,
-          "eneco": 0.17967,
           "frank": 0.17617,
-          "liveenergy": 0.18417,
           "nextenergy": 0.178525,
-          "pure": 0.18327,
           "tibber": 0.176046,
-          "vandebron": 0.17917,
-          "vattenfall": 0.18667,
-          "zonneplan": 0.17937
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.16117,
-          "budget": 0.14437,
-          "eneco": 0.14267,
           "frank": 0.15067,
-          "liveenergy": 0.13817,
           "nextenergy": 0.16117,
-          "pure": 0.13907,
           "tibber": 0.146294,
-          "vandebron": 0.14317,
-          "vattenfall": 0.16117,
-          "zonneplan": 0.18117
+          "vattenfall": 0.16117
         }
       },
       {
@@ -1146,29 +678,17 @@
         "market": 0.165863,
         "buy": {
           "anwb": 0.180739,
-          "budget": 0.182663,
-          "eneco": 0.184363,
           "frank": 0.180863,
-          "liveenergy": 0.188863,
           "nextenergy": 0.183218,
-          "pure": 0.187963,
           "tibber": 0.180739,
-          "vandebron": 0.183863,
-          "vattenfall": 0.191363,
-          "zonneplan": 0.184063
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.165863,
-          "budget": 0.149063,
-          "eneco": 0.147363,
           "frank": 0.155363,
-          "liveenergy": 0.142863,
           "nextenergy": 0.165863,
-          "pure": 0.143763,
           "tibber": 0.150987,
-          "vandebron": 0.147863,
-          "vattenfall": 0.165863,
-          "zonneplan": 0.185863
+          "vattenfall": 0.165863
         }
       },
       {
@@ -1177,29 +697,17 @@
         "market": 0.1799,
         "buy": {
           "anwb": 0.194776,
-          "budget": 0.1967,
-          "eneco": 0.1984,
           "frank": 0.1949,
-          "liveenergy": 0.2029,
           "nextenergy": 0.197255,
-          "pure": 0.202,
           "tibber": 0.194776,
-          "vandebron": 0.1979,
-          "vattenfall": 0.2054,
-          "zonneplan": 0.1981
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.1799,
-          "budget": 0.1631,
-          "eneco": 0.1614,
           "frank": 0.1694,
-          "liveenergy": 0.1569,
           "nextenergy": 0.1799,
-          "pure": 0.1578,
           "tibber": 0.165024,
-          "vandebron": 0.1619,
-          "vattenfall": 0.1799,
-          "zonneplan": 0.1999
+          "vattenfall": 0.1799
         }
       },
       {
@@ -1208,29 +716,17 @@
         "market": 0.20757,
         "buy": {
           "anwb": 0.222446,
-          "budget": 0.22437,
-          "eneco": 0.22607,
           "frank": 0.22257,
-          "liveenergy": 0.23057,
           "nextenergy": 0.224925,
-          "pure": 0.22967,
           "tibber": 0.222446,
-          "vandebron": 0.22557,
-          "vattenfall": 0.23307,
-          "zonneplan": 0.22577
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.20757,
-          "budget": 0.19077,
-          "eneco": 0.18907,
           "frank": 0.19707,
-          "liveenergy": 0.18457,
           "nextenergy": 0.20757,
-          "pure": 0.18547,
           "tibber": 0.192694,
-          "vandebron": 0.18957,
-          "vattenfall": 0.20757,
-          "zonneplan": 0.22757
+          "vattenfall": 0.20757
         }
       },
       {
@@ -1239,29 +735,17 @@
         "market": 0.21246,
         "buy": {
           "anwb": 0.227336,
-          "budget": 0.22926,
-          "eneco": 0.23096,
           "frank": 0.22746,
-          "liveenergy": 0.23546,
           "nextenergy": 0.229815,
-          "pure": 0.23456,
           "tibber": 0.227336,
-          "vandebron": 0.23046,
-          "vattenfall": 0.23796,
-          "zonneplan": 0.23066
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.21246,
-          "budget": 0.19566,
-          "eneco": 0.19396,
           "frank": 0.20196,
-          "liveenergy": 0.18946,
           "nextenergy": 0.21246,
-          "pure": 0.19036,
           "tibber": 0.197584,
-          "vandebron": 0.19446,
-          "vattenfall": 0.21246,
-          "zonneplan": 0.23246
+          "vattenfall": 0.21246
         }
       },
       {
@@ -1270,29 +754,17 @@
         "market": 0.194707,
         "buy": {
           "anwb": 0.209583,
-          "budget": 0.211507,
-          "eneco": 0.213207,
           "frank": 0.209707,
-          "liveenergy": 0.217707,
           "nextenergy": 0.212062,
-          "pure": 0.216807,
           "tibber": 0.209583,
-          "vandebron": 0.212707,
-          "vattenfall": 0.220207,
-          "zonneplan": 0.212907
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.194707,
-          "budget": 0.177907,
-          "eneco": 0.176207,
           "frank": 0.184207,
-          "liveenergy": 0.171707,
           "nextenergy": 0.194707,
-          "pure": 0.172607,
           "tibber": 0.179831,
-          "vandebron": 0.176707,
-          "vattenfall": 0.194707,
-          "zonneplan": 0.214707
+          "vattenfall": 0.194707
         }
       },
       {
@@ -1301,29 +773,17 @@
         "market": 0.155007,
         "buy": {
           "anwb": 0.169883,
-          "budget": 0.171807,
-          "eneco": 0.173507,
           "frank": 0.170007,
-          "liveenergy": 0.178007,
           "nextenergy": 0.172362,
-          "pure": 0.177107,
           "tibber": 0.169883,
-          "vandebron": 0.173007,
-          "vattenfall": 0.180507,
-          "zonneplan": 0.173207
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.155007,
-          "budget": 0.138207,
-          "eneco": 0.136507,
           "frank": 0.144507,
-          "liveenergy": 0.132007,
           "nextenergy": 0.155007,
-          "pure": 0.132907,
           "tibber": 0.140131,
-          "vandebron": 0.137007,
-          "vattenfall": 0.155007,
-          "zonneplan": 0.175007
+          "vattenfall": 0.155007
         }
       },
       {
@@ -1332,29 +792,17 @@
         "market": 0.106008,
         "buy": {
           "anwb": 0.120884,
-          "budget": 0.122808,
-          "eneco": 0.124508,
           "frank": 0.121008,
-          "liveenergy": 0.129008,
           "nextenergy": 0.123363,
-          "pure": 0.128108,
           "tibber": 0.120884,
-          "vandebron": 0.124008,
-          "vattenfall": 0.131508,
-          "zonneplan": 0.124208
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.106008,
-          "budget": 0.089208,
-          "eneco": 0.087508,
           "frank": 0.095508,
-          "liveenergy": 0.083008,
           "nextenergy": 0.106008,
-          "pure": 0.083908,
           "tibber": 0.091132,
-          "vandebron": 0.088008,
-          "vattenfall": 0.106008,
-          "zonneplan": 0.126008
+          "vattenfall": 0.106008
         }
       },
       {
@@ -1363,29 +811,17 @@
         "market": 0.061683,
         "buy": {
           "anwb": 0.076559,
-          "budget": 0.078483,
-          "eneco": 0.080183,
           "frank": 0.076683,
-          "liveenergy": 0.084683,
           "nextenergy": 0.079038,
-          "pure": 0.083783,
           "tibber": 0.076559,
-          "vandebron": 0.079683,
-          "vattenfall": 0.087183,
-          "zonneplan": 0.079883
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.061683,
-          "budget": 0.044883,
-          "eneco": 0.043183,
           "frank": 0.051183,
-          "liveenergy": 0.038683,
           "nextenergy": 0.061683,
-          "pure": 0.039583,
           "tibber": 0.046807,
-          "vandebron": 0.043683,
-          "vattenfall": 0.061683,
-          "zonneplan": 0.081683
+          "vattenfall": 0.061683
         }
       },
       {
@@ -1394,29 +830,17 @@
         "market": 0.034928,
         "buy": {
           "anwb": 0.049804,
-          "budget": 0.051728,
-          "eneco": 0.053428,
           "frank": 0.049928,
-          "liveenergy": 0.057928,
           "nextenergy": 0.052283,
-          "pure": 0.057028,
           "tibber": 0.049804,
-          "vandebron": 0.052928,
-          "vattenfall": 0.060428,
-          "zonneplan": 0.053128
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.034928,
-          "budget": 0.018128,
-          "eneco": 0.016428,
           "frank": 0.024428,
-          "liveenergy": 0.011928,
           "nextenergy": 0.034928,
-          "pure": 0.012828,
           "tibber": 0.020052,
-          "vandebron": 0.016928,
-          "vattenfall": 0.034928,
-          "zonneplan": 0.054928
+          "vattenfall": 0.034928
         }
       },
       {
@@ -1425,29 +849,17 @@
         "market": 0.043635,
         "buy": {
           "anwb": 0.058511,
-          "budget": 0.060435,
-          "eneco": 0.062135,
           "frank": 0.058635,
-          "liveenergy": 0.066635,
           "nextenergy": 0.06099,
-          "pure": 0.065735,
           "tibber": 0.058511,
-          "vandebron": 0.061635,
-          "vattenfall": 0.069135,
-          "zonneplan": 0.061835
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.043635,
-          "budget": 0.026835,
-          "eneco": 0.025135,
           "frank": 0.033135,
-          "liveenergy": 0.020635,
           "nextenergy": 0.043635,
-          "pure": 0.021535,
           "tibber": 0.028759,
-          "vandebron": 0.025635,
-          "vattenfall": 0.043635,
-          "zonneplan": 0.063635
+          "vattenfall": 0.043635
         }
       },
       {
@@ -1456,29 +868,17 @@
         "market": 0.085855,
         "buy": {
           "anwb": 0.100731,
-          "budget": 0.102655,
-          "eneco": 0.104355,
           "frank": 0.100855,
-          "liveenergy": 0.108855,
           "nextenergy": 0.10321,
-          "pure": 0.107955,
           "tibber": 0.100731,
-          "vandebron": 0.103855,
-          "vattenfall": 0.111355,
-          "zonneplan": 0.104055
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.085855,
-          "budget": 0.069055,
-          "eneco": 0.067355,
           "frank": 0.075355,
-          "liveenergy": 0.062855,
           "nextenergy": 0.085855,
-          "pure": 0.063755,
           "tibber": 0.070979,
-          "vandebron": 0.067855,
-          "vattenfall": 0.085855,
-          "zonneplan": 0.105855
+          "vattenfall": 0.085855
         }
       },
       {
@@ -1487,29 +887,17 @@
         "market": 0.14528,
         "buy": {
           "anwb": 0.160156,
-          "budget": 0.16208,
-          "eneco": 0.16378,
           "frank": 0.16028,
-          "liveenergy": 0.16828,
           "nextenergy": 0.162635,
-          "pure": 0.16738,
           "tibber": 0.160156,
-          "vandebron": 0.16328,
-          "vattenfall": 0.17078,
-          "zonneplan": 0.16348
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.14528,
-          "budget": 0.12848,
-          "eneco": 0.12678,
           "frank": 0.13478,
-          "liveenergy": 0.12228,
           "nextenergy": 0.14528,
-          "pure": 0.12318,
           "tibber": 0.130404,
-          "vandebron": 0.12728,
-          "vattenfall": 0.14528,
-          "zonneplan": 0.16528
+          "vattenfall": 0.14528
         }
       },
       {
@@ -1518,29 +906,17 @@
         "market": 0.195252,
         "buy": {
           "anwb": 0.210128,
-          "budget": 0.212052,
-          "eneco": 0.213752,
           "frank": 0.210252,
-          "liveenergy": 0.218252,
           "nextenergy": 0.212607,
-          "pure": 0.217352,
           "tibber": 0.210128,
-          "vandebron": 0.213252,
-          "vattenfall": 0.220752,
-          "zonneplan": 0.213452
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.195252,
-          "budget": 0.178452,
-          "eneco": 0.176752,
           "frank": 0.184752,
-          "liveenergy": 0.172252,
           "nextenergy": 0.195252,
-          "pure": 0.173152,
           "tibber": 0.180376,
-          "vandebron": 0.177252,
-          "vattenfall": 0.195252,
-          "zonneplan": 0.215252
+          "vattenfall": 0.195252
         }
       },
       {
@@ -1549,29 +925,17 @@
         "market": 0.240393,
         "buy": {
           "anwb": 0.255269,
-          "budget": 0.257193,
-          "eneco": 0.258893,
           "frank": 0.255393,
-          "liveenergy": 0.263393,
           "nextenergy": 0.257748,
-          "pure": 0.262493,
           "tibber": 0.255269,
-          "vandebron": 0.258393,
-          "vattenfall": 0.265893,
-          "zonneplan": 0.258593
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.240393,
-          "budget": 0.223593,
-          "eneco": 0.221893,
           "frank": 0.229893,
-          "liveenergy": 0.217393,
           "nextenergy": 0.240393,
-          "pure": 0.218293,
           "tibber": 0.225517,
-          "vandebron": 0.222393,
-          "vattenfall": 0.240393,
-          "zonneplan": 0.260393
+          "vattenfall": 0.240393
         }
       },
       {
@@ -1580,29 +944,17 @@
         "market": 0.297403,
         "buy": {
           "anwb": 0.312279,
-          "budget": 0.314203,
-          "eneco": 0.315903,
           "frank": 0.312403,
-          "liveenergy": 0.320403,
           "nextenergy": 0.314758,
-          "pure": 0.319503,
           "tibber": 0.312279,
-          "vandebron": 0.315403,
-          "vattenfall": 0.322903,
-          "zonneplan": 0.315603
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.297403,
-          "budget": 0.280603,
-          "eneco": 0.278903,
           "frank": 0.286903,
-          "liveenergy": 0.274403,
           "nextenergy": 0.297403,
-          "pure": 0.275303,
           "tibber": 0.282527,
-          "vandebron": 0.279403,
-          "vattenfall": 0.297403,
-          "zonneplan": 0.317403
+          "vattenfall": 0.297403
         }
       },
       {
@@ -1611,29 +963,17 @@
         "market": 0.252187,
         "buy": {
           "anwb": 0.267063,
-          "budget": 0.268987,
-          "eneco": 0.270687,
           "frank": 0.267187,
-          "liveenergy": 0.275187,
           "nextenergy": 0.269542,
-          "pure": 0.274287,
           "tibber": 0.267063,
-          "vandebron": 0.270187,
-          "vattenfall": 0.277687,
-          "zonneplan": 0.270387
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.252187,
-          "budget": 0.235387,
-          "eneco": 0.233687,
           "frank": 0.241687,
-          "liveenergy": 0.229187,
           "nextenergy": 0.252187,
-          "pure": 0.230087,
           "tibber": 0.237311,
-          "vandebron": 0.234187,
-          "vattenfall": 0.252187,
-          "zonneplan": 0.272187
+          "vattenfall": 0.252187
         }
       },
       {
@@ -1642,29 +982,17 @@
         "market": 0.22425,
         "buy": {
           "anwb": 0.239126,
-          "budget": 0.24105,
-          "eneco": 0.24275,
           "frank": 0.23925,
-          "liveenergy": 0.24725,
           "nextenergy": 0.241605,
-          "pure": 0.24635,
           "tibber": 0.239126,
-          "vandebron": 0.24225,
-          "vattenfall": 0.24975,
-          "zonneplan": 0.24245
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.22425,
-          "budget": 0.20745,
-          "eneco": 0.20575,
           "frank": 0.21375,
-          "liveenergy": 0.20125,
           "nextenergy": 0.22425,
-          "pure": 0.20215,
           "tibber": 0.209374,
-          "vandebron": 0.20625,
-          "vattenfall": 0.22425,
-          "zonneplan": 0.24425
+          "vattenfall": 0.22425
         }
       },
       {
@@ -1673,29 +1001,17 @@
         "market": 0.20652,
         "buy": {
           "anwb": 0.221396,
-          "budget": 0.22332,
-          "eneco": 0.22502,
           "frank": 0.22152,
-          "liveenergy": 0.22952,
           "nextenergy": 0.223875,
-          "pure": 0.22862,
           "tibber": 0.221396,
-          "vandebron": 0.22452,
-          "vattenfall": 0.23202,
-          "zonneplan": 0.22472
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.20652,
-          "budget": 0.18972,
-          "eneco": 0.18802,
           "frank": 0.19602,
-          "liveenergy": 0.18352,
           "nextenergy": 0.20652,
-          "pure": 0.18442,
           "tibber": 0.191644,
-          "vandebron": 0.18852,
-          "vattenfall": 0.20652,
-          "zonneplan": 0.22652
+          "vattenfall": 0.20652
         }
       },
       {
@@ -1704,29 +1020,17 @@
         "market": 0.177,
         "buy": {
           "anwb": 0.191876,
-          "budget": 0.1938,
-          "eneco": 0.1955,
           "frank": 0.192,
-          "liveenergy": 0.2,
           "nextenergy": 0.194355,
-          "pure": 0.1991,
           "tibber": 0.191876,
-          "vandebron": 0.195,
-          "vattenfall": 0.2025,
-          "zonneplan": 0.1952
+          "vattenfall": null
         },
         "sell": {
           "anwb": 0.177,
-          "budget": 0.1602,
-          "eneco": 0.1585,
           "frank": 0.1665,
-          "liveenergy": 0.154,
           "nextenergy": 0.177,
-          "pure": 0.1549,
           "tibber": 0.162124,
-          "vandebron": 0.159,
-          "vattenfall": 0.177,
-          "zonneplan": 0.197
+          "vattenfall": 0.177
         }
       }
     ]

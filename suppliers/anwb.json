@@ -9,8 +9,7 @@
     "gas": true
   },
   "features": {
-    "autoCurtailment": false,
-    "notes": "Basis app-inzicht, geen geautomatiseerde omvormer-stop."
+    "autoCurtailment": null
   },
   "fields": {
     "electricityMarkup": {
@@ -54,13 +53,6 @@
     ]
   },
   "manual": {
-    "electricityFixedMonthly": {
-      "value": 5.99,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
     "electricityMarkup": {
       "value": 0.018,
       "vatIncluded": true,
@@ -68,13 +60,6 @@
       "checkedAt": "2026-09-24",
       "source": "https://www.anwb.nl/energie/actuele-tarieven",
       "note": "'De inkoopkosten bedragen € 0,018 per kWh ... (incl. btw)'"
-    },
-    "gasFixedMonthly": {
-      "value": 5.99,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
     },
     "gasMarkup": {
       "value": 0.0768,

@@ -9,8 +9,7 @@
     "gas": true
   },
   "features": {
-    "autoCurtailment": true,
-    "notes": "App-aansturing om omvormers uit te zetten tijdens negatieve uren."
+    "autoCurtailment": null
   },
   "fields": {
     "electricityMarkup": {

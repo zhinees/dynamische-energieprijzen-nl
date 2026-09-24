@@ -69,7 +69,7 @@ test("ANWB config takes the announced new gas price, stroom markup scraped", asy
   assert.equal(rec.tariffs.gasMarkup?.value, ex(0.0768));
   assert.equal(rec.tariffs.electricityMarkup?.source, "scraped");
   assert.equal(rec.tariffs.gasMarkup?.source, "scraped");
-  assert.equal(rec.tariffs.electricityFixedMonthly?.verified, false); // from the community table
+  assert.equal(rec.tariffs.electricityFixedMonthly, undefined); // not published by ANWB, so no value at all
 });
 
 test("ANWB gas falls back to the second rule when the 'vanaf' note is gone", () => {

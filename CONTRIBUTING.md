@@ -4,7 +4,7 @@ Thanks for helping keep the tariffs correct. Almost every contribution is an edi
 
 ## 1. Update a tariff (most common)
 
-A supplier changed its prices, or a value in [`data/REPORT.md`](data/REPORT.md) is marked ❔ unverified.
+A supplier changed its prices, or a supplier in [`data/REPORT.md`](data/REPORT.md) is listed as not published yet.
 
 1. Find the number on the **supplier's own website**. For suppliers that only show tariffs after entering a postcode, use their tariff calculator or tarievenblad.
 2. Edit `manual` in `suppliers/<id>.json`:
@@ -22,7 +22,7 @@ A supplier changed its prices, or a value in [`data/REPORT.md`](data/REPORT.md) 
 
 Field notes:
 - **`value`**: copy the number exactly as the site shows it. Set `vatIncluded` to match how the site shows it; the conversion to excl. btw happens automatically.
-- **`verified: true`**: only when you read the number on the supplier's own site. Numbers from comparison sites, news articles or forums get `verified: false`, and `source` names where they came from.
+- **`verified: true`**: required. Only add a number you read on the supplier's own site or calculator, and put that URL in `source`. Numbers from comparison sites, news articles or forums are not accepted; the validator rejects anything else.
 - **`feedInDelta`**: this is what gets added to the hourly price for power you feed back. For "uurprijs minus € 0,02 terugleverkosten", enter `-0.02`. For "uurprijs + € 0,02 bonus", enter `0.02`.
 - **Fixed costs**: use the monthly amount per connection (per aansluiting).
 
@@ -82,7 +82,7 @@ Use plain headers with the project's user agent. Don't imitate the supplier's ow
 Copy an existing file (for example `suppliers/frank.json`) to `suppliers/<new-id>.json`. The `id` must match the file name. Fill in:
 - `products`,
 - `features.autoCurtailment` (whether it can automatically stop feed-in at negative prices),
-- `manual` values with sources,
+- `manual` values with sources (verified only; a supplier without any is simply not published yet),
 - and rules if the site allows it.
 
 ## Ground rules

@@ -68,8 +68,11 @@
       ],
       "properties": {
         "autoCurtailment": {
-          "type": "boolean",
-          "description": "Supplier can automatically stop feed-in at negative prices."
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Supplier can automatically stop feed-in at negative prices. null = not verified."
         },
         "notes": {
           "type": "string"
@@ -292,8 +295,8 @@
           "type": "boolean"
         },
         "verified": {
-          "type": "boolean",
-          "description": "true = read on the supplier's own site on checkedAt."
+          "const": true,
+          "description": "Must be true: the value was read on the supplier's own site on checkedAt. Unverified values are not accepted."
         },
         "checkedAt": {
           "type": "string",

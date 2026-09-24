@@ -34,14 +34,16 @@ export function urlsFor(cfg: SupplierConfig): string[] {
 
 function manualValue(cfg: SupplierConfig, key: FieldKey, prev?: FieldValue): FieldValue | undefined {
   const m = cfg.manual[key];
-  if (!m) return undefined;
+  if (!m || m.verified !== true) return undefined; // only real, checked data is published
   const value = m.vatIncluded ? exclVat(m.value) : r6(m.value);
+  // Keep the exact published amount incl. btw (converting back would drift in the last decimal).
+  const valueInclVat = m.vatIncluded ? r6(m.value) : inclVat(value);
   const checkedAt = `${m.checkedAt}T00:00:00Z`;
   // Keep a newer scraped/calculator value over an older manual one.
   if (prev && prev.source !== "manual" && prev.since && prev.since > checkedAt) return undefined;
   return {
     value,
-    valueInclVat: inclVat(value),
+    valueInclVat,
     unit: FIELD_UNITS[key],
     source: "manual",
     verified: m.verified,
@@ -76,7 +78,7 @@ export function buildSupplier(
       const unchanged = prevVal?.source === "calculator" && prevVal.value === value;
       tariffs[key] = {
         value,
-        valueInclVat: inclVat(value),
+        valueInclVat: c.vatIncluded ? r6(c.value) : inclVat(value),
         unit: FIELD_UNITS[key],
         source: "calculator",
         verified: true,
@@ -106,7 +108,7 @@ export function buildSupplier(
           const unchanged = prevVal?.source === "scraped" && prevVal.value === value;
           scraped = {
             value,
-            valueInclVat: inclVat(value),
+            valueInclVat: rule.vatIncluded ? r6(res.value) : inclVat(value),
             unit: FIELD_UNITS[key],
             source: "scraped",
             verified: true,
@@ -128,7 +130,7 @@ export function buildSupplier(
 
     // Scrape failed or no rule: newest of (manual block, previous scraped value).
     const manual = manualValue(cfg, key, prevVal);
-    const fallback = manual ?? (prevVal ? { ...prevVal } : undefined);
+    const fallback = manual ?? (prevVal && prevVal.source !== "manual" ? { ...prevVal } : undefined);
     if (fallback) {
       if (lastError) fallback.lastError = lastError;
       else delete fallback.lastError;

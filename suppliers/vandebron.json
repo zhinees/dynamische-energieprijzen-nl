@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
+  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
   "id": "vandebron",
   "name": "Vandebron",
   "website": "https://vandebron.nl",
@@ -10,45 +10,8 @@
     "gas": true
   },
   "features": {
-    "autoCurtailment": false,
-    "notes": "Basis verbruiksinzicht."
+    "autoCurtailment": null
   },
   "fields": {},
-  "manual": {
-    "electricityFixedMonthly": {
-      "value": 7.0,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "electricityMarkup": {
-      "value": 0.018,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "gasFixedMonthly": {
-      "value": 7.0,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "gasMarkup": {
-      "value": 0.099,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "feedInDelta": {
-      "value": -0.018,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    }
-  }
+  "manual": {}
 }

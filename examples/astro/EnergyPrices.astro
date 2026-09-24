@@ -46,7 +46,7 @@ const eur = (n: number | null) =>
         <tbody>
           {rows.map((s: any) => (
             <tr>
-              <td>{s.name}{!s.verified && <span title="Niet bevestigd op de site van de leverancier"> *</span>}</td>
+              <td>{s.name}</td>
               <td>{eur(s.buy)}</td>
               <td>{eur(s.sell)}</td>
               <td>{eur(s.fixedMonthly.electricity)}</td>
@@ -54,7 +54,7 @@ const eur = (n: number | null) =>
           ))}
         </tbody>
       </table>
-      <p><small>Excl. btw, energiebelasting en netbeheerkosten. * = nog niet bevestigd bij de leverancier.</small></p>
+      <p><small>Excl. btw, energiebelasting en netbeheerkosten. – = niet gepubliceerd door de leverancier.</small></p>
     </>
   )}
 </section>

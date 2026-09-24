@@ -10,7 +10,7 @@
   },
   "features": {
     "autoCurtailment": true,
-    "notes": "Slim Sturen zet automatisch de teruglevering stil als stroom geld kost."
+    "notes": "Slim Terugleveren: with your permission Frank steers your solar panels (seen in Frank's calculator, 2026-09-24)."
   },
   "calculator": {
     "adapter": "frank-graphql",

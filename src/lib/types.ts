@@ -56,8 +56,8 @@ export interface SupplierConfig {
   render?: "http" | "browser";
   products: { electricity: boolean; gas: boolean };
   features: {
-    /** Supplier can automatically stop feed-in / curtail inverters at negative prices. */
-    autoCurtailment: boolean;
+    /** Supplier can automatically stop feed-in / curtail inverters at negative prices. null = not verified. */
+    autoCurtailment: boolean | null;
     notes?: string;
   };
   /**
@@ -79,8 +79,8 @@ export interface ManualValue {
   value: number;
   /** true when `value` includes 21% VAT; it is converted to excl. VAT in the output. */
   vatIncluded: boolean;
-  /** true = read on the supplier's own site on checkedAt. false = secondary source, needs checking. */
-  verified: boolean;
+  /** Must be true: read on the supplier's own site on checkedAt. Unverified values are not allowed. */
+  verified: true;
   checkedAt: string; // YYYY-MM-DD
   source: string;
   note?: string;

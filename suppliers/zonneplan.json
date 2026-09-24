@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/supplier.schema.json",
-  "$comment": "Tariffs are only shown after entering a postcode, so there is no scrape rule yet. Contributions welcome (see CONTRIBUTING.md).",
+  "$comment": "No verified tariffs yet: this supplier only shows prices in its postcode calculator. It is not published until a calculator adapter or a verified manual value is added (see CONTRIBUTING.md).",
   "id": "zonneplan",
   "name": "Zonneplan",
   "website": "https://www.zonneplan.nl",
@@ -10,45 +10,8 @@
     "gas": true
   },
   "features": {
-    "autoCurtailment": true,
-    "notes": "Volledig automatisch afschakelen bij negatieve stroomprijzen. Teruglevering: uurprijs + Zonnebonus."
+    "autoCurtailment": null
   },
   "fields": {},
-  "manual": {
-    "electricityFixedMonthly": {
-      "value": 6.25,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "electricityMarkup": {
-      "value": 0.0182,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "gasFixedMonthly": {
-      "value": 6.25,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "gasMarkup": {
-      "value": 0.0799,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    },
-    "feedInDelta": {
-      "value": 0.02,
-      "vatIncluded": false,
-      "verified": false,
-      "checkedAt": "2026-09-24",
-      "source": "Community overview 'Dynamische Energiecontracten Nederland (September 2026)', not checked at the supplier"
-    }
-  }
+  "manual": {}
 }
