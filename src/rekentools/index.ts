@@ -2,9 +2,11 @@
 // using a fixed, public test address (never a private home).
 
 import type { Testadres, Veld } from "../lib/typen.ts";
+import { haalAnwb } from "./anwb.ts";
 import { haalBudget } from "./budget.ts";
 import { haalFrank } from "./frank.ts";
 import { haalVandebron } from "./vandebron.ts";
+import { haalVattenfall } from "./vattenfall.ts";
 
 export type { Testadres };
 
@@ -15,4 +17,6 @@ export const REKENTOOLS: Record<string, (adres: Testadres) => Promise<Rekentoolr
   "frank-graphql": haalFrank,
   "vandebron-api": haalVandebron,
   "budget-api": haalBudget,
+  "anwb-api": haalAnwb,
+  "vattenfall-api": haalVattenfall,
 };

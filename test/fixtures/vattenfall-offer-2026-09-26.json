@@ -1,0 +1,2715 @@
+{
+ "includingVat": {
+  "pricing": {
+   "title": "Prijsopbouw",
+   "items": [
+    {
+     "itemType": "ElectricityProduct",
+     "entryType": "Group",
+     "text": "Stroom",
+     "total": 659.96,
+     "totalText": "€ 659,96",
+     "items": [
+      {
+       "itemType": "HeaderVariableCosts",
+       "entryType": "Group",
+       "text": "Totaal variabele kosten",
+       "total": 739.01,
+       "totalText": "€ 739,01",
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "FlexPrijsStroom",
+         "total": 424.41,
+         "totalText": "€ 424,41",
+         "descriptionListItems": [
+          {
+           "term": "Verwachte beursprijs (EPEX)",
+           "isTotal": false,
+           "total": 424.41,
+           "totalText": "€ 424,41",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "2.500 kWh x € 0,169763"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupSourcingFee",
+         "entryType": "Group",
+         "text": "Inkoopvergoeding",
+         "total": 37.48,
+         "totalText": "€ 37,48",
+         "descriptionListItems": [
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 7.09,
+           "totalText": "€ 7,09",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "473 kWh x € 0,014992"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 30.39,
+           "totalText": "€ 30,39",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "2.027 kWh x € 0,014992"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "BackDeliveryFee",
+         "entryType": "Group",
+         "text": "Terugleververgoeding",
+         "total": 0.0,
+         "totalText": "€ 0,00",
+         "descriptionListItems": [
+          {
+           "term": "Verwachte beursprijs (EPEX)",
+           "isTotal": false,
+           "total": 0.0,
+           "totalText": "€ 0,00",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "0 kWh x € -0,055800"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGovernmentalTaxes",
+         "entryType": "Group",
+         "text": "Overheidsheffingen",
+         "total": 277.12,
+         "totalText": "€ 277,12",
+         "descriptionListItems": [
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 52.43,
+           "totalText": "€ 52,43",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 2.900 kWh"
+              },
+              {
+               "text": "473 kWh x € 0,110848"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 224.69,
+           "totalText": "€ 224,69",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 2.900 kWh"
+              },
+              {
+               "text": "2.027 kWh x € 0,110848"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "itemType": "HeaderFixedCosts",
+       "entryType": "Group",
+       "text": "Totaal vaste kosten",
+       "total": -79.05,
+       "totalText": "€ -79,05",
+       "items": [
+        {
+         "itemType": "CostGroupFixedDeliveryCost",
+         "entryType": "Group",
+         "text": "FlexPrijsStroom",
+         "total": 71.87,
+         "totalText": "€ 71,87",
+         "descriptionListItems": [
+          {
+           "term": "Vaste leveringskosten",
+           "isTotal": false,
+           "total": 71.87,
+           "totalText": "€ 71,87",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 0,196915 / maand: € 5,99 / jaar: € 71,87"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGovernmentalTaxes",
+         "entryType": "Group",
+         "text": "Overheidsheffingen",
+         "total": -628.96,
+         "totalText": "€ -628,96",
+         "descriptionListItems": [
+          {
+           "term": "Vermindering energiebelasting",
+           "isTotal": false,
+           "total": -628.96,
+           "totalText": "€ -628,96",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € -1,723173 / maand: € -52,41 / jaar: € -628,96"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGridOperatorCost",
+         "entryType": "Group",
+         "text": "Systeembeheerkosten",
+         "total": 478.04,
+         "totalText": "€ 478,04",
+         "descriptionListItems": [
+          {
+           "term": "Liander 3x25",
+           "isTotal": false,
+           "total": 478.04,
+           "totalText": "€ 478,04",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 1,309704 / maand: € 39,84 / jaar: € 478,04"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "itemType": "GasProduct",
+     "entryType": "Group",
+     "text": "Gas",
+     "total": 1955.69,
+     "totalText": "€ 1.955,69",
+     "items": [
+      {
+       "itemType": "HeaderVariableCosts",
+       "entryType": "Group",
+       "text": "Totaal variabele kosten",
+       "total": 1617.2,
+       "totalText": "€ 1.617,20",
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "FlexPrijsGas",
+         "total": 815.42,
+         "totalText": "€ 815,42",
+         "descriptionListItems": [
+          {
+           "term": "Verwachte beursprijs (EEX)",
+           "isTotal": false,
+           "total": 815.42,
+           "totalText": "€ 815,42",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 0 - 170.000 m3"
+              },
+              {
+               "text": "1.000 m3 x € 0,815419"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupSourcingFee",
+         "entryType": "Group",
+         "text": "Inkoopvergoeding",
+         "total": 74.99,
+         "totalText": "€ 74,99",
+         "descriptionListItems": [
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 21.67,
+           "totalText": "€ 21,67",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 170.000 m3"
+              },
+              {
+               "text": "289 m3 x € 0,074996"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 53.32,
+           "totalText": "€ 53,32",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 170.000 m3"
+              },
+              {
+               "text": "711 m3 x € 0,074996"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGovernmentalTaxes",
+         "entryType": "Group",
+         "text": "Overheidsheffingen",
+         "total": 726.79,
+         "totalText": "€ 726,79",
+         "descriptionListItems": [
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 210.04,
+           "totalText": "€ 210,04",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 1.000 m3"
+              },
+              {
+               "text": "289 m3 x € 0,726799"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 516.75,
+           "totalText": "€ 516,75",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 1.000 m3"
+              },
+              {
+               "text": "711 m3 x € 0,726799"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "itemType": "HeaderFixedCosts",
+       "entryType": "Group",
+       "text": "Totaal vaste kosten",
+       "total": 338.49,
+       "totalText": "€ 338,49",
+       "items": [
+        {
+         "itemType": "CostGroupFixedDeliveryCost",
+         "entryType": "Group",
+         "text": "FlexPrijsGas",
+         "total": 71.87,
+         "totalText": "€ 71,87",
+         "descriptionListItems": [
+          {
+           "term": "Vaste leveringskosten",
+           "isTotal": false,
+           "total": 71.87,
+           "totalText": "€ 71,87",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 0,196915 / maand: € 5,99 / jaar: € 71,87"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGridOperatorCost",
+         "entryType": "Group",
+         "text": "Systeembeheerkosten",
+         "total": 266.62,
+         "totalText": "€ 266,62",
+         "descriptionListItems": [
+          {
+           "term": "Liander G6 < 4000 m3",
+           "isTotal": false,
+           "total": 266.62,
+           "totalText": "€ 266,62",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 0,730477 / maand: € 22,22 / jaar: € 266,62"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "itemType": "Subtotal",
+     "entryType": "Row",
+     "text": "Subtotaal",
+     "total": 2615.65,
+     "totalText": "€ 2.615,65"
+    },
+    {
+     "itemType": "DiscountGroup",
+     "entryType": "Group",
+     "text": "Kortingen",
+     "total": -200,
+     "totalText": "€ -200,00",
+     "items": [
+      {
+       "itemType": "DiscountGroupItem",
+       "entryType": "Row",
+       "text": "Korting op uw eerste jaarafrekening",
+       "total": -200,
+       "totalText": "€ -200,00",
+       "descriptionListItems": [
+        {
+         "term": "",
+         "isTotal": false,
+         "descriptionDetails": [
+          {
+           "lines": [
+            {
+             "text": "01-11-26 tot 01-11-27 | Eenmalig, na eerste jaar"
+            }
+           ],
+           "total": 0,
+           "isTotal": false
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "itemType": "AnnualTotalFirstYear",
+     "entryType": "Row",
+     "text": "Jaarbedrag eerste jaar",
+     "subText": "Inclusief overige kosten, kortingen en btw",
+     "total": 2415.65,
+     "totalText": "€ 2.415,65"
+    },
+    {
+     "itemType": "ExpectedMonthlyCosts",
+     "entryType": "Row",
+     "text": "Maandbedrag",
+     "total": 217.97,
+     "totalText": "€ 217,97"
+    }
+   ]
+  },
+  "tariffs": {
+   "title": "Prijsoverzicht",
+   "excerpt": "Je ziet hier de prijzen voor de variabele kosten; het variabele tarief en de energiebelasting. Dit betaal je voor je daadwerkelijke verbruik. In je prijsopbouw vind je je vaste kosten, zoals vaste terugleverkosten en systeembeheerkosten.",
+   "items": [
+    {
+     "itemType": "ElectricityProduct",
+     "entryType": "Group",
+     "text": "Stroom",
+     "total": 0,
+     "items": [
+      {
+       "entryType": "Group",
+       "text": "FlexPrijsStroom",
+       "total": 0,
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "01-11-26 tot 01-01-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Dynamisch tarief",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 10.000.000 kWh"
+                }
+               ],
+               "total": 0.169763,
+               "totalText": "€ 0,169763",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.110848,
+               "totalText": "€ 0,110848",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.280611,
+               "totalText": "€ 0,280611",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.014992,
+               "totalText": "€ 0,014992",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Terugleververgoeding",
+                 "tooltip": {
+                  "text": "Je krijgt alleen teruglevergoeding over het deel dat overblijft na saldering tot 01-01-2027",
+                  "meta": {
+                   "highLightType": "Info"
+                  }
+                 }
+                }
+               ],
+               "total": 0.0558,
+               "totalText": "€ 0,055800",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "entryType": "Group",
+         "text": "01-01-27 tot 01-11-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Dynamisch tarief",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 10.000.000 kWh"
+                }
+               ],
+               "total": 0.169763,
+               "totalText": "€ 0,169763",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.110848,
+               "totalText": "€ 0,110848",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.280611,
+               "totalText": "€ 0,280611",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.014992,
+               "totalText": "€ 0,014992",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Terugleververgoeding"
+                }
+               ],
+               "total": 0.0558,
+               "totalText": "€ 0,055800",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "itemType": "GasProduct",
+     "entryType": "Group",
+     "text": "Gas",
+     "total": 0,
+     "items": [
+      {
+       "entryType": "Group",
+       "text": "FlexPrijsGas",
+       "total": 0,
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "01-11-26 tot 01-01-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Variabele kosten gas",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 170.000 m3"
+                }
+               ],
+               "total": 0.815419,
+               "totalText": "€ 0,815419",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 0.726799,
+               "totalText": "€ 0,726799",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 1.542218,
+               "totalText": "€ 1,542218",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.074996,
+               "totalText": "€ 0,074996",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "entryType": "Group",
+         "text": "01-01-27 tot 01-11-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Variabele kosten gas",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 170.000 m3"
+                }
+               ],
+               "total": 0.815419,
+               "totalText": "€ 0,815419",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 0.726799,
+               "totalText": "€ 0,726799",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 1.542218,
+               "totalText": "€ 1,542218",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.074996,
+               "totalText": "€ 0,074996",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "explanations": {
+   "title": "Toelichting prijsopbouw",
+   "entries": [
+    {
+     "htmlText": "FlexPrijsStroom en FlexPrijsGas zijn dynamische energiecontracten. Je energiekosten kunnen sterk schommelen, ook in je nadeel. Het is belangrijk dat je de beursprijzen volgt en je verbruik kunt verplaatsen naar een ander moment."
+    },
+    {
+     "htmlText": "De tarieven in dit aanbod zijn inschattingen, gebaseerd op de verwachte beursprijs voor de komende twaalf maanden. De verwachte beursprijs en de getoonde tarieven zijn geen garantie voor toekomstige prijzen."
+    },
+    {
+     "htmlText": "Je werkelijke kosten worden bepaald door hoeveel energie je verbruikt en teruglevert, de beursprijs en alle andere kosten die van toepassing zijn, zoals de inkoopvergoeding en energiebelasting."
+    },
+    {
+     "htmlText": "Je stroomtarief wijzigt elk uur, je gastarief wijzigt elke dag. Je vindt de tarieven die je betaalt in Mijn Vattenfall, de Energie-app en op <a target=\"_blank\" href=\"https://www.vattenfall.nl/flexprijs-tarieven\">vattenfall.nl/flexprijs-tarieven</a>."
+    },
+    {
+     "htmlText": "Lever je stroom terug, dan verrekenen we voor elk uur je teruglevering met de prijs die op dat moment geldt. Vind meer informatie op <a target=\"_blank\" href=\"https://www.vattenfall.nl/dynamisch-waardesalderen\">vattenfall.nl/dynamisch-waardesalderen</a>."
+    },
+    {
+     "htmlText": "De systeembeheerkosten in dit prijsoverzicht zijn de kosten van een kleine aansluiting of van de werkelijk aanwezige aansluiting."
+    },
+    {
+     "htmlText": "In dit prijsoverzicht staan altijd de actuele tarieven. In de toekomst kunnen deze tarieven wijzigen. We informeren je in dat geval minstens één maand van te voren."
+    },
+    {
+     "htmlText": "De systeembeheerkosten en energiebelasting kunnen tijdens de looptijd veranderen. In Mijn Vattenfall en de Energie-app vind je altijd de actuele tarieven."
+    },
+    {
+     "htmlText": "Bij het berekenen van je kosten ronden wij de tarieven af. Soms ontstaan hierdoor kleine afrondingsverschillen op het prijsoverzicht en de energienota."
+    }
+   ]
+  },
+  "specs": {
+   "termAmount": 217.97,
+   "proposedTermAmount": 218,
+   "cashback": -200,
+   "totalYearlyCost": 2615.65,
+   "totalYearlyCostInclCashback": 2415.65,
+   "inputs": {
+    "postalCode": "8801KE",
+    "houseNumber": 3,
+    "houseNumberAddition": "",
+    "electricityConsumption": {
+     "blocks": [
+      {
+       "number": 1,
+       "volume": 2500
+      }
+     ]
+    },
+    "gasConsumption": 1000,
+    "PropositionId": "PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004"
+   },
+   "volumeSummary": {
+    "electricityConsumption": 2500,
+    "gasConsumption": 1000
+   },
+   "electricity": [
+    {
+     "volumes": {
+      "consumption": {
+       "blocks": [
+        {
+         "number": 1,
+         "grossVolume": 2500,
+         "nettedVolume": 0,
+         "netVolume": 2500,
+         "description": "Dynamisch tarief"
+        }
+       ]
+      },
+      "backDelivery": {
+       "blocks": [
+        {
+         "number": 1,
+         "grossVolume": 0,
+         "nettedVolume": 0,
+         "netVolume": 0,
+         "description": "Dynamisch tarief"
+        }
+       ]
+      }
+     },
+     "numberOfBlocks": 2,
+     "gridCapacity": "3x25",
+     "productCode": "PPC0020519",
+     "productName": "FlexPrijsStroom",
+     "contractDurationUnit": "Onbepaalde tijd",
+     "salesDate": "2026-09-26",
+     "calculationStartDate": "2026-11-01",
+     "calculationEndDate": "2027-11-01",
+     "contractType": "Dynamic",
+     "subTotal": 659.96,
+     "costs": [
+      {
+       "type": "BackDeliveryFee",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": -0.0558,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 10000000,
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief"
+      },
+      {
+       "type": "GovernmentalTaxes",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": -1.723173,
+       "subTotal": -628.96,
+       "unit": "Days"
+      },
+      {
+       "type": "DeliveryCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 2500,
+       "tariff": 0.169763,
+       "subTotal": 424.41,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 10000000,
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief"
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 473,
+       "tariff": 0.110848,
+       "subTotal": 52.43,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 2900
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.110848,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 2900,
+       "volumeTo": 10000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.080719,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 10000,
+       "volumeTo": 50000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.045194,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 50000,
+       "volumeTo": 10000000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 2027,
+       "tariff": 0.110848,
+       "subTotal": 224.69,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 2900
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.110848,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 2900,
+       "volumeTo": 10000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.080719,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 10000,
+       "volumeTo": 50000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.045194,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 50000,
+       "volumeTo": 10000000
+      },
+      {
+       "type": "FixedChargeCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 0.196915,
+       "subTotal": 71.87,
+       "unit": "Days"
+      },
+      {
+       "type": "GridOperatorCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 1.309704,
+       "subTotal": 478.04,
+       "unit": "Days"
+      }
+     ],
+     "prices": [
+      {
+       "deliveryRate": 0.169763,
+       "energyTax": 0.110848,
+       "total": 0.280611,
+       "backDeliveryFee": -0.0558,
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief",
+       "volumeFrom": 0,
+       "volumeTo": 10000000,
+       "unit": "KwHours"
+      }
+     ],
+     "isModelContract": false,
+     "tariffType": "DoubleTariff"
+    }
+   ],
+   "gas": [
+    {
+     "consumption": 1000,
+     "gridCapacity": "G6 < 4000 m3",
+     "productCode": "PPC0020520",
+     "productName": "FlexPrijsGas",
+     "contractDurationUnit": "Onbepaalde tijd",
+     "salesDate": "2026-09-26",
+     "calculationStartDate": "0001-01-01",
+     "calculationEndDate": "0001-01-01",
+     "contractType": "Dynamic",
+     "subTotal": 1955.69,
+     "costs": [
+      {
+       "type": "DeliveryCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 1000,
+       "tariff": 0.815419,
+       "subTotal": 815.42,
+       "unit": "M3",
+       "volumeFrom": 0,
+       "volumeTo": 170000,
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief"
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 289,
+       "tariff": 0.726799,
+       "subTotal": 210.04,
+       "unit": "M3",
+       "volumeFrom": 0,
+       "volumeTo": 1000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.726799,
+       "subTotal": 0.0,
+       "unit": "M3",
+       "volumeFrom": 1000,
+       "volumeTo": 170000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 711,
+       "tariff": 0.726799,
+       "subTotal": 516.75,
+       "unit": "M3",
+       "volumeFrom": 0,
+       "volumeTo": 1000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.726799,
+       "subTotal": 0.0,
+       "unit": "M3",
+       "volumeFrom": 1000,
+       "volumeTo": 170000
+      },
+      {
+       "type": "FixedChargeCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 0.196915,
+       "subTotal": 71.87,
+       "unit": "Days"
+      },
+      {
+       "type": "GridOperatorCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 0.730477,
+       "subTotal": 266.62,
+       "unit": "Days"
+      }
+     ],
+     "prices": [
+      {
+       "deliveryRate": 0.815419,
+       "energyTax": 0.726799,
+       "total": 1.542218,
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief",
+       "volumeFrom": 0,
+       "volumeTo": 170000,
+       "unit": "M3"
+      }
+     ],
+     "isModelContract": false,
+     "tariffType": "SingleTariff"
+    }
+   ]
+  },
+  "conditions": [
+   {
+    "id": 773,
+    "name": "1004 Energie met eenmalige loyaliteitskorting CB01 - Actievoorwaarden",
+    "displayName": "Actievoorwaarden - Energie met eenmalige loyaliteitskorting CB01",
+    "filename": "1004 Energie met éénmalige loyaliteitskorting CB01 - Actievoorwaarden.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/1004 Energie met eenmalige loyaliteitskorting CB01 - Actievoorwaarden",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 764,
+    "name": "6373_001_PVW_CM_FlexPrijsStroom",
+    "displayName": "Productvoorwaarden FlexPrijsStroom",
+    "filename": "6373_001_PVW_CM_FlexPrijsStroom.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/6373_001_PVW_CM_FlexPrijsStroom",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 765,
+    "name": "6374_001_PVW_CM_FlexPrijsGas",
+    "displayName": "Productvoorwaarden FlexPrijsGas",
+    "filename": "6374_001_PVW_CM_FlexPrijsGas.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/6374_001_PVW_CM_FlexPrijsGas",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 804,
+    "name": "8000 Algemene voorwaarden 2026",
+    "displayName": "Algemene voorwaarden voor de levering en teruglevering van elektriciteit en de levering van gas aan huishoudelijke eindafnemers 2026",
+    "filename": "8000_001 Algemene voorwaarden 2026.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/8000 Algemene voorwaarden 2026",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 808,
+    "name": "8002 Toelichting algemene voorwaarden 2026",
+    "displayName": "Toelichting algemene voorwaarden 2026",
+    "filename": "8002_001 Toelichting algemene voorwaarden 2026.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/8002 Toelichting algemene voorwaarden 2026",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 802,
+    "name": "Kwaliteitscriteria",
+    "displayName": "Kwaliteitscriteria",
+    "filename": "vattenfall-kwaliteitscriteria.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/Kwaliteitscriteria",
+    "content": "",
+    "type": "Api"
+   }
+  ]
+ },
+ "excludingVat": {
+  "pricing": {
+   "title": "Prijsopbouw",
+   "items": [
+    {
+     "itemType": "ElectricityProduct",
+     "entryType": "Group",
+     "text": "Stroom",
+     "total": 545.42,
+     "totalText": "€ 545,42",
+     "items": [
+      {
+       "itemType": "HeaderVariableCosts",
+       "entryType": "Group",
+       "text": "Totaal variabele kosten",
+       "total": 610.74,
+       "totalText": "€ 610,74",
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "FlexPrijsStroom",
+         "total": 350.75,
+         "totalText": "€ 350,75",
+         "descriptionListItems": [
+          {
+           "term": "Verwachte beursprijs (EPEX)",
+           "isTotal": false,
+           "total": 350.75,
+           "totalText": "€ 350,75",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "2.500 kWh x € 0,140300"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupSourcingFee",
+         "entryType": "Group",
+         "text": "Inkoopvergoeding",
+         "total": 30.97,
+         "totalText": "€ 30,97",
+         "descriptionListItems": [
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 5.86,
+           "totalText": "€ 5,86",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "473 kWh x € 0,012390"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 25.11,
+           "totalText": "€ 25,11",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "2.027 kWh x € 0,012390"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "BackDeliveryFee",
+         "entryType": "Group",
+         "text": "Terugleververgoeding",
+         "total": 0.0,
+         "totalText": "€ 0,00",
+         "descriptionListItems": [
+          {
+           "term": "Verwachte beursprijs (EPEX)",
+           "isTotal": false,
+           "total": 0.0,
+           "totalText": "€ 0,00",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 0 - 10.000.000 kWh"
+              },
+              {
+               "text": "0 kWh x € -0,055800"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGovernmentalTaxes",
+         "entryType": "Group",
+         "text": "Overheidsheffingen",
+         "total": 229.02,
+         "totalText": "€ 229,02",
+         "descriptionListItems": [
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 43.33,
+           "totalText": "€ 43,33",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 2.900 kWh"
+              },
+              {
+               "text": "473 kWh x € 0,091610"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 185.69,
+           "totalText": "€ 185,69",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 2.900 kWh"
+              },
+              {
+               "text": "2.027 kWh x € 0,091610"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "itemType": "HeaderFixedCosts",
+       "entryType": "Group",
+       "text": "Totaal vaste kosten",
+       "total": -65.32,
+       "totalText": "€ -65,32",
+       "items": [
+        {
+         "itemType": "CostGroupFixedDeliveryCost",
+         "entryType": "Group",
+         "text": "FlexPrijsStroom",
+         "total": 59.4,
+         "totalText": "€ 59,40",
+         "descriptionListItems": [
+          {
+           "term": "Vaste leveringskosten",
+           "isTotal": false,
+           "total": 59.4,
+           "totalText": "€ 59,40",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 0,162740 / maand: € 4,95 / jaar: € 59,40"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGovernmentalTaxes",
+         "entryType": "Group",
+         "text": "Overheidsheffingen",
+         "total": -519.8,
+         "totalText": "€ -519,80",
+         "descriptionListItems": [
+          {
+           "term": "Vermindering energiebelasting",
+           "isTotal": false,
+           "total": -519.8,
+           "totalText": "€ -519,80",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € -1,424110 / maand: € -43,32 / jaar: € -519,80"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGridOperatorCost",
+         "entryType": "Group",
+         "text": "Systeembeheerkosten",
+         "total": 395.08,
+         "totalText": "€ 395,08",
+         "descriptionListItems": [
+          {
+           "term": "Liander 3x25",
+           "isTotal": false,
+           "total": 395.08,
+           "totalText": "€ 395,08",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 1,082400 / maand: € 32,92 / jaar: € 395,08"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "itemType": "GasProduct",
+     "entryType": "Group",
+     "text": "Gas",
+     "total": 1616.29,
+     "totalText": "€ 1.616,29",
+     "items": [
+      {
+       "itemType": "HeaderVariableCosts",
+       "entryType": "Group",
+       "text": "Totaal variabele kosten",
+       "total": 1336.54,
+       "totalText": "€ 1.336,54",
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "FlexPrijsGas",
+         "total": 673.9,
+         "totalText": "€ 673,90",
+         "descriptionListItems": [
+          {
+           "term": "Verwachte beursprijs (EEX)",
+           "isTotal": false,
+           "total": 673.9,
+           "totalText": "€ 673,90",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 0 - 170.000 m3"
+              },
+              {
+               "text": "1.000 m3 x € 0,673900"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupSourcingFee",
+         "entryType": "Group",
+         "text": "Inkoopvergoeding",
+         "total": 61.98,
+         "totalText": "€ 61,98",
+         "descriptionListItems": [
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 17.91,
+           "totalText": "€ 17,91",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 170.000 m3"
+              },
+              {
+               "text": "289 m3 x € 0,061980"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Inkoopvergoeding",
+           "isTotal": false,
+           "total": 44.07,
+           "totalText": "€ 44,07",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 170.000 m3"
+              },
+              {
+               "text": "711 m3 x € 0,061980"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGovernmentalTaxes",
+         "entryType": "Group",
+         "text": "Overheidsheffingen",
+         "total": 600.66,
+         "totalText": "€ 600,66",
+         "descriptionListItems": [
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 173.59,
+           "totalText": "€ 173,59",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-01-27 | 0 - 1.000 m3"
+              },
+              {
+               "text": "289 m3 x € 0,600660"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          },
+          {
+           "term": "Energiebelasting",
+           "isTotal": false,
+           "total": 427.07,
+           "totalText": "€ 427,07",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-01-27 tot 01-11-27 | 0 - 1.000 m3"
+              },
+              {
+               "text": "711 m3 x € 0,600660"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "itemType": "HeaderFixedCosts",
+       "entryType": "Group",
+       "text": "Totaal vaste kosten",
+       "total": 279.75,
+       "totalText": "€ 279,75",
+       "items": [
+        {
+         "itemType": "CostGroupFixedDeliveryCost",
+         "entryType": "Group",
+         "text": "FlexPrijsGas",
+         "total": 59.4,
+         "totalText": "€ 59,40",
+         "descriptionListItems": [
+          {
+           "term": "Vaste leveringskosten",
+           "isTotal": false,
+           "total": 59.4,
+           "totalText": "€ 59,40",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 0,162740 / maand: € 4,95 / jaar: € 59,40"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "itemType": "CostGroupGridOperatorCost",
+         "entryType": "Group",
+         "text": "Systeembeheerkosten",
+         "total": 220.35,
+         "totalText": "€ 220,35",
+         "descriptionListItems": [
+          {
+           "term": "Liander G6 < 4000 m3",
+           "isTotal": false,
+           "total": 220.35,
+           "totalText": "€ 220,35",
+           "descriptionDetails": [
+            {
+             "lines": [
+              {
+               "text": "01-11-26 tot 01-11-27 | 365 dagen"
+              },
+              {
+               "text": "per - dag: € 0,603700 / maand: € 18,36 / jaar: € 220,35"
+              }
+             ],
+             "total": 0,
+             "isTotal": false
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "itemType": "Subtotal",
+     "entryType": "Row",
+     "text": "Subtotaal",
+     "total": 2161.71,
+     "totalText": "€ 2.161,71"
+    },
+    {
+     "itemType": "DiscountGroup",
+     "entryType": "Group",
+     "text": "Kortingen",
+     "total": -165,
+     "totalText": "€ -165,00",
+     "items": [
+      {
+       "itemType": "DiscountGroupItem",
+       "entryType": "Row",
+       "text": "Korting op uw eerste jaarafrekening",
+       "total": -165,
+       "totalText": "€ -165,00",
+       "descriptionListItems": [
+        {
+         "term": "",
+         "isTotal": false,
+         "descriptionDetails": [
+          {
+           "lines": [
+            {
+             "text": "01-11-26 tot 01-11-27 | Eenmalig, na eerste jaar"
+            }
+           ],
+           "total": 0,
+           "isTotal": false
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "totals": [
+    {
+     "itemType": "AnnualTotalFirstYearExclusiveVat",
+     "entryType": "Row",
+     "text": "Jaarbedrag eerste jaar exclusief btw",
+     "subText": "Inclusief overige kosten en kortingen",
+     "total": 1996.71,
+     "totalText": "€ 1.996,71"
+    },
+    {
+     "itemType": "AnnualTotalFirstYearVat",
+     "entryType": "Row",
+     "text": "Btw",
+     "total": 418.94,
+     "totalText": "€ 418,94"
+    },
+    {
+     "itemType": "AnnualTotalFirstYear",
+     "entryType": "Row",
+     "text": "Jaarbedrag eerste jaar",
+     "subText": "Inclusief overige kosten, kortingen en btw",
+     "total": 2415.65,
+     "totalText": "€ 2.415,65"
+    },
+    {
+     "itemType": "ExpectedMonthlyCosts",
+     "entryType": "Row",
+     "text": "Maandbedrag",
+     "total": 217.97,
+     "totalText": "€ 217,97"
+    }
+   ]
+  },
+  "tariffs": {
+   "title": "Prijsoverzicht",
+   "excerpt": "Je ziet hier de prijzen voor de variabele kosten; het variabele tarief en de energiebelasting. Dit betaal je voor je daadwerkelijke verbruik. In je prijsopbouw vind je je vaste kosten, zoals vaste terugleverkosten en systeembeheerkosten.",
+   "items": [
+    {
+     "itemType": "ElectricityProduct",
+     "entryType": "Group",
+     "text": "Stroom",
+     "total": 0,
+     "items": [
+      {
+       "entryType": "Group",
+       "text": "FlexPrijsStroom",
+       "total": 0,
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "01-11-26 tot 01-01-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Dynamisch tarief",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 10.000.000 kWh"
+                }
+               ],
+               "total": 0.1403,
+               "totalText": "€ 0,140300",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.09161,
+               "totalText": "€ 0,091610",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.23191,
+               "totalText": "€ 0,231910",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.01239,
+               "totalText": "€ 0,012390",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Terugleververgoeding",
+                 "tooltip": {
+                  "text": "Je krijgt alleen teruglevergoeding over het deel dat overblijft na saldering tot 01-01-2027",
+                  "meta": {
+                   "highLightType": "Info"
+                  }
+                 }
+                }
+               ],
+               "total": 0.0558,
+               "totalText": "€ 0,055800",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "entryType": "Group",
+         "text": "01-01-27 tot 01-11-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Dynamisch tarief",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 10.000.000 kWh"
+                }
+               ],
+               "total": 0.1403,
+               "totalText": "€ 0,140300",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.09161,
+               "totalText": "€ 0,091610",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 2.900 kWh"
+                }
+               ],
+               "total": 0.23191,
+               "totalText": "€ 0,231910",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.01239,
+               "totalText": "€ 0,012390",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Terugleververgoeding"
+                }
+               ],
+               "total": 0.0558,
+               "totalText": "€ 0,055800",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "itemType": "GasProduct",
+     "entryType": "Group",
+     "text": "Gas",
+     "total": 0,
+     "items": [
+      {
+       "entryType": "Group",
+       "text": "FlexPrijsGas",
+       "total": 0,
+       "items": [
+        {
+         "entryType": "Group",
+         "text": "01-11-26 tot 01-01-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Variabele kosten gas",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 170.000 m3"
+                }
+               ],
+               "total": 0.6739,
+               "totalText": "€ 0,673900",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 0.60066,
+               "totalText": "€ 0,600660",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 1.27456,
+               "totalText": "€ 1,274560",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.06198,
+               "totalText": "€ 0,061980",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "entryType": "Group",
+         "text": "01-01-27 tot 01-11-27",
+         "total": 0,
+         "items": [
+          {
+           "entryType": "Group",
+           "text": "Variabele kosten gas",
+           "total": 0,
+           "descriptionListItems": [
+            {
+             "term": "Levering",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 170.000 m3"
+                }
+               ],
+               "total": 0.6739,
+               "totalText": "€ 0,673900",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Energiebelasting",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 0.60066,
+               "totalText": "€ 0,600660",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "Totaal",
+             "isTotal": true,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "0 - 1.000 m3"
+                }
+               ],
+               "total": 1.27456,
+               "totalText": "€ 1,274560",
+               "isTotal": false
+              }
+             ]
+            },
+            {
+             "term": "",
+             "isTotal": false,
+             "descriptionDetails": [
+              {
+               "lines": [
+                {
+                 "text": "Inkoopvergoeding"
+                }
+               ],
+               "total": 0.06198,
+               "totalText": "€ 0,061980",
+               "isTotal": false
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "explanations": {
+   "title": "Toelichting prijsopbouw",
+   "entries": [
+    {
+     "htmlText": "FlexPrijsStroom en FlexPrijsGas zijn dynamische energiecontracten. Je energiekosten kunnen sterk schommelen, ook in je nadeel. Het is belangrijk dat je de beursprijzen volgt en je verbruik kunt verplaatsen naar een ander moment."
+    },
+    {
+     "htmlText": "De tarieven in dit aanbod zijn inschattingen, gebaseerd op de verwachte beursprijs voor de komende twaalf maanden. De verwachte beursprijs en de getoonde tarieven zijn geen garantie voor toekomstige prijzen."
+    },
+    {
+     "htmlText": "Je werkelijke kosten worden bepaald door hoeveel energie je verbruikt en teruglevert, de beursprijs en alle andere kosten die van toepassing zijn, zoals de inkoopvergoeding en energiebelasting."
+    },
+    {
+     "htmlText": "Je stroomtarief wijzigt elk uur, je gastarief wijzigt elke dag. Je vindt de tarieven die je betaalt in Mijn Vattenfall, de Energie-app en op <a target=\"_blank\" href=\"https://www.vattenfall.nl/flexprijs-tarieven\">vattenfall.nl/flexprijs-tarieven</a>."
+    },
+    {
+     "htmlText": "Lever je stroom terug, dan verrekenen we voor elk uur je teruglevering met de prijs die op dat moment geldt. Vind meer informatie op <a target=\"_blank\" href=\"https://www.vattenfall.nl/dynamisch-waardesalderen\">vattenfall.nl/dynamisch-waardesalderen</a>."
+    },
+    {
+     "htmlText": "De systeembeheerkosten in dit prijsoverzicht zijn de kosten van een kleine aansluiting of van de werkelijk aanwezige aansluiting."
+    },
+    {
+     "htmlText": "In dit prijsoverzicht staan altijd de actuele tarieven. In de toekomst kunnen deze tarieven wijzigen. We informeren je in dat geval minstens één maand van te voren."
+    },
+    {
+     "htmlText": "De systeembeheerkosten en energiebelasting kunnen tijdens de looptijd veranderen. In Mijn Vattenfall en de Energie-app vind je altijd de actuele tarieven."
+    },
+    {
+     "htmlText": "Bij het berekenen van je kosten ronden wij de tarieven af. Soms ontstaan hierdoor kleine afrondingsverschillen op het prijsoverzicht en de energienota."
+    }
+   ]
+  },
+  "specs": {
+   "termAmount": 180.14,
+   "proposedTermAmount": 181,
+   "cashback": -165,
+   "totalYearlyCost": 2161.71,
+   "totalYearlyCostInclCashback": 1996.71,
+   "inputs": {
+    "postalCode": "8801KE",
+    "houseNumber": 3,
+    "houseNumberAddition": "",
+    "electricityConsumption": {
+     "blocks": [
+      {
+       "number": 1,
+       "volume": 2500
+      }
+     ]
+    },
+    "gasConsumption": 1000,
+    "PropositionId": "PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004"
+   },
+   "volumeSummary": {
+    "electricityConsumption": 2500,
+    "gasConsumption": 1000
+   },
+   "electricity": [
+    {
+     "volumes": {
+      "consumption": {
+       "blocks": [
+        {
+         "number": 1,
+         "grossVolume": 2500,
+         "nettedVolume": 0,
+         "netVolume": 2500,
+         "description": "Dynamisch tarief"
+        }
+       ]
+      },
+      "backDelivery": {
+       "blocks": [
+        {
+         "number": 1,
+         "grossVolume": 0,
+         "nettedVolume": 0,
+         "netVolume": 0,
+         "description": "Dynamisch tarief"
+        }
+       ]
+      }
+     },
+     "numberOfBlocks": 2,
+     "gridCapacity": "3x25",
+     "productCode": "PPC0020519",
+     "productName": "FlexPrijsStroom",
+     "contractDurationUnit": "Onbepaalde tijd",
+     "salesDate": "2026-09-26",
+     "calculationStartDate": "2026-11-01",
+     "calculationEndDate": "2027-11-01",
+     "contractType": "Dynamic",
+     "subTotal": 545.42,
+     "costs": [
+      {
+       "type": "BackDeliveryFee",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": -0.0558,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 10000000,
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief"
+      },
+      {
+       "type": "GovernmentalTaxes",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": -1.42411,
+       "subTotal": -519.8,
+       "unit": "Days"
+      },
+      {
+       "type": "DeliveryCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 2500,
+       "tariff": 0.1403,
+       "subTotal": 350.75,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 10000000,
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief"
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 473,
+       "tariff": 0.09161,
+       "subTotal": 43.33,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 2900
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.09161,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 2900,
+       "volumeTo": 10000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.06671,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 10000,
+       "volumeTo": 50000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.03735,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 50000,
+       "volumeTo": 10000000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 2027,
+       "tariff": 0.09161,
+       "subTotal": 185.69,
+       "unit": "KwHours",
+       "volumeFrom": 0,
+       "volumeTo": 2900
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.09161,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 2900,
+       "volumeTo": 10000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.06671,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 10000,
+       "volumeTo": 50000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.03735,
+       "subTotal": 0.0,
+       "unit": "KwHours",
+       "volumeFrom": 50000,
+       "volumeTo": 10000000
+      },
+      {
+       "type": "FixedChargeCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 0.16274,
+       "subTotal": 59.4,
+       "unit": "Days"
+      },
+      {
+       "type": "GridOperatorCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 1.0824,
+       "subTotal": 395.08,
+       "unit": "Days"
+      }
+     ],
+     "prices": [
+      {
+       "deliveryRate": 0.1403,
+       "energyTax": 0.09161,
+       "total": 0.23191,
+       "backDeliveryFee": -0.0558,
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief",
+       "volumeFrom": 0,
+       "volumeTo": 10000000,
+       "unit": "KwHours"
+      }
+     ],
+     "isModelContract": false,
+     "tariffType": "DoubleTariff"
+    }
+   ],
+   "gas": [
+    {
+     "consumption": 1000,
+     "gridCapacity": "G6 < 4000 m3",
+     "productCode": "PPC0020520",
+     "productName": "FlexPrijsGas",
+     "contractDurationUnit": "Onbepaalde tijd",
+     "salesDate": "2026-09-26",
+     "calculationStartDate": "0001-01-01",
+     "calculationEndDate": "0001-01-01",
+     "contractType": "Dynamic",
+     "subTotal": 1616.29,
+     "costs": [
+      {
+       "type": "DeliveryCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 1000,
+       "tariff": 0.6739,
+       "subTotal": 673.9,
+       "unit": "M3",
+       "volumeFrom": 0,
+       "volumeTo": 170000,
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief"
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 289,
+       "tariff": 0.60066,
+       "subTotal": 173.59,
+       "unit": "M3",
+       "volumeFrom": 0,
+       "volumeTo": 1000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-01-01",
+       "quantity": 0,
+       "tariff": 0.60066,
+       "subTotal": 0.0,
+       "unit": "M3",
+       "volumeFrom": 1000,
+       "volumeTo": 170000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 711,
+       "tariff": 0.60066,
+       "subTotal": 427.07,
+       "unit": "M3",
+       "volumeFrom": 0,
+       "volumeTo": 1000
+      },
+      {
+       "type": "EnergyTaxCosts",
+       "periodStart": "2027-01-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 0,
+       "tariff": 0.60066,
+       "subTotal": 0.0,
+       "unit": "M3",
+       "volumeFrom": 1000,
+       "volumeTo": 170000
+      },
+      {
+       "type": "FixedChargeCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 0.16274,
+       "subTotal": 59.4,
+       "unit": "Days"
+      },
+      {
+       "type": "GridOperatorCosts",
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "quantity": 365,
+       "tariff": 0.6037,
+       "subTotal": 220.35,
+       "unit": "Days"
+      }
+     ],
+     "prices": [
+      {
+       "deliveryRate": 0.6739,
+       "energyTax": 0.60066,
+       "total": 1.27456,
+       "periodStart": "2026-11-01",
+       "periodEnd": "2027-11-01",
+       "blockNumber": 1,
+       "blockDescription": "Dynamisch tarief",
+       "volumeFrom": 0,
+       "volumeTo": 170000,
+       "unit": "M3"
+      }
+     ],
+     "isModelContract": false,
+     "tariffType": "SingleTariff"
+    }
+   ]
+  },
+  "conditions": [
+   {
+    "id": 773,
+    "name": "1004 Energie met eenmalige loyaliteitskorting CB01 - Actievoorwaarden",
+    "displayName": "Actievoorwaarden - Energie met eenmalige loyaliteitskorting CB01",
+    "filename": "1004 Energie met éénmalige loyaliteitskorting CB01 - Actievoorwaarden.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/1004 Energie met eenmalige loyaliteitskorting CB01 - Actievoorwaarden",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 764,
+    "name": "6373_001_PVW_CM_FlexPrijsStroom",
+    "displayName": "Productvoorwaarden FlexPrijsStroom",
+    "filename": "6373_001_PVW_CM_FlexPrijsStroom.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/6373_001_PVW_CM_FlexPrijsStroom",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 765,
+    "name": "6374_001_PVW_CM_FlexPrijsGas",
+    "displayName": "Productvoorwaarden FlexPrijsGas",
+    "filename": "6374_001_PVW_CM_FlexPrijsGas.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/6374_001_PVW_CM_FlexPrijsGas",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 804,
+    "name": "8000 Algemene voorwaarden 2026",
+    "displayName": "Algemene voorwaarden voor de levering en teruglevering van elektriciteit en de levering van gas aan huishoudelijke eindafnemers 2026",
+    "filename": "8000_001 Algemene voorwaarden 2026.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/8000 Algemene voorwaarden 2026",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 808,
+    "name": "8002 Toelichting algemene voorwaarden 2026",
+    "displayName": "Toelichting algemene voorwaarden 2026",
+    "filename": "8002_001 Toelichting algemene voorwaarden 2026.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/8002 Toelichting algemene voorwaarden 2026",
+    "content": "",
+    "type": "Api"
+   },
+   {
+    "id": 802,
+    "name": "Kwaliteitscriteria",
+    "displayName": "Kwaliteitscriteria",
+    "filename": "vattenfall-kwaliteitscriteria.pdf",
+    "url": "https://api.vattenfall.nl/osiaom/v1/api/Condition/v1/VattenfallNL Dynamisch/PER_FPS-CM-999-LVR_FPG-CM-999-LVR_CB200_CB01_60_MAG_NIET_1004/Kwaliteitscriteria",
+    "content": "",
+    "type": "Api"
+   }
+  ]
+ }
+}

@@ -11,6 +11,15 @@
   "kenmerken": {
     "automatischAfschakelen": null
   },
+  "rekentool": {
+    "adapter": "anwb-api",
+    "testadres": {
+      "postcode": "8801KE",
+      "huisnummer": 3,
+      "plaats": "Franeker",
+      "omschrijving": "Eise Eisinga Planetarium, Eise Eisingastraat 3, Franeker (openbaar museum; kleinverbruik, stroom en gas)"
+    }
+  },
   "regels": {
     "stroomInkoopopslag": {
       "sectie": "inkoopkosten",
@@ -53,6 +62,14 @@
     ]
   },
   "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 8.52,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://api.anwb.nl/energy/energy-services/v0/get-quote-by-id",
+      "notitie": "Offerte-API achter de rekentool van ANWB (testadres Eise Eisinga Planetarium, 8801KE 3): leveringsKosten € 8,52 per maand incl. btw; in de rekentool 'Vaste leveringskosten € 102,24' per jaar. Energiebelasting € 0,11085/kWh bevestigt incl. btw."
+    },
     "stroomInkoopopslag": {
       "waarde": 0.018,
       "inclBtw": true,
@@ -60,6 +77,14 @@
       "gecontroleerdOp": "2026-09-24",
       "bron": "https://www.anwb.nl/energie/actuele-tarieven",
       "notitie": "'De inkoopkosten bedragen € 0,018 per kWh ... (incl. btw)'"
+    },
+    "gasVastPerMaand": {
+      "waarde": 9.75,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://api.anwb.nl/energy/energy-services/v0/get-quote-by-id",
+      "notitie": "Offerte-API achter de rekentool van ANWB (testadres Eise Eisinga Planetarium, 8801KE 3): gas leveringsKosten € 9,75 per maand incl. btw. Energiebelasting € 0,7268/m³ bevestigt incl. btw."
     },
     "gasInkoopopslag": {
       "waarde": 0.0768,

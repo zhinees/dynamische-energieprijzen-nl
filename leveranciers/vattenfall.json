@@ -11,6 +11,15 @@
   "kenmerken": {
     "automatischAfschakelen": null
   },
+  "rekentool": {
+    "adapter": "vattenfall-api",
+    "testadres": {
+      "postcode": "8801KE",
+      "huisnummer": 3,
+      "plaats": "Franeker",
+      "omschrijving": "Eise Eisinga Planetarium, Eise Eisingastraat 3, Franeker (openbaar museum; kleinverbruik, stroom en gas)"
+    }
+  },
   "regels": {
     "terugleverCorrectie": {
       "labels": [
@@ -25,6 +34,42 @@
     }
   },
   "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 4.95,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://api.vattenfall.nl/api/aompublicapi/salesandcontracting/v1/offer",
+      "notitie": "Aanbod-API van Vattenfall, propositie 'FlexPrijsStroom + FlexPrijsGas', testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft; Vaste leveringskosten € 0,162740 per dag (€ 5,99 per maand incl. btw)",
+      "waardeInclBtw": 5.99
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.01239,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://api.vattenfall.nl/api/aompublicapi/salesandcontracting/v1/offer",
+      "notitie": "Aanbod-API van Vattenfall, propositie 'FlexPrijsStroom + FlexPrijsGas', testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft; Inkoopvergoeding (€ 0,014992 incl. btw)",
+      "waardeInclBtw": 0.014992
+    },
+    "gasVastPerMaand": {
+      "waarde": 4.95,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://api.vattenfall.nl/api/aompublicapi/salesandcontracting/v1/offer",
+      "notitie": "Aanbod-API van Vattenfall, propositie 'FlexPrijsStroom + FlexPrijsGas', testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft; Vaste leveringskosten gas € 0,162740 per dag (€ 5,99 per maand incl. btw)",
+      "waardeInclBtw": 5.99
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.06198,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://api.vattenfall.nl/api/aompublicapi/salesandcontracting/v1/offer",
+      "notitie": "Aanbod-API van Vattenfall, propositie 'FlexPrijsStroom + FlexPrijsGas', testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft; Inkoopvergoeding gas (€ 0,074996 incl. btw)",
+      "waardeInclBtw": 0.074996
+    },
     "terugleverCorrectie": {
       "waarde": 0,
       "inclBtw": true,

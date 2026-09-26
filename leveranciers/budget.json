@@ -14,10 +14,10 @@
   "rekentool": {
     "adapter": "budget-api",
     "testadres": {
-      "postcode": "2584RZ",
-      "huisnummer": 1,
-      "plaats": "'S-GRAVENHAGE",
-      "omschrijving": "Madurodam, George Maduroplein 1, Den Haag (openbare attractie)"
+      "postcode": "8801KE",
+      "huisnummer": 3,
+      "plaats": "Franeker",
+      "omschrijving": "Eise Eisinga Planetarium, Eise Eisingastraat 3, Franeker (openbaar museum; kleinverbruik, stroom en gas)"
     }
   },
   "regels": {},

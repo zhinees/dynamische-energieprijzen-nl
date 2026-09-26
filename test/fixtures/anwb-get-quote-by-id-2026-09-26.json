@@ -1,0 +1,32 @@
+{
+  "type": "success",
+  "data": {
+    "totaalMaandbedrag": 233.46,
+    "type": "electricity_gas",
+    "electricityDetails": {
+      "quoteId": "00000000-0000-0000-0000-000000000000",
+      "verbruik": 2500,
+      "maandbedrag": 59.16381270833333,
+      "breakdown": {
+        "expectedPricePerKwh": 0.174599491,
+        "inkoopkostenPerKwh": 0.017996693,
+        "energyTaxPerKwh": 0.11084047699999999,
+        "netbeheerKosten": 39.84,
+        "leveringsKosten": 8.52,
+        "energyTaxCut": -52.41215833333333
+      }
+    },
+    "gasDetails": {
+      "quoteId": "00000000-0000-0000-0000-000000000000",
+      "verbruik": 1000,
+      "maandbedrag": 174.19,
+      "breakdown": {
+        "expectedPricePerM3": 0.9031495660000001,
+        "inkoopkostenPerM3": 0.076800031,
+        "energyTaxPerM3": 0.7267986,
+        "netbeheerKosten": 22.22,
+        "leveringsKosten": 9.75
+      }
+    }
+  }
+}

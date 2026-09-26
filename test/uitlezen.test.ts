@@ -78,7 +78,10 @@ test("ANWB-bestand neemt de aangekondigde nieuwe gasprijs, stroomopslag uitgelez
   assert.equal(rec.tarieven.gasInkoopopslag?.bedragExclBtw, ex(0.0768));
   assert.equal(rec.tarieven.stroomInkoopopslag?.bron, "website");
   assert.equal(rec.tarieven.gasInkoopopslag?.bron, "website");
-  assert.equal(rec.tarieven.stroomVastPerMaand, undefined); // not published by ANWB, so no value at all
+  // Not on the tariff page; comes from the rekentool's prijsopbouw (€ 102,24/jaar incl. btw).
+  assert.equal(rec.tarieven.stroomVastPerMaand?.bron, "handmatig");
+  assert.equal(rec.tarieven.stroomVastPerMaand?.bedragInclBtw, 8.52);
+  assert.equal(rec.tarieven.gasVastPerMaand?.bedragInclBtw, 9.75);
 });
 
 test("ANWB-gas valt terug op de tweede regel als de 'vanaf'-melding weg is", () => {

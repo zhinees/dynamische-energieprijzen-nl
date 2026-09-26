@@ -70,7 +70,7 @@ Houd ook de `handmatig`-waarden in hetzelfde bestand bij, want die zijn de reser
 
 Veel leveranciers tonen prijzen pas nadat je een adres invult. Hun rekentool laadt meestal een JSON-antwoord met elke tariefregel apart, en dat is betrouwbaarder dan een webpagina uitlezen. `src/rekentools/frank.ts` is het voorbeeld om na te maken.
 
-1. Open de rekentool van de leverancier in je browser, open DevTools (F12) → **Network**, en vul het testadres in: **2584 RZ, huisnummer 1** (Madurodam). Gebruik niet je eigen adres.
+1. Open de rekentool van de leverancier in je browser, open DevTools (F12) → **Network**, en vul het testadres in: **8801 KE, huisnummer 3** (Eise Eisinga Planetarium, Franeker; kleinverbruik met stroom en gas). Gebruik niet je eigen adres.
 2. Zoek het verzoek dat het aanbod teruggeeft. Bewaar het antwoord als `test/fixtures/<id>-<wat>-<datum>.json`, zonder persoonsgegevens.
 3. Schrijf `src/rekentools/<id>.ts`. Die doet dezelfde verzoeken en geeft alleen de eigen regels van de leverancier terug: vaste kosten per maand, opslag en teruglevering. Negeer marktprijs, netbeheerkosten en belastingen. Controleer of bedragen incl. btw zijn: de regel voor energiebelasting verraadt het (€ 0,0916/kWh excl., € 0,1108 incl. in 2026).
 4. Registreer de adapter in `src/rekentools/index.ts`, voeg een `rekentool`-blok toe aan het leveranciersbestand, en voeg een test toe die je fixture uitleest.
@@ -95,5 +95,5 @@ De bot leest de energiebelasting zelf van de site van de Belastingdienst. Je hoe
 ## Spelregels
 
 - **Wees netjes tegen de sites van leveranciers**: het schema (wekelijks plus de 1e en 2e van de maand) is ruim voldoende. Voeg geen regels toe die rekentools of API's massaal bevragen, of die de voorwaarden van een site negeren.
-- **Geen persoonsgegevens**: commit nooit privéadressen, aansluitcodes (EAN) of accountgegevens. Het enige adres in deze repo is het openbare testadres (Madurodam).
+- **Geen persoonsgegevens**: commit nooit privéadressen, aansluitcodes (EAN) of accountgegevens. Het enige adres in deze repo is het openbare testadres (Eise Eisinga Planetarium). De EAN-code die een rekentool soms vraagt, haalt de adapter tijdens de run op en wordt nooit bewaard.
 - **Houd PR's klein**: één leverancier per PR is het makkelijkst te beoordelen.

@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
+import { haalAnwb, leesAnwb } from "../src/rekentools/anwb.ts";
 import { haalFrank, leesFrank } from "../src/rekentools/frank.ts";
+import { haalVattenfall, kiesPropositie, leesVattenfall, sleutelNa } from "../src/rekentools/vattenfall.ts";
 import { laadLeverancierConfigs } from "../src/lib/bestanden.ts";
 import { bouwLeverancier } from "../src/lib/tarieven.ts";
 
@@ -58,7 +60,7 @@ test("haalFrank: adres -> EAN's -> simulatie (netwerk nagebootst)", async () => 
   const sim = aanroepen.find((c) => c.query.includes("SignupSimulatePrice")).variables.input;
   assert.equal(sim.electricityEAN, "EL-EAN");
   assert.equal(sim.gasEAN, "GAS-EAN");
-  assert.equal(sim.zipCode, "2584RZ");
+  assert.equal(sim.zipCode, "8801KE");
   assert.equal(sim.electricityPropositionType, "dynamic");
 });
 
@@ -68,7 +70,7 @@ import { haalBudget, leesBudget, RESELLER_ID } from "../src/rekentools/budget.ts
 
 const vdb = JSON.parse(await readFile(new URL("fixtures/vandebron-pricebreakdown-2026-09-24.json", import.meta.url), "utf8"));
 const bt = JSON.parse(await readFile(new URL("fixtures/budget-online-offers-2026-09-24.json", import.meta.url), "utf8"));
-const testadres = { postcode: "2584RZ", huisnummer: 1, plaats: "X", omschrijving: "test" };
+const testadres = { postcode: "8801KE", huisnummer: 3, plaats: "X", omschrijving: "test" };
 
 test("leesVandebron leest de dynamische opslagen excl. btw", () => {
   const r = leesVandebron(vdb);
@@ -101,7 +103,7 @@ test("haalVandebron: adres -> netbeheerder -> dynamische prijsopbouw (nagebootst
     globalThis.fetch = echteFetch;
   }
   assert.equal(aanroepen.length, 2);
-  assert.match(aanroepen[0].url, /zipcode=2584RZ/);
+  assert.match(aanroepen[0].url, /zipcode=8801KE/);
   assert.equal(aanroepen[1].body.electricity.contractDuration.durationType, "MarketPriceVariable");
   assert.equal(aanroepen[1].body.electricity.gridOperatorEan, "8716892000005");
 });
@@ -135,7 +137,7 @@ test("haalBudget stuurt het testadres en verbruik mee (nagebootst)", async () =>
     globalThis.fetch = echteFetch;
   }
   assert.equal(verstuurd.resellerId, RESELLER_ID);
-  assert.deepEqual(verstuurd.address, { postalCode: "2584RZ", houseNumber: 1, extension: "" });
+  assert.deepEqual(verstuurd.address, { postalCode: "8801KE", houseNumber: 3, extension: "" });
 });
 
 test("adapters bewaren de exacte bedragen incl. btw uit de API", () => {
@@ -147,4 +149,127 @@ test("adapters bewaren de exacte bedragen incl. btw uit de API", () => {
   const rec = bouwLeverancier(frank, new Map(), undefined, "2026-09-24T04:17:00Z", [], b);
   assert.equal(rec.tarieven.stroomInkoopopslag?.bedragExclBtw, 0.0139);
   assert.equal(rec.tarieven.stroomInkoopopslag?.bedragInclBtw, 0.01682);
+});
+
+// Real response captured from ANWB's quote API on 2026-09-26 (Eise Eisinga Planetarium test address; quote ids blanked).
+const anwbQuote = JSON.parse(await readFile(new URL("fixtures/anwb-get-quote-by-id-2026-09-26.json", import.meta.url), "utf8"));
+const anwb = (await laadLeverancierConfigs()).find((c) => c.id === "anwb")!;
+
+test("leesAnwb pakt alleen de vaste leveringskosten, niet netbeheer of de opslag", () => {
+  const r = leesAnwb(anwbQuote);
+  assert.deepEqual(r, { stroomVastPerMaand: { waarde: 8.52, inclBtw: true }, gasVastPerMaand: { waarde: 9.75, inclBtw: true } });
+  const rec = bouwLeverancier(anwb, new Map(), undefined, "2026-09-26T05:00:00Z", [], r);
+  assert.equal(rec.tarieven.stroomVastPerMaand?.bron, "rekentool");
+  assert.equal(rec.tarieven.stroomVastPerMaand?.bedragInclBtw, 8.52);
+});
+
+test("leesAnwb weigert bedragen die niet incl. btw lijken", () => {
+  const excl = structuredClone(anwbQuote);
+  excl.data.electricityDetails.breakdown.energyTaxPerKwh = 0.0916;
+  assert.throws(() => leesAnwb(excl), /niet incl\. btw/);
+});
+
+test("haalAnwb: lookup, offerte, status, prijsopbouw (nagebootst)", async () => {
+  const aanroepen: { url: string; body?: any }[] = [];
+  let statussen = ["ACTIVE", "FINISHED"];
+  const echteFetch = globalThis.fetch;
+  globalThis.fetch = (async (url: any, init: any) => {
+    const u = String(url);
+    aanroepen.push({ url: u, body: init?.body ? JSON.parse(init.body) : undefined });
+    const json = (d: unknown) => new Response(JSON.stringify(d), { headers: { "content-type": "application/json" } });
+    if (u.includes("postcode-lookup"))
+      return json({ city: "Franeker", streetName: "Eise Eisingastraat", postcode: "8801KE", houseNumber: 3, houseNumberSuffices: [{ suffix: "EMPTY", meterpoints: [{ type: "electricity", eanCode: "EAN", gridOperatorId: "GO", isRetail: true }, { type: "gas", eanCode: "GAS", gridOperatorId: "GO", isRetail: true }] }] });
+    if (u.endsWith("/v1/get-quote")) return new Response("abc");
+    if (u.includes("get-quote/status")) {
+      const status = statussen.shift();
+      return json(status === "FINISHED" ? { status, quoteId: { electricity: "q1", gas: "q2" } } : { status });
+    }
+    if (u.includes("get-quote-by-id")) return json(anwbQuote);
+    throw new Error("onverwacht: " + u);
+  }) as typeof fetch;
+  try {
+    const r = await haalAnwb(anwb.rekentool!.testadres, 0);
+    assert.equal(r.stroomVastPerMaand?.waarde, 8.52);
+  } finally {
+    globalThis.fetch = echteFetch;
+  }
+  assert.ok(aanroepen.every((a) => !/aanvraag/i.test(a.url)), "nooit een aanvraag versturen");
+  const offerte = aanroepen.find((a) => a.url.endsWith("/v1/get-quote"))!;
+  assert.equal(offerte.body.type, "electricity_gas");
+  assert.equal(offerte.body.electricity.eanCode, "EAN");
+  assert.equal(offerte.body.gas.eanCode, "GAS");
+  assert.equal(offerte.body.address.postcode, "8801KE");
+  assert.match(aanroepen.at(-1)!.url, /electricity_id=q1&gas_id=q2/);
+});
+
+test("haalAnwb weigert een grootverbruiksaansluiting", async () => {
+  const echteFetch = globalThis.fetch;
+  globalThis.fetch = (async () =>
+    new Response(JSON.stringify({ houseNumberSuffices: [{ suffix: "EMPTY", meterpoints: [{ type: "electricity", isRetail: false }] }] }))) as typeof fetch;
+  try {
+    await assert.rejects(haalAnwb(anwb.rekentool!.testadres, 0), /grootverbruik/);
+  } finally {
+    globalThis.fetch = echteFetch;
+  }
+});
+
+// Real offer captured from Vattenfall's calculator on 2026-09-26 (Eise Eisinga Planetarium test address).
+const vfOfferte = JSON.parse(await readFile(new URL("fixtures/vattenfall-offer-2026-09-26.json", import.meta.url), "utf8"));
+const vattenfall = (await laadLeverancierConfigs()).find((c) => c.id === "vattenfall")!;
+// Dummy keys: the real ones are read from Vattenfall's script at run time and never stored.
+const K1 = "1".repeat(32);
+const K2 = "2".repeat(32);
+const vfScript =
+  `x={productSelector:{url:\`https://api.vattenfall.nl/vattenfallnlsalesflowproductselectorprd\`,headers:{"Content-Type":\`application/json\`,"Ocp-Apim-Subscription-Key":\`${K1}\`}},` +
+  `offer:{url:\`https://api.vattenfall.nl/api/aompublicapi/salesandcontracting/v1\`,headers:{"Content-Type":\`application/json\`,"Ocp-Apim-Subscription-Key":\`${K2}\`}}}`;
+const vfSummary = {
+  propositions: [
+    { propositionId: "ALLEEN-STROOM", productE: { verzamelID: "FPS-CM-999-LVR" } },
+    { propositionId: "VAST-GAS", productE: { verzamelID: "FPS-CM-999-LVR" }, productG: { verzamelID: "VPG-CM-12-A" } },
+    { propositionId: "FLEX-FLEX", productE: { verzamelID: "FPS-CM-999-LVR" }, productG: { verzamelID: "FPG-CM-999-LVR" } },
+  ],
+};
+
+test("leesVattenfall pakt opslag en vaste kosten, excl. en incl. btw", () => {
+  assert.deepEqual(leesVattenfall(vfOfferte), {
+    stroomInkoopopslag: { waarde: 0.01239, inclBtw: false, waardeInclBtw: 0.014992 },
+    stroomVastPerMaand: { waarde: 4.95, inclBtw: false, waardeInclBtw: 5.99 },
+    gasInkoopopslag: { waarde: 0.06198, inclBtw: false, waardeInclBtw: 0.074996 },
+    gasVastPerMaand: { waarde: 4.95, inclBtw: false, waardeInclBtw: 5.99 },
+  });
+});
+
+test("Vattenfall: sleutel per API uit het script, propositie met dynamisch gas", () => {
+  assert.equal(sleutelNa(vfScript, "vattenfallnlsalesflowproductselectorprd"), K1);
+  assert.equal(sleutelNa(vfScript, "aompublicapi/salesandcontracting/v1"), K2);
+  assert.throws(() => sleutelNa("geen sleutels", "aompublicapi/salesandcontracting/v1"), /geen API-sleutel/);
+  assert.equal(kiesPropositie(vfSummary), "FLEX-FLEX");
+  assert.throws(() => kiesPropositie({ propositions: vfSummary.propositions.slice(0, 2) }), /FlexPrijsGas/);
+});
+
+test("haalVattenfall: pagina -> script -> proposities -> aanbod (nagebootst)", async () => {
+  const aanroepen: { url: string; sleutel?: string; body?: any }[] = [];
+  const echteFetch = globalThis.fetch;
+  globalThis.fetch = (async (url: any, init: any) => {
+    const u = String(url);
+    aanroepen.push({ url: u, sleutel: init?.headers?.["ocp-apim-subscription-key"], body: init?.body ? JSON.parse(init.body) : undefined });
+    const json = (d: unknown) => new Response(JSON.stringify(d), { headers: { "content-type": "application/json" } });
+    if (u.endsWith("/bestellen/")) return new Response(`<script src="main-ABC123.js" type="module"></script>`);
+    if (u.endsWith("/main-ABC123.js")) return new Response(vfScript);
+    if (u.includes("ProductsSelector/summary")) return json(vfSummary);
+    if (u.endsWith("/offer")) return json(vfOfferte);
+    throw new Error("onverwacht: " + u);
+  }) as typeof fetch;
+  try {
+    const r = await haalVattenfall(vattenfall.rekentool!.testadres);
+    assert.equal(r.gasVastPerMaand?.waardeInclBtw, 5.99);
+  } finally {
+    globalThis.fetch = echteFetch;
+  }
+  assert.match(aanroepen[1].url, /\/bestellen\/main-ABC123\.js$/);
+  assert.equal(aanroepen[2].sleutel, K1);
+  const offerte = aanroepen[3];
+  assert.equal(offerte.sleutel, K2);
+  assert.equal(offerte.body.propositionId, "FLEX-FLEX");
+  assert.equal(offerte.body.postalCode, "8801KE");
 });
