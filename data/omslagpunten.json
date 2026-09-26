@@ -1,27 +1,27 @@
 {
   "$schema": "../schema/omslagpunten.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-24T19:59:36.877Z",
+  "gegenereerdOp": "2026-09-26T20:50:16.246Z",
   "valuta": "EUR",
   "btw": "inclusief",
   "uitleg": "Alleen het deel dat per leverancier verschilt: vaste kosten x 12 + verbruik x inkoopopslag - teruglevering x terugleverCorrectie, incl. btw. Omslagpunten zijn in kWh (stroom, teruglevering) of m3 (gas) per jaar.",
   "stroom": {
-    "aantalLeveranciers": 8,
+    "aantalLeveranciers": 10,
     "vastPerJaar": {
       "min": 71.88,
-      "max": 84
+      "max": 102.24
     },
     "opslag": {
-      "min": 0.01682,
+      "min": 0.014992,
       "max": 0.0242
     },
-    "omslagpunt": 1642,
+    "omslagpunt": 3297,
     "goedkoopstePerVerbruik": [
       {
         "vanaf": 0,
         "tot": null,
-        "id": "budget",
-        "naam": "Budget Thuis (Budget Energie)"
+        "id": "vattenfall",
+        "naam": "Vattenfall (FlexPrijs)"
       }
     ],
     "paren": [
@@ -71,6 +71,16 @@
         "omslagpunt": 4440
       },
       {
+        "lageVasteKosten": "vandebron",
+        "lageOpslag": "anwb",
+        "omslagpunt": 4485
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "anwb",
+        "omslagpunt": 4781
+      },
+      {
         "lageVasteKosten": "zonneplan",
         "lageOpslag": "frank",
         "omslagpunt": 4865
@@ -79,20 +89,35 @@
         "lageVasteKosten": "liveenergy",
         "lageOpslag": "vandebron",
         "omslagpunt": 5349
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "anwb",
+        "omslagpunt": 10120
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "anwb",
+        "omslagpunt": 13620
+      },
+      {
+        "lageVasteKosten": "frank",
+        "lageOpslag": "anwb",
+        "omslagpunt": 121600
       }
     ]
   },
   "gas": {
-    "aantalLeveranciers": 8,
+    "aantalLeveranciers": 10,
     "vastPerJaar": {
       "min": 71.88,
-      "max": 84
+      "max": 117
     },
     "opslag": {
       "min": 0.05983,
       "max": 0.099
     },
-    "omslagpunt": 309,
+    "omslagpunt": 1152,
     "goedkoopstePerVerbruik": [
       {
         "vanaf": 0,
@@ -159,9 +184,19 @@
         "omslagpunt": 629
       },
       {
+        "lageVasteKosten": "vattenfall",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 795
+      },
+      {
         "lageVasteKosten": "tibber",
         "lageOpslag": "frank",
         "omslagpunt": 1428
+      },
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "anwb",
+        "omslagpunt": 2000
       },
       {
         "lageVasteKosten": "liveenergy",
@@ -172,6 +207,31 @@
         "lageVasteKosten": "budget",
         "lageOpslag": "vandebron",
         "omslagpunt": 2805
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "anwb",
+        "omslagpunt": 3906
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "anwb",
+        "omslagpunt": 5620
+      },
+      {
+        "lageVasteKosten": "frank",
+        "lageOpslag": "anwb",
+        "omslagpunt": 10784
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "anwb",
+        "omslagpunt": 13125
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "anwb",
+        "omslagpunt": 20509
       },
       {
         "lageVasteKosten": "zonneplan",
@@ -185,22 +245,22 @@
       "min": -0.0242,
       "max": 0.02
     },
-    "omslagpunt": 274,
+    "omslagpunt": 687,
     "scenarios": [
       {
         "teruglevering": 1000,
         "goedkoopstePerVerbruik": [
           {
             "vanaf": 0,
-            "tot": 5308,
+            "tot": 3371,
             "id": "zonneplan",
             "naam": "Zonneplan"
           },
           {
-            "vanaf": 5308,
+            "vanaf": 3371,
             "tot": null,
-            "id": "budget",
-            "naam": "Budget Thuis (Budget Energie)"
+            "id": "vattenfall",
+            "naam": "Vattenfall (FlexPrijs)"
           }
         ]
       },
@@ -209,15 +269,15 @@
         "goedkoopstePerVerbruik": [
           {
             "vanaf": 0,
-            "tot": 11597,
+            "tot": 7364,
             "id": "zonneplan",
             "naam": "Zonneplan"
           },
           {
-            "vanaf": 11597,
+            "vanaf": 7364,
             "tot": null,
-            "id": "budget",
-            "naam": "Budget Thuis (Budget Energie)"
+            "id": "vattenfall",
+            "naam": "Vattenfall (FlexPrijs)"
           }
         ]
       },
@@ -226,15 +286,15 @@
         "goedkoopstePerVerbruik": [
           {
             "vanaf": 0,
-            "tot": 24176,
+            "tot": 15351,
             "id": "zonneplan",
             "naam": "Zonneplan"
           },
           {
-            "vanaf": 24176,
+            "vanaf": 15351,
             "tot": null,
-            "id": "budget",
-            "naam": "Budget Thuis (Budget Energie)"
+            "id": "vattenfall",
+            "naam": "Vattenfall (FlexPrijs)"
           }
         ]
       }

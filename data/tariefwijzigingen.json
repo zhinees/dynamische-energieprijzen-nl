@@ -6,5 +6,53 @@
     "vanInclBtw": null,
     "naarInclBtw": -0.018029,
     "bron": "handmatig"
+  },
+  {
+    "datum": "2026-09-26",
+    "leverancier": "anwb",
+    "veld": "stroomVastPerMaand",
+    "vanInclBtw": null,
+    "naarInclBtw": 8.52,
+    "bron": "rekentool"
+  },
+  {
+    "datum": "2026-09-26",
+    "leverancier": "anwb",
+    "veld": "gasVastPerMaand",
+    "vanInclBtw": null,
+    "naarInclBtw": 9.75,
+    "bron": "rekentool"
+  },
+  {
+    "datum": "2026-09-26",
+    "leverancier": "vattenfall",
+    "veld": "stroomVastPerMaand",
+    "vanInclBtw": null,
+    "naarInclBtw": 5.99,
+    "bron": "rekentool"
+  },
+  {
+    "datum": "2026-09-26",
+    "leverancier": "vattenfall",
+    "veld": "stroomInkoopopslag",
+    "vanInclBtw": null,
+    "naarInclBtw": 0.014992,
+    "bron": "rekentool"
+  },
+  {
+    "datum": "2026-09-26",
+    "leverancier": "vattenfall",
+    "veld": "gasVastPerMaand",
+    "vanInclBtw": null,
+    "naarInclBtw": 5.99,
+    "bron": "rekentool"
+  },
+  {
+    "datum": "2026-09-26",
+    "leverancier": "vattenfall",
+    "veld": "gasInkoopopslag",
+    "vanInclBtw": null,
+    "naarInclBtw": 0.074996,
+    "bron": "rekentool"
   }
 ]

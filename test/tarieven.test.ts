@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { laadLeverancierConfigs } from "../src/lib/bestanden.ts";
 import { bouwLeverancier } from "../src/lib/tarieven.ts";
 import type { LeverancierConfig } from "../src/lib/typen.ts";
 
@@ -73,4 +74,18 @@ test("bedragInclBtw is precies het gepubliceerde bedrag, zonder afrondingsversch
   c.handmatig.stroomInkoopopslag = { waarde: 0.08835, inclBtw: true, geverifieerd: true, gecontroleerdOp: "2026-09-24", bron: "https://x.nl/t" };
   const r = bouwLeverancier({ ...c, regels: {} }, new Map(), undefined, "2026-09-24T05:00:00Z");
   assert.equal(r.tarieven.stroomInkoopopslag?.bedragInclBtw, 0.08835);
+});
+
+test("rekentool: alleen een waarschuwing als de run faalde of een eerder geleverd veld wegvalt", async () => {
+  const anwb = (await laadLeverancierConfigs()).find((c) => c.id === "anwb")!;
+  const deel = { stroomVastPerMaand: { waarde: 8.52, inclBtw: true } };
+  // terugleverCorrectie comes from handmatig: the calculator never gives it.
+  const eerste = bouwLeverancier(anwb, new Map(), undefined, "2026-09-26T05:00:00Z", [], deel);
+  assert.equal(eerste.tarieven.terugleverCorrectie?.laatsteFout, undefined);
+  // Nothing at all from the calculator: the run failed.
+  const mislukt = bouwLeverancier(anwb, new Map(), undefined, "2026-09-26T05:00:00Z", [], {});
+  assert.equal(mislukt.tarieven.stroomVastPerMaand?.laatsteFout, "rekentool gaf geen waarde");
+  // A field it gave last time is missing now.
+  const weg = bouwLeverancier(anwb, new Map(), eerste, "2026-09-27T05:00:00Z", [], { gasVastPerMaand: { waarde: 9.75, inclBtw: true } });
+  assert.equal(weg.tarieven.stroomVastPerMaand?.laatsteFout, "rekentool gaf geen waarde");
 });

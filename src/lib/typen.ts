@@ -76,11 +76,11 @@ export interface LeverancierConfig {
 }
 
 export interface Testadres {
-  postcode: string; // "2584RZ"
+  postcode: string; // "8801KE"
   huisnummer: number;
   huisnummerToevoeging?: string;
   plaats: string;
-  /** What this address is, e.g. "Madurodam, Den Haag". */
+  /** What this address is, e.g. "Eise Eisinga Planetarium, Franeker". */
   omschrijving: string;
 }
 

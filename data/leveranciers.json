@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/leveranciers.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-24T19:39:10.132Z",
+  "gegenereerdOp": "2026-09-26T20:50:05.481Z",
   "valuta": "EUR",
   "leveranciers": [
     {
@@ -17,22 +17,44 @@
         "automatischAfschakelen": null
       },
       "tarieven": {
+        "stroomVastPerMaand": {
+          "bedragInclBtw": 8.52,
+          "bedragExclBtw": 7.041322,
+          "eenheid": "EUR/maand",
+          "bron": "rekentool",
+          "geverifieerd": true,
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
+        },
         "stroomInkoopopslag": {
           "bedragInclBtw": 0.018,
           "bedragExclBtw": 0.014876,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
+        },
+        "gasVastPerMaand": {
+          "bedragInclBtw": 9.75,
+          "bedragExclBtw": 8.057851,
+          "eenheid": "EUR/maand",
+          "bron": "rekentool",
+          "geverifieerd": true,
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         },
         "gasInkoopopslag": {
           "bedragInclBtw": 0.0768,
           "bedragExclBtw": 0.063471,
           "eenheid": "EUR/m3",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         },
         "terugleverCorrectie": {
@@ -45,7 +67,7 @@
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "budget",
@@ -64,49 +86,54 @@
           "bedragInclBtw": 5.99,
           "bedragExclBtw": 4.95,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "stroomInkoopopslag": {
           "bedragInclBtw": 0.01682,
           "bedragExclBtw": 0.0139,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "gasVastPerMaand": {
           "bedragInclBtw": 5.99,
           "bedragExclBtw": 4.95,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "gasInkoopopslag": {
           "bedragInclBtw": 0.06413,
           "bedragExclBtw": 0.053,
           "eenheid": "EUR/m3",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "terugleverCorrectie": {
           "bedragInclBtw": 0,
           "bedragExclBtw": 0,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://api.budgetthuis.nl/energy/v1/online-offers"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "frank",
@@ -144,18 +171,20 @@
           "bedragInclBtw": 7,
           "bedragExclBtw": 5.785124,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "gasInkoopopslag": {
           "bedragInclBtw": 0.07986,
           "bedragExclBtw": 0.066,
           "eenheid": "EUR/m3",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "terugleverCorrectie": {
@@ -168,7 +197,7 @@
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "liveenergy",
@@ -229,7 +258,7 @@
           "bronUrl": "https://aanmelden.liveenergy.nl"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "nextenergy",
@@ -248,36 +277,40 @@
           "bedragInclBtw": 5.99,
           "bedragExclBtw": 4.950413,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "stroomInkoopopslag": {
           "bedragInclBtw": 0.021,
           "bedragExclBtw": 0.017355,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "gasVastPerMaand": {
           "bedragInclBtw": 5.99,
           "bedragExclBtw": 4.950413,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "gasInkoopopslag": {
           "bedragInclBtw": 0.079,
           "bedragExclBtw": 0.065289,
           "eenheid": "EUR/m3",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "terugleverCorrectie": {
@@ -290,7 +323,7 @@
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "pure",
@@ -351,7 +384,7 @@
           "bronUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "tibber",
@@ -370,49 +403,54 @@
           "bedragInclBtw": 6.99,
           "bedragExclBtw": 5.77686,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "stroomInkoopopslag": {
           "bedragInclBtw": 0.018,
           "bedragExclBtw": 0.014876,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "gasVastPerMaand": {
           "bedragInclBtw": 5.99,
           "bedragExclBtw": 4.950413,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "gasInkoopopslag": {
           "bedragInclBtw": 0.08835,
           "bedragExclBtw": 0.073017,
           "eenheid": "EUR/m3",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "terugleverCorrectie": {
           "bedragInclBtw": -0.018,
           "bedragExclBtw": -0.014876,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "vandebron",
@@ -431,49 +469,54 @@
           "bedragInclBtw": 6.995225,
           "bedragExclBtw": 5.781296,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "stroomInkoopopslag": {
           "bedragInclBtw": 0.02208,
           "bedragExclBtw": 0.01825,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "gasVastPerMaand": {
           "bedragInclBtw": 6.995225,
           "bedragExclBtw": 5.781296,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "gasInkoopopslag": {
           "bedragInclBtw": 0.05983,
           "bedragExclBtw": 0.04945,
           "eenheid": "EUR/m3",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "terugleverCorrectie": {
           "bedragInclBtw": -0.01361,
           "bedragExclBtw": -0.01125,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
-          "bronUrl": "https://vandebron.nl/api/v2/pricing/priceBreakdown"
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "vattenfall",
@@ -488,17 +531,58 @@
         "automatischAfschakelen": null
       },
       "tarieven": {
+        "stroomVastPerMaand": {
+          "bedragInclBtw": 5.99,
+          "bedragExclBtw": 4.95,
+          "eenheid": "EUR/maand",
+          "bron": "rekentool",
+          "geverifieerd": true,
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
+        },
+        "stroomInkoopopslag": {
+          "bedragInclBtw": 0.014992,
+          "bedragExclBtw": 0.01239,
+          "eenheid": "EUR/kWh",
+          "bron": "rekentool",
+          "geverifieerd": true,
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
+        },
+        "gasVastPerMaand": {
+          "bedragInclBtw": 5.99,
+          "bedragExclBtw": 4.95,
+          "eenheid": "EUR/maand",
+          "bron": "rekentool",
+          "geverifieerd": true,
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
+        },
+        "gasInkoopopslag": {
+          "bedragInclBtw": 0.074996,
+          "bedragExclBtw": 0.06198,
+          "eenheid": "EUR/m3",
+          "bron": "rekentool",
+          "geverifieerd": true,
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
+          "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
+        },
         "terugleverCorrectie": {
           "bedragInclBtw": 0,
           "bedragExclBtw": 0,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "website",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-26T20:50:05.481Z",
+          "laatstGecontroleerd": "2026-09-26T20:50:05.481Z",
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     },
     {
       "id": "zonneplan",
@@ -559,7 +643,7 @@
           "bronUrl": "https://start.zonneplan.nl/energie"
         }
       },
-      "laatstUitgevoerd": "2026-09-24T19:39:10.132Z"
+      "laatstUitgevoerd": "2026-09-26T20:50:05.481Z"
     }
   ]
 }

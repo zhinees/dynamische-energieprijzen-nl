@@ -4,15 +4,15 @@ Gemaakt door `npm run leveranciers`. ✅ uitgelezen van de site van de leveranci
 
 | Leverancier | stroomVastPerMaand | stroomInkoopopslag | gasVastPerMaand | gasInkoopopslag | terugleverCorrectie |
 | --- | --- | --- | --- | --- | --- |
-| ANWB Energie | – | ☑️ handmatig gecontroleerd | – | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-| Budget Thuis (Budget Energie) | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-| Frank Energie | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| ANWB Energie | 🧮 rekentool | ✅ website | 🧮 rekentool | ✅ website | ☑️ handmatig gecontroleerd |
+| Budget Thuis (Budget Energie) | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
+| Frank Energie | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | 🧮 rekentool | 🧮 rekentool | ☑️ handmatig gecontroleerd |
 | Live Energy | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-| NextEnergy | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| NextEnergy | ✅ website | ✅ website | ✅ website | ✅ website | ☑️ handmatig gecontroleerd |
 | Pure Energie | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-| Tibber | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-| Vandebron | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-| Vattenfall (FlexPrijs) | – | – | – | – | ☑️ handmatig gecontroleerd |
+| Tibber | ✅ website | ✅ website | ✅ website | ✅ website | ✅ website |
+| Vandebron | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
+| Vattenfall (FlexPrijs) | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | ✅ website |
 | Zonneplan | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 
 ## Nog niet gepubliceerd

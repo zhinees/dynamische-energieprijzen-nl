@@ -127,7 +127,10 @@ export function bouwLeverancier(
       }
     }
 
-    if (cfg.rekentool && !laatsteFout) laatsteFout = "rekentool gaf geen waarde";
+    // An error when the calculator run failed, or stopped giving a field it gave last time;
+    // a field the calculator never gives (and no rule covers) is not an error.
+    if (cfg.rekentool && !laatsteFout && (!Object.keys(rekentool).length || vorigeWaarde?.bron === "rekentool"))
+      laatsteFout = "rekentool gaf geen waarde";
 
     // Scrape failed or no rule: newest of (handmatig block, previous scraped value).
     const handmatig = handmatigeWaarde(cfg, veld, vorigeWaarde);
