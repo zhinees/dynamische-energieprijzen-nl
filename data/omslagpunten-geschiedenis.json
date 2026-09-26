@@ -60,5 +60,36 @@
     "teruglevering": {
       "omslagpunt": 687
     }
+  },
+  {
+    "datum": "2026-09-26",
+    "stroom": {
+      "omslagpunt": 3297,
+      "goedkoopste": [
+        {
+          "vanaf": 0,
+          "tot": null,
+          "id": "vattenfall"
+        }
+      ]
+    },
+    "gas": {
+      "omslagpunt": 1005,
+      "goedkoopste": [
+        {
+          "vanaf": 0,
+          "tot": 2805,
+          "id": "budget"
+        },
+        {
+          "vanaf": 2805,
+          "tot": null,
+          "id": "vandebron"
+        }
+      ]
+    },
+    "teruglevering": {
+      "omslagpunt": 687
+    }
   }
 ]

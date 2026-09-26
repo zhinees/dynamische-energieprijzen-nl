@@ -1,12 +1,12 @@
 {
   "$schema": "../schema/omslagpunten.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-26T20:50:16.246Z",
+  "gegenereerdOp": "2026-09-26T20:56:28.282Z",
   "valuta": "EUR",
   "btw": "inclusief",
   "uitleg": "Alleen het deel dat per leverancier verschilt: vaste kosten x 12 + verbruik x inkoopopslag - teruglevering x terugleverCorrectie, incl. btw. Omslagpunten zijn in kWh (stroom, teruglevering) of m3 (gas) per jaar.",
   "stroom": {
-    "aantalLeveranciers": 10,
+    "aantalLeveranciers": 11,
     "vastPerJaar": {
       "min": 71.88,
       "max": 102.24
@@ -56,6 +56,11 @@
         "omslagpunt": 3120
       },
       {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "anwb",
+        "omslagpunt": 3670
+      },
+      {
         "lageVasteKosten": "nextenergy",
         "lageOpslag": "tibber",
         "omslagpunt": 4000
@@ -91,6 +96,11 @@
         "omslagpunt": 5349
       },
       {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "eneco",
+        "omslagpunt": 9268
+      },
+      {
         "lageVasteKosten": "nextenergy",
         "lageOpslag": "anwb",
         "omslagpunt": 10120
@@ -108,16 +118,16 @@
     ]
   },
   "gas": {
-    "aantalLeveranciers": 10,
+    "aantalLeveranciers": 11,
     "vastPerJaar": {
       "min": 71.88,
       "max": 117
     },
     "opslag": {
       "min": 0.05983,
-      "max": 0.099
+      "max": 0.10471
     },
-    "omslagpunt": 1152,
+    "omslagpunt": 1005,
     "goedkoopstePerVerbruik": [
       {
         "vanaf": 0,
@@ -187,6 +197,11 @@
         "lageVasteKosten": "vattenfall",
         "lageOpslag": "vandebron",
         "omslagpunt": 795
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "anwb",
+        "omslagpunt": 1182
       },
       {
         "lageVasteKosten": "tibber",

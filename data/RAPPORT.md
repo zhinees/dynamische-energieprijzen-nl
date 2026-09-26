@@ -6,6 +6,7 @@ Gemaakt door `npm run leveranciers`. ✅ uitgelezen van de site van de leveranci
 | --- | --- | --- | --- | --- | --- |
 | ANWB Energie | 🧮 rekentool | ✅ website | 🧮 rekentool | ✅ website | ☑️ handmatig gecontroleerd |
 | Budget Thuis (Budget Energie) | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
+| Eneco | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | Frank Energie | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | 🧮 rekentool | 🧮 rekentool | ☑️ handmatig gecontroleerd |
 | Live Energy | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | NextEnergy | ✅ website | ✅ website | ✅ website | ✅ website | ☑️ handmatig gecontroleerd |
@@ -14,12 +15,6 @@ Gemaakt door `npm run leveranciers`. ✅ uitgelezen van de site van de leveranci
 | Vandebron | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
 | Vattenfall (FlexPrijs) | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | ✅ website |
 | Zonneplan | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
-
-## Nog niet gepubliceerd
-
-Nog geen geverifieerde tarieven (de reden staat in $comment van het leveranciersbestand):
-
-- Eneco
 
 ## Energiebelasting
 

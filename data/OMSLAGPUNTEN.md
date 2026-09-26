@@ -10,7 +10,7 @@ Reken je eigen situatie door met `npm run rekenhulp -- --stroom 2500 --gas 1000`
 
 - Vaste kosten: € 71,88 – € 102,24 per jaar (verschil € 30,36)
 - Inkoopopslag: € 0,0150 – € 0,0242 per kWh (verschil € 0,0092)
-- **Omslagpunt: 3.297 kWh per jaar** (was 1.642 kWh op 2026-09-24). Onder dit verbruik wegen de verschillen in vaste kosten zwaarder, erboven de verschillen in opslag.
+- **Omslagpunt: 3.297 kWh per jaar**. Onder dit verbruik wegen de verschillen in vaste kosten zwaarder, erboven de verschillen in opslag.
 
 Goedkoopste leverancier per jaarverbruik:
 
@@ -28,6 +28,7 @@ Omslagpunt per paar (onder het omslagpunt is de eerste goedkoper, erboven de twe
 | Live Energy | Tibber | 1.819 |
 | Live Energy | Frank Energie | 1.884 |
 | NextEnergy | Zonneplan | 3.120 |
+| Eneco | ANWB Energie | 3.670 |
 | NextEnergy | Tibber | 4.000 |
 | NextEnergy | Frank Energie | 4.253 |
 | Zonneplan | Tibber | 4.440 |
@@ -35,6 +36,7 @@ Omslagpunt per paar (onder het omslagpunt is de eerste goedkoper, erboven de twe
 | Live Energy | ANWB Energie | 4.781 |
 | Zonneplan | Frank Energie | 4.865 |
 | Live Energy | Vandebron | 5.349 |
+| Live Energy | Eneco | 9.268 |
 | NextEnergy | ANWB Energie | 10.120 |
 | Zonneplan | ANWB Energie | 13.620 |
 | Frank Energie | ANWB Energie | 121.600 |
@@ -42,8 +44,8 @@ Omslagpunt per paar (onder het omslagpunt is de eerste goedkoper, erboven de twe
 ## Gas
 
 - Vaste kosten: € 71,88 – € 117,00 per jaar (verschil € 45,12)
-- Inkoopopslag: € 0,0598 – € 0,0990 per m³ (verschil € 0,0392)
-- **Omslagpunt: 1.152 m³ per jaar** (was 309 m³ op 2026-09-24). Onder dit verbruik wegen de verschillen in vaste kosten zwaarder, erboven de verschillen in opslag.
+- Inkoopopslag: € 0,0598 – € 0,1047 per m³ (verschil € 0,0449)
+- **Omslagpunt: 1.005 m³ per jaar** (was 1.152 m³ op 2026-09-26). Onder dit verbruik wegen de verschillen in vaste kosten zwaarder, erboven de verschillen in opslag.
 
 Goedkoopste leverancier per jaarverbruik:
 
@@ -67,6 +69,7 @@ Omslagpunt per paar (onder het omslagpunt is de eerste goedkoper, erboven de twe
 | Pure Energie | Frank Energie | 596 |
 | NextEnergy | Vandebron | 629 |
 | Vattenfall (FlexPrijs) | Vandebron | 795 |
+| Eneco | ANWB Energie | 1.182 |
 | Tibber | Frank Energie | 1.428 |
 | Pure Energie | ANWB Energie | 2.000 |
 | Live Energy | Frank Energie | 2.355 |
@@ -83,7 +86,7 @@ Omslagpunt per paar (onder het omslagpunt is de eerste goedkoper, erboven de twe
 Met zonnepanelen telt ook de `terugleverCorrectie` mee: per jaar betaal je *teruglevering × correctie* (negatief = kosten, positief = bonus). Bij een vaste hoeveelheid teruglevering werkt dat als een extra vast bedrag per jaar, dus het verschuift de omslagpunten van stroom.
 
 - terugleverCorrectie: € -0,0242 – € 0,0200 per kWh (verschil € 0,0442)
-- **Omslagpunt: 687 kWh teruglevering per jaar** (was 274 kWh op 2026-09-24). Lever je meer terug, dan wegen de verschillen in terugleverCorrectie zwaarder dan de verschillen in vaste kosten.
+- **Omslagpunt: 687 kWh teruglevering per jaar**. Lever je meer terug, dan wegen de verschillen in terugleverCorrectie zwaarder dan de verschillen in vaste kosten.
 
 Goedkoopste stroomleverancier per verbruik, bij deze hoeveelheden teruglevering:
 
@@ -100,5 +103,6 @@ Goedkoopste stroomleverancier per verbruik, bij deze hoeveelheden teruglevering:
 
 | Datum | Omslagpunt stroom | Omslagpunt gas | Omslagpunt teruglevering |
 | --- | --- | --- | --- |
+| 2026-09-26 | 3.297 kWh | 1.005 m³ | 687 kWh |
 | 2026-09-26 | 3.297 kWh | 1.152 m³ | 687 kWh |
 | 2026-09-24 | 1.642 kWh | 309 m³ | 274 kWh |

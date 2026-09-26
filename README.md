@@ -95,6 +95,21 @@ Je krijgt een ranglijst van leveranciers voor jouw verbruik, waar je zit ten opz
   - **handmatige waarden**: met de hand gecontroleerd op de eigen site van de leverancier, met bron-URL en datum. Die worden gebruikt als er geen regel is, of als een regel niet meer werkt. Ongecontroleerde waarden worden niet geaccepteerd.
 
   Leveranciers worden elke maandag gecontroleerd en op de 1e en 2e van elke maand (tarieven veranderen meestal op de 1e). Dat zijn een handvol verzoeken per leverancier per maand. Zie [`data/RAPPORT.md`](data/RAPPORT.md) voor de huidige stand. Hulp bij meer rekentool-adapters is welkom.
+
+  Hoe elke leverancier wordt bijgehouden (stand 26 september 2026):
+
+  | Leverancier | Hoe | Opmerking |
+  | --- | --- | --- |
+  | ANWB Energie | rekentool (vaste kosten) + website (opslag) | offerte-API; de opslag uit de API wisselt per aanroep, de tarievenpagina niet |
+  | Budget Thuis | rekentool | aanbod-API |
+  | Frank Energie | rekentool | de API laat soms het stroomdeel leeg; dan gelden de handmatige waarden |
+  | NextEnergy, Tibber | website | |
+  | Vandebron | rekentool | prijsopbouw-API |
+  | Vattenfall | rekentool (+ website voor teruglevering) | aanbod-API; de openbare API-sleutels leest de adapter elke run uit het script van de rekentool |
+  | Eneco | handmatig | de API vraagt een sessietoken en werkt met een winkelmandje op de server |
+  | Zonneplan | handmatig | de rekentool slaat bij elke berekening een aanvraag op |
+  | Live Energy | handmatig | de rekentool loopt via een WordPress-formulier met een sessie |
+  | Pure Energie | handmatig | de rekentool houdt een sessie bij op de server |
 - **Energiebelasting**: de tarieventabellen op de [site van de Belastingdienst](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting). De bot leest die op dezelfde momenten; nieuwe tarieven verschijnen meestal rond 1 januari. Als reserve staan met de hand gecontroleerde waarden in [`belastingen/energiebelasting.json`](belastingen/energiebelasting.json).
 - **Marktprijzen** (alleen in de rekenhulp en het voorbeeld, niet opgeslagen): de openbare API van EnergyZero.
 

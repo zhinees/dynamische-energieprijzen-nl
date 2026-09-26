@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/leverancier.schema.json",
-  "$comment": "Niet gepubliceerd: de rekentool van Eneco antwoordt 'We kunnen je op dit moment geen aanbod doen' voor het openbare testadres (Madurodam), 2026-09-24. De flow gebruikt een winkelmandje op de server, dus er is geen automatische adapter.",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van Eneco (testadres Eise Eisinga Planetarium; Madurodam gaf 'geen aanbod', want grootverbruik). Geen automatische adapter: de API vraagt een sessietoken en werkt met een winkelmandje op de server.",
   "id": "eneco",
   "naam": "Eneco",
   "website": "https://www.eneco.nl",
@@ -13,5 +13,46 @@
     "automatischAfschakelen": null
   },
   "regels": {},
-  "handmatig": {}
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 7,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://www.eneco.nl/duurzame-energie/bestellen2/",
+      "notitie": "Prijsopbouw in de rekentool van Eneco, propositie 'Dynamisch groene stroom & gas', testadres Eise Eisinga Planetarium (8801KE 3); bedragen incl. btw (energiebelasting € 0,11085/kWh); 'Vaste leveringskosten' € 84,00 per jaar"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.02297,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://www.eneco.nl/duurzame-energie/bestellen2/",
+      "notitie": "Prijsopbouw in de rekentool van Eneco, propositie 'Dynamisch groene stroom & gas', testadres Eise Eisinga Planetarium (8801KE 3); bedragen incl. btw (energiebelasting € 0,11085/kWh); 'inkoopvergoeding € 0,02297 / kWh'"
+    },
+    "gasVastPerMaand": {
+      "waarde": 7,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://www.eneco.nl/duurzame-energie/bestellen2/",
+      "notitie": "Prijsopbouw in de rekentool van Eneco, propositie 'Dynamisch groene stroom & gas', testadres Eise Eisinga Planetarium (8801KE 3); bedragen incl. btw (energiebelasting € 0,11085/kWh); gas 'Vaste leveringskosten' € 84,00 per jaar"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.10471,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://www.eneco.nl/duurzame-energie/bestellen2/",
+      "notitie": "Prijsopbouw in de rekentool van Eneco, propositie 'Dynamisch groene stroom & gas', testadres Eise Eisinga Planetarium (8801KE 3); bedragen incl. btw (energiebelasting € 0,11085/kWh); 'inkoopvergoeding € 0,10471 / m³'"
+    },
+    "terugleverCorrectie": {
+      "waarde": 0,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-26",
+      "bron": "https://www.eneco.nl/duurzame-energie/dynamisch-energiecontract/",
+      "notitie": "'Geen terugleverkosten bij zonnepanelen'"
+    }
+  }
 }
