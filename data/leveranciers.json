@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/leveranciers.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-26T20:56:15.558Z",
+  "gegenereerdOp": "2026-09-28T10:58:09.697Z",
   "valuta": "EUR",
   "leveranciers": [
     {
@@ -24,7 +24,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         },
         "stroomInkoopopslag": {
@@ -34,7 +34,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         },
         "gasVastPerMaand": {
@@ -44,7 +44,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         },
         "gasInkoopopslag": {
@@ -54,7 +54,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         },
         "terugleverCorrectie": {
@@ -67,7 +67,7 @@
           "bronUrl": "https://www.anwb.nl/energie/actuele-tarieven"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "budget",
@@ -89,7 +89,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "stroomInkoopopslag": {
@@ -99,7 +99,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "gasVastPerMaand": {
@@ -109,7 +109,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "gasInkoopopslag": {
@@ -119,7 +119,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         },
         "terugleverCorrectie": {
@@ -129,11 +129,11 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.budgetthuis.nl/energie/dynamisch-energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "eneco",
@@ -194,7 +194,7 @@
           "bronUrl": "https://www.eneco.nl/duurzame-energie/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "frank",
@@ -214,18 +214,20 @@
           "bedragInclBtw": 7,
           "bedragExclBtw": 5.785124,
           "eenheid": "EUR/maand",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-28T10:58:09.697Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "stroomInkoopopslag": {
           "bedragInclBtw": 0.01815,
           "bedragExclBtw": 0.015,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-28T10:58:09.697Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "gasVastPerMaand": {
@@ -235,7 +237,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "gasInkoopopslag": {
@@ -245,20 +247,21 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         },
         "terugleverCorrectie": {
           "bedragInclBtw": -0.012705,
           "bedragExclBtw": -0.0105,
           "eenheid": "EUR/kWh",
-          "bron": "handmatig",
+          "bron": "rekentool",
           "geverifieerd": true,
-          "sinds": "2026-09-24T00:00:00Z",
+          "sinds": "2026-09-28T10:58:09.697Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.frankenergie.nl/nl/dynamisch-energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "liveenergy",
@@ -319,7 +322,7 @@
           "bronUrl": "https://aanmelden.liveenergy.nl"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "nextenergy",
@@ -341,7 +344,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "stroomInkoopopslag": {
@@ -351,7 +354,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "gasVastPerMaand": {
@@ -361,7 +364,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "gasInkoopopslag": {
@@ -371,7 +374,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         },
         "terugleverCorrectie": {
@@ -384,7 +387,7 @@
           "bronUrl": "https://www.nextenergy.nl/dynamische-energie"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "pure",
@@ -445,7 +448,7 @@
           "bronUrl": "https://pure-energie.nl/energiecontract/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "tibber",
@@ -467,7 +470,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "stroomInkoopopslag": {
@@ -477,7 +480,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "gasVastPerMaand": {
@@ -487,7 +490,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "gasInkoopopslag": {
@@ -497,7 +500,7 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         },
         "terugleverCorrectie": {
@@ -507,11 +510,11 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://tibber.com/nl/energiecontract"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "vandebron",
@@ -533,7 +536,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "stroomInkoopopslag": {
@@ -543,7 +546,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "gasVastPerMaand": {
@@ -553,7 +556,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "gasInkoopopslag": {
@@ -563,7 +566,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         },
         "terugleverCorrectie": {
@@ -573,11 +576,11 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://vandebron.nl/energie/energiecontract/dynamisch"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "vattenfall",
@@ -599,7 +602,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         },
         "stroomInkoopopslag": {
@@ -609,7 +612,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         },
         "gasVastPerMaand": {
@@ -619,7 +622,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         },
         "gasInkoopopslag": {
@@ -629,7 +632,7 @@
           "bron": "rekentool",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         },
         "terugleverCorrectie": {
@@ -639,11 +642,11 @@
           "bron": "website",
           "geverifieerd": true,
           "sinds": "2026-09-26T20:50:05.481Z",
-          "laatstGecontroleerd": "2026-09-26T20:56:15.558Z",
+          "laatstGecontroleerd": "2026-09-28T10:58:09.697Z",
           "bronUrl": "https://www.vattenfall.nl/energie/dynamisch-energiecontract/"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     },
     {
       "id": "zonneplan",
@@ -704,7 +707,7 @@
           "bronUrl": "https://start.zonneplan.nl/energie"
         }
       },
-      "laatstUitgevoerd": "2026-09-26T20:56:15.558Z"
+      "laatstUitgevoerd": "2026-09-28T10:58:09.697Z"
     }
   ]
 }
