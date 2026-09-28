@@ -1,0 +1,95 @@
+{
+  "$schema": "../schema/netbeheer-config.schema.json",
+  "$comment": "Periodieke netbeheerkosten stroom voor kleinverbruik, per jaar: aansluitdienst + vastrecht transport + capaciteitstarief + meterhuur (slimme meter). Met de hand overgenomen uit de tariefbladen; controleer in december (nieuwe tarieven per 1 januari) en in juli (sommige netbeheerders wijzigen halverwege het jaar). 'openData' is het kleinverbruiksbestand waaruit `npm run netbeheer:postcodes` de postcodes per netbeheerder haalt; Enexis publiceert dat niet meer en krijgt alle postcodes die in geen ander bestand staan.",
+  "categorieen": {
+    "tm1x10": "t/m 1x10A",
+    "tm3x25": "> 1x10A t/m 3x25A (ook 1x25A, 1x35A en 1x40A)",
+    "3x35": "> 3x25A t/m 3x35A (ook 3x40A)"
+  },
+  "standaard": "enexis",
+  "netbeheerders": [
+    {
+      "id": "coteq",
+      "naam": "Coteq",
+      "geldigVanaf": "2026-01-01",
+      "tarieven": {
+        "tm1x10": { "bedragExclBtw": 111.9187, "bedragInclBtw": 135.4216 },
+        "tm3x25": { "bedragExclBtw": 377.1518, "bedragInclBtw": 456.3537 },
+        "3x35": { "bedragExclBtw": 1613.1596, "bedragInclBtw": 1951.9231 }
+      },
+      "bron": "https://d3a07q56iliqjn.cloudfront.net/web-uploads/Documenten/Tarieven/tarief-2026/KV-periodieke-tarieven_2026.pdf",
+      "gecontroleerdOp": "2026-09-28",
+      "notitie": "Tabel 'Periodieke vergoedingen elektriciteit', aansluiting voor afnemen of afnemen en terugleveren: totaal per jaar (PAV, capaciteitstarief, vastrecht transport en meterhuur).",
+      "openData": { "url": "https://d3a07q56iliqjn.cloudfront.net/web-uploads/Documenten/Open-data/CoteqNetbeheer_kleinverbruik_01012026.csv", "formaat": "csv" }
+    },
+    {
+      "id": "enexis",
+      "naam": "Enexis",
+      "geldigVanaf": "2026-01-01",
+      "tarieven": {
+        "tm1x10": { "bedragExclBtw": 126.071, "bedragInclBtw": 152.5459 },
+        "tm3x25": { "bedragExclBtw": 393.251, "bedragInclBtw": 475.8337 },
+        "3x35": { "bedragExclBtw": 1628.9585, "bedragInclBtw": 1971.0398 }
+      },
+      "bron": "https://edge-www.enexis.nl/v1/media/edge/images/project/enexisnl/enexisnl/enexis-nl/pdf-documents/tarieven/tarieven-consument/2026/ptkv-elektriciteit--01012026v10.pdf",
+      "gecontroleerdOp": "2026-09-28",
+      "notitie": "Tabel 'Aansluiting met elektriciteitsmeter', per jaar incl. btw; excl. btw is daaruit afgeleid (÷ 1,21)."
+    },
+    {
+      "id": "liander",
+      "naam": "Liander",
+      "geldigVanaf": "2026-01-01",
+      "tarieven": {
+        "tm1x10": { "bedragExclBtw": 134.466, "bedragInclBtw": 162.7039 },
+        "tm3x25": { "bedragExclBtw": 395.076, "bedragInclBtw": 478.042 },
+        "3x35": { "bedragExclBtw": 1600.1235, "bedragInclBtw": 1936.1494 }
+      },
+      "bron": "https://www.liander.nl/-/media/files/tarieven/consument/2026/jaarlijkse-netwerkkosten-stroom-2026-v10.pdf",
+      "gecontroleerdOp": "2026-09-28",
+      "notitie": "Tabel 'Capaciteitstarieven', regels 'bemeten' (met meetdienst), per jaar.",
+      "openData": { "url": "https://www.liander.nl/-/media/files/open-data/kleinverbruikdata/verbruiksdata-kv-2026.csv", "formaat": "csv" }
+    },
+    {
+      "id": "rendo",
+      "naam": "Rendo",
+      "geldigVanaf": "2026-07-01",
+      "tarieven": {
+        "tm1x10": { "bedragExclBtw": 133.345, "bedragInclBtw": 161.35 },
+        "tm3x25": { "bedragExclBtw": 367.74, "bedragInclBtw": 444.96 },
+        "3x35": { "bedragExclBtw": 1469.01, "bedragInclBtw": 1777.5 }
+      },
+      "bron": "https://www.rendonetwerken.nl/wp-content/uploads/2026/07/Tarievenblad_nettarieven_elektriciteit_KV_2026_versie_1.1_internet.pdf",
+      "gecontroleerdOp": "2026-09-28",
+      "notitie": "Versie 1.1, per 1 juli 2026. Som van vastrecht transport, capaciteitsafhankelijk transporttarief, periodieke aansluitdienst en meterhuur, per jaar.",
+      "openData": { "url": "https://www.rendonetwerken.nl/wp-content/uploads/2026/07/NV-RENDO_kleinverbruiksgegevens_01_07_2026.xlsx", "formaat": "xlsx" }
+    },
+    {
+      "id": "stedin",
+      "naam": "Stedin",
+      "geldigVanaf": "2026-01-01",
+      "tarieven": {
+        "tm1x10": { "bedragExclBtw": 138.73, "bedragInclBtw": 167.8633 },
+        "tm3x25": { "bedragExclBtw": 394.02, "bedragInclBtw": 476.7642 },
+        "3x35": { "bedragExclBtw": 1590.31, "bedragInclBtw": 1924.2751 }
+      },
+      "bron": "https://www.stedin.net/-/media/project/online/files/tarieven/tarieven-2026/tarieven-2026_elektriciteit_kleinverbruik.pdf",
+      "gecontroleerdOp": "2026-09-28",
+      "notitie": "Som van tabel 2 (periodieke aansluitvergoeding), tabel 3 (vastrecht transport en capaciteitstarief) en tabel 4 (meettarief), per jaar; voor t/m 3x25A gelijk aan het voorbeeld in tabel 5.",
+      "openData": { "url": "https://www.stedin.net/-/media/project/online/files/zakelijk/open-data/stedin-kleinverbruikgegevens-2026.csv", "formaat": "csv" }
+    },
+    {
+      "id": "westland",
+      "naam": "Westland Infra",
+      "geldigVanaf": "2026-01-01",
+      "tarieven": {
+        "tm1x10": { "bedragExclBtw": 134.16, "bedragInclBtw": 162.33 },
+        "tm3x25": { "bedragExclBtw": 413.39, "bedragInclBtw": 500.2 },
+        "3x35": { "bedragExclBtw": 1693.83, "bedragInclBtw": 2049.53 }
+      },
+      "bron": "https://westlandinfra.nl/wp-content/uploads/2025/12/westland-infra-aansluit-en-transporttarieven-elektriciteit-kleinverbruik-2026.pdf",
+      "gecontroleerdOp": "2026-09-28",
+      "notitie": "Tabel 'Periodieke vergoedingen transport, aansluiting & meterhuur', kolom 'Totaal periodiek' per jaar.",
+      "openData": { "url": "https://westlandinfra.nl/wp-content/uploads/2026/09/Westland_Infra_kleinverbruiksgegevens_01_01_2026.csv", "formaat": "csv" }
+    }
+  ]
+}

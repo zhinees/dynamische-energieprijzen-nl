@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/netbeheer-postcodes.schema.json",
+  "title": "data/netbeheer-postcodes.json",
+  "description": "Netbeheerder stroom per postcode: per viercijferig gebied, met uitzonderingen op zes posities; overige postcodes horen bij 'standaard'.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gegenereerdOp",
+    "bronnen",
+    "standaard",
+    "postcodes4",
+    "uitzonderingen"
+  ],
+  "properties": {
+    "gegenereerdOp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "bronnen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]+$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "standaard": {
+      "type": "string",
+      "pattern": "^[a-z]+$"
+    },
+    "postcodes4": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z]+$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{3}$"
+        }
+      }
+    },
+    "uitzonderingen": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[1-9][0-9]{3}[A-Z]{2}$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z]+$"
+      }
+    }
+  }
+}

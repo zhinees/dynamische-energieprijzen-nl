@@ -32,6 +32,7 @@ jobs:
             npx playwright install --with-deps chromium
           fi
       - run: npm run belasting
+      - run: npm run netbeheer
       - run: npm run leveranciers
       - run: npm run afleiden
       - run: npm run valideer

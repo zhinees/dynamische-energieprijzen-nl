@@ -11,6 +11,8 @@
   "scripts": {
     "leveranciers": "node src/leveranciers-scrapen.ts",
     "belasting": "node src/belasting-ophalen.ts",
+    "netbeheer": "node src/netbeheer.ts",
+    "netbeheer:postcodes": "node src/netbeheer.ts --postcodes",
     "afleiden": "node src/afleiden.ts",
     "rekenhulp": "node src/rekenhulp.ts",
     "debug": "node src/debug-leverancier.ts",

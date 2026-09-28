@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/netbeheer.schema.json",
+  "title": "data/netbeheer.json",
+  "description": "Periodieke netbeheerkosten stroom per jaar, per netbeheerder en aansluitcategorie.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gegenereerdOp",
+    "categorieen",
+    "standaard",
+    "netbeheerders"
+  ],
+  "properties": {
+    "gegenereerdOp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "categorieen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tm1x10",
+        "tm3x25",
+        "3x35"
+      ],
+      "properties": {
+        "tm1x10": {
+          "type": "string"
+        },
+        "tm3x25": {
+          "type": "string"
+        },
+        "3x35": {
+          "type": "string"
+        }
+      }
+    },
+    "standaard": {
+      "type": "string",
+      "pattern": "^[a-z]+$"
+    },
+    "netbeheerders": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "naam",
+          "geldigVanaf",
+          "tarieven",
+          "bron",
+          "gecontroleerdOp"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]+$"
+          },
+          "naam": {
+            "type": "string"
+          },
+          "geldigVanaf": {
+            "type": "string",
+            "format": "date"
+          },
+          "tarieven": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tm1x10",
+              "tm3x25",
+              "3x35"
+            ],
+            "properties": {
+              "tm1x10": {
+                "$ref": "#/$defs/bedrag"
+              },
+              "tm3x25": {
+                "$ref": "#/$defs/bedrag"
+              },
+              "3x35": {
+                "$ref": "#/$defs/bedrag"
+              }
+            }
+          },
+          "bron": {
+            "type": "string",
+            "format": "uri"
+          },
+          "gecontroleerdOp": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "bedrag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bedragExclBtw",
+        "bedragInclBtw"
+      ],
+      "properties": {
+        "bedragExclBtw": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 10000
+        },
+        "bedragInclBtw": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 12100
+        }
+      }
+    }
+  }
+}
