@@ -9,6 +9,7 @@ import { DATA, ROOT, laadLeverancierConfigs, leesJson } from "./lib/bestanden.ts
 import { regelsVoor } from "./lib/tarieven.ts";
 import { VELDEN, type EnergiebelastingConfig } from "./lib/typen.ts";
 import type { NetbeheerConfig } from "./lib/netbeheer.ts";
+import type { ThuisbatterijenConfig } from "./lib/thuisbatterijen.ts";
 
 const ajv = new (Ajv2020 as any)({ allErrors: true, strict: false });
 (addFormats as any)(ajv);
@@ -72,15 +73,22 @@ for (const n of (await leesJson<NetbeheerConfig>(netbeheerCfg))?.netbeheerders ?
   if (n.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("netbeheer/netbeheerders.json", `${n.id}: gecontroleerdOp ligt in de toekomst`);
 }
 
-// 4. Generated data (if present)
+// 4. Home battery prices config
+const batterijCfg = join(ROOT, "thuisbatterijen", "thuisbatterijen.json");
+await controleer("thuisbatterijen-config.schema.json", batterijCfg);
+const batterijen = await leesJson<ThuisbatterijenConfig>(batterijCfg);
+if (batterijen && batterijen.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("thuisbatterijen/thuisbatterijen.json", "gecontroleerdOp ligt in de toekomst");
+
+// 5. Generated data (if present)
 await controleer("leveranciers.schema.json", join(DATA, "leveranciers.json"));
 await controleer("energiebelasting.schema.json", join(DATA, "energiebelasting.json"));
 await controleer("omslagpunten.schema.json", join(DATA, "omslagpunten.json"));
 await controleer("netbeheer.schema.json", join(DATA, "netbeheer.json"));
 await controleer("netbeheer-postcodes.schema.json", join(DATA, "netbeheer-postcodes.json"));
+await controleer("thuisbatterijen.schema.json", join(DATA, "thuisbatterijen.json"));
 
 if (fouten) {
   console.error(`\n${fouten} probleem/problemen`);
   process.exit(1);
 }
-console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven en de databestanden zijn geldig`);
+console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen en de databestanden zijn geldig`);

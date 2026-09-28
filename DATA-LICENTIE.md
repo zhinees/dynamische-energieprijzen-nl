@@ -1,6 +1,6 @@
 # Datalicentie
 
-De data in `data/`, de leveranciersbestanden in `leveranciers/`, `belastingen/` en `netbeheer/` zijn beschikbaar onder de
+De data in `data/`, de leveranciersbestanden in `leveranciers/`, `belastingen/`, `netbeheer/` en `thuisbatterijen/` zijn beschikbaar onder de
 [Creative Commons Naamsvermelding 4.0 Internationaal-licentie (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.nl).
 
 Vermeld graag: **"dynamische-energieprijzen-nl"**, met een link naar deze repository.

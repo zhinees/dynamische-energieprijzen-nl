@@ -4,6 +4,7 @@ Een onafhankelijk, open overzicht van wat Nederlandse leveranciers rekenen voor 
 
 - **Tarieven van leveranciers**: vaste kosten per maand, inkoopopslag en teruglevering, per leverancier, met bron en controledatum per getal.
 - **Energiebelasting** per jaar, rechtstreeks van de Belastingdienst.
+- **Aanschafprijzen van thuisbatterijen** per type en capaciteit (bandbreedte), met de prijs per kWh en de levensduur, om een terugverdientijd te kunnen schatten.
 - **Omslagpunten en een rekenhulp**: vanaf welk jaarverbruik de inkoopopslag zwaarder weegt dan de vaste kosten, en welke leverancier bij jouw verbruik het goedkoopst is. Bij elke tariefwijziging opnieuw berekend.
 
 Zie het als een filterlijst van een adblocker. De data staat als gewone JSON- en CSV-bestanden in deze repo, en een geplande taak houdt die actueel. Iedereen mag de bestanden gebruiken voor vergelijkingssites, domotica of onderzoek. Correcties gaan via pull requests.
@@ -30,6 +31,7 @@ Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energiepr
 | `data/energiebelasting.json` | Energiebelasting voor huishoudens per jaar (vanaf 2023), incl. en excl. btw | wekelijks + op de 1e en 2e van de maand |
 | `data/netbeheer.json` | Periodieke netbeheerkosten stroom per jaar per netbeheerder, voor drie aansluitcategorieën (t/m 1x10A; t/m 3x25A, ook 1x35A; 3x35A), incl. en excl. btw | met de hand, december en juli |
 | `data/netbeheer-postcodes.json` | Netbeheerder stroom per postcode (per viercijferig gebied, met uitzonderingen op zes posities) | jaarlijks, januari |
+| `data/thuisbatterijen.json` | Aanschafprijs van thuisbatterijen (vast met installatie, en stekkerbatterij) per capaciteit, als bandbreedte incl. btw, met de prijs per kWh, levensduur en bronnen | met de hand, januari en juli |
 | `data/omslagpunten.json` / [`OMSLAGPUNTEN.md`](data/OMSLAGPUNTEN.md) | Omslagpunten voor stroom, gas en teruglevering, en de goedkoopste leverancier per jaarverbruik | na elke update |
 | `data/omslagpunten-geschiedenis.json` | Elke keer dat een omslagpunt of de goedkoopste leverancier verandert | als dat verandert |
 | `data/tariefwijzigingen.json` | Logboek van elke tariefwijziging | als tarieven veranderen |
@@ -115,6 +117,7 @@ Je krijgt een ranglijst van leveranciers voor jouw verbruik, waar je zit ten opz
 - **Energiebelasting**: de tarieventabellen op de [site van de Belastingdienst](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting). De bot leest die op dezelfde momenten; nieuwe tarieven verschijnen meestal rond 1 januari. Als reserve staan met de hand gecontroleerde waarden in [`belastingen/energiebelasting.json`](belastingen/energiebelasting.json).
 - **Netbeheerkosten**: met de hand overgenomen uit de tariefbladen van de zes regionale netbeheerders, in [`netbeheer/netbeheerders.json`](netbeheer/netbeheerders.json) (bron-URL en datum per netbeheerder). Het bedrag per jaar is aansluitdienst + vastrecht transport + capaciteitstarief + meterhuur. Controleren in december (nieuwe tarieven per 1 januari) en in juli: Rendo wijzigde zijn tarieven per 1 juli 2026.
 - **Netbeheerder per postcode**: uit de open kleinverbruiksbestanden van Liander, Stedin, Coteq, Rendo en Westland Infra (stroom). Enexis publiceert dat bestand niet meer en krijgt alle postcodes die in geen ander bestand staan. De bestanden voegen postcodes samen tot bereiken; alleen het begin en eind van een bereik geldt als zeker. Postcodes die in geen bestand staan (vooral nieuwe straten en bedrijventerreinen) volgen hun gebied; alleen naast Coteq en Rendo, waar het verschil met Enexis € 20–30 per jaar is, gaat een lange reeks ervan (10 of meer) naar Enexis. Welke postcodes er per gebied bestaan komt van de [PDOK Locatieserver](https://www.pdok.nl). Een steekproef van 78 postcodes tegen het EAN-codeboek gaf 76 goed; de 2 fouten waren Liander/Stedin, die € 1–2 per jaar verschillen.
+- **Thuisbatterijen**: met de hand overgenomen uit openbare prijsoverzichten, in [`thuisbatterijen/thuisbatterijen.json`](thuisbatterijen/thuisbatterijen.json) (bron-URL en datum per prijs, plus controlebronnen). Het zijn bandbreedtes van vergelijkers en verkopers, geen offertes; de enige onafhankelijke bron (Milieu Centraal) noemt geen prijs per kWh. De prijs per kWh daalt met de capaciteit, omdat installatie en omvormer bij elke vaste batterij terugkomen. Controleren in januari en juli.
 - **Marktprijzen** (alleen in de rekenhulp en het voorbeeld, niet opgeslagen): de openbare API van EnergyZero.
 
 ## Zelf draaien
@@ -126,6 +129,7 @@ npm ci
 npm run belasting                        # energiebelasting → data/energiebelasting.json
 npm run netbeheer                        # netbeheer/netbeheerders.json → data/netbeheer.json
 npm run netbeheer:postcodes              # ook data/netbeheer-postcodes.json (januari; downloadt ± 40 MB, vraagt PDOK ± 3.000 keer)
+npm run thuisbatterijen                  # thuisbatterijen/thuisbatterijen.json → data/thuisbatterijen.json
 npm run leveranciers                     # tarieven uitlezen → data/leveranciers.json
 npm run afleiden                         # omslagpunten → data/omslagpunten.json en OMSLAGPUNTEN.md
 npm run rekenhulp -- --stroom 2500       # ranglijst en jaarrekening voor jouw verbruik
@@ -153,6 +157,6 @@ De nuttigste hulp is de huidige tarieven van een leverancier controleren en het 
 ## Licentie
 
 - Code: [MIT](LICENSE).
-- Data in `data/`, `leveranciers/`, `belastingen/` en `netbeheer/`: [CC BY 4.0](DATA-LICENTIE.md). Vermeld "dynamische-energieprijzen-nl" en de onderliggende bronnen die daar staan.
+- Data in `data/`, `leveranciers/`, `belastingen/`, `netbeheer/` en `thuisbatterijen/`: [CC BY 4.0](DATA-LICENTIE.md). Vermeld "dynamische-energieprijzen-nl" en de onderliggende bronnen die daar staan.
 
 Dit project is niet verbonden aan een energieleverancier, en niets hier is financieel advies. Controleer altijd de voorwaarden van de leverancier zelf voordat je overstapt.

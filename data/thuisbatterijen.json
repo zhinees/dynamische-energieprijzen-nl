@@ -1,0 +1,121 @@
+{
+  "gegenereerdOp": "2026-09-28T18:29:23.676Z",
+  "gecontroleerdOp": "2026-09-28",
+  "valuta": "EUR",
+  "typen": {
+    "vast": "Vaste thuisbatterij met hybride omvormer, geplaatst door een installateur (prijs incl. installatie)",
+    "stekker": "Stekkerbatterij: in het stopcontact, zonder installateur (laad- en ontlaadvermogen meestal beperkt)"
+  },
+  "prijzen": [
+    {
+      "type": "stekker",
+      "capaciteitKwh": 2,
+      "prijsInclBtw": {
+        "van": 750,
+        "tot": 799
+      },
+      "bron": "https://thuisbatterij.nl/prijzen/",
+      "bronDatum": "2026-09-01",
+      "notitie": "Overzicht noemt 2–3 kWh; de prijs per kWh (€ 375–400) past bij 2 kWh.",
+      "prijsPerKwhInclBtw": {
+        "van": 375,
+        "tot": 399.5
+      }
+    },
+    {
+      "type": "stekker",
+      "capaciteitKwh": 5,
+      "prijsInclBtw": {
+        "van": 1295,
+        "tot": 2099
+      },
+      "bron": "https://thuisbatterij.nl/prijzen/",
+      "bronDatum": "2026-09-01",
+      "prijsPerKwhInclBtw": {
+        "van": 259,
+        "tot": 419.8
+      }
+    },
+    {
+      "type": "vast",
+      "capaciteitKwh": 5,
+      "prijsInclBtw": {
+        "van": 3500,
+        "tot": 5000
+      },
+      "bron": "https://thuisbatterij.nl/prijzen/",
+      "bronDatum": "2026-09-01",
+      "prijsPerKwhInclBtw": {
+        "van": 700,
+        "tot": 1000
+      }
+    },
+    {
+      "type": "vast",
+      "capaciteitKwh": 10,
+      "prijsInclBtw": {
+        "van": 5000,
+        "tot": 8000
+      },
+      "bron": "https://thuisbatterij.nl/prijzen/",
+      "bronDatum": "2026-09-01",
+      "prijsPerKwhInclBtw": {
+        "van": 500,
+        "tot": 800
+      }
+    },
+    {
+      "type": "vast",
+      "capaciteitKwh": 15,
+      "prijsInclBtw": {
+        "van": 7500,
+        "tot": 11000
+      },
+      "bron": "https://thuisbatterij.nl/prijzen/",
+      "bronDatum": "2026-09-01",
+      "prijsPerKwhInclBtw": {
+        "van": 500,
+        "tot": 733.33
+      }
+    },
+    {
+      "type": "vast",
+      "capaciteitKwh": 20,
+      "prijsInclBtw": {
+        "van": 9000,
+        "tot": 14000
+      },
+      "bron": "https://thuisbatterij.nl/prijzen/",
+      "bronDatum": "2026-09-01",
+      "prijsPerKwhInclBtw": {
+        "van": 450,
+        "tot": 700
+      }
+    }
+  ],
+  "levensduur": {
+    "jaren": {
+      "van": 10,
+      "tot": 15
+    },
+    "garantie": "Meestal 10 jaar of 6.000 laadcycli, met na afloop nog 60–80% van de capaciteit.",
+    "bronnen": [
+      "https://www.zonneplan.nl/thuisbatterij/laadcycli",
+      "https://solargarant.nl/thuisbatterijen/levensduur/"
+    ]
+  },
+  "controlebronnen": [
+    {
+      "url": "https://www.accuprofs.nl/thuisbatterij/kosten/",
+      "notitie": "Verkoper: € 550–700 per kWh incl. installatie."
+    },
+    {
+      "url": "https://samenstromen.nl/kennisbank/wat-kost-een-thuisbatterij-prijzen-subsidies-en-terugverdientijd-op-een-rij/",
+      "notitie": "Overzicht: € 650–1.300 per kWh incl. installatie; 10 kWh € 5.500–8.500."
+    },
+    {
+      "url": "https://www.milieucentraal.nl/persberichten/thuisbatterijen-hoeveel-voordeel-is-er-echt-te-behalen/",
+      "notitie": "Onafhankelijk: een batterij van 6 kWh met omvormer en installatie kost 'een paar duizend euro' en is op dit moment hoogstwaarschijnlijk niet terug te verdienen met de besparing op de stroomrekening."
+    }
+  ]
+}

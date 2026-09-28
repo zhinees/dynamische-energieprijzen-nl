@@ -13,6 +13,7 @@
     "belasting": "node src/belasting-ophalen.ts",
     "netbeheer": "node src/netbeheer.ts",
     "netbeheer:postcodes": "node src/netbeheer.ts --postcodes",
+    "thuisbatterijen": "node src/thuisbatterijen.ts",
     "afleiden": "node src/afleiden.ts",
     "rekenhulp": "node src/rekenhulp.ts",
     "debug": "node src/debug-leverancier.ts",
