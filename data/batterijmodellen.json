@@ -1,5 +1,5 @@
 {
-  "gegenereerdOp": "2026-09-29T13:34:34.322Z",
+  "gegenereerdOp": "2026-09-29T13:46:44.191Z",
   "gecontroleerdOp": "2026-09-29",
   "modellen": [
     {
@@ -177,17 +177,21 @@
       "merk": "Sigenergy",
       "model": "SigenStor BAT 6.0",
       "type": "vast",
-      "capaciteitKwh": 6,
+      "capaciteitKwh": 6.02,
       "bruikbaarKwh": 5.84,
       "laadKw": 3,
       "ontlaadKw": 3,
       "rondeVerliesPct": null,
       "standbyW": null,
       "garantie": null,
-      "notitie": "Per module; meerdere modules op één SigenStor tellen op. Piek 4,5 kW (10 seconden).",
+      "notitie": "Heet 6.0; de totale capaciteit is 6,02 kWh (5,84 kWh bruikbaar). Per module; meerdere modules op één SigenStor tellen op. Piek 4,5 kW (10 seconden).",
       "bronnen": [
         {
           "url": "https://onecdn.io/media/sigenergy-sigenstor-bat-datenblatt-66c261fa-a70a-4f19-81b6-03dc78da747d.pdf",
+          "soort": "datasheet"
+        },
+        {
+          "url": "https://www.maxsel.de/wp-content/uploads/2025/09/Sigen-Battery-6.0_10.0_Datasheet_EN.pdf",
           "soort": "datasheet"
         },
         {
@@ -195,7 +199,7 @@
           "soort": "verkoper"
         }
       ],
-      "bruikbaarAandeel": 0.973,
+      "bruikbaarAandeel": 0.97,
       "vermogenKw": 3
     },
     {
@@ -203,17 +207,21 @@
       "merk": "Sigenergy",
       "model": "SigenStor BAT 10.0",
       "type": "vast",
-      "capaciteitKwh": 10,
+      "capaciteitKwh": 9.04,
       "bruikbaarKwh": 8.76,
       "laadKw": 4.6,
       "ontlaadKw": 4.6,
       "rondeVerliesPct": null,
       "standbyW": null,
       "garantie": null,
-      "notitie": "Per module; meerdere modules op één SigenStor tellen op. Piek 6,9 kW (10 seconden).",
+      "notitie": "Heet 10.0, maar de totale capaciteit is 9,04 kWh (8,76 kWh bruikbaar). Per module; meerdere modules op één SigenStor tellen op. Piek 6,9 kW (10 seconden).",
       "bronnen": [
         {
           "url": "https://onecdn.io/media/sigenergy-sigenstor-bat-datenblatt-66c261fa-a70a-4f19-81b6-03dc78da747d.pdf",
+          "soort": "datasheet"
+        },
+        {
+          "url": "https://www.maxsel.de/wp-content/uploads/2025/09/Sigen-Battery-6.0_10.0_Datasheet_EN.pdf",
           "soort": "datasheet"
         },
         {
@@ -221,7 +229,7 @@
           "soort": "verkoper"
         }
       ],
-      "bruikbaarAandeel": 0.876,
+      "bruikbaarAandeel": 0.969,
       "vermogenKw": 4.6
     },
     {

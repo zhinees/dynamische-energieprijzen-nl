@@ -13,7 +13,7 @@ test("rekent bruikbaar aandeel en één vermogen uit", () => {
   const tesla = b.modellen.find((m) => m.id === "tesla-powerwall-3")!;
   assert.equal(tesla.vermogenKw, 11.04); // laden onbekend: alleen ontladen
   const sigen = b.modellen.find((m) => m.id === "sigenergy-sigenstor-bat-10")!;
-  assert.equal(sigen.bruikbaarAandeel, 0.876);
+  assert.equal(sigen.bruikbaarAandeel, 0.969);
   assert.equal(b.gegenereerdOp, "2026-09-29T00:00:00.000Z");
 });
 
