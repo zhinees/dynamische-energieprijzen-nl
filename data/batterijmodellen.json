@@ -1,0 +1,276 @@
+{
+  "gegenereerdOp": "2026-09-29T13:34:34.322Z",
+  "gecontroleerdOp": "2026-09-29",
+  "modellen": [
+    {
+      "id": "homewizard-plug-in-battery-1",
+      "merk": "HomeWizard",
+      "model": "Plug-In Battery (1 module)",
+      "type": "stekker",
+      "capaciteitKwh": 2.7,
+      "bruikbaarKwh": 2.48,
+      "laadKw": 0.8,
+      "ontlaadKw": 0.8,
+      "rondeVerliesPct": 25,
+      "standbyW": 1,
+      "garantie": "Levensduur 15 jaar of 6.000 cycli (tot 70% van de capaciteit).",
+      "notitie": "Ongeveer 92% van de capaciteit bruikbaar. HomeWizard noemt een werkelijk rendement van 70–80%; hier 25% verlies. Uit te breiden tot 4 modules.",
+      "bronnen": [
+        {
+          "url": "https://www.homewizard.com/nl/plug-in-battery/",
+          "soort": "fabrikant"
+        },
+        {
+          "url": "https://www.energiebewustontwerpen.be/thuisbatterijen/homewizard/",
+          "soort": "review"
+        }
+      ],
+      "bruikbaarAandeel": 0.919,
+      "vermogenKw": 0.8
+    },
+    {
+      "id": "homewizard-plug-in-battery-4",
+      "merk": "HomeWizard",
+      "model": "Plug-In Battery (4 modules)",
+      "type": "stekker",
+      "capaciteitKwh": 10.8,
+      "bruikbaarKwh": 9.94,
+      "laadKw": 3.2,
+      "ontlaadKw": 3.2,
+      "rondeVerliesPct": 25,
+      "standbyW": null,
+      "garantie": "Levensduur 15 jaar of 6.000 cycli (tot 70% van de capaciteit).",
+      "notitie": "Vier modules van 2,7 kWh en 800 W. Stand-by per module 1 W; voor vier samen niet opgegeven.",
+      "bronnen": [
+        {
+          "url": "https://www.homewizard.com/nl/plug-in-battery/",
+          "soort": "fabrikant"
+        },
+        {
+          "url": "https://www.thuisbatterijmatch.nl/thuisbatterijen/homewizard-plug-in-battery-4-modules",
+          "soort": "verkoper"
+        }
+      ],
+      "bruikbaarAandeel": 0.92,
+      "vermogenKw": 3.2
+    },
+    {
+      "id": "marstek-venus-e-3",
+      "merk": "Marstek",
+      "model": "Venus E 3.0",
+      "type": "stekker",
+      "capaciteitKwh": 5.12,
+      "bruikbaarKwh": 4.6,
+      "laadKw": 2.5,
+      "ontlaadKw": 0.8,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": "10 jaar; meer dan 6.000 cycli bij 90% ontlaaddiepte.",
+      "notitie": "Kan 2,5 kW laden en ontladen; als stekkerbatterij staat ontladen meestal op 800 W.",
+      "bronnen": [
+        {
+          "url": "https://www.maison-et-domotique.com/en/169412-marstek-venus-e-complete-test-of-the-plug-play-solar-battery-5-12-kwh-2500-w-should-you-go-for-it/",
+          "soort": "review"
+        },
+        {
+          "url": "https://www.nkon.nl/en/marstek-venus-e-51-2v-5-12kwh-thuisbatterij-v3-0-ct003-energiemeter.html",
+          "soort": "verkoper"
+        }
+      ],
+      "bruikbaarAandeel": 0.898,
+      "vermogenKw": 0.8
+    },
+    {
+      "id": "huawei-luna2000-5-s0",
+      "merk": "Huawei",
+      "model": "LUNA2000-5-S0",
+      "type": "vast",
+      "capaciteitKwh": 5,
+      "bruikbaarKwh": 5,
+      "laadKw": 2.5,
+      "ontlaadKw": 2.5,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Nominaal vermogen; maximaal 3,74 kW. Uit te breiden per 5 kWh.",
+      "bronnen": [
+        {
+          "url": "https://solar.huawei.com/en/products/luna2000-5-10-15-s0/specs/",
+          "soort": "fabrikant"
+        }
+      ],
+      "bruikbaarAandeel": 1,
+      "vermogenKw": 2.5
+    },
+    {
+      "id": "huawei-luna2000-10-s0",
+      "merk": "Huawei",
+      "model": "LUNA2000-10-S0",
+      "type": "vast",
+      "capaciteitKwh": 10,
+      "bruikbaarKwh": 10,
+      "laadKw": 5,
+      "ontlaadKw": 5,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Nominaal vermogen; maximaal 7 kW.",
+      "bronnen": [
+        {
+          "url": "https://solar.huawei.com/en/products/luna2000-5-10-15-s0/specs/",
+          "soort": "fabrikant"
+        }
+      ],
+      "bruikbaarAandeel": 1,
+      "vermogenKw": 5
+    },
+    {
+      "id": "huawei-luna2000-15-s0",
+      "merk": "Huawei",
+      "model": "LUNA2000-15-S0",
+      "type": "vast",
+      "capaciteitKwh": 15,
+      "bruikbaarKwh": 15,
+      "laadKw": 5,
+      "ontlaadKw": 5,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Nominaal vermogen; maximaal 7 kW.",
+      "bronnen": [
+        {
+          "url": "https://solar.huawei.com/en/products/luna2000-5-10-15-s0/specs/",
+          "soort": "fabrikant"
+        }
+      ],
+      "bruikbaarAandeel": 1,
+      "vermogenKw": 5
+    },
+    {
+      "id": "sessy-5",
+      "merk": "Sessy",
+      "model": "5 kWh",
+      "type": "vast",
+      "capaciteitKwh": 5,
+      "bruikbaarKwh": 5,
+      "laadKw": 2.2,
+      "ontlaadKw": 1.7,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Omvormer ingebouwd; 1-fase en 3-fase.",
+      "bronnen": [
+        {
+          "url": "https://www.sessy.nl/specificaties/",
+          "soort": "fabrikant"
+        },
+        {
+          "url": "https://www.frankenergie.nl/nl/thuisbatterij/sessy/5-kwh-sessy-omvormer-zit-ingebouwd-1-fase",
+          "soort": "verkoper"
+        }
+      ],
+      "bruikbaarAandeel": 1,
+      "vermogenKw": 1.7
+    },
+    {
+      "id": "sigenergy-sigenstor-bat-6",
+      "merk": "Sigenergy",
+      "model": "SigenStor BAT 6.0",
+      "type": "vast",
+      "capaciteitKwh": 6,
+      "bruikbaarKwh": 5.84,
+      "laadKw": 3,
+      "ontlaadKw": 3,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Per module; meerdere modules op één SigenStor tellen op. Piek 4,5 kW (10 seconden).",
+      "bronnen": [
+        {
+          "url": "https://onecdn.io/media/sigenergy-sigenstor-bat-datenblatt-66c261fa-a70a-4f19-81b6-03dc78da747d.pdf",
+          "soort": "datasheet"
+        },
+        {
+          "url": "https://www.solarelectricsupply.com/sigenergy-sigenstor-6kwh-battery-module",
+          "soort": "verkoper"
+        }
+      ],
+      "bruikbaarAandeel": 0.973,
+      "vermogenKw": 3
+    },
+    {
+      "id": "sigenergy-sigenstor-bat-10",
+      "merk": "Sigenergy",
+      "model": "SigenStor BAT 10.0",
+      "type": "vast",
+      "capaciteitKwh": 10,
+      "bruikbaarKwh": 8.76,
+      "laadKw": 4.6,
+      "ontlaadKw": 4.6,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Per module; meerdere modules op één SigenStor tellen op. Piek 6,9 kW (10 seconden).",
+      "bronnen": [
+        {
+          "url": "https://onecdn.io/media/sigenergy-sigenstor-bat-datenblatt-66c261fa-a70a-4f19-81b6-03dc78da747d.pdf",
+          "soort": "datasheet"
+        },
+        {
+          "url": "https://www.tradesparky.com/solarsparky/batteries/sigenergy-batteries/sigenergy-sigenstor-bat-10-kwh-battery-with-led",
+          "soort": "verkoper"
+        }
+      ],
+      "bruikbaarAandeel": 0.876,
+      "vermogenKw": 4.6
+    },
+    {
+      "id": "solaredge-home-battery-10",
+      "merk": "SolarEdge",
+      "model": "Home Battery 10 kWh (48V)",
+      "type": "vast",
+      "capaciteitKwh": 9.7,
+      "bruikbaarKwh": 9.7,
+      "laadKw": 5,
+      "ontlaadKw": 5,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "Piekrendement meer dan 94,5% (alleen de batterij, zonder omvormer); daarom geen rondeverlies.",
+      "bronnen": [
+        {
+          "url": "https://www.solarquotes.com.au/blog/solaredge-home-battery-review/",
+          "soort": "review"
+        },
+        {
+          "url": "https://www.wattuneed.com/en/lithium-battery/25980-battery-solaredge-home-battery-10-kwh-bat-10k1ps0b-01-0768563817625.html",
+          "soort": "verkoper"
+        }
+      ],
+      "bruikbaarAandeel": 1,
+      "vermogenKw": 5
+    },
+    {
+      "id": "tesla-powerwall-3",
+      "merk": "Tesla",
+      "model": "Powerwall 3",
+      "type": "vast",
+      "capaciteitKwh": 13.5,
+      "bruikbaarKwh": 13.5,
+      "laadKw": null,
+      "ontlaadKw": 11.04,
+      "rondeVerliesPct": null,
+      "standbyW": null,
+      "garantie": null,
+      "notitie": "11,04 kW AC (Europese uitvoering). Het rendement van 97,5% in de datasheet is van zon naar huis, geen rondeverlies; daarom leeg.",
+      "bronnen": [
+        {
+          "url": "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-uk/Powerwall-3-Datasheet-EN.pdf",
+          "soort": "datasheet"
+        }
+      ],
+      "bruikbaarAandeel": 1,
+      "vermogenKw": 11.04
+    }
+  ]
+}

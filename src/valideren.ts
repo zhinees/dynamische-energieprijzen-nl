@@ -78,6 +78,10 @@ const batterijCfg = join(ROOT, "thuisbatterijen", "thuisbatterijen.json");
 await controleer("thuisbatterijen-config.schema.json", batterijCfg);
 const batterijen = await leesJson<ThuisbatterijenConfig>(batterijCfg);
 if (batterijen && batterijen.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("thuisbatterijen/thuisbatterijen.json", "gecontroleerdOp ligt in de toekomst");
+const modellenCfg = join(ROOT, "thuisbatterijen", "modellen.json");
+await controleer("batterijmodellen-config.schema.json", modellenCfg);
+const modellen = await leesJson<{ gecontroleerdOp: string }>(modellenCfg);
+if (modellen && modellen.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("thuisbatterijen/modellen.json", "gecontroleerdOp ligt in de toekomst");
 
 // 5. Generated data (if present)
 await controleer("leveranciers.schema.json", join(DATA, "leveranciers.json"));
@@ -86,9 +90,10 @@ await controleer("omslagpunten.schema.json", join(DATA, "omslagpunten.json"));
 await controleer("netbeheer.schema.json", join(DATA, "netbeheer.json"));
 await controleer("netbeheer-postcodes.schema.json", join(DATA, "netbeheer-postcodes.json"));
 await controleer("thuisbatterijen.schema.json", join(DATA, "thuisbatterijen.json"));
+await controleer("batterijmodellen.schema.json", join(DATA, "batterijmodellen.json"));
 
 if (fouten) {
   console.error(`\n${fouten} probleem/problemen`);
   process.exit(1);
 }
-console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen en de databestanden zijn geldig`);
+console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen, de batterijmodellen en de databestanden zijn geldig`);

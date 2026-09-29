@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/batterijmodellen.schema.json",
+  "title": "data/batterijmodellen.json",
+  "description": "Technische gegevens van thuisbatterijen per model (capaciteit, bruikbare capaciteit, laad- en ontlaadvermogen, verlies, stand-by), met bronnen; plus het bruikbare aandeel en één vermogen voor rekenhulpen. Gemaakt door `npm run thuisbatterijen`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gegenereerdOp",
+    "gecontroleerdOp",
+    "modellen"
+  ],
+  "properties": {
+    "gegenereerdOp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "gecontroleerdOp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "modellen": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "merk",
+          "model",
+          "type",
+          "capaciteitKwh",
+          "bruikbaarKwh",
+          "laadKw",
+          "ontlaadKw",
+          "rondeVerliesPct",
+          "standbyW",
+          "garantie",
+          "bronnen",
+          "bruikbaarAandeel",
+          "vermogenKw"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "merk": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "vast",
+              "stekker"
+            ]
+          },
+          "capaciteitKwh": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 100
+          },
+          "bruikbaarKwh": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0,
+            "maximum": 100
+          },
+          "laadKw": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0,
+            "maximum": 30
+          },
+          "ontlaadKw": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0,
+            "maximum": 30
+          },
+          "rondeVerliesPct": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 50
+          },
+          "standbyW": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 200
+          },
+          "garantie": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notitie": {
+            "type": "string"
+          },
+          "bronnen": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "url",
+                "soort"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "soort": {
+                  "enum": [
+                    "fabrikant",
+                    "datasheet",
+                    "verkoper",
+                    "review"
+                  ]
+                },
+                "notitie": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "bruikbaarAandeel": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0,
+            "maximum": 1
+          },
+          "vermogenKw": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0,
+            "maximum": 30
+          }
+        }
+      }
+    }
+  }
+}
