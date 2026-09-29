@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van EnergyZero. Geen automatische adapter: die rekentool maakt bij elke berekening een huisscan aan.",
+  "id": "energyzero",
+  "naam": "EnergyZero",
+  "website": "https://www.energyzero.nl",
+  "tariefUrl": "https://www.energyzero.nl/dynamisch-contract",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 7.50006,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://aanbod.energyzero.nl/link/start",
+      "notitie": "Rekentool van EnergyZero (aanbod.energyzero.nl, prijsopbouw van het aanbod), testadres Madurodam (2584RZ 1); bedragen incl. btw (energiebelasting in dezelfde opbouw € 0,11085/kWh): Dynamische Stroom 'Vaste leveringskosten' € 7,50006 per maand"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.02242,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://aanbod.energyzero.nl/link/start",
+      "notitie": "Rekentool van EnergyZero (aanbod.energyzero.nl, prijsopbouw van het aanbod), testadres Madurodam (2584RZ 1); bedragen incl. btw (energiebelasting in dezelfde opbouw € 0,11085/kWh): Dynamische Stroom 'Inkoopvergoeding' € 0,02242 per kWh"
+    },
+    "gasVastPerMaand": {
+      "waarde": 7.50006,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://aanbod.energyzero.nl/link/start",
+      "notitie": "Rekentool van EnergyZero (aanbod.energyzero.nl, prijsopbouw van het aanbod), testadres Madurodam (2584RZ 1); bedragen incl. btw (energiebelasting in dezelfde opbouw € 0,11085/kWh): Dynamisch Gas 'Vaste leveringskosten' € 7,50006 per maand"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.07495,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://aanbod.energyzero.nl/link/start",
+      "notitie": "Rekentool van EnergyZero (aanbod.energyzero.nl, prijsopbouw van het aanbod), testadres Madurodam (2584RZ 1); bedragen incl. btw (energiebelasting in dezelfde opbouw € 0,11085/kWh): Dynamisch Gas 'Inkoopvergoeding' € 0,07495 per m³"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.02242,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://aanbod.energyzero.nl/link/start",
+      "notitie": "Rekentool van EnergyZero (aanbod.energyzero.nl, prijsopbouw van het aanbod), testadres Madurodam (2584RZ 1); bedragen incl. btw (energiebelasting in dezelfde opbouw € 0,11085/kWh): Dynamische Stroom 'Verkoopvergoeding' € 0,02242 per teruggeleverde kWh (kosten, dus negatief)"
+    }
+  }
+}

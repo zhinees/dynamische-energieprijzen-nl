@@ -1,0 +1,64 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van Greenchoice voor het dynamisch contract. Dat contract wordt geleverd door EnergyZero ('EnergyZero wordt jouw energieleverancier').",
+  "id": "greenchoice",
+  "naam": "Greenchoice",
+  "website": "https://www.greenchoice.nl",
+  "tariefUrl": "https://www.greenchoice.nl/stroom-en-gas/dynamisch-energiecontract/",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null,
+    "notities": "Het dynamisch contract van Greenchoice wordt geleverd door EnergyZero (gezien in de rekentool van Greenchoice, 2026-09-29)."
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.1983,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://onboarding.api.energyzero.nl/v1/offers",
+      "notitie": "Aanbod-API achter de rekentool van Greenchoice (aanmelden.dynamischcontract.greenchoice.nl, 'Greenchoice: powered by EnergyZero Dynamisch NL'), testadres Madurodam (2584RZ 1); 'Vaste leveringskosten' stroom € 6,19830 per maand excl. btw (€ 7,49994 incl.)",
+      "waardeInclBtw": 7.49994
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.01853,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://onboarding.api.energyzero.nl/v1/offers",
+      "notitie": "Aanbod-API achter de rekentool van Greenchoice (aanmelden.dynamischcontract.greenchoice.nl, 'Greenchoice: powered by EnergyZero Dynamisch NL'), testadres Madurodam (2584RZ 1); stroom 'Inkoopvergoeding' € 0,01853 per kWh excl. btw (€ 0,02242 incl.)",
+      "waardeInclBtw": 0.02242
+    },
+    "gasVastPerMaand": {
+      "waarde": 6.1983,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://onboarding.api.energyzero.nl/v1/offers",
+      "notitie": "Aanbod-API achter de rekentool van Greenchoice (aanmelden.dynamischcontract.greenchoice.nl, 'Greenchoice: powered by EnergyZero Dynamisch NL'), testadres Madurodam (2584RZ 1); 'Vaste leveringskosten' gas € 6,19830 per maand excl. btw (€ 7,49994 incl.)",
+      "waardeInclBtw": 7.49994
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.06194,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://onboarding.api.energyzero.nl/v1/offers",
+      "notitie": "Aanbod-API achter de rekentool van Greenchoice (aanmelden.dynamischcontract.greenchoice.nl, 'Greenchoice: powered by EnergyZero Dynamisch NL'), testadres Madurodam (2584RZ 1); gas 'Inkoopvergoeding' € 0,06194 per m³ excl. btw (€ 0,07495 incl.)",
+      "waardeInclBtw": 0.07495
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.01853,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://onboarding.api.energyzero.nl/v1/offers",
+      "notitie": "Aanbod-API achter de rekentool van Greenchoice (aanmelden.dynamischcontract.greenchoice.nl, 'Greenchoice: powered by EnergyZero Dynamisch NL'), testadres Madurodam (2584RZ 1); 'Terugleveringskosten stroom': 'Verkoopvergoeding' € 0,01853 per teruggeleverde kWh excl. btw (€ 0,02242 incl.)",
+      "waardeInclBtw": -0.02242
+    }
+  }
+}

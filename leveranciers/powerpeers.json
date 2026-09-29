@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van Powerpeers (dochter van Vattenfall). Geen automatische adapter: die rekentool loopt via een aanmeldstraat met sessie.",
+  "id": "powerpeers",
+  "naam": "Powerpeers",
+  "website": "https://powerpeers.nl",
+  "tariefUrl": "https://powerpeers.nl/dynamische-energie/energieprijzen-dynamisch-energiecontract/",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.25,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://powerpeers.codecast.nl/services/public/newcustomer/calculate",
+      "notitie": "Berekening achter de rekentool van Powerpeers (powerpeers.nl/aanvragen, 'Helemaal Dynamisch'), testadres Madurodam (2584RZ 1); 'Alle prijzen zijn inclusief btw tenzij anders vermeld': 'Vaste leveringskosten Stroom dynamisch' € 0,205479 per dag; in de prijsopbouw 'Vaste leveringskosten voor stroom € 75,00' per jaar"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.01,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://powerpeers.codecast.nl/services/public/newcustomer/calculate",
+      "notitie": "Berekening achter de rekentool van Powerpeers (powerpeers.nl/aanvragen, 'Helemaal Dynamisch'), testadres Madurodam (2584RZ 1); 'Alle prijzen zijn inclusief btw tenzij anders vermeld': 'Inkoopvergoeding' (E_PURCH_FEE) € 0,01 per kWh; op de site 'een van de laagste inkoopvergoedingen van Nederland (€ 0,01)'"
+    },
+    "gasVastPerMaand": {
+      "waarde": 6.25,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://powerpeers.codecast.nl/services/public/newcustomer/calculate",
+      "notitie": "Berekening achter de rekentool van Powerpeers (powerpeers.nl/aanvragen, 'Helemaal Dynamisch'), testadres Madurodam (2584RZ 1); 'Alle prijzen zijn inclusief btw tenzij anders vermeld': 'Vaste leveringskosten Gas dynamisch' € 0,205479 per dag; in de prijsopbouw 'Vaste leveringskosten voor gas € 75,00' per jaar"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.0821,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://powerpeers.codecast.nl/services/public/newcustomer/calculate",
+      "notitie": "Berekening achter de rekentool van Powerpeers (powerpeers.nl/aanvragen, 'Helemaal Dynamisch'), testadres Madurodam (2584RZ 1); 'Alle prijzen zijn inclusief btw tenzij anders vermeld': gas 'Inkoopvergoeding' (G_PURCH_FEE) € 0,0821 per m³"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.01,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://powerpeers.codecast.nl/services/public/newcustomer/calculate",
+      "notitie": "Berekening achter de rekentool van Powerpeers (powerpeers.nl/aanvragen, 'Helemaal Dynamisch'), testadres Madurodam (2584RZ 1); 'Alle prijzen zijn inclusief btw tenzij anders vermeld': 'Verkoopvergoeding' (E_SELL_FEE) € 0,01 per teruggeleverde kWh (kosten, dus negatief)"
+    }
+  }
+}

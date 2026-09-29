@@ -1,0 +1,53 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in het maandelijkse tarievenblad (pdf) van Zonopnaam Energie. Bedragen in het tarievenblad zijn excl. btw.",
+  "id": "zonopnaam",
+  "naam": "Zonopnaam Energie",
+  "website": "https://www.zonopnaam.nl",
+  "tariefUrl": "https://www.zonopnaam.nl/tarieven",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null,
+    "notities": "Dynamisch stroom is (vooralsnog) niet mogelijk met zonnepanelen op eigen dak: bij teruglevering zet Zonopnaam het contract om naar variabel (tarievenblad september 2026)."
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.611367,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf",
+      "notitie": "Tarievenblad dynamisch september 2026: 'Vaste leveringskosten per dag € 0,21736' excl. btw (€ 0,2630 incl. btw) × 365/12",
+      "waardeInclBtw": 7.999583
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.0165,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf",
+      "notitie": "Tarievenblad dynamisch september 2026: 'Inkoopvergoeding € 0,0165' per kWh excl. btw (energiebelasting in dezelfde tabel € 0,09160, dus excl. btw)"
+    },
+    "gasVastPerMaand": {
+      "waarde": 6.198308,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf",
+      "notitie": "Tarievenblad dynamisch september 2026: gas 'Vaste leveringskosten per dag € 0,20378' excl. btw (€ 0,2466 incl. btw) × 365/12",
+      "waardeInclBtw": 7.50075
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.066,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf",
+      "notitie": "Tarievenblad dynamisch september 2026: gas 'Inkoopvergoeding € 0,066' per m³ excl. btw (energiebelasting in dezelfde tabel € 0,6007, dus excl. btw)"
+    }
+  }
+}

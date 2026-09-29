@@ -1,0 +1,17 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Nog geen gecontroleerde waarden: Mega noemt de opslagen en vaste kosten niet op de open site of in de productvoorwaarden dynamisch, en de rekentool (onboarding.mega.nl) zit achter een botcontrole. Wordt pas gepubliceerd als er gecontroleerde waarden zijn.",
+  "id": "mega",
+  "naam": "Mega",
+  "website": "https://www.mega.nl",
+  "tariefUrl": "https://www.mega.nl/dynamisch-energiecontract/",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {}
+}
