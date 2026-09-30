@@ -38,6 +38,7 @@ Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energiepr
 | `data/omslagpunten-geschiedenis.json` | Elke keer dat een omslagpunt of de goedkoopste leverancier verandert | als dat verandert |
 | `data/tariefwijzigingen.json` | Logboek van elke tariefwijziging | als tarieven veranderen |
 | `data/RAPPORT.md` | Waar elke waarde vandaan komt, en welke leveranciers nog niet gepubliceerd zijn | samen met leveranciers.json |
+| `data/BEWAKING.md` / `data/bewaakt/` | Bewaakte pagina's van leveranciers zonder automatische bron, en wat daar veranderde | samen met leveranciers.json |
 
 ### Voorbeeld: wat kost een kWh per leverancier?
 
@@ -150,7 +151,7 @@ De workflows vragen zelf schrijfrechten voor hun commits, dus je hoeft de standa
 
 De workflows:
 
-- `leveranciers.yml`: draait om 04:17 UTC op elke maandag en op de 1e en 2e van de maand. Werkt de energiebelasting, de tarieven van leveranciers en de omslagpunten bij. Houdt één issue open zolang een scraperregel, rekentool of het uitlezen van de energiebelasting kapot is, en sluit het weer als alles werkt.
+- `leveranciers.yml`: draait om 04:17 UTC op elke maandag en op de 1e en 2e van de maand. Werkt de energiebelasting, de tarieven van leveranciers en de omslagpunten bij. Houdt één issue open zolang een scraperregel, rekentool of het uitlezen van de energiebelasting kapot is, en sluit het weer als alles werkt. Opent ook een issue (of reageert erop) als een bewaakte pagina van een leverancier zonder automatische bron is veranderd; sluit dat issue zelf als je de tarieven hebt gecontroleerd.
 - `ci.yml`: draait bij elke PR. Controleert types, tests, schema's en elk leveranciersbestand.
 
 ## Bijdragen

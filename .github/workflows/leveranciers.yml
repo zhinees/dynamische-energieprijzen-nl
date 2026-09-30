@@ -34,6 +34,7 @@ jobs:
       - run: npm run belasting
       - run: npm run netbeheer
       - run: npm run leveranciers
+      - run: npm run bewaken
       - run: npm run afleiden
       - run: npm run valideer
       - name: Data vastleggen
@@ -56,4 +57,19 @@ jobs:
             fi
           elif [ -n "$bestaand" ]; then
             gh issue close "$bestaand" --comment "Alle scraperregels werken weer."
+          fi
+
+      # Watched pages of suppliers without an automatic source: open an issue when one changed.
+      - name: Gewijzigde bewaakte pagina's melden
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          titel="Bewaking: een pagina van een leverancier is gewijzigd"
+          if grep -q "^## 🔔" data/BEWAKING.md; then
+            bestaand=$(gh issue list --state open --search "in:title \"$titel\"" --json number --jq '.[0].number')
+            if [ -n "$bestaand" ]; then
+              gh issue comment "$bestaand" --body-file data/BEWAKING.md
+            else
+              gh issue create --title "$titel" --body-file data/BEWAKING.md
+            fi
           fi

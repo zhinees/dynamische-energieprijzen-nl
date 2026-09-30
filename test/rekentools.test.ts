@@ -275,7 +275,8 @@ test("haalVattenfall: pagina -> script -> proposities -> aanbod (nagebootst)", a
 });
 
 // ---- Zonopnaam (tariff sheet pdf saved 2026-09-29) ----
-import { bedragen, haalZonopnaam, kiesTarievenblad, leesZonopnaam, pdfRegels } from "../src/rekentools/zonopnaam.ts";
+import { bedragen, haalZonopnaam, kiesTarievenblad, leesZonopnaam } from "../src/rekentools/zonopnaam.ts";
+import { pdfRegels } from "../src/lib/pdf.ts";
 
 const zonPdf = new Uint8Array(await readFile(new URL("fixtures/zonopnaam-tarievenblad-dynamisch-2026-09.pdf", import.meta.url)));
 const zonPagina = [

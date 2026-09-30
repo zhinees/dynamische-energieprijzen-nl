@@ -70,10 +70,22 @@ export interface LeverancierConfig {
     adapter: string;
     testadres?: Testadres;
   };
+  /**
+   * Pages or pdfs to watch when there is no automatic source (e.g. the calculator sits behind a
+   * bot check). Their text is saved under data/bewaakt/; a change opens an issue.
+   */
+  bewaken?: Bewaking[];
   /** Scrape rules. One rule or a list tried in order. Leave a field out to rely on `handmatig` only. */
   regels: Partial<Record<Veld, Regel | Regel[]>>;
   /** Hand-checked values, used when scraping fails or no rule exists. One entry per field. */
   handmatig: Partial<Record<Veld, HandmatigeWaarde>>;
+}
+
+export interface Bewaking {
+  url: string;
+  omschrijving: string;
+  /** Regex (case-insensitive): keep only sentences that match, to ignore e.g. changing welcome discounts. */
+  filter?: string;
 }
 
 export interface Testadres {

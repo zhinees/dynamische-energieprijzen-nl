@@ -22,5 +22,5 @@ Nu vergelijkt het project alleen wat een leverancier rekent. Contracten verschil
 
 ## Leveranciers
 
-- **Mega**: de gastarieven (vaste kosten en opslag) ontbreken nog. De stroomwaarden zijn met de hand gelezen in de rekentool, want die zit achter een botcontrole. Ze moeten dus ook met de hand bijgehouden worden.
+- **Mega**: de gastarieven (vaste kosten en opslag) ontbreken nog. De stroomwaarden zijn met de hand gelezen in de rekentool, want die zit achter een botcontrole. Ze moeten dus met de hand bijgehouden worden; de bot bewaakt de openbare pagina's en de productvoorwaarden van Mega en opent een issue als daar iets verandert. Een tariefwijziging die alleen in de rekentool zichtbaar is, ziet de bewaking niet.
 - **Zonopnaam**: de adapter (`src/rekentools/zonopnaam.ts`) leest het tarievenblad van de lopende maand. Op 2026-09-30 gaf www.zonopnaam.nl vanuit de ontwikkelomgeving een 503/TLS-fout; bij de eerste run van de bot (1 oktober) controleren of het ophalen daar werkt.
