@@ -22,6 +22,5 @@ Nu vergelijkt het project alleen wat een leverancier rekent. Contracten verschil
 
 ## Leveranciers
 
-- **Mega**: nog geen gecontroleerde tarieven. De site noemt ze niet, en de rekentool zit achter een botcontrole.
-- **"nieuweenergie"** uit de lijst van Independer: nog niet duidelijk welke leverancier dit is. NieuweStroom richt zich op bedrijven en de aanmeldstraat gaf een fout.
+- **Mega**: de gastarieven (vaste kosten en opslag) ontbreken nog. De stroomwaarden zijn met de hand gelezen in de rekentool, want die zit achter een botcontrole. Ze moeten dus ook met de hand bijgehouden worden.
 - **Zonopnaam**: het tarievenblad wordt per maand vervangen (nu september 2026). Een adapter die het nieuwste tarievenblad leest, houdt dit bij.
