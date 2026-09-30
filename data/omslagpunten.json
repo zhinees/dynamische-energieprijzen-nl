@@ -1,34 +1,81 @@
 {
   "$schema": "../schema/omslagpunten.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-26T20:56:28.282Z",
+  "gegenereerdOp": "2026-09-30T17:47:24.531Z",
   "valuta": "EUR",
   "btw": "inclusief",
   "uitleg": "Alleen het deel dat per leverancier verschilt: vaste kosten x 12 + verbruik x inkoopopslag - teruglevering x terugleverCorrectie, incl. btw. Omslagpunten zijn in kWh (stroom, teruglevering) of m3 (gas) per jaar.",
   "stroom": {
-    "aantalLeveranciers": 11,
+    "aantalLeveranciers": 21,
     "vastPerJaar": {
-      "min": 71.88,
-      "max": 102.24
+      "min": 71.87,
+      "max": 102.85
     },
     "opslag": {
-      "min": 0.014992,
-      "max": 0.0242
+      "min": 0.01,
+      "max": 0.02528
     },
-    "omslagpunt": 3297,
+    "omslagpunt": 2027,
     "goedkoopstePerVerbruik": [
       {
         "vanaf": 0,
-        "tot": null,
+        "tot": 3,
+        "id": "energiek",
+        "naam": "Energiek"
+      },
+      {
+        "vanaf": 3,
+        "tot": 625,
         "id": "vattenfall",
         "naam": "Vattenfall (FlexPrijs)"
+      },
+      {
+        "vanaf": 625,
+        "tot": null,
+        "id": "powerpeers",
+        "naam": "Powerpeers"
       }
     ],
     "paren": [
       {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "vattenfall",
+        "omslagpunt": 3
+      },
+      {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "budget",
+        "omslagpunt": 8
+      },
+      {
         "lageVasteKosten": "vandebron",
         "lageOpslag": "frank",
         "omslagpunt": 15
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 42
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 42
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "frank",
+        "omslagpunt": 51
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 169
+      },
+      {
+        "lageVasteKosten": "vandebron",
+        "lageOpslag": "easyenergy",
+        "omslagpunt": 200
       },
       {
         "lageVasteKosten": "nextenergy",
@@ -36,9 +83,54 @@
         "omslagpunt": 239
       },
       {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "mega",
+        "omslagpunt": 253
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 284
+      },
+      {
+        "lageVasteKosten": "mega",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 294
+      },
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 300
+      },
+      {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 390
+      },
+      {
+        "lageVasteKosten": "budget",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 457
+      },
+      {
         "lageVasteKosten": "liveenergy",
         "lageOpslag": "zonneplan",
         "omslagpunt": 571
+      },
+      {
+        "lageVasteKosten": "vattenfall",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 625
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 1150
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "anwb",
+        "omslagpunt": 1698
       },
       {
         "lageVasteKosten": "liveenergy",
@@ -51,14 +143,49 @@
         "omslagpunt": 1884
       },
       {
+        "lageVasteKosten": "energyzero",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 2440
+      },
+      {
+        "lageVasteKosten": "greenchoice",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 2440
+      },
+      {
+        "lageVasteKosten": "energyzero",
+        "lageOpslag": "anwb",
+        "omslagpunt": 2769
+      },
+      {
+        "lageVasteKosten": "greenchoice",
+        "lageOpslag": "anwb",
+        "omslagpunt": 2769
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "energiedirect",
+        "omslagpunt": 3049
+      },
+      {
         "lageVasteKosten": "nextenergy",
         "lageOpslag": "zonneplan",
         "omslagpunt": 3120
       },
       {
+        "lageVasteKosten": "zonopnaam",
+        "lageOpslag": "anwb",
+        "omslagpunt": 3181
+      },
+      {
         "lageVasteKosten": "eneco",
         "lageOpslag": "anwb",
         "omslagpunt": 3670
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 3990
       },
       {
         "lageVasteKosten": "nextenergy",
@@ -82,8 +209,18 @@
       },
       {
         "lageVasteKosten": "liveenergy",
+        "lageOpslag": "easyenergy",
+        "omslagpunt": 4711
+      },
+      {
+        "lageVasteKosten": "liveenergy",
         "lageOpslag": "anwb",
         "omslagpunt": 4781
+      },
+      {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "anwb",
+        "omslagpunt": 4825
       },
       {
         "lageVasteKosten": "zonneplan",
@@ -97,8 +234,38 @@
       },
       {
         "lageVasteKosten": "liveenergy",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 5523
+      },
+      {
+        "lageVasteKosten": "vandebron",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 5697
+      },
+      {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 6606
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "anwb",
+        "omslagpunt": 7344
+      },
+      {
+        "lageVasteKosten": "liveenergy",
         "lageOpslag": "eneco",
         "omslagpunt": 9268
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 9775
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 9775
       },
       {
         "lageVasteKosten": "nextenergy",
@@ -106,37 +273,103 @@
         "omslagpunt": 10120
       },
       {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 10909
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 10909
+      },
+      {
         "lageVasteKosten": "zonneplan",
         "lageOpslag": "anwb",
         "omslagpunt": 13620
       },
       {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "pure",
+        "omslagpunt": 18718
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 22636
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 23295
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "energiedirect",
+        "omslagpunt": 24000
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "om",
+        "omslagpunt": 46321
+      },
+      {
+        "lageVasteKosten": "mega",
+        "lageOpslag": "tibber",
+        "omslagpunt": 75200
+      },
+      {
         "lageVasteKosten": "frank",
         "lageOpslag": "anwb",
         "omslagpunt": 121600
+      },
+      {
+        "lageVasteKosten": "mega",
+        "lageOpslag": "anwb",
+        "omslagpunt": 197600
+      },
+      {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "tibber",
+        "omslagpunt": 414138
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 599714
+      },
+      {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "anwb",
+        "omslagpunt": 1047241
       }
     ]
   },
   "gas": {
-    "aantalLeveranciers": 11,
+    "aantalLeveranciers": 20,
     "vastPerJaar": {
-      "min": 71.88,
+      "min": 65.88,
       "max": 117
     },
     "opslag": {
       "min": 0.05983,
-      "max": 0.10471
+      "max": 0.12979
     },
-    "omslagpunt": 1005,
+    "omslagpunt": 731,
     "goedkoopstePerVerbruik": [
       {
         "vanaf": 0,
-        "tot": 2805,
-        "id": "budget",
-        "naam": "Budget Thuis (Budget Energie)"
+        "tot": 399,
+        "id": "energiedirect",
+        "naam": "Energiedirect"
       },
       {
-        "vanaf": 2805,
+        "vanaf": 399,
+        "tot": 69368,
+        "id": "energiek",
+        "naam": "Energiek"
+      },
+      {
+        "vanaf": 69368,
         "tot": null,
         "id": "vandebron",
         "naam": "Vandebron"
@@ -144,14 +377,49 @@
     ],
     "paren": [
       {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 109
+      },
+      {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 109
+      },
+      {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 120
+      },
+      {
         "lageVasteKosten": "pure",
         "lageOpslag": "zonneplan",
         "omslagpunt": 126
       },
       {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 142
+      },
+      {
         "lageVasteKosten": "tibber",
         "lageOpslag": "liveenergy",
         "omslagpunt": 197
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 202
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 202
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 242
       },
       {
         "lageVasteKosten": "pure",
@@ -162,6 +430,21 @@
         "lageVasteKosten": "tibber",
         "lageOpslag": "zonneplan",
         "omslagpunt": 374
+      },
+      {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "om",
+        "omslagpunt": 379
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "energiek",
+        "omslagpunt": 399
+      },
+      {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 401
       },
       {
         "lageVasteKosten": "tibber",
@@ -179,9 +462,19 @@
         "omslagpunt": 456
       },
       {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 499
+      },
+      {
         "lageVasteKosten": "liveenergy",
         "lageOpslag": "zonneplan",
         "omslagpunt": 511
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "budget",
+        "omslagpunt": 552
       },
       {
         "lageVasteKosten": "pure",
@@ -189,9 +482,34 @@
         "omslagpunt": 596
       },
       {
+        "lageVasteKosten": "easyenergy",
+        "lageOpslag": "anwb",
+        "omslagpunt": 623
+      },
+      {
         "lageVasteKosten": "nextenergy",
         "lageOpslag": "vandebron",
         "omslagpunt": 629
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 638
+      },
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 723
+      },
+      {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 723
+      },
+      {
+        "lageVasteKosten": "eneco",
+        "lageOpslag": "om",
+        "omslagpunt": 763
       },
       {
         "lageVasteKosten": "vattenfall",
@@ -199,9 +517,44 @@
         "omslagpunt": 795
       },
       {
+        "lageVasteKosten": "pure",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 910
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "powerpeers",
+        "omslagpunt": 923
+      },
+      {
         "lageVasteKosten": "eneco",
         "lageOpslag": "anwb",
         "omslagpunt": 1182
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 1191
+      },
+      {
+        "lageVasteKosten": "frank",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 1222
+      },
+      {
+        "lageVasteKosten": "frank",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 1222
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 1352
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 1352
       },
       {
         "lageVasteKosten": "tibber",
@@ -210,8 +563,38 @@
       },
       {
         "lageVasteKosten": "pure",
+        "lageOpslag": "om",
+        "omslagpunt": 1592
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 1785
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 1785
+      },
+      {
+        "lageVasteKosten": "pure",
         "lageOpslag": "anwb",
         "omslagpunt": 2000
+      },
+      {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 2098
+      },
+      {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 2098
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 2135
       },
       {
         "lageVasteKosten": "liveenergy",
@@ -224,14 +607,84 @@
         "omslagpunt": 2805
       },
       {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 2970
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 2970
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 3597
+      },
+      {
+        "lageVasteKosten": "tibber",
+        "lageOpslag": "om",
+        "omslagpunt": 3709
+      },
+      {
         "lageVasteKosten": "tibber",
         "lageOpslag": "anwb",
         "omslagpunt": 3906
       },
       {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "frank",
+        "omslagpunt": 4018
+      },
+      {
+        "lageVasteKosten": "om",
+        "lageOpslag": "anwb",
+        "omslagpunt": 4422
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 4474
+      },
+      {
+        "lageVasteKosten": "nextenergy",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 4474
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 4806
+      },
+      {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 4806
+      },
+      {
         "lageVasteKosten": "liveenergy",
         "lageOpslag": "anwb",
         "omslagpunt": 5620
+      },
+      {
+        "lageVasteKosten": "liveenergy",
+        "lageOpslag": "om",
+        "omslagpunt": 6436
+      },
+      {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 6701
+      },
+      {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "anwb",
+        "omslagpunt": 7925
+      },
+      {
+        "lageVasteKosten": "zonopnaam",
+        "lageOpslag": "anwb",
+        "omslagpunt": 8820
       },
       {
         "lageVasteKosten": "frank",
@@ -244,38 +697,83 @@
         "omslagpunt": 13125
       },
       {
+        "lageVasteKosten": "powerpeers",
+        "lageOpslag": "om",
+        "omslagpunt": 13262
+      },
+      {
         "lageVasteKosten": "nextenergy",
         "lageOpslag": "anwb",
         "omslagpunt": 20509
       },
       {
+        "lageVasteKosten": "essent",
+        "lageOpslag": "anwb",
+        "omslagpunt": 23500
+      },
+      {
         "lageVasteKosten": "zonneplan",
         "lageOpslag": "frank",
         "omslagpunt": 64286
+      },
+      {
+        "lageVasteKosten": "energiek",
+        "lageOpslag": "vandebron",
+        "omslagpunt": 69368
+      },
+      {
+        "lageVasteKosten": "zonneplan",
+        "lageOpslag": "zonopnaam",
+        "omslagpunt": 107214
+      },
+      {
+        "lageVasteKosten": "vattenfall",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 393913
+      },
+      {
+        "lageVasteKosten": "vattenfall",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 393913
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "energyzero",
+        "omslagpunt": 482400
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "greenchoice",
+        "omslagpunt": 482400
+      },
+      {
+        "lageVasteKosten": "energiedirect",
+        "lageOpslag": "vattenfall",
+        "omslagpunt": 1500000
       }
     ]
   },
   "teruglevering": {
     "correctie": {
-      "min": -0.0242,
+      "min": -0.03025,
       "max": 0.02
     },
-    "omslagpunt": 687,
+    "omslagpunt": 616,
     "scenarios": [
       {
         "teruglevering": 1000,
         "goedkoopstePerVerbruik": [
           {
             "vanaf": 0,
-            "tot": 3371,
+            "tot": 3000,
             "id": "zonneplan",
             "naam": "Zonneplan"
           },
           {
-            "vanaf": 3371,
+            "vanaf": 3000,
             "tot": null,
-            "id": "vattenfall",
-            "naam": "Vattenfall (FlexPrijs)"
+            "id": "powerpeers",
+            "naam": "Powerpeers"
           }
         ]
       },
@@ -284,15 +782,15 @@
         "goedkoopstePerVerbruik": [
           {
             "vanaf": 0,
-            "tot": 7364,
+            "tot": 6000,
             "id": "zonneplan",
             "naam": "Zonneplan"
           },
           {
-            "vanaf": 7364,
+            "vanaf": 6000,
             "tot": null,
-            "id": "vattenfall",
-            "naam": "Vattenfall (FlexPrijs)"
+            "id": "powerpeers",
+            "naam": "Powerpeers"
           }
         ]
       },
@@ -301,15 +799,15 @@
         "goedkoopstePerVerbruik": [
           {
             "vanaf": 0,
-            "tot": 15351,
+            "tot": 12000,
             "id": "zonneplan",
             "naam": "Zonneplan"
           },
           {
-            "vanaf": 15351,
+            "vanaf": 12000,
             "tot": null,
-            "id": "vattenfall",
-            "naam": "Vattenfall (FlexPrijs)"
+            "id": "powerpeers",
+            "naam": "Powerpeers"
           }
         ]
       }

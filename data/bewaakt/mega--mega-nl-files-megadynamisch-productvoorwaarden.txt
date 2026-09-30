@@ -1,0 +1,373 @@
+PRODUCTVOORWAARDEN
+Dynamisch
+Begrippenlijst
+Begrippenlijst Dynamisch Energiecontract
+• Marktprijs
+De actuele marktprijs voor elektriciteit of gas op de groothandelsmarkt (EPEX Spot & TTF Day Ahead) op een
+bepaald moment.
+Deze prijs verandert elk kwartier voor elektra en elke dag voor gas.
+• EPEX Spot
+De Europese elektriciteitsbeurs waar de kwartier marktprijzen voor elektriciteit worden bepaald.
+• TTF – Day-Ahead
+De Europese gasbeurs waar de dagprijzen voor gas worden bepaald.
+• Inkooptoeslag
+Een extra bedrag dat de leverancier aftrekt van de marktprijs om kosten voor verkoop, balanshandhaving en
+administratie te dekken.
+• Verbruiksopslag
+Een extra bedrag dat de leverancier rekent bovenop de marktprijs om kosten voor inkoop, balanshandhaving en
+administratie te dekken.
+• Negatieve spotprijs
+Een situatie waarin de Spotprijs voor elektriciteit onder nul daalt, meestal door een overschot aan duurzame
+energie.
+Dit kan leiden tot kosten voor teruglevering.
+• Saldering
+Het verrekenen van teruggeleverde elektriciteit met verbruikte elektriciteit.
+De wettelijke salderingsregeling wordt
+afgebouwd en stopt volledig per 1 januari 2027.
+• Slimme meter
+Een digitale energiemeter die op afstand kan worden uitgelezen en kwartierwaarden kan doorgeven.
+Deze is
+verplicht voor een dynamisch contract.
+• P4-machtiging
+Toestemming die je geeft aan de leverancier om meetgegevens via de netbeheerder te ontvangen.
+Zonder deze
+machtiging kan een dynamisch contract niet worden uitgevoerd.
+• Voorschotbedrag
+Een maandelijks bedrag dat vooraf wordt betaald om grote bijbetalingen bij de jaarafrekening te voorkomen.
+Na
+elke volledig gemeten kalendermaand wordt het voorschotbedrag automatisch herzien op basis van het werkelijke
+verbruik en de actuele marktprijzen.
+Het bedrag wordt verrekend met te veel of te weinig betaalde kosten en kan
+niet door de klant zelf worden aangepast.
+• Jaarafrekening
+De jaarlijkse eindafrekening waarin het werkelijke verbruik wordt verrekend met de betaalde voorschotten, de
+energiebelasting en salderen.
+• Variabel contract
+Een contract waarbij de tarieven niet per kwartier, maar bijvoorbeeld per maand worden aangepast op basis van
+marktontwikkelingen.
+Algemene informatie
+Een dynamisch energiecontract is niet voor iedereen geschikt.
+Houd rekening met
+de volgende risico’s:
+• Sterk wisselende prijzen : De stroomprijs verandert elk uur en de gasprijs
+dagelijks.
+Dit kan leiden tot hogere kosten bij piekprijzen.
+• Negatieve prijzen : In uitzonderlijke gevallen kunnen stroomprijzen negatief
+zijn.
+Dit kan invloed hebben op je energiekosten, afhankelijk van je
+verbruiksmoment.
+• Slimme meter verplicht : Voor een dynamisch contract is een Slimme meter
+vereist die op afstand uitleesbaar is.
+• Actief energiebeheer nodig : Om optimaal te profiteren van lage tarieven is
+het belangrijk dat je je energieverbruik actief kunt sturen.
+Dit dynamische contract is uitsluitend bedoeld voor consumenten met een
+kleinverbruikersaansluiting.
+Dat betekent:
+• Voor elektriciteit : een aansluiting van maximaal 3 x 80 ampère
+• Voor gas (indien van toepassing): een aansluiting van maximaal 40 m³ per
+uur
+Zakelijke klanten en grootverbruikers komen niet in aanmerking voor dit product.
+1.Groene stroom
+Speciaal voor de levering van groene stroom en/of gas voor onbepaalde tijd, bij
+contracten die vanaf 1 juli 2025 zijn afgesloten.
+De stroom die bij dit product wordt
+geleverd, komt uit Europese wind-, zonne-energie of andere hernieuwbare bronnen.
+Wil
+je de exacte oorsprong weten?
+Die staat op het stroometiket.
+Je vindt het stroometiket
+op mega.nl/voorwaarden en op je Jaarafrekening.
+2.
+Start levering van energie
+De levering van energie start op de datum die in je bevestigingsbrief staat.
+De
+startdatum kan aangepast worden via onze klantenservice, neem dan contact op via
+mega.nl/contact .
+2.1 Gepersonaliseerd kostenoverzicht bij
+aanmelding
+Bij het afsluiten van een dynamisch contract ontvang je een gepersonaliseerd
+kostenoverzicht.
+Dit overzicht is gebaseerd op jouw doorgegeven verbruik en de
+referentie marktprijs op het moment van aanmelding.
+Het doel hiervan is om je een
+zo realistisch mogelijke indicatie te geven van de verwachte kosten gedurende de
+looptijd van het contract.
+Let op: dit is een indicatie en geen garantie, omdat de
+werkelijke kosten afhankelijk zijn van jouw daadwerkelijke verbruik en de
+marktprijzen en toeslagen op het moment van levering.
+Na de start van je contract kun je jouw actuele verbruik, kosten en tarieven volgen
+via:
+• Het klantportaal myMega (inloggen via mijn.mega.nl )
+• De myMega-app (beschikbaar in de App Store en Google Play)
+• Onze FAQ-pagina met uitleg over dynamische tarieven en actuele
+marktprijzen ( www.mega.nl/faq)
+Hier vind je ook informatie over hoe de tarieven worden berekend en hoe je jouw
+energieverbruik kunt optimaliseren.
+3.
+Tarieven bij een dynamisch
+contract
+Mega Energie biedt een dynamisch energiecontract aan waarbij het verbruik en de
+teruglevering van elektriciteit worden afgerekend op basis van de actuele marktprijzen.
+Dit model wijkt af van een traditioneel vast of variabel contract en kent de volgende
+kenmerken:
+Elektriciteit
+3.1 Kwartierprijzen voor elektriciteit
+Bij dit product wordt de elektriciteitsprijs per kwartier vastgesteld .
+Dit betekent
+dat:
+• Elke dag bestaat uit 96 afzonderlijke prijsblokken van 15 minuten.
+• De prijs per kwartier is gebaseerd op de EPEX SPOT markt (Day-Ahead).
+• De prijzen gelden voor het verbruik in het betreffende kwartier.
+3.2 Hoe wordt de kwartierprijs bepaald?
+De prijs per kwartier bestaat uit de volgende componenten:
+• EPEX SPOT Day-Ahead prijs per kwartier : dit is de marktprijs voor
+elektriciteit voor elk kwartier van de volgende dag.
+• Verbruiksopslag of Inkooptoeslag : een vaste toeslag per kWh voor:
+o Inkoop – verkoop kosten
+o Risico-afdekking
+o Operationele kosten
+o Winstmarge
+• Overheidsheffingen :
+o Energiebelasting
+o ODE (Opslag Duurzame Energie)
+o BTW
+• Netbeheerkosten : deze worden apart in rekening gebracht en zijn
+afhankelijk van uw netbeheerder.
+3.3 Saldering op jaarbasis
+De Saldering van energiebelasting vindt plaats op jaarbasis.
+Teruggeleverde
+elektriciteit wordt fiscaal verrekend met het verbruik over het gehele kalenderjaar,
+voor zover het de belastingcomponent betreft.
+Let op: de wettelijke salderingsregeling voor kleinverbruikers wordt stapsgewijs
+afgebouwd en eindigt volledig per 1 januari 2027.
+Vanaf dat moment vervalt de
+mogelijkheid om teruggeleverde elektriciteit fiscaal te salderen met het verbruik.
+3.4 Verrekening per kwartier
+Verbruik en teruglevering worden afgerekend per kwartier.
+Voor elk afzonderlijk
+kwartier wordt het nettoverbruik of de netto-teruglevering verrekend tegen de op
+dat moment geldende kwartier marktprijs en geldende verbruiksopslag.
+Er vindt
+geen saldering plaats over langere perioden zoals dagen of maanden.
+3.5 Teruglevering tegen contractprijs
+Indien in een kwartier meer elektriciteit wordt opgewekt dan verbruikt, wordt het
+overschot teruggeleverd aan het net.
+Deze teruglevering wordt vergoed tegen de
+geldende kwartiertarief en de geldende inkooptoeslag.
+Bij negatieve marktprijzen kan teruglevering leiden tot een negatief financieel
+resultaat.
+In dat geval wordt een bedrag in rekening gebracht voor het terugleveren
+van elektriciteit.
+Dit doet zich voor wanneer het aanbod op het net groter is dan de
+vraag, bijvoorbeeld bij veel zon- of windenergie en lage afname.
+3.6 Levering tegen contractprijs
+Indien in een kwartier meer elektriciteit wordt verbruikt dan opgewekt, wordt het
+tekort ingekocht tegen de geldende kwartier marktprijs van dat moment.
+Het
+verbruik wordt direct afgerekend op basis van de kwartier marktprijs +
+verbruiksopslag.
+Gas
+3.7 Dagprijzen voor gas
+Bij dit product wordt de gasprijs dagelijks vastgesteld .
+Dit betekent dat:
+• Elke kalenderdag geldt een nieuwe gasprijs .
+• De prijs is gebaseerd op de TTF Day-Ahead marktprijs (Title Transfer
+Facility).
+• De dagprijs geldt van 00:00 tot 23:59 uur op de betreffende dag.
+3.8 Hoe wordt de dagprijs bepaald?
+De dagprijs voor gas bestaat uit de volgende componenten:
+• TTF Day-Ahead marktprijs : de prijs waarvoor gas op de groothandelsmarkt
+wordt verhandeld voor levering op de volgende dag.
+• Verbruikopslag : een vaste toeslag per m³ voor:
+o Inkoopkosten
+o Risico-afdekking
+o Transportkosten
+o Operationele kosten
+o Winstmarge
+• Overheidsheffingen :
+o Energiebelasting
+o ODE (Opslag Duurzame Energie)
+o BTW
+4.
+Betalingsvoorwaarden
+4.1 Jaarrekening
+Elke maand betaal je een Voorschotbedrag voor je energie.
+En één keer per jaar
+ontvang je een Jaarafrekening.
+In deze Jaarafrekening verrekenen we het
+daadwerkelijke verbruik met de voorschotbedragen die je hebt betaald.
+En
+corrigeren we verschillen in de energiebelasting en salderen we de
+energiebelasting.
+4.2 Voorschotbedrag
+Na aanmelding bij Mega Energie wordt een voorschotbedrag vastgesteld.
+Dit
+bedrag is gebaseerd op het doorgegeven verbruik en de tarieven die behoren bij
+het gekozen contract.
+Bij een dynamisch contract wordt het initiële
+voorschotbedrag berekend op basis van referentie marktprijzen, die een indicatie
+geven van het verwachte prijsniveau op de energiemarkt.
+Het minimale voorschotbedrag bedraagt € 5 voor stroom en € 5 voor gas, vanaf het
+moment van eerste aanmelding tot aan de eerste herberekening op basis van de
+gemeten verbruiksgegevens van de eerste volledige kalendermaand.
+Het voorschotbedrag is bedoeld om te voorkomen dat bij de jaarafrekening een
+aanzienlijk bedrag moet worden bijbetaald.
+Na afloop van elke volledig geleverde
+en gemeten kalendermaand wordt het voorschotbedrag;
+• Opnieuw beoordeeld
+• In die gemeten maand teveel of te weinig betaalde kosten verrekend
+• En de op dat moment geldende marktprijzen herberekend
+• Het voorschotbedrag, mag om bovenstaande redenen, nooit aangepast
+worden
+Wanneer het voorschotbedrag is herberekend, wordt je hierover tijdig per e-mail
+geïnformeerd.
+Minimaal een week voor incasso of vervaldatum.
+4.3 Betalingsverwerking
+Je betaalt bij Mega standaard via automatische incasso.
+Je ontvangt je rekening
+rond de 18e van de maand per e-mail.
+De incasso gebeurt dan altijd rond de 27e
+dag van de maand.
+Je betaalt altijd een maand vooruit.
+Automatische incasso is gratis.
+Wil je op een andere manier betalen?
+Dan rekenen
+we € 3 per betaling inclusief btw hiervoor.
+Je hebt altijd 14 dagen om je rekening te
+betalen.
+4.4 Kosten bij te laat betalen
+Betaal je te laat?
+Dan sturen we je een herinnering dat je nog 14 dagen hebt om je
+rekening alsnog te betalen.
+Betaal je na de herinnering nog steeds niet?
+Dan
+ontvang je een aanmaning, deze kost € 20.
+Als je daarna nog steeds de rekening niet betaald hebt, kan de netbeheerder je gas
+en stroom afsluiten.
+De kosten hiervoor komen voor jouw rekening.
+Dan ontvang je
+een eindafrekening met alle kosten die je nog moet betalen, naast eventuele
+openstaande facturen.
+Voor de eindafrekening krijg je 14 dagen de tijd om te
+betalen.
+Betaal je daarna nog steeds niet?
+Dan starten we een incassotraject.
+De kosten
+hiervoor zijn wettelijk bepaald in de Wet Incassokosten en worden apart bij je in
+rekening gebracht.
+Buitengerechtelijke kosten zoals een aanmaning of de kosten van een
+incassobureau zijn maximaal 15% van het openstaande bedrag, met een minimum
+van € 40.
+Deze kosten zijn vrijgesteld van btw.
+4.5 Waarborgsommen en financiële garanties
+Soms vraagt Mega een waarborgsom of een andere financiële zekerheid.
+Je wordt
+altijd vooraf geïnformeerd hierover en de bevestiging ontvang je schriftelijk, vóór je
+energiecontract start.
+5.
+Storingen in de energiemeter
+5.1 Verwerking van meetgegevens
+Voor een dynamisch energiecontract is het noodzakelijk dat de energiemeter op
+betrouwbare wijze actuele meetgegevens doorgeeft.
+Deze gegevens worden gebruikt
+om het verbruik per kwartier af te rekenen tegen de geldende marktprijzen.
+Indien de
+meter geen meetdata doorgeeft, is correcte verrekening op basis van dynamische
+tarieven niet mogelijk.
+5.2 Tijdelijke verwerking bij storingen
+Indien er sprake is van een storing in de elektriciteits- en/of gasmeter, wordt het
+verbruik tijdelijk geschat op basis van een lineair model, gebaseerd op gemeten of
+berekende meterstanden.
+Deze benadering wordt toegepast zolang de storing
+voortduurt en wordt afgerekend tegen de geldende marktprijzen en toeslagen.
+Aangezien het om een lineare schatting gaat, kan dit afwijken van het werkelijke
+verbruik.
+5.3 Omzetting naar maandelijks variabel contract
+Indien de storing langer dan 30 kalenderdagen aanhoudt, wordt het dynamische
+contract automatisch omgezet naar een maandelijks Variabel contract.
+https://www.mega.nl/variabel-contract-ontwikkeling-prijzen/
+In dat geval wordt het verbruik niet langer afgerekend tegen de marktprijs en toeslagen,
+maar tegen een tarief dat eenmaal per maand wordt vastgesteld op basis van
+gemiddelde marktontwikkelingen.
+Deze omzetting is noodzakelijk om een correcte en
+transparante verrekening te kunnen waarborgen bij afwezigheid van actuele meetdata.
+5.4 Herstel en terugkeer naar dynamisch contract
+Na herstel van de meter en het opnieuw ontvangen van realtime meetgegevens, kan het
+contract op verzoek worden teruggezet naar een dynamisch tarief.
+Hiervoor dient:
+• De werking van de meter te zijn hersteld.
+• Eventuele communicatiemodules (zoals een P1-kabel) correct te functioneren.
+• Contact te worden opgenomen met Mega Energie om de terugzetting te initiëren.
+De netbeheerder is verantwoordelijk voor de technische werking van de meter.
+In geval
+van een storing dient contact te worden opgenomen met de betreffende netbeheerder
+via www.mijnenergieverbruik.nl/netbeheerder.ooptijd en opzegging van contract.
+5.5 Intrekken van P4-machtiging
+Indien de P4-machtiging wordt ingetrokken, is het niet langer mogelijk om
+meetgegevens via de netbeheerder te ontvangen.
+Aangezien deze gegevens essentieel
+zijn voor het toepassen van dynamische tarieven, resulteert het intrekken van de
+machtiging automatisch in een omzetting van het contract naar een maandelijks
+Variabel contract.
+https://www.mega.nl/variabel-contract-ontwikkeling-prijzen/
+Het verbruik wordt vanaf dat moment afgerekend tegen een tarief dat maandelijks
+wordt vastgesteld op basis van gemiddelde marktontwikkelingen.
+6.1 Looptijd contract
+Deze staat in je energiecontract vermeld.
+De looptijd start op de eerste dag van de
+levering van energie.
+Je ontvangt een bevestiging van de startdatum via e-mail.
+Wij
+berichten je huidige energieleverancier over jouw overstap, binnen de bedenktermijn van
+14 kalenderdagen.
+Het kan zijn dat je huidige leverancier je bericht over een mogelijke
+opzegvergoeding bij contractbreuk.
+Wil je jouw energiecontract opzeggen?
+Dit kan te allen tijde kosteloos met inachtenming
+van een opzegtermijn van 30 dagen.
+Opzeggen is gemakkelijk te doen via de
+overstapservice van jouw nieuwe energieleverancier.
+Je kunt ook telefonisch via 010-88
+000 88, schriftelijk per post of via klanten@mega.nl je contract opzeggen.
+6.2 Bedenktijd
+Als consument mag je binnen 14 dagen na het afsluiten van een energiecontract zonder
+opgave van reden je energiecontract annuleren.
+Die bedenktijd begint zodra je de
+(contract)bevestiging van Mega hebt ontvangen.
+Wil je gebruik maken van dit
+herroepingsrecht?
+Dan moet je Mega dit binnen die 14 dagen laten weten.
+Dat kan via:
+010-88 000 88, schriftelijk per post of per e-mail via klanten@mega.nl .
+Heb je binnen die bedenktijd al energie van Mega ontvangen?
+Dan hoef je alleen te
+betalen voor de energie die je hebt gebruikt als:
+● Je Mega vooraf duidelijk en aantoonbaar hebt gevraagd om de levering tijdens
+de bedenktijd te laten starten, en
+● Mega je heeft geïnformeerd dat je hiervoor moet betalen als je alsnog binnen die
+14 dagen je energiecontract stopzet.
+7.
+Privacy
+Bij de aanvraag van een dienst of product vraagt Mega om je persoonsgegevens.
+Deze
+gebruikt Mega voor de goedkeuring van je aanvraag, de uitvoering van de
+overeenkomst, het risicobeheer en marketingdoeleinden.
+Als je geen informatie over de
+producten wilt ontvangen, kun je dit aan Mega laten weten.
+8.
+Voorwaarden
+Op het energiecontract zijn de volgende voorwaarden van toepassing: de algemene
+voorwaarden voor de levering van elektriciteit en gas aan kleinverbruikers 2025, deze
+productvoorwaarden en onze kwaliteitscriteria.
+Als er tegenstrijdigheden staan in deze
+productvoorwaarden en de algemene voorwaarden, dan geldt wat er in de
+productvoorwaarden staat.
+De productvoorwaarden en de daarin genoemde tarieven
+kunnen veranderen als dit door wet- of regelgeving nodig is.
+Je ontvangt minimaal 30
+dagen voor de aanpassing informatie hierover.
+Deze productvoorwaarden zijn van toepassing op alle energiecontracten voor
+onbepaalde tijd die met Mega worden afgesloten.
+Deze zijn in werking getreden op 1 juli
+2025.
+Andere productvoorwaarden vind je in het archief op mega.nl/voorwaarden .

@@ -6,15 +6,25 @@ Gemaakt door `npm run leveranciers`. ✅ uitgelezen van de site van de leveranci
 | --- | --- | --- | --- | --- | --- |
 | ANWB Energie | 🧮 rekentool | ✅ website | 🧮 rekentool | ✅ website | ☑️ handmatig gecontroleerd |
 | Budget Thuis (Budget Energie) | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
+| easyEnergy | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | Eneco | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| Energiedirect | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| Energiek | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| EnergyZero | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| Essent | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | Frank Energie | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
+| Greenchoice | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | Live Energy | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| Mega | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | – | – | ☑️ handmatig gecontroleerd |
 | NextEnergy | ✅ website | ✅ website | ✅ website | ✅ website | ☑️ handmatig gecontroleerd |
+| OM | nieuwe energie | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| Powerpeers | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | Pure Energie | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
 | Tibber | ✅ website | ✅ website | ✅ website | ✅ website | ✅ website |
 | Vandebron | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool |
 | Vattenfall (FlexPrijs) | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | ✅ website |
 | Zonneplan | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd | ☑️ handmatig gecontroleerd |
+| Zonopnaam Energie | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | 🧮 rekentool | – |
 
 ## Energiebelasting
 
