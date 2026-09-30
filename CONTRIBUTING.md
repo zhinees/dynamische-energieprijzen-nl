@@ -77,6 +77,8 @@ Veel leveranciers tonen prijzen pas nadat je een adres invult. Hun rekentool laa
 
 Gebruik gewone headers met de user agent van het project. Doe je niet voor als de app van de leverancier, log niet in, en verstuur nooit een aanmelding.
 
+Publiceert een leverancier elke maand een tarievenblad (pdf) in plaats van een rekentool? Dan kan een adapter dat blad lezen; `src/rekentools/zonopnaam.ts` is het voorbeeld. Zo'n bron hangt niet van een adres af: laat `testadres` dan weg uit het `rekentool`-blok.
+
 ## 4. Een leverancier toevoegen
 
 Kopieer een bestaand bestand (bijvoorbeeld `leveranciers/frank.json`) naar `leveranciers/<nieuw-id>.json`. De `id` moet gelijk zijn aan de bestandsnaam. Vul in:

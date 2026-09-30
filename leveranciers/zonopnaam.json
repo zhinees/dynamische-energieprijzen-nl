@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/leverancier.schema.json",
-  "$comment": "Waarden met de hand gecontroleerd in het maandelijkse tarievenblad (pdf) van Zonopnaam Energie. Bedragen in het tarievenblad zijn excl. btw.",
+  "$comment": "De bot leest elke run het tarievenblad Dynamisch (pdf) van de lopende maand op zonopnaam.nl/tarieven (adapter src/rekentools/zonopnaam.ts). De handmatige waarden hieronder komen uit het tarievenblad van september 2026 en zijn de terugval als dat mislukt. Bedragen in het tarievenblad zijn excl. btw.",
   "id": "zonopnaam",
   "naam": "Zonopnaam Energie",
   "website": "https://www.zonopnaam.nl",
@@ -12,6 +12,9 @@
   "kenmerken": {
     "automatischAfschakelen": null,
     "notities": "Dynamisch stroom is (vooralsnog) niet mogelijk met zonnepanelen op eigen dak: bij teruglevering zet Zonopnaam het contract om naar variabel (tarievenblad september 2026)."
+  },
+  "rekentool": {
+    "adapter": "zonopnaam-tarievenblad"
   },
   "regels": {},
   "handmatig": {

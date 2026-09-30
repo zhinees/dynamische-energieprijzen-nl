@@ -180,10 +180,9 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "adapter",
-        "testadres"
+        "adapter"
       ],
-      "description": "Lees tarieven uit de eigen prijsrekentool van de leverancier (adapter in src/rekentools/). Gebruik een openbaar adres, nooit een privéwoning.",
+      "description": "Lees tarieven uit de eigen prijsrekentool of het tarievenblad van de leverancier (adapter in src/rekentools/). Gebruik een openbaar testadres, nooit een privéwoning. Laat testadres weg als de bron niet van een adres afhangt.",
       "properties": {
         "adapter": {
           "type": "string"

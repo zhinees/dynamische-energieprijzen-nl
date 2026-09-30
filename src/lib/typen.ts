@@ -64,10 +64,11 @@ export interface LeverancierConfig {
   /**
    * Read tariffs from the supplier's own price calculator (see src/rekentools/).
    * Takes priority over page rules. Uses a public test address, never a private home.
+   * Sources that do not depend on an address (e.g. a tariff sheet) have no test address.
    */
   rekentool?: {
     adapter: string;
-    testadres: Testadres;
+    testadres?: Testadres;
   };
   /** Scrape rules. One rule or a list tried in order. Leave a field out to rely on `handmatig` only. */
   regels: Partial<Record<Veld, Regel | Regel[]>>;
