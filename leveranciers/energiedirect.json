@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de postcodecheck en de prijzen-API van Energiedirect (pagina Dynamisch energiecontract).",
+  "id": "energiedirect",
+  "naam": "Energiedirect",
+  "website": "https://www.energiedirect.nl",
+  "tariefUrl": "https://www.energiedirect.nl/energie/energiecontract/dynamisch",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.99,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiedirect.nl/api/public/cplusactivation/offers/v1",
+      "notitie": "Aanbod-API achter de postcodecheck van Energiedirect ('Groene Stroom & Gas - Dynamisch.'), testadres Madurodam (2584RZ 1); bedragen incl. btw: 'Vaste leveringskosten (€ 6,99 /maand)', € 0,22994 per dag"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.0205,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiedirect.nl/api/public/cplusactivation/offers/v1",
+      "notitie": "Aanbod-API achter de postcodecheck van Energiedirect ('Groene Stroom & Gas - Dynamisch.'), testadres Madurodam (2584RZ 1); bedragen incl. btw: 'Inkoopvergoeding' € 0,0205 per kWh (prijzen-API: € 0,01694 excl. btw)"
+    },
+    "gasVastPerMaand": {
+      "waarde": 5.49,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiedirect.nl/api/public/cplusactivation/offers/v1",
+      "notitie": "Aanbod-API achter de postcodecheck van Energiedirect ('Groene Stroom & Gas - Dynamisch.'), testadres Madurodam (2584RZ 1); bedragen incl. btw: gas 'Vaste leveringskosten (€ 5,49 /maand)', € 0,1806 per dag"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.075,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiedirect.nl/api/public/cplusactivation/offers/v1",
+      "notitie": "Aanbod-API achter de postcodecheck van Energiedirect ('Groene Stroom & Gas - Dynamisch.'), testadres Madurodam (2584RZ 1); bedragen incl. btw: gas 'Inkoopvergoeding' € 0,075 per m³ (prijzen-API: € 0,06198 excl. btw)"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.01694,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiedirect.nl/api/public/dynamicpricing/dynamic-prices/v1",
+      "notitie": "Prijzen-API achter de pagina Dynamisch energiecontract (electricityFeedIn): 'Verkoopvergoeding' −€ 0,01694 per teruggeleverde kWh, zonder btw (vatPercentage 0). Het bedrag incl. btw is omgerekend met 21% btw, net als bij de andere leveranciers."
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de postcodecheck en de openbare prijzen-API van Essent (pagina Dynamisch energiecontract).",
+  "id": "essent",
+  "naam": "Essent",
+  "website": "https://www.essent.nl",
+  "tariefUrl": "https://www.essent.nl/energie/energiecontract/dynamisch",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 7.49,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.essent.nl/api/public/cplusactivation/offers/v1",
+      "notitie": "Aanbod-API achter de postcodecheck van Essent ('Groene Stroom & Gas - Dynamisch'), testadres Madurodam (2584RZ 1); bedragen incl. btw: 'Vaste leveringskosten (€ 7,49 /maand)', € 0,24625 per dag"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.02528,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.essent.nl/api/public/dynamicpricing/dynamic-prices/v1",
+      "notitie": "Prijzen-API achter de tarieventabel op de pagina Dynamisch energiecontract: 'Inkoopvergoeding' € 0,02528 incl. btw (€ 0,02089 excl.); ook zo in het aanbod voor het testadres"
+    },
+    "gasVastPerMaand": {
+      "waarde": 5.99,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.essent.nl/api/public/cplusactivation/offers/v1",
+      "notitie": "Aanbod-API achter de postcodecheck van Essent ('Groene Stroom & Gas - Dynamisch'), testadres Madurodam (2584RZ 1); bedragen incl. btw: gas 'Vaste leveringskosten (€ 5,99 /maand)', € 0,19692 per dag"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.07872,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.essent.nl/api/public/dynamicpricing/dynamic-prices/v1",
+      "notitie": "Prijzen-API achter de tarieventabel op de pagina Dynamisch energiecontract: gas 'Inkoopvergoeding' € 0,07872 per m³ incl. btw (€ 0,06506 excl.)"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.02089,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.essent.nl/api/public/dynamicpricing/dynamic-prices/v1",
+      "notitie": "Prijzen-API (electricityFeedIn): 'Verkoopvergoeding' −€ 0,02089 per teruggeleverde kWh, zonder btw (vatPercentage 0). Het bedrag incl. btw is omgerekend met 21% btw, net als bij de andere leveranciers."
+    }
+  }
+}

@@ -79,6 +79,33 @@
         }
       }
     },
+    "bewaken": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Pagina's of pdf's die de bot bewaakt als er geen automatische bron is (bijvoorbeeld omdat de rekentool achter een botcontrole zit). De tekst komt in data/bewaakt/; bij een wijziging opent de bot een issue, zodat je alleen hoeft te controleren als er iets verandert.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "omschrijving"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "omschrijving": {
+            "type": "string",
+            "minLength": 3
+          },
+          "filter": {
+            "type": "string",
+            "description": "Regex (hoofdletterongevoelig): bewaak alleen zinnen die hierop passen, zodat bijvoorbeeld wisselende welkomstkortingen geen melding geven."
+          }
+        }
+      }
+    },
     "regels": {
       "type": "object",
       "additionalProperties": false,
@@ -180,10 +207,9 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "adapter",
-        "testadres"
+        "adapter"
       ],
-      "description": "Lees tarieven uit de eigen prijsrekentool van de leverancier (adapter in src/rekentools/). Gebruik een openbaar adres, nooit een privéwoning.",
+      "description": "Lees tarieven uit de eigen prijsrekentool of het tarievenblad van de leverancier (adapter in src/rekentools/). Gebruik een openbaar testadres, nooit een privéwoning. Laat testadres weg als de bron niet van een adres afhangt.",
       "properties": {
         "adapter": {
           "type": "string"

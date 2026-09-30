@@ -12,6 +12,7 @@
     "leveranciers": "node src/leveranciers-scrapen.ts",
     "belasting": "node src/belasting-ophalen.ts",
     "netbeheer": "node src/netbeheer.ts",
+    "bewaken": "node src/bewaken.ts",
     "netbeheer:postcodes": "node src/netbeheer.ts --postcodes",
     "thuisbatterijen": "node src/thuisbatterijen.ts",
     "afleiden": "node src/afleiden.ts",
@@ -26,6 +27,7 @@
     "@types/node": "^22.18.0",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "pdfjs-dist": "^6.3.289",
     "playwright": "^1.55.0",
     "typescript": "^5.9.0"
   }

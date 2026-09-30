@@ -64,15 +64,28 @@ export interface LeverancierConfig {
   /**
    * Read tariffs from the supplier's own price calculator (see src/rekentools/).
    * Takes priority over page rules. Uses a public test address, never a private home.
+   * Sources that do not depend on an address (e.g. a tariff sheet) have no test address.
    */
   rekentool?: {
     adapter: string;
-    testadres: Testadres;
+    testadres?: Testadres;
   };
+  /**
+   * Pages or pdfs to watch when there is no automatic source (e.g. the calculator sits behind a
+   * bot check). Their text is saved under data/bewaakt/; a change opens an issue.
+   */
+  bewaken?: Bewaking[];
   /** Scrape rules. One rule or a list tried in order. Leave a field out to rely on `handmatig` only. */
   regels: Partial<Record<Veld, Regel | Regel[]>>;
   /** Hand-checked values, used when scraping fails or no rule exists. One entry per field. */
   handmatig: Partial<Record<Veld, HandmatigeWaarde>>;
+}
+
+export interface Bewaking {
+  url: string;
+  omschrijving: string;
+  /** Regex (case-insensitive): keep only sentences that match, to ignore e.g. changing welcome discounts. */
+  filter?: string;
 }
 
 export interface Testadres {

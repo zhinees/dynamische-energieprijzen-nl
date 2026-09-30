@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Stroomwaarden met de hand gecontroleerd in de rekentool van Mega (onboarding.mega.nl, achter een botcontrole, dus niet automatisch uit te lezen). Gaswaarden nog niet gecontroleerd. De bot bewaakt de openbare pagina's en de productvoorwaarden en opent een issue als daar iets verandert (zie data/BEWAKING.md).",
+  "id": "mega",
+  "naam": "Mega",
+  "website": "https://www.mega.nl",
+  "tariefUrl": "https://www.mega.nl/dynamisch-energiecontract/",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "bewaken": [
+    {
+      "url": "https://www.mega.nl/dynamisch-energiecontract/",
+      "omschrijving": "pagina Dynamisch energiecontract (zinnen over opslag, toeslag en vaste kosten)",
+      "filter": "inkoop|opslag|toeslag|afslag|vaste leveringskosten|vastrecht|per kwh|per m³|per m3|teruglever"
+    },
+    {
+      "url": "https://www.mega.nl/veelgestelde-vragen-dynamisch/",
+      "omschrijving": "veelgestelde vragen dynamisch (zinnen over opslag, toeslag en vaste kosten)",
+      "filter": "inkoop|opslag|toeslag|afslag|vaste leveringskosten|vastrecht|per kwh|per m³|per m3|teruglever"
+    },
+    {
+      "url": "https://s3.eu-west-3.amazonaws.com/mega.nl/files/MegaDynamisch+productvoorwaarden.pdf",
+      "omschrijving": "productvoorwaarden Dynamisch (pdf)"
+    }
+  ],
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 6.05,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-30",
+      "bron": "https://onboarding.mega.nl/campagne/nBUGfwmTF0YICqU7",
+      "notitie": "Prijsopbouw elektriciteit (incl. btw) in de rekentool van Mega, met de hand gelezen door de beheerder (de rekentool zit achter een botcontrole, dus de bot kan dit niet zelf controleren): 'Vaste leveringskosten € 72,60 per jaar' / 12"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.01815,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-30",
+      "bron": "https://onboarding.mega.nl/campagne/nBUGfwmTF0YICqU7",
+      "notitie": "Prijsopbouw elektriciteit (incl. btw) in de rekentool van Mega, met de hand gelezen door de beheerder (de rekentool zit achter een botcontrole, dus de bot kan dit niet zelf controleren): 'Inkoopvergoeding (o.b.v. energiebelasting t/m 10.000 kWh) € 0,12900 per kWh', dus inclusief energiebelasting; min € 0,11085 energiebelasting 2026 incl. btw = € 0,01815"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.03025,
+      "inclBtw": true,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-30",
+      "bron": "https://onboarding.mega.nl/campagne/nBUGfwmTF0YICqU7",
+      "notitie": "Prijsopbouw elektriciteit (incl. btw) in de rekentool van Mega, met de hand gelezen door de beheerder (de rekentool zit achter een botcontrole, dus de bot kan dit niet zelf controleren): 'Afslagtarief bij teruglevering € 0,03025 per kWh'"
+    }
+  }
+}

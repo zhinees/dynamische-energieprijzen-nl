@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de tarieventabel op de site van Energiek (pagina laadt de tabel met JavaScript). Bedragen excl. btw en energiebelasting.",
+  "id": "energiek",
+  "naam": "Energiek",
+  "website": "https://www.energiek.nl",
+  "tariefUrl": "https://www.energiek.nl/energie/dynamisch",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 4.95,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiek.nl/energie/dynamisch",
+      "notitie": "Tarieventabel op de pagina Dynamisch van Energiek: 'Vaste leveringskosten € 59,40 per jaar' (stroom) / 12; 'Deze tarieven zijn exclusief btw en energiebelasting'"
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.0149,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiek.nl/energie/dynamisch",
+      "notitie": "Tarieventabel op de pagina Dynamisch van Energiek: 'Inkoopvergoeding (beursprijs-opslag) € 0,0149 per kWh', excl. btw"
+    },
+    "gasVastPerMaand": {
+      "waarde": 4.95,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiek.nl/energie/dynamisch",
+      "notitie": "Tarieventabel op de pagina Dynamisch van Energiek: 'Vaste leveringskosten € 59,40 per jaar' (gas) / 12, excl. btw"
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.04959,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiek.nl/energie/dynamisch",
+      "notitie": "Tarieventabel op de pagina Dynamisch van Energiek: 'Inkoopvergoeding € 0,04959 per m³', excl. btw"
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.0149,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://www.energiek.nl/energie/dynamisch",
+      "notitie": "Tarieventabel op de pagina Dynamisch van Energiek: 'Beursprijs-afslag bij teruglevering € 0,0149 per kWh': je krijgt de beursprijs min dit bedrag, excl. btw"
+    }
+  }
+}

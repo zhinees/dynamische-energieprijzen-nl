@@ -1,0 +1,63 @@
+{
+  "$schema": "../schema/leverancier.schema.json",
+  "$comment": "Waarden met de hand gecontroleerd in de rekentool van easyEnergy. Zelfde bedragen voor Madurodam (2584RZ 1, Stedin) en het Eise Eisinga Planetarium (Liander).",
+  "id": "easyenergy",
+  "naam": "easyEnergy",
+  "website": "https://www.easyenergy.com",
+  "tariefUrl": "https://www.easyenergy.com/dynamische-energie",
+  "producten": {
+    "stroom": true,
+    "gas": true
+  },
+  "kenmerken": {
+    "automatischAfschakelen": null
+  },
+  "regels": {},
+  "handmatig": {
+    "stroomVastPerMaand": {
+      "waarde": 5.785124,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://klantworden.easyenergy.com/api/v1/fetch-products",
+      "notitie": "Productenoverzicht achter de rekentool van easyEnergy (klantworden.easyenergy.com, 'Dynamisch Stroom & Gas Regulier'), testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft: tariff_fixed_e € 5,785124 per maand; in de kostenopbouw 'Vaste leveringskosten' € 7,00 incl. btw",
+      "waardeInclBtw": 7.0
+    },
+    "stroomInkoopopslag": {
+      "waarde": 0.018,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://klantworden.easyenergy.com/api/v1/fetch-products",
+      "notitie": "Productenoverzicht achter de rekentool van easyEnergy (klantworden.easyenergy.com, 'Dynamisch Stroom & Gas Regulier'), testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft: purchase_surcharge_electricity € 0,018 per kWh; in de kostenopbouw 'Inkoopvergoeding' € 0,02178 incl. btw, en op de site 'de beursprijs plus 2,178 cent per kWh inkoopvergoeding (inclusief btw)'",
+      "waardeInclBtw": 0.02178
+    },
+    "gasVastPerMaand": {
+      "waarde": 5.785124,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://klantworden.easyenergy.com/api/v1/fetch-products",
+      "notitie": "Productenoverzicht achter de rekentool van easyEnergy (klantworden.easyenergy.com, 'Dynamisch Stroom & Gas Regulier'), testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft: tariff_fixed_g € 5,785124 per maand; in de kostenopbouw gas 'Vaste leveringskosten' € 7,00 incl. btw",
+      "waardeInclBtw": 7.0
+    },
+    "gasInkoopopslag": {
+      "waarde": 0.107268,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://klantworden.easyenergy.com/api/v1/fetch-products",
+      "notitie": "Productenoverzicht achter de rekentool van easyEnergy (klantworden.easyenergy.com, 'Dynamisch Stroom & Gas Regulier'), testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft: purchase_surcharge_gas € 0,065289 ('Inkoopvergoeding' € 0,079 incl. btw) plus tariff_g_transport € 0,041979 ('Transportkosten gas' € 0,05079 incl. btw, rekent easyEnergy zelf per m³ bovenop de beursprijs, gelijk voor Stedin en Liander) = € 0,107268 per m³",
+      "waardeInclBtw": 0.12979
+    },
+    "terugleverCorrectie": {
+      "waarde": -0.018,
+      "inclBtw": false,
+      "geverifieerd": true,
+      "gecontroleerdOp": "2026-09-29",
+      "bron": "https://klantworden.easyenergy.com/api/v1/fetch-products",
+      "notitie": "Productenoverzicht achter de rekentool van easyEnergy (klantworden.easyenergy.com, 'Dynamisch Stroom & Gas Regulier'), testadres Eise Eisinga Planetarium (8801KE 3); excl. btw zoals de API het teruggeeft: purchase_fee_return_delivery_electricity € 0,018 per kWh (modus 'Standaard'); op de site: 'Lever je stroom terug met zonnepanelen? Dan berekenen we deze inkoopvergoeding alleen over het verschil tussen wat je gebruikt en wat je teruglevert op maandbasis', dus over netto teruglevering",
+      "waardeInclBtw": -0.02178
+    }
+  }
+}

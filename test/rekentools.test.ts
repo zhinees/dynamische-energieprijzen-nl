@@ -51,7 +51,7 @@ test("haalFrank: adres -> EAN's -> simulatie (netwerk nagebootst)", async () => 
     return new Response(JSON.stringify(json), { headers: { "content-type": "application/json" } });
   }) as typeof fetch;
   try {
-    const r = await haalFrank(frank.rekentool!.testadres);
+    const r = await haalFrank(frank.rekentool!.testadres!);
     assert.equal(r.stroomInkoopopslag?.waarde, 0.01815);
   } finally {
     globalThis.fetch = echteFetch;
@@ -188,7 +188,7 @@ test("haalAnwb: lookup, offerte, status, prijsopbouw (nagebootst)", async () => 
     throw new Error("onverwacht: " + u);
   }) as typeof fetch;
   try {
-    const r = await haalAnwb(anwb.rekentool!.testadres, 0);
+    const r = await haalAnwb(anwb.rekentool!.testadres!, 0);
     assert.equal(r.stroomVastPerMaand?.waarde, 8.52);
   } finally {
     globalThis.fetch = echteFetch;
@@ -207,7 +207,7 @@ test("haalAnwb weigert een grootverbruiksaansluiting", async () => {
   globalThis.fetch = (async () =>
     new Response(JSON.stringify({ houseNumberSuffices: [{ suffix: "EMPTY", meterpoints: [{ type: "electricity", isRetail: false }] }] }))) as typeof fetch;
   try {
-    await assert.rejects(haalAnwb(anwb.rekentool!.testadres, 0), /grootverbruik/);
+    await assert.rejects(haalAnwb(anwb.rekentool!.testadres!, 0), /grootverbruik/);
   } finally {
     globalThis.fetch = echteFetch;
   }
@@ -261,7 +261,7 @@ test("haalVattenfall: pagina -> script -> proposities -> aanbod (nagebootst)", a
     throw new Error("onverwacht: " + u);
   }) as typeof fetch;
   try {
-    const r = await haalVattenfall(vattenfall.rekentool!.testadres);
+    const r = await haalVattenfall(vattenfall.rekentool!.testadres!);
     assert.equal(r.gasVastPerMaand?.waardeInclBtw, 5.99);
   } finally {
     globalThis.fetch = echteFetch;
@@ -272,4 +272,63 @@ test("haalVattenfall: pagina -> script -> proposities -> aanbod (nagebootst)", a
   assert.equal(offerte.sleutel, K2);
   assert.equal(offerte.body.propositionId, "FLEX-FLEX");
   assert.equal(offerte.body.postalCode, "8801KE");
+});
+
+// ---- Zonopnaam (tariff sheet pdf saved 2026-09-29) ----
+import { bedragen, haalZonopnaam, kiesTarievenblad, leesZonopnaam } from "../src/rekentools/zonopnaam.ts";
+import { pdfRegels } from "../src/lib/pdf.ts";
+
+const zonPdf = new Uint8Array(await readFile(new URL("fixtures/zonopnaam-tarievenblad-dynamisch-2026-09.pdf", import.meta.url)));
+const zonPagina = [
+  "/files/pdf/ZON_Tarievenblad_2026M7_Dynamisch_V02.pdf",
+  "/files/pdf/ZON_Tarievenblad_2026M8_Dynamisch_V01.pdf",
+  "/files/pdf/ZON_Tarievenblad_2026M9_Vast_V01.pdf",
+  "/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf",
+  "/files/pdf/ZON_Tarievenblad_2026M10_Dynamisch_V01.pdf",
+  "/files/pdf/ZON_Tarievenblad_2026M10_Dynamisch_V02.pdf",
+].map((h) => `<a href="${h}">pdf</a>`).join("\n");
+
+test("kiesTarievenblad: blad van de lopende maand, nooit een toekomstige, hoogste versie", () => {
+  assert.equal(kiesTarievenblad(zonPagina, "2026-09-30"), "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf");
+  assert.equal(kiesTarievenblad(zonPagina, "2026-10-01"), "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M10_Dynamisch_V02.pdf");
+  // New month's sheet not there yet: use the newest older one.
+  assert.equal(kiesTarievenblad(zonPagina, "2026-12-01"), "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M10_Dynamisch_V02.pdf");
+  assert.throws(() => kiesTarievenblad(zonPagina, "2026-06-15"), /geen tarievenblad/);
+});
+
+test("bedragen plakt de stukjes van een bedrag uit de pdf weer aan elkaar", () => {
+  assert.deepEqual(bedragen("Vaste leveringskosten per dag € 0, 21736 € 0,0 4564 € 0,2 630"), [0.21736, 0.04564, 0.263]);
+  assert.deepEqual(bedragen("Dynamisch tarief EPEX b eursprijs € 0, 0165"), [0.0165]);
+});
+
+test("leesZonopnaam leest stroom en gas uit het tarievenblad, excl. btw", async () => {
+  const r = leesZonopnaam(await pdfRegels(zonPdf));
+  assert.deepEqual(r, {
+    stroomInkoopopslag: { waarde: 0.0165, inclBtw: false },
+    gasInkoopopslag: { waarde: 0.066, inclBtw: false },
+    stroomVastPerMaand: { waarde: 6.611367, inclBtw: false, waardeInclBtw: 7.999583 },
+    gasVastPerMaand: { waarde: 6.198308, inclBtw: false, waardeInclBtw: 7.50075 },
+  });
+});
+
+test("leesZonopnaam weigert als excl. en incl. btw niet bij elkaar passen", () => {
+  const regels = ["Dynamisch tarief € 0,0165", "Vaste leveringskosten per dag € 0,21736 € 0,2999", "Dynamisch tarief € 0,066", "Vaste leveringskosten per dag € 0,20378 € 0,2466"];
+  assert.throws(() => leesZonopnaam(regels), /21% btw/);
+  assert.throws(() => leesZonopnaam(["Dynamisch tarief € 0,0165"]), /niet gevonden/);
+});
+
+test("haalZonopnaam: tariefpagina -> blad van deze maand -> waarden (netwerk nagebootst)", async () => {
+  const opgehaald: string[] = [];
+  const echteFetch = globalThis.fetch;
+  globalThis.fetch = (async (url: any) => {
+    opgehaald.push(String(url));
+    return String(url).endsWith(".pdf") ? new Response(zonPdf) : new Response(zonPagina);
+  }) as typeof fetch;
+  try {
+    const r = await haalZonopnaam(Date.parse("2026-09-15T12:00:00Z"));
+    assert.equal(r.stroomInkoopopslag?.waarde, 0.0165);
+  } finally {
+    globalThis.fetch = echteFetch;
+  }
+  assert.deepEqual(opgehaald, ["https://www.zonopnaam.nl/tarieven", "https://www.zonopnaam.nl/files/pdf/ZON_Tarievenblad_2026M9_Dynamisch_V01.pdf"]);
 });
