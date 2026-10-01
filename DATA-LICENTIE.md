@@ -14,6 +14,7 @@ De bestanden combineren data uit deze bronnen. Hun voorwaarden gelden voor dat d
 | Energiebelasting (`data/energiebelasting.json`) | [Belastingdienst](https://www.belastingdienst.nl) | Tarieven uit wet- en regelgeving (Wet belastingen op milieugrondslag); de overheid publiceert ze openbaar. |
 | Netbeheerkosten (`data/netbeheer.json`) | De tariefbladen van de netbeheerders (URL in `bron` per netbeheerder) | Door de ACM gereguleerde tarieven, openbaar gepubliceerd. |
 | Netbeheerder per postcode (`data/netbeheer-postcodes.json`) | Open kleinverbruiksgegevens van Liander, Stedin, Coteq, Rendo en Westland Infra; bestaande postcodes uit de PDOK Locatieserver | Alleen de afgeleide netbeheerder per postcode wordt gepubliceerd, geen verbruik. Stedin, Coteq en Westland Infra publiceren hun bestanden onder CC BY 4.0 (data.overheid.nl); bij Liander en Rendo staat geen licentie vermeld. |
+| Gemiddeld vast contract (`data/vast.json`) | [CBS StatLine 85592NED](https://opendata.cbs.nl/#/CBS/nl/dataset/85592NED/table), Gemiddelde energietarieven voor consumenten | CC BY 4.0; bron: CBS. |
 | Tarieven van leveranciers | De openbare websites van de leveranciers (URL in `bronUrl` / `bron` van elke waarde) | Tarieven zijn feiten, verzameld van openbare pagina's. Merknamen zijn van hun eigenaars. |
 
 Marktprijzen worden niet in deze repo opgeslagen of verspreid. De rekenhulp en het voorbeeld halen ze op het moment zelf op bij EnergyZero; daarvoor gelden de voorwaarden van EnergyZero.

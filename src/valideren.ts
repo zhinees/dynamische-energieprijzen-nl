@@ -98,9 +98,10 @@ await controleer("netbeheer-postcodes.schema.json", join(DATA, "netbeheer-postco
 await controleer("thuisbatterijen.schema.json", join(DATA, "thuisbatterijen.json"));
 await controleer("batterijmodellen.schema.json", join(DATA, "batterijmodellen.json"));
 await controleer("laden.schema.json", join(DATA, "laden.json"));
+await controleer("vast.schema.json", join(DATA, "vast.json"));
 
 if (fouten) {
   console.error(`\n${fouten} probleem/problemen`);
   process.exit(1);
 }
-console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen, de batterijmodellen, thuis laden en de databestanden zijn geldig`);
+console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen, de batterijmodellen, thuis laden, het gemiddelde vaste contract en de databestanden zijn geldig`);

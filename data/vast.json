@@ -1,0 +1,118 @@
+{
+  "gegenereerdOp": "2026-10-01T12:58:27.348Z",
+  "valuta": "EUR",
+  "inclBtw": true,
+  "omschrijving": "Gemiddeld vast of variabel stroomcontract voor huishoudens (CBS), per kWh en per jaar, incl. btw. Het leveringstarief is zonder energiebelasting; totaalPerKwh telt de energiebelasting van die maand erbij.",
+  "bron": {
+    "naam": "CBS StatLine, Gemiddelde energietarieven voor consumenten",
+    "tabel": "85592NED",
+    "url": "https://opendata.cbs.nl/#/CBS/nl/dataset/85592NED/table",
+    "licentie": "CC BY 4.0"
+  },
+  "laatste": {
+    "maand": "2026-08",
+    "leveringPerKwh": 0.1469,
+    "energiebelastingPerKwh": 0.1109,
+    "totaalPerKwh": 0.2578,
+    "vastPerJaar": 114.63,
+    "vastPerMaand": 9.55
+  },
+  "maanden": [
+    {
+      "maand": "2025-09",
+      "leveringPerKwh": 0.1485,
+      "energiebelastingPerKwh": 0.1229,
+      "totaalPerKwh": 0.2714,
+      "vastPerJaar": 108.68,
+      "vastPerMaand": 9.06
+    },
+    {
+      "maand": "2025-10",
+      "leveringPerKwh": 0.1514,
+      "energiebelastingPerKwh": 0.1229,
+      "totaalPerKwh": 0.2743,
+      "vastPerJaar": 109.03,
+      "vastPerMaand": 9.09
+    },
+    {
+      "maand": "2025-11",
+      "leveringPerKwh": 0.1518,
+      "energiebelastingPerKwh": 0.1229,
+      "totaalPerKwh": 0.2747,
+      "vastPerJaar": 109.35,
+      "vastPerMaand": 9.11
+    },
+    {
+      "maand": "2025-12",
+      "leveringPerKwh": 0.152,
+      "energiebelastingPerKwh": 0.1229,
+      "totaalPerKwh": 0.2749,
+      "vastPerJaar": 109.59,
+      "vastPerMaand": 9.13
+    },
+    {
+      "maand": "2026-01",
+      "leveringPerKwh": 0.1497,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2606,
+      "vastPerJaar": 110.64,
+      "vastPerMaand": 9.22
+    },
+    {
+      "maand": "2026-02",
+      "leveringPerKwh": 0.1474,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2583,
+      "vastPerJaar": 111.07,
+      "vastPerMaand": 9.26
+    },
+    {
+      "maand": "2026-03",
+      "leveringPerKwh": 0.1457,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2566,
+      "vastPerJaar": 111.68,
+      "vastPerMaand": 9.31
+    },
+    {
+      "maand": "2026-04",
+      "leveringPerKwh": 0.1383,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2492,
+      "vastPerJaar": 112.41,
+      "vastPerMaand": 9.37
+    },
+    {
+      "maand": "2026-05",
+      "leveringPerKwh": 0.1387,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2496,
+      "vastPerJaar": 112.95,
+      "vastPerMaand": 9.41
+    },
+    {
+      "maand": "2026-06",
+      "leveringPerKwh": 0.1397,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2506,
+      "vastPerJaar": 113.1,
+      "vastPerMaand": 9.42
+    },
+    {
+      "maand": "2026-07",
+      "leveringPerKwh": 0.1447,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2556,
+      "vastPerJaar": 114.14,
+      "vastPerMaand": 9.51
+    },
+    {
+      "maand": "2026-08",
+      "leveringPerKwh": 0.1469,
+      "energiebelastingPerKwh": 0.1109,
+      "totaalPerKwh": 0.2578,
+      "vastPerJaar": 114.63,
+      "vastPerMaand": 9.55
+    }
+  ]
+}

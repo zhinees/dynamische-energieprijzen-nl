@@ -1,0 +1,21 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85592NED/$metadata#Cbs.OData.WebAPI.TypedDataSet&$select=Btw,Perioden,VastLeveringstariefVasteEnVar_8,VariabelLeveringstariefContractprijs_9,Energiebelasting_14","value":[
+    {
+      "Btw":"A048944","Perioden":"2026MM01","VastLeveringstariefVasteEnVar_8":110.64,"VariabelLeveringstariefContractprijs_9":0.1497,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM02","VastLeveringstariefVasteEnVar_8":111.07,"VariabelLeveringstariefContractprijs_9":0.1474,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM03","VastLeveringstariefVasteEnVar_8":111.68,"VariabelLeveringstariefContractprijs_9":0.1457,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM04","VastLeveringstariefVasteEnVar_8":112.41,"VariabelLeveringstariefContractprijs_9":0.1383,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM05","VastLeveringstariefVasteEnVar_8":112.95,"VariabelLeveringstariefContractprijs_9":0.1387,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM06","VastLeveringstariefVasteEnVar_8":113.1,"VariabelLeveringstariefContractprijs_9":0.1397,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM07","VastLeveringstariefVasteEnVar_8":114.14,"VariabelLeveringstariefContractprijs_9":0.1447,"Energiebelasting_14":0.11085
+    },{
+      "Btw":"A048944","Perioden":"2026MM08","VastLeveringstariefVasteEnVar_8":114.63,"VariabelLeveringstariefContractprijs_9":0.1469,"Energiebelasting_14":0.11085
+    }
+  ]
+}

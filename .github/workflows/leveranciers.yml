@@ -33,6 +33,7 @@ jobs:
           fi
       - run: npm run belasting
       - run: npm run netbeheer
+      - run: npm run vast
       - run: npm run leveranciers
       - run: npm run bewaken
       - run: npm run afleiden
