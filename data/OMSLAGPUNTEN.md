@@ -42,49 +42,49 @@ Omslagpunt per paar (onder het omslagpunt is de eerste goedkoper, erboven de twe
 | Live Energy | Zonneplan | 571 |
 | Vattenfall (FlexPrijs) | Powerpeers | 625 |
 | Essent | Zonopnaam Energie | 1.150 |
-| Essent | ANWB Energie | 1.698 |
+| Essent | ANWB Energie | 1.665 |
 | Live Energy | Tibber | 1.819 |
 | Live Energy | Frank Energie | 1.884 |
 | EnergyZero | Zonopnaam Energie | 2.440 |
 | Greenchoice | Zonopnaam Energie | 2.440 |
-| EnergyZero | ANWB Energie | 2.769 |
-| Greenchoice | ANWB Energie | 2.769 |
+| EnergyZero | ANWB Energie | 2.715 |
+| Greenchoice | ANWB Energie | 2.715 |
 | Live Energy | Energiedirect | 3.049 |
+| Zonopnaam Energie | ANWB Energie | 3.059 |
 | NextEnergy | Zonneplan | 3.120 |
-| Zonopnaam Energie | ANWB Energie | 3.181 |
-| Eneco | ANWB Energie | 3.670 |
+| Eneco | ANWB Energie | 3.622 |
 | Eneco | Zonopnaam Energie | 3.990 |
 | NextEnergy | Tibber | 4.000 |
 | NextEnergy | Frank Energie | 4.253 |
+| Vandebron | ANWB Energie | 4.426 |
 | Zonneplan | Tibber | 4.440 |
-| Vandebron | ANWB Energie | 4.485 |
 | Live Energy | easyEnergy | 4.711 |
-| Live Energy | ANWB Energie | 4.781 |
-| easyEnergy | ANWB Energie | 4.825 |
+| Live Energy | ANWB Energie | 4.742 |
+| easyEnergy | ANWB Energie | 4.762 |
 | Zonneplan | Frank Energie | 4.865 |
 | Live Energy | Vandebron | 5.349 |
 | Live Energy | Zonopnaam Energie | 5.523 |
 | Vandebron | Zonopnaam Energie | 5.697 |
 | easyEnergy | Zonopnaam Energie | 6.606 |
-| Energiedirect | ANWB Energie | 7.344 |
+| Energiedirect | ANWB Energie | 7.248 |
 | Live Energy | Eneco | 9.268 |
 | Live Energy | EnergyZero | 9.775 |
 | Live Energy | Greenchoice | 9.775 |
-| NextEnergy | ANWB Energie | 10.120 |
+| NextEnergy | ANWB Energie | 10.040 |
 | Eneco | EnergyZero | 10.909 |
 | Eneco | Greenchoice | 10.909 |
-| Zonneplan | ANWB Energie | 13.620 |
+| Zonneplan | ANWB Energie | 13.500 |
 | Energiek | Pure Energie | 18.718 |
 | Energiedirect | Zonopnaam Energie | 22.636 |
 | NextEnergy | Zonopnaam Energie | 23.295 |
 | NextEnergy | Energiedirect | 24.000 |
 | Essent | OM | nieuwe energie | 46.321 |
 | Mega | Tibber | 75.200 |
-| Frank Energie | ANWB Energie | 121.600 |
-| Mega | ANWB Energie | 197.600 |
+| Frank Energie | ANWB Energie | 120.000 |
+| Mega | ANWB Energie | 196.000 |
 | Energiek | Tibber | 414.138 |
 | Zonneplan | Zonopnaam Energie | 599.714 |
-| Energiek | ANWB Energie | 1.047.241 |
+| Energiek | ANWB Energie | 1.038.966 |
 
 ## Gas
 

@@ -54,5 +54,13 @@
     "vanInclBtw": null,
     "naarInclBtw": 0.074996,
     "bron": "rekentool"
+  },
+  {
+    "datum": "2026-10-01",
+    "leverancier": "anwb",
+    "veld": "stroomVastPerMaand",
+    "vanInclBtw": 8.52,
+    "naarInclBtw": 8.5,
+    "bron": "rekentool"
   }
 ]
