@@ -1,0 +1,28 @@
+{
+  "$schema": "../schema/laden-config.schema.json",
+  "$comment": "Thuis laden van een elektrische auto: de ERE-vergoeding (emissiereductie-eenheden) per thuis geladen kWh en de aanschafprijs van een laadpaal, met de hand overgenomen uit openbare overzichten. Bandbreedtes, geen offertes. De ERE-prijs wisselt met de markt: controleren in januari en juli. `npm run laden` schrijft data/laden.json.",
+  "gecontroleerdOp": "2026-10-01",
+  "ere": {
+    "omschrijving": "Vergoeding die een inboeker de bezitter van een laadpaal betaalt voor de ERE's van thuis geladen stroom, na de kosten van de inboeker, in euro per thuis geladen kWh.",
+    "voorwaarden": "Een laadpaal met een geijkte MID-kWh-meter, verbonden met internet, aangemeld bij een inboeker (vaak via de app van de laadpaal of de energieleverancier). Laden onderweg of met een gewone stekker telt niet mee.",
+    "perKwh": { "richtwaarde": 0.10, "van": 0.07, "tot": 0.15 },
+    "bronnen": [
+      { "url": "https://www.anwb.nl/auto/elektrisch-rijden/laadpalen/ere-certificaten", "datum": "2026-10-01" },
+      { "url": "https://www.frankenergie.nl/nl/kennisbank/laadpaal/ere-certificaten", "datum": "2026-10-01" },
+      { "url": "https://www.evrijders.nl/nieuws/ere-certificaten-hoe-werken-ze", "datum": "2026-10-01", "notitie": "Ongeveer 10 cent per geladen kWh." },
+      { "url": "https://www.laadpas.net/ere-certificaten/", "datum": "2026-10-01" }
+    ]
+  },
+  "laadpaal": {
+    "omschrijving": "Laadpaal (wallbox) thuis met installatie, incl. btw. Duurder als de kabel ver moet of de meterkast aangepast of verzwaard moet worden.",
+    "prijsInclBtw": { "van": 900, "tot": 2200 },
+    "bronnen": [
+      { "url": "https://www.installatieplatform.nl/kennisbank/kosten-prijzen/wat-kost-een-laadpaal", "datum": "2026-10-01" },
+      { "url": "https://laadnederland.nl/laadpaal-kosten/", "datum": "2026-10-01", "notitie": "Gemiddeld € 900–2.000 incl. installatie." },
+      { "url": "https://www.brabant-elektra.nl/kosten/laadpaal/", "datum": "2026-10-01", "notitie": "Meestal € 800–1.900 incl. installatie." }
+    ],
+    "controlebronnen": [
+      { "url": "https://www.milieucentraal.nl/", "notitie": "Onafhankelijk: richtbedrag € 1.300–2.200 voor een laadpaal thuis." }
+    ]
+  }
+}
