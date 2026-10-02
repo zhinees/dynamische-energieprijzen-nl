@@ -29,3 +29,7 @@ Gemaakt door `npm run leveranciers`. ✅ uitgelezen van de site van de leveranci
 ## Energiebelasting
 
 ✅ uitgelezen van de site van de Belastingdienst. Jaren: 2023, 2024, 2025, 2026.
+
+## Ophaalfouten
+
+- **Vandebron**: rekentool: geen netbeheerder gevonden voor het testadres

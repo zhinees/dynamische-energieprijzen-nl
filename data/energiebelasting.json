@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/energiebelasting.schema.json",
   "versie": 1,
-  "gegenereerdOp": "2026-09-24T19:46:48.677Z",
+  "gegenereerdOp": "2026-10-02T10:29:27.952Z",
   "valuta": "EUR",
   "jaren": {
     "2023": {
@@ -21,7 +21,7 @@
       "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
       "geverifieerd": true,
       "sinds": "2026-09-24T19:46:48.677Z",
-      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+      "laatstGecontroleerd": "2026-10-02T10:29:27.952Z"
     },
     "2024": {
       "stroomPerKwh": {
@@ -40,7 +40,7 @@
       "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
       "geverifieerd": true,
       "sinds": "2026-09-24T19:46:48.677Z",
-      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+      "laatstGecontroleerd": "2026-10-02T10:29:27.952Z"
     },
     "2025": {
       "stroomPerKwh": {
@@ -59,7 +59,7 @@
       "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
       "geverifieerd": true,
       "sinds": "2026-09-24T19:46:48.677Z",
-      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+      "laatstGecontroleerd": "2026-10-02T10:29:27.952Z"
     },
     "2026": {
       "stroomPerKwh": {
@@ -78,7 +78,7 @@
       "bronUrl": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/overige_belastingen/belastingen_op_milieugrondslag/energiebelasting/energiebelasting",
       "geverifieerd": true,
       "sinds": "2026-09-24T19:46:48.677Z",
-      "laatstGecontroleerd": "2026-09-24T19:46:48.677Z"
+      "laatstGecontroleerd": "2026-10-02T10:29:27.952Z"
     }
   }
 }
