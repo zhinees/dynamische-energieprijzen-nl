@@ -1,0 +1,135 @@
+{
+  "gegenereerdOp": "2026-10-02T16:59:16.899Z",
+  "gecontroleerdOp": "2026-10-02",
+  "valuta": "EUR",
+  "inclBtw": true,
+  "omschrijving": "Vaste stroomcontracten van leveranciers voor nieuwe klanten, met de hand overgenomen van de eigen site of het tariefblad van de leverancier. Leveringstarief per kWh zonder energiebelasting, incl. btw. Terugleverkosten per kWh, of een staffel: een vast bedrag per maand voor de band waarin de teruglevering per jaar valt. Geen volledige lijst: er komen leveranciers bij.",
+  "contracten": [
+    {
+      "id": "delta-modelcontract-1-jaar-vast",
+      "leverancier": "DELTA Energie",
+      "naam": "Modelcontract 1 jaar vast",
+      "looptijdMaanden": 12,
+      "tariefUrl": "https://www.deltaenergie.nl/service/info/modelcontract/",
+      "geldigVanaf": "2026-09-16",
+      "notitie": "DELTA past de vaste modelcontracttarieven vaak aan (in 2026 al negen keer); dit is het tariefblad van 16 september 2026.",
+      "tarieven": {
+        "stroomLeveringPerKwh": {
+          "bedragInclBtw": 0.19245,
+          "bedragExclBtw": 0.15905,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://www.deltaenergie.nl/media/o1wasjuw/modelcontract-vast-delta-groene-stroom-groen-en-delta-gas-consument-16-september-2026.pdf",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "Groene Stroom, enkeltarief (normaal en dal gelijk)."
+        },
+        "stroomVastPerMaand": {
+          "bedragInclBtw": 9.49,
+          "bedragExclBtw": 7.842975,
+          "eenheid": "EUR/maand",
+          "bronUrl": "https://www.deltaenergie.nl/media/o1wasjuw/modelcontract-vast-delta-groene-stroom-groen-en-delta-gas-consument-16-september-2026.pdf",
+          "gecontroleerdOp": "2026-10-02"
+        },
+        "terugleververgoedingPerKwh": {
+          "bedragInclBtw": 0.07953,
+          "bedragExclBtw": 0.065727,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://www.deltaenergie.nl/media/o1wasjuw/modelcontract-vast-delta-groene-stroom-groen-en-delta-gas-consument-16-september-2026.pdf",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "'Vergoeding bij teruglevering (btw-vrij)'. Btw-vrij: dit bedrag krijgt de consument, dus niet met 21% btw verhoogd."
+        },
+        "terugleverkostenPerKwh": {
+          "bedragInclBtw": 0.07703,
+          "bedragExclBtw": 0.063661,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://www.deltaenergie.nl/media/o1wasjuw/modelcontract-vast-delta-groene-stroom-groen-en-delta-gas-consument-16-september-2026.pdf",
+          "gecontroleerdOp": "2026-10-02"
+        }
+      }
+    },
+    {
+      "id": "pure-modelcontract-1-jaar-vast",
+      "leverancier": "Pure Energie",
+      "leverancierId": "pure",
+      "naam": "Modelcontract 1 jaar vast",
+      "looptijdMaanden": 12,
+      "tariefUrl": "https://pure-energie.nl/modelcontract/",
+      "geldigVanaf": "2026-09-24",
+      "tarieven": {
+        "stroomLeveringPerKwh": {
+          "bedragInclBtw": 0.2299,
+          "bedragExclBtw": 0.19,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://pure-energie.nl/assets/Modelcontract-consument-24-9-2026.pdf",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "Enkeltarief, voor en na 1-1-2027 gelijk."
+        },
+        "stroomVastPerMaand": {
+          "bedragInclBtw": 10.99,
+          "bedragExclBtw": 9.082645,
+          "eenheid": "EUR/maand",
+          "bronUrl": "https://pure-energie.nl/assets/Modelcontract-consument-24-9-2026.pdf",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "Het tariefblad noemt € 0,36121 per dag; × 365 / 12 = € 10,99 per maand."
+        },
+        "terugleververgoedingPerKwh": {
+          "bedragInclBtw": 0.095,
+          "bedragExclBtw": 0.078512,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://pure-energie.nl/assets/Modelcontract-consument-24-9-2026.pdf",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "'incl. 0% btw'. Btw-vrij: dit bedrag krijgt de consument, dus niet met 21% btw verhoogd."
+        },
+        "terugleverkostenPerKwh": {
+          "bedragInclBtw": 0.0925,
+          "bedragExclBtw": 0.076446,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://pure-energie.nl/assets/Modelcontract-consument-24-9-2026.pdf",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "Vanaf 1-1-2027 (tot 1-1-2027: € 0,14900); het jaar zonder saldering is waar de rekenhulp om draait."
+        }
+      }
+    },
+    {
+      "id": "budget-modelcontract-1-jaar-vast",
+      "leverancier": "Budget Energie",
+      "leverancierId": "budget",
+      "naam": "Modelcontract 1 jaar vast",
+      "looptijdMaanden": 12,
+      "tariefUrl": "https://www.budgetthuis.nl/energie/modelcontract",
+      "notitie": "Geen ingangsdatum op de pagina; budgetenergie.nl stuurt door naar budgetthuis.nl.",
+      "tarieven": {
+        "stroomLeveringPerKwh": {
+          "bedragInclBtw": 0.242,
+          "bedragExclBtw": 0.2,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://www.budgetthuis.nl/energie/modelcontract",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "Enkeltarief; normaal en dal gelijk."
+        },
+        "stroomVastPerMaand": {
+          "bedragInclBtw": 10.99,
+          "bedragExclBtw": 9.082645,
+          "eenheid": "EUR/maand",
+          "bronUrl": "https://www.budgetthuis.nl/energie/modelcontract",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "Vast contract € 10,99; het variabele modelcontract op dezelfde pagina heeft € 9,99."
+        },
+        "terugleververgoedingPerKwh": {
+          "bedragInclBtw": 0.1,
+          "bedragExclBtw": 0.082645,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://www.budgetthuis.nl/energie/modelcontract",
+          "gecontroleerdOp": "2026-10-02",
+          "notitie": "'per kWh, excl. btw'. Btw-vrij: dit bedrag krijgt de consument, dus niet met 21% btw verhoogd."
+        },
+        "terugleverkostenPerKwh": {
+          "bedragInclBtw": 0.08058,
+          "bedragExclBtw": 0.066595,
+          "eenheid": "EUR/kWh",
+          "bronUrl": "https://www.budgetthuis.nl/energie/modelcontract",
+          "gecontroleerdOp": "2026-10-02"
+        }
+      }
+    }
+  ]
+}
