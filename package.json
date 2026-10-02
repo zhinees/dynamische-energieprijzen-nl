@@ -17,6 +17,7 @@
     "thuisbatterijen": "node src/thuisbatterijen.ts",
     "laden": "node src/laden.ts",
     "vast": "node src/vast.ts",
+    "vaste-contracten": "node src/vaste-contracten.ts",
     "afleiden": "node src/afleiden.ts",
     "rekenhulp": "node src/rekenhulp.ts",
     "debug": "node src/debug-leverancier.ts",

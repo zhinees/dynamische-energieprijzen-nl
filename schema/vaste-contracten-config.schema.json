@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/vaste-contracten-config.schema.json",
+  "title": "vaste-contracten/contracten.json",
+  "description": "Vaste stroomcontracten van leveranciers, met de hand overgenomen van de eigen site of het tariefblad van de leverancier, met bron en datum per waarde.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gecontroleerdOp",
+    "contracten"
+  ],
+  "$defs": {
+    "waarde": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "waarde",
+        "inclBtw",
+        "geverifieerd",
+        "gecontroleerdOp",
+        "bron"
+      ],
+      "properties": {
+        "waarde": {
+          "type": "number"
+        },
+        "inclBtw": {
+          "type": "boolean"
+        },
+        "geverifieerd": {
+          "const": true
+        },
+        "gecontroleerdOp": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "bron": {
+          "type": "string",
+          "format": "uri"
+        },
+        "notitie": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$comment": {
+      "type": "string"
+    },
+    "gecontroleerdOp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "contracten": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "leverancier",
+          "naam",
+          "looptijdMaanden",
+          "tariefUrl",
+          "tarieven"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "leverancier": {
+            "type": "string"
+          },
+          "leverancierId": {
+            "type": "string"
+          },
+          "naam": {
+            "type": "string"
+          },
+          "looptijdMaanden": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "tariefUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "geldigVanaf": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "notitie": {
+            "type": "string"
+          },
+          "tarieven": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "stroomLeveringPerKwh",
+              "stroomVastPerMaand",
+              "terugleververgoedingPerKwh"
+            ],
+            "properties": {
+              "stroomLeveringPerKwh": {
+                "$ref": "#/$defs/waarde"
+              },
+              "stroomVastPerMaand": {
+                "$ref": "#/$defs/waarde"
+              },
+              "terugleververgoedingPerKwh": {
+                "$ref": "#/$defs/waarde"
+              },
+              "terugleverkostenPerKwh": {
+                "$ref": "#/$defs/waarde"
+              }
+            }
+          },
+          "terugleverStaffels": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "inclBtw",
+              "geverifieerd",
+              "gecontroleerdOp",
+              "bron",
+              "banden"
+            ],
+            "properties": {
+              "inclBtw": {
+                "type": "boolean"
+              },
+              "geverifieerd": {
+                "const": true
+              },
+              "gecontroleerdOp": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "bron": {
+                "type": "string",
+                "format": "uri"
+              },
+              "notitie": {
+                "type": "string"
+              },
+              "banden": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "totKwh",
+                    "perMaand"
+                  ],
+                  "properties": {
+                    "totKwh": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "perMaand": {
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
