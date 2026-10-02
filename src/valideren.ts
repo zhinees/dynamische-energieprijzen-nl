@@ -10,6 +10,7 @@ import { regelsVoor } from "./lib/tarieven.ts";
 import { VELDEN, type EnergiebelastingConfig } from "./lib/typen.ts";
 import type { NetbeheerConfig } from "./lib/netbeheer.ts";
 import type { ThuisbatterijenConfig } from "./lib/thuisbatterijen.ts";
+import { bouwVasteContracten, type VasteContractenConfig } from "./lib/vaste-contracten.ts";
 
 const ajv = new (Ajv2020 as any)({ allErrors: true, strict: false });
 (addFormats as any)(ajv);
@@ -89,6 +90,19 @@ await controleer("laden-config.schema.json", ladenCfg);
 const laden = await leesJson<{ gecontroleerdOp: string }>(ladenCfg);
 if (laden && laden.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("laden/laden.json", "gecontroleerdOp ligt in de toekomst");
 
+// 4c. Fixed contracts of suppliers
+const vasteCfg = join(ROOT, "vaste-contracten", "contracten.json");
+await controleer("vaste-contracten-config.schema.json", vasteCfg);
+const vaste = await leesJson<VasteContractenConfig>(vasteCfg);
+if (vaste) {
+  if (vaste.gecontroleerdOp > new Date().toISOString().slice(0, 10)) fout("vaste-contracten/contracten.json", "gecontroleerdOp ligt in de toekomst");
+  try {
+    bouwVasteContracten(vaste, new Date().toISOString(), Object.fromEntries(configs.map((l) => [l.id, l.website])));
+  } catch (e) {
+    fout("vaste-contracten/contracten.json", (e as Error).message);
+  }
+}
+
 // 5. Generated data (if present)
 await controleer("leveranciers.schema.json", join(DATA, "leveranciers.json"));
 await controleer("energiebelasting.schema.json", join(DATA, "energiebelasting.json"));
@@ -99,9 +113,10 @@ await controleer("thuisbatterijen.schema.json", join(DATA, "thuisbatterijen.json
 await controleer("batterijmodellen.schema.json", join(DATA, "batterijmodellen.json"));
 await controleer("laden.schema.json", join(DATA, "laden.json"));
 await controleer("vast.schema.json", join(DATA, "vast.json"));
+await controleer("vaste-contracten.schema.json", join(DATA, "vaste-contracten.json"));
 
 if (fouten) {
   console.error(`\n${fouten} probleem/problemen`);
   process.exit(1);
 }
-console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen, de batterijmodellen, thuis laden, het gemiddelde vaste contract en de databestanden zijn geldig`);
+console.log(`✓ ${configs.length} leveranciersbestanden, het energiebelastingbestand, de netbeheertarieven, de batterijprijzen, de batterijmodellen, thuis laden, het gemiddelde vaste contract, de vaste contracten en de databestanden zijn geldig`);
