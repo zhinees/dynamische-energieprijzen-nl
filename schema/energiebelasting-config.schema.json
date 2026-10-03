@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/energiebelasting-config.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/energiebelasting-config.schema.json",
   "title": "belastingen/energiebelasting.json",
   "description": "Waar de bot de energiebelasting leest, plus met de hand gecontroleerde reservewaarden per jaar (excl. btw, zoals de Belastingdienst ze noemt).",
   "type": "object",

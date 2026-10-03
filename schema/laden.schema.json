@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/laden.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/laden.schema.json",
   "title": "data/laden.json",
   "description": "Thuis laden: de ERE-vergoeding per thuis geladen kWh (richtwaarde en bandbreedte, na de kosten van de inboeker) en de aanschafprijs van een laadpaal met installatie, incl. btw, met bronnen. Gemaakt door `npm run laden`.",
   "type": "object",

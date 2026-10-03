@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/vast.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/vast.schema.json",
   "title": "data/vast.json",
   "description": "Gemiddeld vast of variabel stroomcontract voor huishoudens per maand (CBS StatLine 85592NED), incl. btw. Gemaakt door `npm run vast`.",
   "type": "object",

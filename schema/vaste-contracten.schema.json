@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/vaste-contracten.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/vaste-contracten.schema.json",
   "title": "data/vaste-contracten.json",
   "description": "Vaste stroomcontracten van leveranciers voor nieuwe klanten, incl. btw; leveringstarief zonder energiebelasting; terugleverkosten per kWh of als staffel (bedrag per maand per band van de teruglevering per jaar).",
   "type": "object",
