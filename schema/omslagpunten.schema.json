@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/omslagpunten.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/omslagpunten.schema.json",
   "title": "data/omslagpunten.json",
   "description": "Omslagpunten tussen vaste kosten en inkoopopslag, incl. btw, in kWh (stroom) of m3 (gas) per jaar.",
   "type": "object",

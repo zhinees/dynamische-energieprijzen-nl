@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/netbeheer-config.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/netbeheer-config.schema.json",
   "title": "netbeheer/netbeheerders.json",
   "description": "Periodieke netbeheerkosten stroom per netbeheerder en categorie, met de hand uit de tariefbladen, plus het open kleinverbruiksbestand per netbeheerder.",
   "type": "object",

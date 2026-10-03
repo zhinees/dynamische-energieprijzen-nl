@@ -4,7 +4,7 @@
 //   DATA_BASIS=./data node voorbeelden/prijs-op-uur.mjs 18   # use a local checkout
 import { readFile } from "node:fs/promises";
 
-const BASIS = process.env.DATA_BASIS ?? "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data";
+const BASIS = process.env.DATA_BASIS ?? "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/data";
 const uur = Number(process.argv[2] ?? 18);
 
 const haal = async (pad) =>

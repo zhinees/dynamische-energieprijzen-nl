@@ -1,6 +1,6 @@
-# Dynamische energieprijzen NL
+# Energieprijzen NL
 
-Een onafhankelijk, open overzicht van wat Nederlandse leveranciers rekenen voor een dynamisch energiecontract, automatisch bijgewerkt door GitHub Actions:
+Een onafhankelijk, open overzicht van wat een Nederlands huishouden betaalt voor energie: wat leveranciers rekenen voor een dynamisch of vast contract, met belastingen en netbeheerkosten, automatisch bijgewerkt door GitHub Actions:
 
 - **Tarieven van leveranciers**: vaste kosten per maand, inkoopopslag en teruglevering, per leverancier, met bron en controledatum per getal.
 - **Energiebelasting** per jaar, rechtstreeks van de Belastingdienst.
@@ -24,10 +24,10 @@ Zie het als een filterlijst van een adblocker. De data staat als gewone JSON- en
 Haal elk bestand direct van GitHub op. `raw.githubusercontent.com` staat verzoeken van andere domeinen toe, dus dit werkt zowel in de browser als op een server.
 
 ```
-https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data/<bestand>
+https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/data/<bestand>
 ```
 
-Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energieprijzen-nl@main/data/<bestand>`. Let op: jsDelivr bewaart branch-URL's tot 12 uur in de cache, dus gebruik raw GitHub als je de nieuwste data nodig hebt.
+Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/energieprijzen-nl@main/data/<bestand>`. Let op: jsDelivr bewaart branch-URL's tot 12 uur in de cache, dus gebruik raw GitHub als je de nieuwste data nodig hebt.
 
 | Bestand | Inhoud | Bijgewerkt |
 | --- | --- | --- |
@@ -49,7 +49,7 @@ Een CDN-alternatief is `https://cdn.jsdelivr.net/gh/zhinees/dynamische-energiepr
 ### Voorbeeld: wat kost een kWh per leverancier?
 
 ```js
-const BASIS = "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data";
+const BASIS = "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/data";
 const { leveranciers } = await (await fetch(`${BASIS}/leveranciers.json`)).json();
 const { jaren } = await (await fetch(`${BASIS}/energiebelasting.json`)).json();
 
@@ -172,6 +172,6 @@ De nuttigste hulp is de huidige tarieven van een leverancier controleren en het 
 ## Licentie
 
 - Code: [MIT](LICENSE).
-- Data in `data/`, `leveranciers/`, `belastingen/`, `netbeheer/`, `thuisbatterijen/`, `laden/` en `vaste-contracten/`: [CC BY 4.0](DATA-LICENTIE.md). Vermeld "dynamische-energieprijzen-nl" en de onderliggende bronnen die daar staan.
+- Data in `data/`, `leveranciers/`, `belastingen/`, `netbeheer/`, `thuisbatterijen/`, `laden/` en `vaste-contracten/`: [CC BY 4.0](DATA-LICENTIE.md). Vermeld "energieprijzen-nl" en de onderliggende bronnen die daar staan.
 
 Dit project is niet verbonden aan een energieleverancier, en niets hier is financieel advies. Controleer altijd de voorwaarden van de leverancier zelf voordat je overstapt.

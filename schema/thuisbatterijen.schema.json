@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/thuisbatterijen.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/thuisbatterijen.schema.json",
   "title": "data/thuisbatterijen.json",
   "description": "Aanschafprijzen van thuisbatterijen per type en capaciteit (bandbreedte, incl. btw), met de prijs per kWh, de levensduur en de bronnen. Gemaakt door `npm run thuisbatterijen`.",
   "type": "object",

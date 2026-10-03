@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/batterijmodellen-config.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/batterijmodellen-config.schema.json",
   "title": "thuisbatterijen/modellen.json",
   "description": "Technische gegevens van thuisbatterijen per model, met de hand overgenomen, met bronnen. Wat niet bekend is, is null.",
   "type": "object",

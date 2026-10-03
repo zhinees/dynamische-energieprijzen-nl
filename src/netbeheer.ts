@@ -15,7 +15,7 @@ import { bouwNetbeheer, bouwPostcodes, gebiedenIn, leesCsv, leesXlsx, netbeheerd
 
 const CACHE = join(ROOT, "tmp", "netbeheer");
 const PDOK = "https://api.pdok.nl/bzk/locatieserver/search/v3_1/free";
-const AGENT = "dynamische-energieprijzen-nl (+https://github.com/zhinees/dynamische-energieprijzen-nl)";
+const AGENT = "energieprijzen-nl (+https://github.com/zhinees/energieprijzen-nl)";
 
 async function metCache(naam: string, haal: () => Promise<Buffer>): Promise<Buffer> {
   const pad = join(CACHE, naam);
