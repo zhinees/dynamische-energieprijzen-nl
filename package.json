@@ -1,5 +1,5 @@
 {
-  "name": "dynamische-energieprijzen-nl",
+  "name": "energieprijzen-nl",
   "version": "1.0.0",
   "private": true,
   "description": "Open data: tarieven van Nederlandse leveranciers met een dynamisch energiecontract, energiebelasting en omslagpunten, automatisch bijgewerkt.",

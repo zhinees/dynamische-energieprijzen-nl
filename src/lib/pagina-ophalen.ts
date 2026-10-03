@@ -1,7 +1,7 @@
 import { htmlNaarTekst } from "./uitlezen.ts";
 
 export const USER_AGENT =
-  "dynamische-energieprijzen-nl/1.0 (+https://github.com/zhinees/dynamische-energieprijzen-nl)";
+  "energieprijzen-nl/1.0 (+https://github.com/zhinees/energieprijzen-nl)";
 
 /** Fetch a page and return its visible text. */
 export async function haalPaginaTekst(url: string, ophalen: "http" | "browser" = "http"): Promise<string> {

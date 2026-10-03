@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/vaste-contracten-config.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/vaste-contracten-config.schema.json",
   "title": "vaste-contracten/contracten.json",
   "description": "Vaste stroomcontracten van leveranciers, met de hand overgenomen van de eigen site of het tariefblad van de leverancier, met bron en datum per waarde.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/batterijmodellen.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/batterijmodellen.schema.json",
   "title": "data/batterijmodellen.json",
   "description": "Technische gegevens van thuisbatterijen per model (capaciteit, bruikbare capaciteit, laad- en ontlaadvermogen, verlies, stand-by), met bronnen; plus het bruikbare aandeel en één vermogen voor rekenhulpen. Gemaakt door `npm run thuisbatterijen`.",
   "type": "object",

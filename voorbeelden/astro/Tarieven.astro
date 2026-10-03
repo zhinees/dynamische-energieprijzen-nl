@@ -7,7 +7,7 @@
 interface Props {
   basis?: string;
 }
-const { basis = "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/data" } = Astro.props;
+const { basis = "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/data" } = Astro.props;
 
 let leveranciers: any[] = [];
 let fout = "";
@@ -52,7 +52,7 @@ const rijen = leveranciers.slice().sort((a, b) => (incl(a, "stroomInkoopopslag")
       </table>
       <p><small>
         Incl. btw, bovenop de marktprijs. Teruglevering: negatief = kosten, positief = bonus.
-        – = niet gepubliceerd door de leverancier. Bron: dynamische-energieprijzen-nl.
+        – = niet gepubliceerd door de leverancier. Bron: energieprijzen-nl.
       </small></p>
     </>
   )}

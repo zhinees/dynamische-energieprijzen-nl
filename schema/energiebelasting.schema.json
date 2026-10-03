@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/zhinees/dynamische-energieprijzen-nl/main/schema/energiebelasting.schema.json",
+  "$id": "https://raw.githubusercontent.com/zhinees/energieprijzen-nl/main/schema/energiebelasting.schema.json",
   "title": "data/energiebelasting.json",
   "description": "Energiebelasting voor huishoudens (eerste schijf) per jaar, van de Belastingdienst.",
   "type": "object",
